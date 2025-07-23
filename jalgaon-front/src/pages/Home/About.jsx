@@ -8,6 +8,7 @@ import {
   Award,
   Clock,
 } from "lucide-react";
+import { Banner1, dpc } from "../../assets";
 
 const About = () => {
   // Dummy data for Jalgaon district
@@ -96,7 +97,7 @@ const About = () => {
               <motion.div
                 key={update.id}
                 whileHover={{ y: -5 }}
-                className="bg-gray-50 border border-gray-200 rounded-lg p-6 hover:shadow-md transition"
+                className="bg-gray-50 border border-gray-200 p-6 hover:shadow-md transition"
               >
                 <div className="flex items-center text-gray-500 mb-2">
                   <Calendar size={16} className="mr-2" />
@@ -130,23 +131,23 @@ const About = () => {
                 Khandesh region and is bordered by the Satpura mountain ranges.
               </p>
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white p-4 rounded-lg shadow-sm">
+                <div className="bg-white p-4 shadow-sm">
                   <h4 className="font-semibold text-gray-800">Population</h4>
                   <p className="text-blue-600 font-bold">
                     {districtData.population}
                   </p>
                 </div>
-                <div className="bg-white p-4 rounded-lg shadow-sm">
+                <div className="bg-white p-4 shadow-sm">
                   <h4 className="font-semibold text-gray-800">Area</h4>
                   <p className="text-blue-600 font-bold">{districtData.area}</p>
                 </div>
-                <div className="bg-white p-4 rounded-lg shadow-sm">
+                <div className="bg-white p-4 shadow-sm">
                   <h4 className="font-semibold text-gray-800">Literacy Rate</h4>
                   <p className="text-blue-600 font-bold">
                     {districtData.literacy}
                   </p>
                 </div>
-                <div className="bg-white p-4 rounded-lg shadow-sm">
+                <div className="bg-white p-4 shadow-sm">
                   <h4 className="font-semibold text-gray-800">Villages</h4>
                   <p className="text-blue-600 font-bold">
                     {districtData.villages}
@@ -156,9 +157,9 @@ const About = () => {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                src={Banner1}
                 alt="Jalgaon District"
-                className="w-full h-auto rounded-lg shadow-md"
+                className="w-full h-auto"
               />
             </div>
           </div>
@@ -175,7 +176,7 @@ const About = () => {
                 key={index}
                 href={link.link}
                 whileHover={{ scale: 1.05 }}
-                className="bg-blue-50 rounded-lg p-6 text-center hover:bg-blue-100 transition group"
+                className="bg-blue-50 p-6 text-center hover:bg-blue-100 transition group"
               >
                 <div className="text-blue-600 mb-4 flex justify-center group-hover:text-blue-800">
                   {link.icon}
@@ -196,9 +197,9 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <img
-                src="https://images.unsplash.com/photo-1581093196277-2ac17d9c8c5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                src={dpc}
                 alt="District Planning Committee"
-                className="w-full h-auto rounded-lg shadow-md"
+                className="w-full h-auto"
               />
             </div>
             <div>
@@ -222,12 +223,110 @@ const About = () => {
               </p>
               <a
                 href="#about"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
+                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
               >
                 Learn More
                 <ArrowRight size={20} className="ml-2" />
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-gray-800 mb-8">
+            Our Services
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* District Annual Plan */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-gray-50 border border-gray-200 p-6 hover:shadow-md transition"
+            >
+              <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                <FileText size={24} className="text-blue-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">
+                District Annual Plan
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Access current and archived district annual plans, development
+                schemes, and progress reports.
+              </p>
+              <a
+                href="#annual-plan"
+                className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center"
+              >
+                View Plans <ArrowRight size={16} className="ml-1" />
+              </a>
+            </motion.div>
+
+            {/* MLA/MP Fund Projects */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-gray-50 border border-gray-200 p-6 hover:shadow-md transition"
+            >
+              <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                <Users size={24} className="text-green-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">
+                MLA/MP Fund Projects
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Information about projects funded through MLA/MP Local Area
+                Development funds.
+              </p>
+              <a
+                href="#mla-funds"
+                className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center"
+              >
+                View Projects <ArrowRight size={16} className="ml-1" />
+              </a>
+            </motion.div>
+
+            {/* RTI Portal */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-gray-50 border border-gray-200 p-6 hover:shadow-md transition"
+            >
+              <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                <FileText size={24} className="text-purple-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">RTI Portal</h3>
+              <p className="text-gray-600 mb-4">
+                Submit Right to Information applications and track their status
+                online.
+              </p>
+              <a
+                href="#rti"
+                className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center"
+              >
+                Access Portal <ArrowRight size={16} className="ml-1" />
+              </a>
+            </motion.div>
+
+            {/* Tenders */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-gray-50 border border-gray-200 p-6 hover:shadow-md transition"
+            >
+              <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                <Award size={24} className="text-orange-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Tenders</h3>
+              <p className="text-gray-600 mb-4">
+                View current tenders, notices, and procurement opportunities in
+                the district.
+              </p>
+              <a
+                href="#tenders"
+                className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center"
+              >
+                View Tenders <ArrowRight size={16} className="ml-1" />
+              </a>
+            </motion.div>
           </div>
         </div>
       </section>

@@ -1,32 +1,44 @@
 import React from "react";
+import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 border-t border-gray-300 py-4">
-      <div className="max-w-7xl mx-auto px-4">
+    <footer className="bg-gray-800 text-white py-6">
+      <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          {/* Left side - Copyright */}
-          <div className="text-sm text-gray-600 mb-2 md:mb-0">
-            © {new Date().getFullYear()} Government Portal. All rights reserved.
+          {/* Left side - Logo and basic info */}
+          <div className="flex items-center mb-4 md:mb-0">
+            <img
+              src="/jalgaon-logo.png"
+              alt="Jalgaon District Logo"
+              className="h-10 mr-3"
+            />
+            <div>
+              <h3 className="text-lg font-bold">Jalgaon District Planning</h3>
+              <p className="text-sm text-gray-300">Government of Maharashtra</p>
+            </div>
           </div>
 
-          {/* Right side - Links */}
-          <div className="flex space-x-4">
-            <a href="#" className="text-sm text-gray-600 hover:text-blue-600">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-sm text-gray-600 hover:text-blue-600">
-              Terms of Use
-            </a>
-            <a href="#" className="text-sm text-gray-600 hover:text-blue-600">
-              Accessibility
-            </a>
+          {/* Right side - Minimal contact info */}
+          <div className="text-sm">
+            <div className="flex items-center mb-1">
+              <FaMapMarkerAlt className="mr-2" />
+              <span>Jalgaon, Maharashtra</span>
+            </div>
+            <div className="flex items-center mb-1">
+              <FaPhone className="mr-2" />
+              <span>0257-2220000</span>
+            </div>
+            <div className="flex items-center">
+              <FaEnvelope className="mr-2" />
+              <span>contact@jalgaonplanning.gov.in</span>
+            </div>
           </div>
         </div>
 
-        {/* Bottom line - Date */}
-        <div className="mt-2 text-xs text-gray-500 text-center md:text-left">
-          Last updated: July 17, 2025
+        {/* Bottom copyright */}
+        <div className="border-t border-gray-700 mt-4 pt-4 text-center text-sm text-gray-300">
+          <p>© Jalgaon District Planning • Last Updated: Jul 24, 2025</p>
         </div>
       </div>
     </footer>

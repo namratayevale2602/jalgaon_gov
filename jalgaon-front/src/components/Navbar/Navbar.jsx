@@ -15,25 +15,50 @@ const Navbar = () => {
       {
         name: "ABOUT DISTRICT",
         dropdown: [
-          { name: "History", href: "#" },
-          { name: "Organizational Chart", href: "#" },
-          { name: "Objectives", href: "#" },
+          { name: "History", href: "/history" },
+          { name: "Organizational Chart", href: "/organizationalChart" },
+          { name: "Objectives", href: "/objectives" },
         ],
       },
       {
-        name: "Functions & Duties",
+        name: "Functions",
         dropdown: [
-          { name: "Responsibility", href: "#" },
-          { name: "Role-wise Duties", href: "#" },
+          { name: "Responsibility", href: "/responsibilities" },
+          { name: "Role-wise Duties", href: "/rolewiseduties" },
         ],
       },
-      { name: "Schemes & Programs", href: "#" },
-      { name: "Projects & Approvals", href: "#" },
-      { name: "Committees & Meetings", href: "#" },
-      { name: "Transparency & RTI", href: "#" },
+      {
+        name: "Schemes",
+        dropdown: [
+          { name: "Annual Plan", href: "/annual-plan" },
+          { name: "MLAMP Funds", href: "/MLAMPFunds" },
+          { name: "Spacial Funds", href: "/spacialfunds" },
+        ],
+      },
+      {
+        name: "Projects",
+        dropdown: [
+          { name: "Ongoing Projects", href: "/ongoingprojects" },
+          { name: "Approval Process", href: "/approvalprocess" },
+        ],
+      },
+      {
+        name: "Committees",
+        dropdown: [
+          { name: "Planning Committee", href: "/planningcommittee" },
+          { name: "Executive Committee", href: "/executivecommittee" },
+        ],
+      },
+      {
+        name: "Transparency & RTI",
+        dropdown: [
+          { name: "Budget Expenditure", href: "/budgetexpenditure" },
+          { name: "RTI Portal", href: "/rti-portal" },
+        ],
+      },
     ],
     sidebar: [
-      { name: "Staff & Contact", href: "#" },
+      { name: "Staff & Contact", href: "/Directory" },
       { name: "Downloads", href: "#" },
       { name: "Tenders & Notices", href: "#" },
     ],
