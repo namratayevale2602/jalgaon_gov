@@ -271,18 +271,37 @@ const About = () => {
               <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                 <Users size={24} className="text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">
-                MLA/MP Fund Projects
-              </h3>
+              <h3 className="text-xl font-semibold mb-3">MLA Fund</h3>
               <p className="text-gray-600 mb-4">
-                Information about projects funded through MLA/MP Local Area
-                Development funds.
+                Information about funded through MLA Local Area Development
+                funds.
               </p>
               <a
                 href="#mla-funds"
                 className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center"
               >
                 View Projects <ArrowRight size={16} className="ml-1" />
+              </a>
+            </motion.div>
+
+            {/* Tenders */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-gray-50 border border-gray-200 p-6 hover:shadow-md transition"
+            >
+              <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                <Award size={24} className="text-orange-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">MP Fund</h3>
+              <p className="text-gray-600 mb-4">
+                Information about funded through MP Local Area Development
+                funds.
+              </p>
+              <a
+                href="#tenders"
+                className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center"
+              >
+                View Tenders <ArrowRight size={16} className="ml-1" />
               </a>
             </motion.div>
 
@@ -304,27 +323,6 @@ const About = () => {
                 className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center"
               >
                 Access Portal <ArrowRight size={16} className="ml-1" />
-              </a>
-            </motion.div>
-
-            {/* Tenders */}
-            <motion.div
-              whileHover={{ y: -5 }}
-              className="bg-gray-50 border border-gray-200 p-6 hover:shadow-md transition"
-            >
-              <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                <Award size={24} className="text-orange-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Tenders</h3>
-              <p className="text-gray-600 mb-4">
-                View current tenders, notices, and procurement opportunities in
-                the district.
-              </p>
-              <a
-                href="#tenders"
-                className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center"
-              >
-                View Tenders <ArrowRight size={16} className="ml-1" />
               </a>
             </motion.div>
           </div>

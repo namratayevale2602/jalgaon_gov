@@ -6,7 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import Layout from "./Layout/Layout";
+import Layout from "./layout/Layout";
 import Home from "./pages/Home/Home";
 import Historyofdistrict from "./pages/About_District/History";
 import OrganizationalChart from "./pages/About_District/OrganizationalChart";

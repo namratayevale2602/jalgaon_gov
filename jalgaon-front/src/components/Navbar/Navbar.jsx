@@ -13,11 +13,18 @@ const Navbar = () => {
     left: [
       { name: "HOME", href: "/" },
       {
-        name: "ABOUT DISTRICT",
+        name: "ABOUT",
         dropdown: [
-          { name: "History", href: "/history" },
+          // { name: "History", href: "/history" },
           { name: "Organizational Chart", href: "/organizationalChart" },
           { name: "Objectives", href: "/objectives" },
+        ],
+      },
+      {
+        name: "Committees",
+        dropdown: [
+          { name: "Planning Committee", href: "/planningcommittee" },
+          // { name: "Executive Committee", href: "/executivecommittee" },
         ],
       },
       {
@@ -31,37 +38,41 @@ const Navbar = () => {
         name: "Schemes",
         dropdown: [
           { name: "Annual Plan", href: "/annual-plan" },
-          { name: "MLAMP Funds", href: "/MLAMPFunds" },
-          { name: "Spacial Funds", href: "/spacialfunds" },
+          { name: "MLA Funds", href: "/MLAFunds" },
+          { name: "MP Funds", href: "/MPFunds" },
+          { name: "Other Funds", href: "/spacialfunds" },
         ],
       },
+      // {
+      //   name: "Projects",
+      //   dropdown: [
+      //     { name: "Ongoing Projects", href: "/ongoingprojects" },
+      //     { name: "Approval Process", href: "/approvalprocess" },
+      //   ],
+      // },
+
       {
-        name: "Projects",
+        name: "RTI",
         dropdown: [
-          { name: "Ongoing Projects", href: "/ongoingprojects" },
-          { name: "Approval Process", href: "/approvalprocess" },
-        ],
-      },
-      {
-        name: "Committees",
-        dropdown: [
-          { name: "Planning Committee", href: "/planningcommittee" },
-          { name: "Executive Committee", href: "/executivecommittee" },
-        ],
-      },
-      {
-        name: "Transparency & RTI",
-        dropdown: [
-          { name: "Budget Expenditure", href: "/budgetexpenditure" },
+          // { name: "Budget Expenditure", href: "/budgetexpenditure" },
           { name: "RTI Portal", href: "/rti-portal" },
         ],
       },
+      {
+        name: "Media",
+        dropdown: [
+          { name: "Photos", href: "/rti-portal" },
+          { name: "Presentation", href: "/budgetexpenditure" },
+        ],
+      },
+      { name: "Staff & Contacts", href: "/" },
+      { name: "Downloades", href: "/" },
     ],
-    sidebar: [
-      { name: "Staff & Contact", href: "/Directory" },
-      { name: "Downloads", href: "#" },
-      { name: "Tenders & Notices", href: "#" },
-    ],
+    // sidebar: [
+    //   { name: "Staff & Contact", href: "/Directory" },
+    //   { name: "Downloads", href: "#" },
+    //   { name: "Tenders & Notices", href: "#" },
+    // ],
   };
 
   return (
@@ -147,7 +158,7 @@ const Navbar = () => {
                 </div>
               ))}
             </div>
-            <button
+            {/* <button
               onClick={() => setShowSidebar(true)}
               className="text-blue-600 hover:text-blue-800 pl-4"
             >
@@ -165,7 +176,7 @@ const Navbar = () => {
                   d="M19 9l-7 7-7-7"
                 />
               </svg>
-            </button>
+            </button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -280,7 +291,7 @@ const Navbar = () => {
       </nav>
 
       {/* Sidebar for desktop "more" button */}
-      {showSidebar && (
+      {/* {showSidebar && (
         <div className="fixed inset-y-0 right-0 z-50 w-64 bg-white shadow-xl">
           <div className="h-full overflow-y-auto">
             <div className="flex justify-between items-center p-4 border-b">
@@ -320,7 +331,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
