@@ -23,6 +23,12 @@ import ExecutiveCommittee from "./pages/Committees/ExecutiveCommittee";
 import BudgetExpenditure from "./pages/Transparency/BudgetExpenditure";
 import RTIPortal from "./pages/Transparency/RTIPortal";
 import Directory from "./pages/Contact/Directory";
+import GalleryPage from "./pages/Media/Photos";
+import PresentationGallery from "./pages/Media/Presentation";
+import BlogPage from "./pages/Blogpage/BlogPage";
+import BlogDetailPage from "./pages/Blogpage/BlogDetailPage";
+import ReportsPage from "./pages/Reports/ReportsPage";
+import Download from "./pages/Downloads/Downloads";
 // import Aboutdistrict from "./pages/About_District/About";
 
 function App() {
@@ -49,6 +55,12 @@ function App() {
           <Route path="/budgetexpenditure" element={<BudgetExpenditure />} />
           <Route path="/rti-portal" element={<RTIPortal />} />
           <Route path="/directory" element={<Directory />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/presentation" element={<PresentationGallery />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogDetailPage />} />
+          <Route path="/reports" element={<ReportsPage />} />
+          <Route path="/downloads" element={<Download />} />
         </Route>
       </>
     )

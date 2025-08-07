@@ -14,7 +14,10 @@ export const RawContentDisplay = () => {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(`/api/content/${section}`);
+        // Use the full URL if your React app is on a different port (like 3000)
+        const response = await fetch(
+          `http://127.0.0.1:8000/api/content/${section}`
+        );
 
         // First check if response is OK
         if (!response.ok) {
@@ -28,7 +31,7 @@ export const RawContentDisplay = () => {
         }
 
         const data = await response.json();
-        setContentData(data[language] || []);
+        setContentData(data || []); // Remove the [language] part since your API returns the full object
       } catch (err) {
         setError(err.message);
         console.error("Fetch error:", err);
@@ -80,7 +83,7 @@ export const RawContentDisplay = () => {
         />
       </div>
 
-      {displayContent.length === 0 ? (
+      {contentData.length === 0 ? (
         <div className="bg-yellow-100 p-4 rounded-lg">
           {language === "en" ? "No content found" : "सामग्री आढळली नाही"}
         </div>
@@ -102,7 +105,7 @@ export const RawContentDisplay = () => {
               </tr>
             </thead>
             <tbody>
-              {displayContent.map((item) => (
+              {contentData.map((item) => (
                 <tr key={item.id} className="border-t">
                   <td className="px-4 py-2">{item.id || "-"}</td>
                   <td className="px-4 py-2">{item.section_name || "-"}</td>

@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Getting Started with React and Vite",
+    "slug": "getting-started-with-react-and-vite",
+    "excerpt": "Learn how to set up a new project with React and Vite for blazing fast development.",
+    "content": "Vite is a modern frontend build tool that provides an extremely fast development experience... (full content would be here)",
+    "date": "2023-05-15",
+    "category": "Development",
+    "tags": ["react", "vite", "javascript"]
+  },
+  {
+    "id": 2,
+    "title": "Mastering Tailwind CSS",
+    "slug": "mastering-tailwind-css",
+    "excerpt": "Advanced techniques for working with Tailwind CSS in your projects.",
+    "content": "Tailwind CSS is a utility-first CSS framework that enables you to build designs directly in your markup... (full content would be here)",
+    "date": "2023-06-22",
+    "category": "CSS",
+    "tags": ["tailwind", "css", "frontend"]
+  },
+  {
+    "id": 3,
+    "title": "Animations with Framer Motion",
+    "slug": "animations-with-framer-motion",
+    "excerpt": "Create beautiful animations in React with Framer Motion.",
+    "content": "Framer Motion is a production-ready motion library for React that makes creating animations easy... (full content would be here)",
+    "date": "2023-07-10",
+    "category": "Animation",
+    "tags": ["animation", "react", "framer"]
+  },
+  {
+    "id": 4,
+    "title": "Building Modern Web Applications",
+    "slug": "building-modern-web-applications",
+    "excerpt": "Best practices for building scalable web applications in 2023.",
+    "content": "Modern web development has evolved significantly in recent years with new tools and methodologies... (full content would be here)",
+    "date": "2023-08-05",
+    "category": "Web Development",
+    "tags": ["webdev", "javascript", "frontend"]
+  },
+  {
+    "id": 5,
+    "title": "Getting Started with React and Vite",
+    "slug": "getting-started-with-react-and-vite",
+    "excerpt": "Learn how to set up a new project with React and Vite for blazing fast development.",
+    "content": "Vite is a modern frontend build tool that provides an extremely fast development experience... (full content would be here)",
+    "date": "2023-09-15",
+    "category": "Development",
+    "tags": ["react", "vite", "javascript"]
+  },
+  {
+    "id": 6,
+    "title": "Mastering Tailwind CSS",
+    "slug": "mastering-tailwind-css",
+    "excerpt": "Advanced techniques for working with Tailwind CSS in your projects.",
+    "content": "Tailwind CSS is a utility-first CSS framework that enables you to build designs directly in your markup... (full content would be here)",
+    "date": "2023-10-22",
+    "category": "CSS",
+    "tags": ["tailwind", "css", "frontend"]
+  },
+  {
+    "id": 7,
+    "title": "Animations with Framer Motion",
+    "slug": "animations-with-framer-motion",
+    "excerpt": "Create beautiful animations in React with Framer Motion.",
+    "content": "Framer Motion is a production-ready motion library for React that makes creating animations easy... (full content would be here)",
+    "date": "2023-11-10",
+    "category": "Animation",
+    "tags": ["animation", "react", "framer"]
+  },
+  {
+    "id": 8,
+    "title": "Building Modern Web Applications",
+    "slug": "building-modern-web-applications",
+    "excerpt": "Best practices for building scalable web applications in 2023.",
+    "content": "Modern web development has evolved significantly in recent years with new tools and methodologies... (full content would be here)",
+    "date": "2023-12-05",
+    "category": "Web Development",
+    "tags": ["webdev", "javascript", "frontend"]
+  }
+]

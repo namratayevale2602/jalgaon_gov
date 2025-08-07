@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 const Navbar = () => {
+  const { language, toggleLanguage } = useLanguage();
   const [openDropdown, setOpenDropdown] = useState(null);
-  const [showSidebar, setShowSidebar] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const toggleDropdown = (name) => {
@@ -11,68 +12,127 @@ const Navbar = () => {
 
   const navItems = {
     left: [
-      { name: "HOME", href: "/" },
       {
-        name: "ABOUT",
+        name: { en: "HOME", mr: "मुख्यपृष्ठ" },
+        href: "/",
+      },
+      {
+        name: { en: "ABOUT", mr: "आमच्याबद्दल" },
         dropdown: [
-          // { name: "History", href: "/history" },
-          { name: "Organizational Chart", href: "/organizationalChart" },
-          { name: "Objectives", href: "/objectives" },
+          {
+            name: { en: "Organizational Chart", mr: "संस्थात्मक रचना" },
+            href: "/organizationalChart",
+          },
+          {
+            name: { en: "Objectives", mr: "उद्दिष्टे" },
+            href: "/objectives",
+          },
         ],
       },
       {
-        name: "Committees",
+        name: { en: "COMMITTEES", mr: "समित्या" },
         dropdown: [
-          { name: "Planning Committee", href: "/planningcommittee" },
-          // { name: "Executive Committee", href: "/executivecommittee" },
+          {
+            name: { en: "Planning Committee", mr: "नियोजन समिती" },
+            href: "/planningcommittee",
+          },
         ],
       },
       {
-        name: "Functions",
+        name: { en: "DSP", mr: "डीएसपी" },
         dropdown: [
-          { name: "Responsibility", href: "/responsibilities" },
-          { name: "Role-wise Duties", href: "/rolewiseduties" },
+          {
+            name: { en: "Planning Committee", mr: "नियोजन समिती" },
+            href: "/planningcommittee",
+          },
         ],
       },
       {
-        name: "Schemes",
+        name: { en: "FUNCTIONS", mr: "कार्ये" },
         dropdown: [
-          { name: "Annual Plan", href: "/annual-plan" },
-          { name: "MLA Funds", href: "/MLAFunds" },
-          { name: "MP Funds", href: "/MPFunds" },
-          { name: "Other Funds", href: "/spacialfunds" },
+          {
+            name: { en: "RESPONSIBILITY", mr: "जबाबदाऱ्या" },
+            href: "/responsibilities",
+          },
+          {
+            name: { en: "ROLE-WISE DUTIES", mr: "भागानुसार कर्तव्ये" },
+            href: "/rolewiseduties",
+          },
+          {
+            name: { en: "STAFF & CONTACTS", mr: "कर्मचारी आणि संपर्क" },
+            href: "/directory",
+          },
         ],
       },
-      // {
-      //   name: "Projects",
-      //   dropdown: [
-      //     { name: "Ongoing Projects", href: "/ongoingprojects" },
-      //     { name: "Approval Process", href: "/approvalprocess" },
-      //   ],
-      // },
+      {
+        name: { en: "SCHEMES", mr: "योजना" },
+        dropdown: [
+          {
+            name: { en: "ANNUAL PLAN", mr: "वार्षिक योजना" },
+            href: "/annual-plan",
+          },
+          {
+            name: { en: "MLA FUNDS", mr: "एमएलए निधी" },
+            href: "/annual-plan",
+          },
+          {
+            name: { en: "MP FUNDS", mr: "एमपी निधी" },
+            href: "/annual-plan",
+          },
+          {
+            name: { en: "OTHER FUNDS", mr: "इतर निधी" },
+            href: "/spacialfunds",
+          },
+        ],
+      },
+      {
+        name: { en: "RTI", mr: "माहिती अधिकार" },
+        dropdown: [
+          {
+            name: { en: "RTI Portal", mr: "माहिती अधिकार पोर्टल" },
+            href: "/rti-portal",
+          },
+        ],
+      },
+      {
+        name: { en: "TOURISM", mr: "पर्यटन" },
+        href: "/gallery",
+      },
+      {
+        name: { en: "GALLERY", mr: "गॅलरी" },
+        href: "/gallery",
+      },
 
       {
-        name: "RTI",
-        dropdown: [
-          // { name: "Budget Expenditure", href: "/budgetexpenditure" },
-          { name: "RTI Portal", href: "/rti-portal" },
-        ],
+        name: { en: "BLOG", mr: "ब्लॉग" },
+        href: "/blog",
+      },
+      // {
+      //   name: { en: "Media", mr: "माध्यम" },
+      //   dropdown: [
+      //     {
+      //       name: { en: "Photos", mr: "छायाचित्रे" },
+      //       href: "/gallery",
+      //     },
+      //     {
+      //       name: { en: "Presentation", mr: "सादरीकरण" },
+      //       href: "/presentation",
+      //     },
+      //   ],
+      // },
+      {
+        name: { en: "REPORTS", mr: "अहवाल" },
+        href: "/reports",
       },
       {
-        name: "Media",
-        dropdown: [
-          { name: "Photos", href: "/rti-portal" },
-          { name: "Presentation", href: "/budgetexpenditure" },
-        ],
+        name: { en: "DOWNLOADS", mr: "डाउनलोड्स" },
+        href: "/downloads",
       },
-      { name: "Staff & Contacts", href: "/" },
-      { name: "Downloades", href: "/" },
     ],
-    // sidebar: [
-    //   { name: "Staff & Contact", href: "/Directory" },
-    //   { name: "Downloads", href: "#" },
-    //   { name: "Tenders & Notices", href: "#" },
-    // ],
+  };
+
+  const getText = (item) => {
+    return language === "en" ? item.en : item.mr;
   };
 
   return (
@@ -97,13 +157,12 @@ const Navbar = () => {
             </div>
 
             <div className="hidden md:flex items-center space-x-4">
-              <a href="#" className="text-blue-600 hover:text-blue-800">
-                Digital India
-              </a>
-              <div className="border-l border-gray-300 h-6"></div>
-              <a href="#" className="text-blue-600 hover:text-blue-800">
-                PowerTo Empower
-              </a>
+              <button
+                onClick={toggleLanguage}
+                className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+              >
+                {language === "en" ? "मराठी" : "English"}
+              </button>
             </div>
           </div>
 
@@ -118,7 +177,7 @@ const Navbar = () => {
                         onClick={() => toggleDropdown(`left-${index}`)}
                         className="font-medium text-gray-700 hover:text-blue-600 flex items-center"
                       >
-                        {item.name}
+                        {getText(item.name)}
                         <svg
                           className="w-4 h-4 ml-1"
                           fill="none"
@@ -141,7 +200,7 @@ const Navbar = () => {
                               href={subItem.href}
                               className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50"
                             >
-                              {subItem.name}
+                              {getText(subItem.name)}
                             </a>
                           ))}
                         </div>
@@ -152,31 +211,12 @@ const Navbar = () => {
                       href={item.href}
                       className="font-medium text-gray-700 hover:text-blue-600"
                     >
-                      {item.name}
+                      {getText(item.name)}
                     </a>
                   )}
                 </div>
               ))}
             </div>
-            {/* <button
-              onClick={() => setShowSidebar(true)}
-              className="text-blue-600 hover:text-blue-800 pl-4"
-            >
-              <span>more</span>
-              <svg
-                className="w-4 h-4 inline ml-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -208,10 +248,16 @@ const Navbar = () => {
                 )}
               </svg>
             </button>
+            <button
+              onClick={toggleLanguage}
+              className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
+            >
+              {language === "en" ? "मराठी" : "English"}
+            </button>
           </div>
         </div>
 
-        {/* Mobile Menu Content - Merged left and sidebar items */}
+        {/* Mobile Menu Content */}
         {showMobileMenu && (
           <div className="md:hidden bg-white pb-4 px-4">
             {/* Left nav items */}
@@ -223,7 +269,7 @@ const Navbar = () => {
                       onClick={() => toggleDropdown(`left-${index}`)}
                       className="w-full flex justify-between items-center font-medium text-gray-700 hover:text-blue-600"
                     >
-                      {item.name}
+                      {getText(item.name)}
                       <svg
                         className={`w-4 h-4 ml-1 transform ${
                           openDropdown === `left-${index}` ? "rotate-180" : ""
@@ -248,7 +294,7 @@ const Navbar = () => {
                             href={subItem.href}
                             className="block text-gray-700 hover:text-blue-600"
                           >
-                            {subItem.name}
+                            {getText(subItem.name)}
                           </a>
                         ))}
                       </div>
@@ -259,79 +305,14 @@ const Navbar = () => {
                     href={item.href}
                     className="block font-medium text-gray-700 hover:text-blue-600"
                   >
-                    {item.name}
+                    {getText(item.name)}
                   </a>
                 )}
               </div>
             ))}
-
-            {/* Sidebar items */}
-            {navItems.sidebar.map((item, index) => (
-              <div key={`sidebar-${index}`} className="py-2 border-b">
-                <a
-                  href={item.href}
-                  className="block font-medium text-gray-700 hover:text-blue-600"
-                >
-                  {item.name}
-                </a>
-              </div>
-            ))}
-
-            <div className="pt-4">
-              <a href="#" className="text-blue-600 hover:text-blue-800">
-                Digital India
-              </a>
-              <div className="border-l border-gray-300 h-6 inline-block mx-2"></div>
-              <a href="#" className="text-blue-600 hover:text-blue-800">
-                PowerTo Empower
-              </a>
-            </div>
           </div>
         )}
       </nav>
-
-      {/* Sidebar for desktop "more" button */}
-      {/* {showSidebar && (
-        <div className="fixed inset-y-0 right-0 z-50 w-64 bg-white shadow-xl">
-          <div className="h-full overflow-y-auto">
-            <div className="flex justify-between items-center p-4 border-b">
-              <h2 className="text-lg font-medium">More Options</h2>
-              <button
-                onClick={() => setShowSidebar(false)}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="p-4">
-              <ul className="space-y-2">
-                {navItems.sidebar.map((item, index) => (
-                  <li key={index}>
-                    <a
-                      href={item.href}
-                      className="block p-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded"
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      )} */}
     </div>
   );
 };
