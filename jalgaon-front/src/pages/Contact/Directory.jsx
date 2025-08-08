@@ -1,69 +1,149 @@
 import { motion } from "framer-motion";
 import { FaUserTie, FaPhone, FaEnvelope, FaRupeeSign } from "react-icons/fa";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 const Directory = () => {
-  const staffMembers = [
-    {
-      name: "Shree . Prataprao Patil",
-      designation: "District Planning Officer",
-      contact: {
-        phone: "0257-2222233",
-        mobile: "9876543210",
-        email: "dpo-jalgaon@maharashtra.gov.in",
-      },
-      salary: "Pay Level 12 (₹78,800 - ₹2,09,200)",
-      responsibilities: [
-        "Overall supervision of district planning",
-        "Chairing committee meetings",
-        "Final approval of development plans",
-      ],
+  const { language } = useLanguage();
+
+  // Bilingual content
+  const content = {
+    title: {
+      en: "Staff Directory",
+      mr: "कर्मचारी संचिका",
     },
-    {
-      name: "Shree . R. A. Idhe",
-      designation: "Assistant District Planning Officer",
-      contact: {
-        phone: "0257-2222234",
-        mobile: "9876543211",
-        email: "adpo-jalgaon@maharashtra.gov.in",
+    staffMembers: [
+      {
+        name: {
+          en: "Shri. Prataprao Patil",
+          mr: "श्री. प्रतापराव पाटील",
+        },
+        designation: {
+          en: "District Planning Officer",
+          mr: "जिल्हा नियोजन अधिकारी",
+        },
+        contact: {
+          phone: "0257-2222233",
+          mobile: "9876543210",
+          email: "dpo-jalgaon@maharashtra.gov.in",
+        },
+        salary: {
+          en: "Pay Level 12 (₹78,800 - ₹2,09,200)",
+          mr: "पे लेव्हल 12 (₹78,800 - ₹2,09,200)",
+        },
+        responsibilities: {
+          en: [
+            "Overall supervision of district planning",
+            "Chairing committee meetings",
+            "Final approval of development plans",
+          ],
+          mr: [
+            "जिल्हा नियोजनाची एकूण देखरेख",
+            "समिती बैठकांचे अध्यक्षपद",
+            "विकास योजनांची अंतिम मंजुरी",
+          ],
+        },
       },
-      salary: "Pay Level 10 (₹56,100 - ₹1,77,500)",
-      responsibilities: [
-        "Day-to-day administration",
-        "RTI matters",
-        "Coordination with line departments",
-      ],
-    },
-    {
-      name: "Shreemati . Meenakshi Deshmukh",
-      designation: "Accounts Officer",
-      contact: {
-        phone: "0257-2222235",
-        mobile: "9876543212",
-        email: "accounts-dpc@jalgaon.gov.in",
+      {
+        name: {
+          en: "Shri. R. A. Idhe",
+          mr: "श्री. आर. ए. इधे",
+        },
+        designation: {
+          en: "Assistant District Planning Officer",
+          mr: "सहाय्यक जिल्हा नियोजन अधिकारी",
+        },
+        contact: {
+          phone: "0257-2222234",
+          mobile: "9876543211",
+          email: "adpo-jalgaon@maharashtra.gov.in",
+        },
+        salary: {
+          en: "Pay Level 10 (₹56,100 - ₹1,77,500)",
+          mr: "पे लेव्हल 10 (₹56,100 - ₹1,77,500)",
+        },
+        responsibilities: {
+          en: [
+            "Day-to-day administration",
+            "RTI matters",
+            "Coordination with line departments",
+          ],
+          mr: ["दैनंदिन प्रशासन", "आरटीआय बाबी", "लाइन विभागांशी समन्वय"],
+        },
       },
-      salary: "Pay Level 8 (₹47,600 - ₹1,51,100)",
-      responsibilities: [
-        "Budget preparation",
-        "Financial approvals",
-        "Expenditure monitoring",
-      ],
-    },
-    {
-      name: "Shree . Sanjay Jadhav",
-      designation: "Taluka Planning Officer (Jalgaon)",
-      contact: {
-        phone: "0257-2222236",
-        mobile: "9876543213",
-        email: "tpo-jalgaon@jalgaon.gov.in",
+      {
+        name: {
+          en: "Smt. Meenakshi Deshmukh",
+          mr: "सौ. मीनाक्षी देशमुख",
+        },
+        designation: {
+          en: "Accounts Officer",
+          mr: "लेखा अधिकारी",
+        },
+        contact: {
+          phone: "0257-2222235",
+          mobile: "9876543212",
+          email: "accounts-dpc@jalgaon.gov.in",
+        },
+        salary: {
+          en: "Pay Level 8 (₹47,600 - ₹1,51,100)",
+          mr: "पे लेव्हल 8 (₹47,600 - ₹1,51,100)",
+        },
+        responsibilities: {
+          en: [
+            "Budget preparation",
+            "Financial approvals",
+            "Expenditure monitoring",
+          ],
+          mr: ["अर्थसंकल्प तयारी", "आर्थिक मंजुरी", "खर्चाचे निरीक्षण"],
+        },
       },
-      salary: "Pay Level 7 (₹44,900 - ₹1,42,400)",
-      responsibilities: [
-        "Field verification",
-        "Local coordination",
-        "Progress monitoring",
-      ],
+      {
+        name: {
+          en: "Shri. Sanjay Jadhav",
+          mr: "श्री. संजय जाधव",
+        },
+        designation: {
+          en: "Taluka Planning Officer (Jalgaon)",
+          mr: "तालुका नियोजन अधिकारी (जळगाव)",
+        },
+        contact: {
+          phone: "0257-2222236",
+          mobile: "9876543213",
+          email: "tpo-jalgaon@jalgaon.gov.in",
+        },
+        salary: {
+          en: "Pay Level 7 (₹44,900 - ₹1,42,400)",
+          mr: "पे लेव्हल 7 (₹44,900 - ₹1,42,400)",
+        },
+        responsibilities: {
+          en: [
+            "Field verification",
+            "Local coordination",
+            "Progress monitoring",
+          ],
+          mr: ["फील्ड पडताळणी", "स्थानिक समन्वय", "प्रगती निरीक्षण"],
+        },
+      },
+    ],
+    contactTitle: {
+      en: "Contact",
+      mr: "संपर्क",
     },
-  ];
+    responsibilitiesTitle: {
+      en: "Responsibilities",
+      mr: "जबाबदाऱ्या",
+    },
+  };
+
+  const getText = (item) => {
+    if (Array.isArray(item)) {
+      return item[language] || item.en;
+    }
+    if (typeof item === "object" && item !== null) {
+      return item[language] || item.en || item;
+    }
+    return item;
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
@@ -74,13 +154,13 @@ const Directory = () => {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
-            Staff Directory
+            {getText(content.title)}
           </h1>
           <div className="border-b-2 border-blue-100 w-20 mb-6"></div>
         </motion.div>
 
         <div className="space-y-6">
-          {staffMembers.map((staff, index) => (
+          {content.staffMembers.map((staff, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -97,11 +177,10 @@ const Directory = () => {
                       </div>
                       <div>
                         <h2 className="text-xl font-semibold text-gray-800">
-                          {staff.name}
+                          {getText(staff.name)}
                         </h2>
-                        <p className="text-blue-700">{staff.designation}</p>
-                        <p className="text-sm text-gray-500">
-                          {staff.englishDesignation}
+                        <p className="text-blue-700">
+                          {getText(staff.designation)}
                         </p>
                       </div>
                     </div>
@@ -109,14 +188,16 @@ const Directory = () => {
                     <div className="mt-4">
                       <div className="flex items-center mb-2">
                         <FaRupeeSign className="text-gray-500 mr-2" />
-                        <span className="text-gray-700">{staff.salary}</span>
+                        <span className="text-gray-700">
+                          {getText(staff.salary)}
+                        </span>
                       </div>
                     </div>
                   </div>
 
                   <div className="md:w-1/3 border-l md:px-6">
                     <h3 className="text-lg font-medium text-gray-800 mb-3">
-                      Contact
+                      {getText(content.contactTitle)}
                     </h3>
                     <div className="space-y-2">
                       <div className="flex items-center">
@@ -145,10 +226,10 @@ const Directory = () => {
 
                   <div className="md:w-1/3 border-l md:px-6 mt-4 md:mt-0">
                     <h3 className="text-lg font-medium text-gray-800 mb-3">
-                      Responsibilities
+                      {getText(content.responsibilitiesTitle)}
                     </h3>
                     <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                      {staff.responsibilities.map((item, i) => (
+                      {getText(staff.responsibilities).map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
                     </ul>
@@ -158,102 +239,6 @@ const Directory = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* <div className="mt-8 bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold text-blue-700 mb-4">
-            Salary Structure (As per 7th Pay Commission)
-          </h2>
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-blue-50">
-                <tr>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider"
-                  >
-                    Pay Level
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider"
-                  >
-                    Pay Scale
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider"
-                  >
-                    Grade Pay
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider"
-                  >
-                    Example Positions
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                <tr className="hover:bg-blue-50 transition">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    Level 12
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                    ₹78,800 - ₹2,09,200
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                    ₹7,600
-                  </td>
-                  <td className="px-6 py-4 text-sm text-gray-700">
-                    District Planning Officer
-                  </td>
-                </tr>
-                <tr className="hover:bg-blue-50 transition">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    Level 10
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                    ₹56,100 - ₹1,77,500
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                    ₹5,400
-                  </td>
-                  <td className="px-6 py-4 text-sm text-gray-700">
-                    Assistant District Planning Officer
-                  </td>
-                </tr>
-                <tr className="hover:bg-blue-50 transition">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    Level 8
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                    ₹47,600 - ₹1,51,100
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                    ₹4,800
-                  </td>
-                  <td className="px-6 py-4 text-sm text-gray-700">
-                    Accounts Officer
-                  </td>
-                </tr>
-                <tr className="hover:bg-blue-50 transition">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    Level 7
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                    ₹44,900 - ₹1,42,400
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                    ₹4,600
-                  </td>
-                  <td className="px-6 py-4 text-sm text-gray-700">
-                    Taluka Planning Officer
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div> */}
       </div>
     </div>
   );

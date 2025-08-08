@@ -1,9 +1,31 @@
+// RecentBlogs.jsx
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import BlogCard from "../../components/BlogCart/BlogCard";
 import blogData from "../../data/blogData.json";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 const RecentBlogs = () => {
+  const { language } = useLanguage();
+
+  const content = {
+    title: {
+      en: "Recent Blogs",
+      mr: "अलीकडील ब्लॉग",
+    },
+    viewAll: {
+      en: "View All Articles",
+      mr: "सर्व लेख पहा",
+    },
+  };
+
+  const getText = (item) => {
+    if (typeof item === "object" && item !== null) {
+      return item[language] || item.en || item;
+    }
+    return item;
+  };
+
   // Sort blogs by date (newest first) and take first 3
   const recentBlogs = [...blogData]
     .sort((a, b) => new Date(b.date) - new Date(a.date))
@@ -19,14 +41,16 @@ const RecentBlogs = () => {
         >
           <div className="flex justify-between items-center mb-8">
             <div>
-              <h2 className="text-2xl font-bold text-gray-800">Recent Blogs</h2>
+              <h2 className="text-2xl font-bold text-gray-800">
+                {getText(content.title)}
+              </h2>
               <div className="border-b-2 border-blue-100 w-20 mt-2"></div>
             </div>
             <Link
               to="/blog"
               className="text-blue-600 hover:text-blue-800 font-medium flex items-center"
             >
-              View All Articles
+              {getText(content.viewAll)}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 ml-1"

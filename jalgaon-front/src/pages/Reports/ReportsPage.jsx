@@ -1,80 +1,158 @@
 import { motion } from "framer-motion";
 import { FaDownload, FaEye, FaFilePdf, FaSearch } from "react-icons/fa";
 import { useState } from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 const ReportsPage = () => {
-  // JSON data included in the same file
-  const reportsData = [
-    {
-      id: 1,
-      title: "Annual Financial Report 2023",
-      date: "2023-12-31",
-      description: "Complete financial overview for fiscal year 2023",
-      fileUrl: "/reports/financial-report-2023.pdf",
-      fileSize: "2.4 MB",
-      fileType: "PDF",
+  const { language } = useLanguage();
+
+  // Bilingual content
+  const content = {
+    title: {
+      en: "Reports",
+      mr: "अहवाल",
     },
-    {
-      id: 2,
-      title: "Quarterly Performance Q1 2024",
-      date: "2024-03-31",
-      description: "First quarter performance metrics and analysis",
-      fileUrl: "/reports/q1-2024-performance.pdf",
-      fileSize: "1.8 MB",
-      fileType: "PDF",
+    subtitle: {
+      en: "Access all official reports and documents",
+      mr: "सर्व अधिकृत अहवाल आणि दस्तऐवजांमध्ये प्रवेश करा",
     },
-    {
-      id: 3,
-      title: "Sustainability Report 2023",
-      date: "2023-11-15",
-      description: "Environmental and social impact assessment",
-      fileUrl: "/reports/sustainability-2023.pdf",
-      fileSize: "3.2 MB",
-      fileType: "PDF",
+    searchPlaceholder: {
+      en: "Search reports...",
+      mr: "अहवाल शोधा...",
     },
-    {
-      id: 4,
-      title: "Market Research Analysis",
-      date: "2024-02-20",
-      description: "Current market trends and competitor analysis",
-      fileUrl: "/reports/market-research-2024.pdf",
-      fileSize: "4.1 MB",
-      fileType: "PDF",
+    tableHeaders: {
+      title: { en: "Title", mr: "शीर्षक" },
+      description: { en: "Description", mr: "वर्णन" },
+      date: { en: "Date", mr: "तारीख" },
+      format: { en: "Format", mr: "स्वरूप" },
+      actions: { en: "Actions", mr: "क्रिया" },
     },
-    {
-      id: 5,
-      title: "Employee Satisfaction Survey",
-      date: "2023-10-05",
-      description: "Results from annual employee engagement survey",
-      fileUrl: "/reports/employee-survey-2023.pdf",
-      fileSize: "1.5 MB",
-      fileType: "PDF",
+    buttons: {
+      view: { en: "View", mr: "पहा" },
+      download: { en: "Download", mr: "डाउनलोड करा" },
     },
-  ];
+    emptyState: {
+      title: { en: "No reports found", mr: "कोणतेही अहवाल सापडले नाहीत" },
+      message: {
+        en: "Try adjusting your search or filter to find what you're looking for.",
+        mr: "तुम्ही शोधत असलेले शोधण्यासाठी तुमची शोध किंवा फिल्टर समायोजित करण्याचा प्रयत्न करा.",
+      },
+    },
+    reports: [
+      {
+        id: 1,
+        title: {
+          en: "Annual Financial Report 2023",
+          mr: "वार्षिक आर्थिक अहवाल २०२३",
+        },
+        date: "2023-12-31",
+        description: {
+          en: "Complete financial overview for fiscal year 2023",
+          mr: "2023 च्या आर्थिक वर्षासाठी संपूर्ण आर्थिक आढावा",
+        },
+        fileUrl: "/reports/financial-report-2023.pdf",
+        fileSize: "2.4 MB",
+        fileType: "PDF",
+      },
+      {
+        id: 2,
+        title: {
+          en: "Quarterly Performance Q1 2024",
+          mr: "तिमाही कामगिरी Q1 २०२४",
+        },
+        date: "2024-03-31",
+        description: {
+          en: "First quarter performance metrics and analysis",
+          mr: "पहिल्या तिमाहीची कामगिरी मेट्रिक्स आणि विश्लेषण",
+        },
+        fileUrl: "/reports/q1-2024-performance.pdf",
+        fileSize: "1.8 MB",
+        fileType: "PDF",
+      },
+      {
+        id: 3,
+        title: {
+          en: "Sustainability Report 2023",
+          mr: "शाश्वतता अहवाल २०२३",
+        },
+        date: "2023-11-15",
+        description: {
+          en: "Environmental and social impact assessment",
+          mr: "पर्यावरणीय आणि सामाजिक प्रभाव मूल्यांकन",
+        },
+        fileUrl: "/reports/sustainability-2023.pdf",
+        fileSize: "3.2 MB",
+        fileType: "PDF",
+      },
+      {
+        id: 4,
+        title: {
+          en: "Market Research Analysis",
+          mr: "बाजार संशोधन विश्लेषण",
+        },
+        date: "2024-02-20",
+        description: {
+          en: "Current market trends and competitor analysis",
+          mr: "चालू बाजारातील ट्रेंड आणि स्पर्धकांचे विश्लेषण",
+        },
+        fileUrl: "/reports/market-research-2024.pdf",
+        fileSize: "4.1 MB",
+        fileType: "PDF",
+      },
+      {
+        id: 5,
+        title: {
+          en: "Employee Satisfaction Survey",
+          mr: "कर्मचारी समाधान सर्वेक्षण",
+        },
+        date: "2023-10-05",
+        description: {
+          en: "Results from annual employee engagement survey",
+          mr: "वार्षिक कर्मचारी संलग्नता सर्वेक्षणाचे निकाल",
+        },
+        fileUrl: "/reports/employee-survey-2023.pdf",
+        fileSize: "1.5 MB",
+        fileType: "PDF",
+      },
+    ],
+  };
 
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredReports = reportsData.filter(
+  const getText = (item) => {
+    if (Array.isArray(item)) {
+      return item[language] || item.en;
+    }
+    if (typeof item === "object" && item !== null) {
+      return item[language] || item.en || item;
+    }
+    return item;
+  };
+
+  const filteredReports = content.reports.filter(
     (report) =>
-      report.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      report.description.toLowerCase().includes(searchTerm.toLowerCase())
+      getText(report.title).toLowerCase().includes(searchTerm.toLowerCase()) ||
+      getText(report.description)
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase())
   );
 
   const formatDate = (dateString) => {
     const options = { year: "numeric", month: "short", day: "numeric" };
-    return new Date(dateString).toLocaleDateString(undefined, options);
+    return new Date(dateString).toLocaleDateString(
+      language === "mr" ? "mr-IN" : "en-US",
+      options
+    );
   };
 
   const handleDownload = (fileUrl, fileName) => {
-    // In a real app, this would trigger the file download
     console.log(`Downloading ${fileName} from ${fileUrl}`);
-    // window.open(fileUrl, '_blank'); // Uncomment in production
+    // window.open(fileUrl, '_blank');
   };
 
   const handleView = (fileUrl) => {
-    // In a real app, this would open the file in a new tab
     console.log(`Viewing file at ${fileUrl}`);
-    // window.open(fileUrl, '_blank'); // Uncomment in production
+    // window.open(fileUrl, '_blank');
   };
 
   return (
@@ -85,11 +163,11 @@ const ReportsPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">Reports</h1>
+          <h1 className="text-3xl font-bold text-gray-800 mb-2">
+            {getText(content.title)}
+          </h1>
           <div className="border-b-2 border-blue-100 w-20 mb-6"></div>
-          <p className="text-gray-600 mb-8">
-            Access all official reports and documents
-          </p>
+          <p className="text-gray-600 mb-8">{getText(content.subtitle)}</p>
 
           {/* Search Bar */}
           <div className="mb-8">
@@ -99,7 +177,7 @@ const ReportsPage = () => {
               </div>
               <input
                 type="text"
-                placeholder="Search reports..."
+                placeholder={getText(content.searchPlaceholder)}
                 className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -117,31 +195,31 @@ const ReportsPage = () => {
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      Title
+                      {getText(content.tableHeaders.title)}
                     </th>
                     <th
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      Description
+                      {getText(content.tableHeaders.description)}
                     </th>
                     <th
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      Date
+                      {getText(content.tableHeaders.date)}
                     </th>
                     <th
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      Format
+                      {getText(content.tableHeaders.format)}
                     </th>
                     <th
                       scope="col"
                       className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
-                      Actions
+                      {getText(content.tableHeaders.actions)}
                     </th>
                   </tr>
                 </thead>
@@ -164,7 +242,7 @@ const ReportsPage = () => {
                           </div>
                           <div className="ml-4">
                             <div className="text-sm font-medium text-gray-900">
-                              {report.title}
+                              {getText(report.title)}
                             </div>
                             <div className="text-sm text-gray-500">
                               {report.fileSize}
@@ -174,7 +252,7 @@ const ReportsPage = () => {
                       </td>
                       <td className="px-6 py-4">
                         <div className="text-sm text-gray-900 max-w-xs truncate">
-                          {report.description}
+                          {getText(report.description)}
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
@@ -193,15 +271,20 @@ const ReportsPage = () => {
                             onClick={() => handleView(report.fileUrl)}
                             className="text-blue-600 hover:text-blue-900 flex items-center p-2 rounded hover:bg-blue-50 transition"
                           >
-                            <FaEye className="mr-1" /> View
+                            <FaEye className="mr-1" />{" "}
+                            {getText(content.buttons.view)}
                           </button>
                           <button
                             onClick={() =>
-                              handleDownload(report.fileUrl, report.title)
+                              handleDownload(
+                                report.fileUrl,
+                                getText(report.title)
+                              )
                             }
                             className="text-green-600 hover:text-green-900 flex items-center p-2 rounded hover:bg-green-50 transition"
                           >
-                            <FaDownload className="mr-1" /> Download
+                            <FaDownload className="mr-1" />{" "}
+                            {getText(content.buttons.download)}
                           </button>
                         </div>
                       </td>
@@ -222,11 +305,10 @@ const ReportsPage = () => {
                   <FaSearch className="mx-auto text-4xl" />
                 </div>
                 <h3 className="text-lg font-medium text-gray-900">
-                  No reports found
+                  {getText(content.emptyState.title)}
                 </h3>
                 <p className="mt-1 text-sm text-gray-500">
-                  Try adjusting your search or filter to find what you're
-                  looking for.
+                  {getText(content.emptyState.message)}
                 </p>
               </motion.div>
             )}

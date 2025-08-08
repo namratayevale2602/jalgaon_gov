@@ -73,11 +73,11 @@ const Navbar = () => {
           },
           {
             name: { en: "MLA FUNDS", mr: "एमएलए निधी" },
-            href: "/annual-plan",
+            href: "/MLAMPFunds",
           },
           {
             name: { en: "MP FUNDS", mr: "एमपी निधी" },
-            href: "/annual-plan",
+            href: "/MLAMPFunds",
           },
           {
             name: { en: "OTHER FUNDS", mr: "इतर निधी" },
