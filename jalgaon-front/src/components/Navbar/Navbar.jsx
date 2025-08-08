@@ -96,7 +96,7 @@ const Navbar = () => {
       },
       {
         name: { en: "TOURISM", mr: "पर्यटन" },
-        href: "/gallery",
+        href: "/tourism",
       },
       {
         name: { en: "GALLERY", mr: "गॅलरी" },

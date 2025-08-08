@@ -29,6 +29,8 @@ import BlogPage from "./pages/Blogpage/BlogPage";
 import BlogDetailPage from "./pages/Blogpage/BlogDetailPage";
 import ReportsPage from "./pages/Reports/ReportsPage";
 import Download from "./pages/Downloads/Downloads";
+import TourismMain from "./pages/Tourism/Tourism";
+import TourismDetail from "./pages/Tourism/TourismDetail";
 // import Aboutdistrict from "./pages/About_District/About";
 
 function App() {
@@ -61,6 +63,8 @@ function App() {
           <Route path="/blog/:slug" element={<BlogDetailPage />} />
           <Route path="/reports" element={<ReportsPage />} />
           <Route path="/downloads" element={<Download />} />
+          <Route path="tourism" element={<TourismMain />} />
+          <Route path="tourism/:slug" element={<TourismDetail />} />
         </Route>
       </>
     )
