@@ -17,22 +17,18 @@ const AboutDPC = () => {
         "The District Planning Committee (DPC) is a constitutional body established under Article 243ZD of the Constitution of India and the Maharashtra District Planning Committee Act, 1998.",
         "The primary objective of the DPC is to consolidate the plans prepared by Panchayats and Municipalities in the district and to prepare a draft development plan for the district as a whole.",
         "The committee plays a crucial role in decentralized planning and ensures balanced development of the district by coordinating between various departments and local bodies.",
+        "The DPC operates in conjunction with the Zilla Parishad structure as per the Maharashtra Zilla Parishad Act, 1998. The composition includes elected members (24-50 based on district population), ex-officio members (Guardian Minister, District Chairman), and nominated representatives.",
+        "The system ensures inclusive representation with reserved seats for Scheduled Castes (SC), Scheduled Tribes (ST), Other Backward Classes (OBC), and women (30% quota). Joint committees address local issues while implementing development plans.",
       ],
       mr: [
         "जिल्हा नियोजन समिती (DPC) ही भारतीय राज्यघटनेच्या कलम 243ZD आणि महाराष्ट्र जिल्हा नियोजन समिती कायदा, 1998 अंतर्गत स्थापन केलेली एक घटनात्मक संस्था आहे.",
         "DPC चे प्राथमिक उद्दिष्ट जिल्ह्यातील पंचायत आणि नगरपालिकांनी तयार केलेली योजना एकत्रित करणे आणि संपूर्ण जिल्ह्यासाठी विकास योजनेचा मसुदा तयार करणे हे आहे.",
         "समिती विकेंद्रीकृत नियोजनात महत्त्वपूर्ण भूमिका बजावते आणि विविध विभाग आणि स्थानिक संस्थांमधील समन्वयाद्वारे जिल्ह्याचा संतुलित विकास सुनिश्चित करते.",
+        "DPC महाराष्ट्र जिल्हा परिषद कायदा, 1998 नुसार जिल्हा परिषद रचनेसह कार्य करते. यात निवडून आलेले सदस्य (जिल्ह्याच्या लोकसंख्येनुसार 24-50), पदेन सदस्य (संरक्षण मंत्री, जिल्हा अध्यक्ष) आणि नामनिर्देशित प्रतिनिधी समाविष्ट आहेत.",
+        "या प्रणालीमध्ये अनुसूचित जाती (SC), अनुसूचित जमाती (ST), इतर मागासवर्गीय (OBC) आणि महिलांसाठी (30% कोटा) राखीव जागा असून स्थानिक समस्यांवर उपाययोजना करताना विकास योजना अंमलात आणल्या जातात.",
       ],
     },
-    cta: {
-      text: {
-        en: "Learn More",
-        mr: "अधिक जाणून घ्या",
-      },
-      link: "#about",
-    },
   };
-
   const getText = (item) => {
     if (Array.isArray(item)) {
       return item[language] || item.en;
@@ -63,13 +59,6 @@ const AboutDPC = () => {
                 {paragraph}
               </p>
             ))}
-            <a
-              href={content.cta.link}
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold hover:bg-blue-700 transition rounded-lg"
-            >
-              {getText(content.cta.text)}
-              <ArrowRight size={20} className="ml-2" />
-            </a>
           </div>
         </div>
       </div>

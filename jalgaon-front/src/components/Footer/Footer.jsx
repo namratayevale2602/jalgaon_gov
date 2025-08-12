@@ -1,6 +1,7 @@
 import React from "react";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 import { useLanguage } from "../../contexts/LanguageContext";
+import { logo } from "../../assets";
 
 const Footer = () => {
   const { language } = useLanguage();
@@ -39,11 +40,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Left side - Logo and basic info */}
           <div className="flex items-center mb-4 md:mb-0">
-            <img
-              src="/jalgaon-logo.png"
-              alt="Jalgaon District Logo"
-              className="h-10 mr-3"
-            />
+            <img src={logo} alt="Jalgaon District Logo" className="h-20 mr-3" />
             <div>
               <h3 className="text-lg font-bold">{getText("title")}</h3>
               <p className="text-sm text-gray-300">{getText("subtitle")}</p>

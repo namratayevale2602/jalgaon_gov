@@ -8,6 +8,8 @@ import AboutDPC from "./AboutDPC";
 import LatestUpdates from "./LatestUpdates";
 import QuickLinks from "./QuickLinks";
 import Services from "./Services";
+// import GRDetailSection from "./GRDetailSection";
+
 function Home() {
   return (
     <div>
@@ -18,6 +20,7 @@ function Home() {
       <QuickLinks />
       <AboutDPC />
       <Services />
+      {/* <GRDetailSection /> */}
       <RecentBlogs />
     </div>
   );

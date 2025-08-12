@@ -22,7 +22,7 @@ const QuickLinks = () => {
           en: "Right to Information applications and status",
           mr: "माहिती अधिकार अर्ज आणि स्थिती",
         },
-        link: "#rti",
+        link: "/rti-portal",
       },
       {
         title: {
@@ -34,7 +34,7 @@ const QuickLinks = () => {
           en: "List of committees and members",
           mr: "समित्या आणि सदस्यांची यादी",
         },
-        link: "#committees",
+        link: "/planningcommittee",
       },
       {
         title: {
@@ -46,19 +46,19 @@ const QuickLinks = () => {
           en: "Forms, reports and circulars",
           mr: "फॉर्म, अहवाल आणि परिपत्रके",
         },
-        link: "#downloads",
+        link: "/downloads",
       },
       {
         title: {
-          en: "Tenders",
-          mr: "टेंडर",
+          en: "Reports",
+          mr: "योजना",
         },
         icon: "Award",
         description: {
-          en: "Current tenders and notices",
-          mr: "चालू टेंडर आणि सूचना",
+          en: "Current reports",
+          mr: "अहवाल",
         },
-        link: "#tenders",
+        link: "/reports",
       },
     ],
   };

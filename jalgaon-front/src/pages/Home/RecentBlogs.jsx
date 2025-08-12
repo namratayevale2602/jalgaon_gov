@@ -32,8 +32,8 @@ const RecentBlogs = () => {
     .slice(0, 3);
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="container mx-auto">
+      <div className="py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,10 +41,9 @@ const RecentBlogs = () => {
         >
           <div className="flex justify-between items-center mb-8">
             <div>
-              <h2 className="text-2xl font-bold text-gray-800">
+              <h2 className="text-3xl font-bold text-gray-800">
                 {getText(content.title)}
               </h2>
-              <div className="border-b-2 border-blue-100 w-20 mt-2"></div>
             </div>
             <Link
               to="/blog"

@@ -16,8 +16,8 @@ const PresentationGallery = () => {
   // Bilingual content
   const content = {
     title: {
-      en: "Presentation Gallery",
-      mr: "प्रेझेंटेशन गॅलरी",
+      en: "Presentation",
+      mr: "प्रेझेंटेशन",
     },
     description: {
       en: "Explore our collection of informative presentations on various topics.",

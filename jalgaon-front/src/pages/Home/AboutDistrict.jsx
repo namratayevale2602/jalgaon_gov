@@ -66,7 +66,8 @@ const AboutDistrict = () => {
             transition={{ duration: 0.8 }}
           >
             <img
-              src={districtData.image || Banner1}
+              // src={districtData.image || Banner1}
+              src={districtData.image}
               alt={districtData.name[language]}
               className="w-full h-auto rounded-lg shadow-md"
             />

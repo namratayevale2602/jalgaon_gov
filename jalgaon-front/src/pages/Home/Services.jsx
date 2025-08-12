@@ -26,7 +26,7 @@ const Services = () => {
           en: "Access current and archived district annual plans, development schemes, and progress reports.",
           mr: "चालू आणि संग्रहित जिल्हा वार्षिक योजना, विकास योजना आणि प्रगती अहवाल मिळवा.",
         },
-        link: "#annual-plan",
+        link: "/annual-plan",
         color: "blue",
       },
       {
@@ -39,7 +39,7 @@ const Services = () => {
           en: "Information about funded through MLA Local Area Development funds.",
           mr: "एमएलए स्थानिक क्षेत्र विकास निधीतून वित्तपुरवठा केलेल्या माहिती.",
         },
-        link: "#mla-funds",
+        link: "/MLAFunds",
         color: "green",
       },
       {
@@ -52,7 +52,7 @@ const Services = () => {
           en: "Information about funded through MP Local Area Development funds.",
           mr: "एमपी स्थानिक क्षेत्र विकास निधीतून वित्तपुरवठा केलेल्या माहिती.",
         },
-        link: "#tenders",
+        link: "/MPFunds",
         color: "orange",
       },
       {
@@ -65,7 +65,7 @@ const Services = () => {
           en: "Submit Right to Information applications and track their status online.",
           mr: "माहिती अधिकार अर्ज सादर करा आणि त्यांची स्थिती ऑनलाइन ट्रॅक करा.",
         },
-        link: "#rti",
+        link: "/rti-portal",
         color: "purple",
       },
     ],

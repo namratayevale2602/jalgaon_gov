@@ -38,6 +38,7 @@ class DistrictResource extends Resource
                             ->required()
                             ->columnSpanFull(),
                         Forms\Components\FileUpload::make('image_path')
+                            ->disk("public")
                             ->image()
                             ->directory('district-images')
                             ->imageEditor()
@@ -67,6 +68,7 @@ class DistrictResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('image_path')
+                ->disk("public")
                     ->label('Image')
                     ->size(80),
                 Tables\Columns\TextColumn::make('name')

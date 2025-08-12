@@ -14,7 +14,8 @@ import Objectives from "./pages/About_District/Objectives";
 import KeyResponsibilities from "./pages/Functions/KeyResponsibilities";
 import RolewiseDuties from "./pages/Functions/RolewiseDuties";
 import DistrictAnnualPlan from "./pages/Schemes/DistrictAnnualPlan";
-import MLAMPFunds from "./pages/Schemes/MLAMPFunds";
+import MLAFunds from "./pages/Schemes/MLAFunds";
+import MPFunds from "./pages/Schemes/MPFunds";
 import SpecialSchemes from "./pages/Schemes/SpecialSchemes";
 import OngoingProjects from "./pages/Projects/OngoingProjects";
 import ApprovalProcess from "./pages/Projects/ApprovalProcess";
@@ -31,6 +32,10 @@ import ReportsPage from "./pages/Reports/ReportsPage";
 import Download from "./pages/Downloads/Downloads";
 import TourismMain from "./pages/Tourism/Tourism";
 import TourismDetail from "./pages/Tourism/TourismDetail";
+import MinoritySchemes from "./pages/Schemes/MinoritySchemes";
+import AreaDevelop from "./pages/Schemes/AreaDevelop";
+import GRDirectory from "./pages/GR/GRDirectory";
+import DPC from "./pages/DPC/DPC";
 // import Aboutdistrict from "./pages/About_District/About";
 
 function App() {
@@ -48,7 +53,8 @@ function App() {
           <Route path="/responsibilities" element={<KeyResponsibilities />} />
           <Route path="/rolewiseduties" element={<RolewiseDuties />} />
           <Route path="/annual-plan" element={<DistrictAnnualPlan />} />
-          <Route path="/MLAMPFunds" element={<MLAMPFunds />} />
+          <Route path="/MLAFunds" element={<MLAFunds />} />
+          <Route path="/MPFunds" element={<MPFunds />} />
           <Route path="/spacialfunds" element={<SpecialSchemes />} />
           <Route path="/ongoingprojects" element={<OngoingProjects />} />
           <Route path="/approvalprocess" element={<ApprovalProcess />} />
@@ -65,6 +71,10 @@ function App() {
           <Route path="/downloads" element={<Download />} />
           <Route path="tourism" element={<TourismMain />} />
           <Route path="tourism/:slug" element={<TourismDetail />} />
+          <Route path="minority-scheme" element={<MinoritySchemes />} />
+          <Route path="area-develop" element={<AreaDevelop />} />
+          <Route path="gr-directory" element={<GRDirectory />} />
+          <Route path="dpc" element={<DPC />} />
         </Route>
       </>
     )

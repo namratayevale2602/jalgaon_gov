@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import { FaRupeeSign, FaClipboardCheck, FaListOl } from "react-icons/fa";
 import { useLanguage } from "../../contexts/LanguageContext";
 
-const MLAMPFunds = () => {
+const MLAFunds = () => {
   const { language } = useLanguage();
 
   // Bilingual content
   const content = {
     title: {
-      en: "MLA/MP Local Area Development Funds",
-      mr: "एमएलए/एमपी स्थानिक क्षेत्र विकास निधी",
+      en: "MLA Local Area Development Funds",
+      mr: "एमएलए स्थानिक क्षेत्र विकास निधी",
     },
     guidelinesTitle: {
       en: "Guidelines",
@@ -93,22 +93,6 @@ const MLAMPFunds = () => {
         },
       },
       {
-        id: "MP-2023-112",
-        name: {
-          en: "School Building Renovation - Yaval",
-          mr: "शाळा इमारत नूतनीकरण - यवळ",
-        },
-        amount: "₹50,00,000",
-        status: {
-          en: "Completed",
-          mr: "पूर्ण",
-        },
-        mla: {
-          en: "Smt. Meena Deshmukh",
-          mr: "सौ. मीना देशमुख",
-        },
-      },
-      {
         id: "MLA-2023-078",
         name: {
           en: "Primary Health Center Equipment",
@@ -122,22 +106,6 @@ const MLAMPFunds = () => {
         mla: {
           en: "Shri. Sunil Jadhav",
           mr: "श्री. सुनील जाधव",
-        },
-      },
-      {
-        id: "MP-2023-095",
-        name: {
-          en: "Community Hall - Bhusawal",
-          mr: "सामुदायिक भवन - भुसावळ",
-        },
-        amount: "₹40,00,000",
-        status: {
-          en: "Ongoing",
-          mr: "चालू",
-        },
-        mla: {
-          en: "Shri. Prakash Pawar",
-          mr: "श्री. प्रकाश पवार",
         },
       },
     ],
@@ -297,4 +265,4 @@ const MLAMPFunds = () => {
   );
 };
 
-export default MLAMPFunds;
+export default MLAFunds;
