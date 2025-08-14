@@ -2,123 +2,333 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useLanguage } from "../../contexts/LanguageContext";
-import { img1, img2, img3, img4, img5, img6, img7, img8 } from "../../assets";
+import {
+  bhumipujan,
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  ladki1,
+  ladki2,
+  ladki3,
+  meet1,
+  meet10,
+  meet2,
+  meet3,
+  meet4,
+  meet5,
+  meet6,
+  meet7,
+  meet8,
+  meet9,
+  opening1,
+  opening2,
+  womenemp1,
+} from "../../assets";
 
 const GalleryPage = () => {
   const { language } = useLanguage();
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentCategory, setCurrentCategory] = useState(null);
 
   // Bilingual content
   const content = {
     title: {
-      en: "Photo Gallery",
-      mr: "फोटो गॅलरी",
+      en: "Our Gallery",
+      mr: "आमची गॅलरी",
     },
     description: {
-      en: "Explore our collection of beautiful images from various categories.",
-      mr: "विविध श्रेणींमधील आमच्या सुंदर प्रतिमांचा संग्रह पाहा.",
+      en: "Explore our collection of images from various events and programs.",
+      mr: "विविध कार्यक्रम आणि कार्यक्रमांमधील आमच्या प्रतिमांचा संग्रह पाहा.",
     },
     imageCounter: {
       en: "Image {current} of {total}",
       mr: "प्रतिमा {current} पैकी {total}",
     },
-    sampleImages: [
+    categories: [
       {
-        id: 1,
+        id: "meetings",
         title: {
-          en: "Nature Landscape",
-          mr: "निसर्ग दृश्य",
+          en: "Meetings & Discussions",
+          mr: "सभा आणि चर्चा",
         },
         description: {
-          en: "Beautiful mountain view with sunset colors",
-          mr: "सूर्यास्ताच्या रंगांसह सुंदर पर्वत दृश्य",
+          en: "Moments from our important meetings and strategy discussions",
+          mr: "आमच्या महत्त्वाच्या सभा आणि धोरण चर्चेचे क्षण",
         },
-        url: img1,
+        images: [
+          {
+            id: 1,
+            title: {
+              en: "Monthly Board Meeting",
+              mr: "मासिक मंडळ सभा",
+            },
+            description: {
+              en: "Discussion on development projects",
+              mr: "विकास प्रकल्पांवर चर्चा",
+            },
+            url: meet1,
+          },
+          {
+            id: 2,
+            title: {
+              en: "Team Meeting",
+              mr: "संघ सभा",
+            },
+            description: {
+              en: "Weekly coordination meeting",
+              mr: "साप्ताहिक समन्वय सभा",
+            },
+            url: meet2,
+          },
+          {
+            id: 3,
+            title: {
+              en: "Strategy Discussion",
+              mr: "रणनीती चर्चा",
+            },
+            description: {
+              en: "Planning for upcoming initiatives",
+              mr: "आगामी उपक्रमांसाठी नियोजन",
+            },
+            url: meet3,
+          },
+          {
+            id: 4,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: meet4,
+          },
+          {
+            id: 5,
+            title: {
+              en: "Project Planning",
+              mr: "प्रकल्प नियोजन",
+            },
+            description: {
+              en: "Discussion on new projects",
+              mr: "नवीन प्रकल्पांवर चर्चा",
+            },
+            url: meet5,
+          },
+          {
+            id: 6,
+            title: {
+              en: "Team Workshop",
+              mr: "संघ कार्यशाळा",
+            },
+            description: {
+              en: "Skill development session",
+              mr: "कौशल्य विकास सत्र",
+            },
+            url: meet6,
+          },
+          {
+            id: 7,
+            title: {
+              en: "Team Workshop",
+              mr: "संघ कार्यशाळा",
+            },
+            description: {
+              en: "Skill development session",
+              mr: "कौशल्य विकास सत्र",
+            },
+            url: meet7,
+          },
+          {
+            id: 8,
+            title: {
+              en: "Team Workshop",
+              mr: "संघ कार्यशाळा",
+            },
+            description: {
+              en: "Skill development session",
+              mr: "कौशल्य विकास सत्र",
+            },
+            url: meet8,
+          },
+          {
+            id: 9,
+            title: {
+              en: "Team Workshop",
+              mr: "संघ कार्यशाळा",
+            },
+            description: {
+              en: "Skill development session",
+              mr: "कौशल्य विकास सत्र",
+            },
+            url: meet9,
+          },
+          {
+            id: 10,
+            title: {
+              en: "Team Workshop",
+              mr: "संघ कार्यशाळा",
+            },
+            description: {
+              en: "Skill development session",
+              mr: "कौशल्य विकास सत्र",
+            },
+            url: meet10,
+          },
+        ],
       },
       {
-        id: 2,
+        id: "new_office",
         title: {
-          en: "City Skyline",
-          mr: "शहराचे दृश्य",
+          en: "Office Inaugurations",
+          mr: "कार्यालय उद्घाटन",
         },
         description: {
-          en: "Modern city architecture at dusk",
-          mr: "संध्याकाळी आधुनिक शहरी वास्तुकला",
+          en: "Celebrations of new beginnings and expansions",
+          mr: "नवीन सुरुवात आणि विस्ताराचे उत्सव",
         },
-        url: img2,
+        images: [
+          {
+            id: 11,
+            title: {
+              en: "Regional Office Opening",
+              mr: "प्रादेशिक कार्यालय उद्घाटन",
+            },
+            description: {
+              en: "Inauguration of new branch office",
+              mr: "नवीन शाखा कार्यालयाचे उद्घाटन",
+            },
+            url: opening1,
+          },
+          {
+            id: 12,
+            title: {
+              en: "Headquarters Inauguration",
+              mr: "मुख्यालय उद्घाटन",
+            },
+            description: {
+              en: "Opening of our main office",
+              mr: "आमच्या मुख्य कार्यालयाचे उद्घाटन",
+            },
+            url: opening2,
+          },
+        ],
       },
       {
-        id: 3,
+        id: "ladki_bahin",
         title: {
-          en: "Ocean Waves",
-          mr: "समुद्राचे लाटा",
+          en: "Ladki Bahin Yojana",
+          mr: "लाडकी बहिन योजना",
         },
         description: {
-          en: "Crystal clear water and sandy beach",
-          mr: "स्फटिकासारखे स्वच्छ पाणी आणि वाळूचे किनारे",
+          en: "Empowering sisters through education and opportunities",
+          mr: "शिक्षण आणि संधींद्वारे बहिणींना सक्षम करणे",
         },
-        url: img3,
+        images: [
+          {
+            id: 10,
+            title: {
+              en: "Scheme Launch Event",
+              mr: "योजना सुरू करण्याचा कार्यक्रम",
+            },
+            description: {
+              en: "Launch event for women empowerment scheme",
+              mr: "महिला सक्षमीकरण योजनेचे उद्घाटन",
+            },
+            url: ladki1,
+          },
+          {
+            id: 11,
+            title: {
+              en: "Beneficiary Interaction",
+              mr: "लाभार्थी संवाद",
+            },
+            description: {
+              en: "Meeting with scheme beneficiaries",
+              mr: "योजना लाभार्थ्यांसोबत संवाद",
+            },
+            url: ladki2,
+          },
+          {
+            id: 12,
+            title: {
+              en: "Award Distribution",
+              mr: "पुरस्कार वितरण",
+            },
+            description: {
+              en: "Recognizing outstanding participants",
+              mr: "उत्कृष्ट सहभागींना सन्मान",
+            },
+            url: ladki3,
+          },
+        ],
       },
       {
-        id: 4,
+        id: "womens_empowerment",
         title: {
-          en: "Wildlife",
-          mr: "वन्यजीव",
+          en: "Women's Empowerment",
+          mr: "महिला सक्षमीकरण",
         },
         description: {
-          en: "Majestic elephant in the wild",
-          mr: "जंगलातील भव्य हत्ती",
+          en: "Programs dedicated to uplifting women in our community",
+          mr: "आमच्या समुदायातील महिलांना सक्षम करण्यासाठी समर्पित कार्यक्रम",
         },
-        url: img4,
+        images: [
+          {
+            id: 13,
+            title: {
+              en: "Skill Development Workshop",
+              mr: "कौशल्य विकास कार्यशाळा",
+            },
+            description: {
+              en: "Training session for women entrepreneurs",
+              mr: "महिला उद्योजकांसाठी प्रशिक्षण सत्र",
+            },
+            url: womenemp1,
+          },
+          {
+            id: 14,
+            title: {
+              en: "Financial Literacy Program",
+              mr: "आर्थिक साक्षरता कार्यक्रम",
+            },
+            description: {
+              en: "Educating women about financial management",
+              mr: "महिलांना आर्थिक व्यवस्थापनाबद्दल शिक्षण",
+            },
+            url: womenemp1,
+          },
+        ],
       },
       {
-        id: 5,
+        id: "bhumi_pujan",
         title: {
-          en: "Mountain Trek",
-          mr: "पर्वत ट्रेक",
+          en: "Bhumi Pujan Ceremonies",
+          mr: "भूमी पूजन समारंभ",
         },
         description: {
-          en: "Adventurous hiking trail in the mountains",
-          mr: "पर्वतातील साहसी ट्रेक मार्ग",
+          en: "Traditional blessings for new construction projects",
+          mr: "नवीन बांधकाम प्रकल्पांसाठी पारंपारिक आशीर्वाद",
         },
-        url: img5,
-      },
-      {
-        id: 6,
-        title: {
-          en: "Urban Art",
-          mr: "शहरी कला",
-        },
-        description: {
-          en: "Colorful street art in downtown",
-          mr: "शहराच्या मध्यभागी रंगीबेरंगी रस्त्याची कला",
-        },
-        url: img6,
-      },
-      {
-        id: 7,
-        title: {
-          en: "Desert Sunset",
-          mr: "वाळवंटातील सूर्यास्त",
-        },
-        description: {
-          en: "Golden hour in the sandy desert",
-          mr: "वाळूच्या वाळवंटात सुवर्णकाळ",
-        },
-        url: img7,
-      },
-      {
-        id: 8,
-        title: {
-          en: "Winter Wonderland",
-          mr: "हिवाळी जादूचे जग",
-        },
-        description: {
-          en: "Snow-covered trees and frozen lake",
-          mr: "बर्फाने झाकलेली झाडे आणि गोठलेले तलाव",
-        },
-        url: img8,
+        images: [
+          {
+            id: 16,
+            title: {
+              en: "Construction Groundbreaking",
+              mr: "भूमी पूजन समारंभ",
+            },
+            description: {
+              en: "Traditional ceremony for new building",
+              mr: "नवीन इमारतीसाठी पारंपारिक समारंभ",
+            },
+            url: bhumipujan,
+          },
+        ],
       },
     ],
   };
@@ -133,26 +343,32 @@ const GalleryPage = () => {
     return item[language] || item.en;
   };
 
-  const openImage = (image, index) => {
+  const openImage = (image, categoryId, imageIndex) => {
     setSelectedImage(image);
-    setCurrentIndex(index);
+    setCurrentIndex(imageIndex);
+    setCurrentCategory(categoryId);
   };
 
   const closeImage = () => {
     setSelectedImage(null);
+    setCurrentCategory(null);
   };
 
   const navigate = (direction) => {
     let newIndex;
+    const category = content.categories.find(
+      (cat) => cat.id === currentCategory
+    );
+    const images = category?.images || [];
+
     if (direction === "prev") {
-      newIndex =
-        currentIndex === 0 ? content.sampleImages.length - 1 : currentIndex - 1;
+      newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
     } else {
-      newIndex =
-        currentIndex === content.sampleImages.length - 1 ? 0 : currentIndex + 1;
+      newIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
     }
+
     setCurrentIndex(newIndex);
-    setSelectedImage(content.sampleImages[newIndex]);
+    setSelectedImage(images[newIndex]);
   };
 
   return (
@@ -162,46 +378,64 @@ const GalleryPage = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          className="text-center mb-12"
         >
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
             {getText(content.title)}
           </h1>
-          <div className="border-b-2 border-blue-100 w-20 mb-6"></div>
-          <p className="text-gray-600 mb-8">{getText(content.description)}</p>
+          <div className="border-b-2 border-blue-100 w-20 mb-6 mx-auto"></div>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            {getText(content.description)}
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {content.sampleImages.map((image, index) => {
-            const imageText = getText(image, true);
-            return (
-              <motion.div
-                key={image.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                whileHover={{ scale: 1.03 }}
-                className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
-                onClick={() => openImage(image, index)}
-              >
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={image.url}
-                    alt={imageText.title}
-                    className="w-full h-full object-cover transition duration-300 hover:scale-105"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="text-lg font-medium text-gray-800 mb-1">
-                    {imageText.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    {imageText.description}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+        {/* Separate sections for each category */}
+        {content.categories.map((category) => (
+          <section key={category.id} className="mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center mb-8"
+            >
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                {getText(category.title)}
+              </h2>
+              <div className="border-b-2 border-blue-100 w-16 mb-4 mx-auto"></div>
+              <p className="text-gray-600 max-w-3xl mx-auto">
+                {getText(category.description)}
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {category.images.map((image, imageIndex) => {
+                const imageText = getText(image, true);
+                return (
+                  <motion.div
+                    key={image.id}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: imageIndex * 0.05 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.03 }}
+                    className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+                    onClick={() => openImage(image, category.id, imageIndex)}
+                  >
+                    <div className="h-48 overflow-hidden">
+                      <img
+                        src={image.url}
+                        alt={imageText.title}
+                        className="w-full h-full object-cover transition duration-300 hover:scale-105"
+                      />
+                    </div>
+                    <div className="p-4"></div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </section>
+        ))}
 
         {/* Image Modal */}
         {selectedImage && (
@@ -266,7 +500,12 @@ const GalleryPage = () => {
                   <div className="mt-4 text-sm text-gray-500">
                     {getText(content.imageCounter)
                       .replace("{current}", currentIndex + 1)
-                      .replace("{total}", content.sampleImages.length)}
+                      .replace(
+                        "{total}",
+                        content.categories.find(
+                          (cat) => cat.id === currentCategory
+                        )?.images.length || 0
+                      )}
                   </div>
                 </div>
               </motion.div>
