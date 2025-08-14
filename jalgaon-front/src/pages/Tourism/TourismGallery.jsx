@@ -1,21 +1,39 @@
 import React from "react";
 import {
-  changdev,
-  patnadevi,
-  girnadam,
-  gandhifoundation,
-  waghurdam,
-  gandhigarden,
+  t1,
+  t2,
+  t3,
+  t4,
+  t5,
+  t6,
+  t7,
+  t8,
+  t9,
+  t10,
+  t11,
+  t12,
+  t13,
+  t14,
+  t15,
 } from "../../assets";
 
 const TourismGallery = () => {
   const images = [
-    { src: changdev, title: "Changdev Temple" },
-    { src: patnadevi, title: "Patnadevi Hills" },
-    { src: girnadam, title: "Girna Dam" },
-    { src: gandhifoundation, title: "Gandhi Foundation" },
-    { src: waghurdam, title: "Waghur Dam" },
-    { src: gandhigarden, title: "Gandhi Garden" },
+    { src: t1, title: "Location 1" },
+    { src: t2, title: "Location 2" },
+    { src: t3, title: "Location 3" },
+    { src: t4, title: "Location 4" },
+    { src: t5, title: "Location 5" },
+    { src: t6, title: "Location 6" },
+    { src: t7, title: "Location 7" },
+    { src: t8, title: "Location 8" },
+    { src: t9, title: "Location 9" },
+    { src: t10, title: "Location 10" },
+    { src: t11, title: "Location 11" },
+    { src: t12, title: "Location 12" },
+    { src: t13, title: "Location 13" },
+    { src: t14, title: "Location 14" },
+    { src: t15, title: "Location 15" },
   ];
 
   return (
@@ -38,15 +56,7 @@ const TourismGallery = () => {
                 alt={item.title}
                 className="w-full h-64 object-cover transform group-hover:scale-110 transition duration-700 ease-in-out"
               />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center">
-                <span className="text-white text-lg font-bold mb-2">
-                  {item.title}
-                </span>
-                <button className="bg-indigo-600 text-white px-4 py-1 rounded-full text-sm hover:bg-indigo-700 transition">
-                  View More
-                </button>
-              </div>
+          
             </div>
           ))}
         </div>
