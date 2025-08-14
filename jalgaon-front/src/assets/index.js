@@ -2,9 +2,9 @@ import logo from "../assets/Logo/logo.png";
 import Banner1 from "../assets/About/jalgaon.jpg";
 import dpc from "../assets/About/dpc-office.png";
 
-import hero1 from "../assets/Banner/banner1.jpeg";
-import hero2 from "../assets/Banner/banner2.jpeg";
-import hero3 from "../assets/Banner/banner3.jpeg";
+import hero1 from "../assets/Banner/hero1.jpeg";
+import hero2 from "../assets/Banner/hero2.jpeg";
+import hero3 from "../assets/Banner/hero3.jpeg";
 import hero4 from "../assets/Banner/banner4.jpeg";
 
 import img1 from "../assets/Gallery/img1.jpeg";
@@ -19,6 +19,7 @@ import img8 from "../assets/Gallery/img8.jpeg";
 import changdev from "../assets/Tourist/Changdev.jpeg";
 import girnadam from "../assets/Tourist/girna-dam.jpg";
 import patnadevi from "../assets/Tourist/patnadevi_temple.jpg";
+
 
 import meet1 from "../assets/Gallery/Meet1.jpeg";
 import meet2 from "../assets/Gallery/Meet2.jpeg";
@@ -43,7 +44,20 @@ import ladki3 from "../assets/Gallery/ladki3.jpg";
 import womenemp1 from "../assets/Gallery/womenempower1.jpg";
 import womenemp2 from "../assets/Gallery/womenempower2.jpg";
 
+import gandhifoundation from "../assets/Tourist/gandhifoundation.jpg";
+import waghurdam from "../assets/Tourist/waghurdam.png";
+import gandhigarden from "../assets/Tourist/gandhigarden.avif";
+import bhauncheudyan from "../assets/Tourist/bhauncheudyan.jpg";
+import mall from "../assets/Tourist/mall.webp";
+import mehrunlake from "../assets/Tourist/mehrunlake.jpg";
+
 export {
+  mehrunlake,
+  mall,
+  bhauncheudyan,
+  gandhifoundation,
+  waghurdam,
+  gandhigarden,
   logo,
   Banner1,
   dpc,

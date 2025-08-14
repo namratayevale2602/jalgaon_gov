@@ -14,17 +14,16 @@ const Directory = () => {
     staffMembers: [
       {
         name: {
-          en: "Shri. Prataprao Patil",
-          mr: "श्री. प्रतापराव पाटील",
+          en: "Shri.Vijay Shinde",
+          mr: "श्री. विजय शिंदे",
         },
         designation: {
           en: "District Planning Officer",
           mr: "जिल्हा नियोजन अधिकारी",
         },
         contact: {
-          phone: "0257-2222233",
-          mobile: "9876543210",
-          email: "dpo-jalgaon@maharashtra.gov.in",
+          phone: "0257-2223135",
+          email: "dpojalgaon@gmail.com",
         },
         responsibilities: {
           en: [
@@ -41,17 +40,16 @@ const Directory = () => {
       },
       {
         name: {
-          en: "Shri. R. A. Idhe",
-          mr: "श्री. आर. ए. इधे",
+          en: "Shri.Rahul Idhe",
+          mr: "श्री. राहुल इधे",
         },
         designation: {
           en: "Assistant District Planning Officer",
           mr: "सहाय्यक जिल्हा नियोजन अधिकारी",
         },
         contact: {
-          phone: "0257-2222234",
-          mobile: "9876543211",
-          email: "adpo-jalgaon@maharashtra.gov.in",
+          phone: "0257-2223135",
+          email: "dpojalgaon@gmail.com",
         },
         responsibilities: {
           en: [
@@ -64,17 +62,16 @@ const Directory = () => {
       },
       {
         name: {
-          en: "Smt. Meenakshi Deshmukh",
-          mr: "सौ. मीनाक्षी देशमुख",
+          en: "Shri Bharat Salunke",
+          mr: "श्री. भरत साळुंके",
         },
         designation: {
-          en: "Accounts Officer",
-          mr: "लेखा अधिकारी",
+          en: "Assistant District Planning Officer",
+          mr: "सहाय्यक जिल्हा नियोजन अधिकारी",
         },
         contact: {
-          phone: "0257-2222235",
-          mobile: "9876543212",
-          email: "accounts-dpc@jalgaon.gov.in",
+          phone: "0257-2223135",
+          email: "dpojalgaon@gmail.com",
         },
         responsibilities: {
           en: [
@@ -83,29 +80,6 @@ const Directory = () => {
             "Expenditure monitoring",
           ],
           mr: ["अर्थसंकल्प तयारी", "आर्थिक मंजुरी", "खर्चाचे निरीक्षण"],
-        },
-      },
-      {
-        name: {
-          en: "Shri. Sanjay Jadhav",
-          mr: "श्री. संजय जाधव",
-        },
-        designation: {
-          en: "Taluka Planning Officer (Jalgaon)",
-          mr: "तालुका नियोजन अधिकारी (जळगाव)",
-        },
-        contact: {
-          phone: "0257-2222236",
-          mobile: "9876543213",
-          email: "tpo-jalgaon@jalgaon.gov.in",
-        },
-        responsibilities: {
-          en: [
-            "Field verification",
-            "Local coordination",
-            "Progress monitoring",
-          ],
-          mr: ["फील्ड पडताळणी", "स्थानिक समन्वय", "प्रगती निरीक्षण"],
         },
       },
     ],
@@ -181,12 +155,7 @@ const Directory = () => {
                           {staff.contact.phone}
                         </span>
                       </div>
-                      <div className="flex items-center">
-                        <FaPhone className="text-gray-500 mr-2" />
-                        <span className="text-gray-700">
-                          {staff.contact.mobile}
-                        </span>
-                      </div>
+
                       <div className="flex items-center">
                         <FaEnvelope className="text-gray-500 mr-2" />
                         <a
