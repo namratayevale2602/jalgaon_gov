@@ -40,6 +40,7 @@ import AllUpdates from "./pages/Home/AllUpdates";
 import UpdateDetails from "./pages/Home/UpdateDetails";
 import DistrictPlanningDashboard from "./pages/DSP/DSP";
 import SchemesPage from "./pages/Schemes/SchemesPage";
+import DistrictPlanningCommittee from "./pages/Committees/DistrictPlanningCommittee";
 
 function App() {
   const router = createBrowserRouter(
@@ -62,8 +63,14 @@ function App() {
           <Route path="/spacialfunds" element={<SpecialSchemes />} />
           <Route path="/ongoingprojects" element={<OngoingProjects />} />
           <Route path="/approvalprocess" element={<ApprovalProcess />} />
-          <Route path="/planningcommittee" element={<PlanningCommittee />} />
-          <Route path="/executivecommittee" element={<ExecutiveCommittee />} />
+          <Route
+            path="/planningcommittee"
+            element={<DistrictPlanningCommittee />}
+          />
+          <Route
+            path="/executivecommittee"
+            element={<DistrictPlanningCommittee />}
+          />
           <Route path="/budgetexpenditure" element={<BudgetExpenditure />} />
           <Route path="/rti-portal" element={<RTIPortal />} />
           <Route path="/directory" element={<Directory />} />
