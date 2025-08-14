@@ -4,6 +4,10 @@ import { FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useLanguage } from "../../contexts/LanguageContext";
 import {
   bhumipujan,
+  conf1,
+  conf2,
+  conf3,
+  conf4,
   img1,
   img2,
   img3,
@@ -13,6 +17,8 @@ import {
   ladki1,
   ladki2,
   ladki3,
+  ladki4,
+  ladki5,
   meet1,
   meet10,
   meet2,
@@ -23,9 +29,22 @@ import {
   meet7,
   meet8,
   meet9,
+  offc1,
+  offc2,
+  offc3,
   opening1,
+  opening10,
   opening2,
+  opening3,
+  opening4,
+  opening5,
+  opening6,
+  opening8,
+  opening9,
   womenemp1,
+  womenemp2,
+  womenemp3,
+  womenemp4,
 } from "../../assets";
 
 const GalleryPage = () => {
@@ -168,18 +187,6 @@ const GalleryPage = () => {
             },
             url: meet9,
           },
-          {
-            id: 10,
-            title: {
-              en: "Team Workshop",
-              mr: "संघ कार्यशाळा",
-            },
-            description: {
-              en: "Skill development session",
-              mr: "कौशल्य विकास सत्र",
-            },
-            url: meet10,
-          },
         ],
       },
       {
@@ -194,18 +201,6 @@ const GalleryPage = () => {
         },
         images: [
           {
-            id: 11,
-            title: {
-              en: "Regional Office Opening",
-              mr: "प्रादेशिक कार्यालय उद्घाटन",
-            },
-            description: {
-              en: "Inauguration of new branch office",
-              mr: "नवीन शाखा कार्यालयाचे उद्घाटन",
-            },
-            url: opening1,
-          },
-          {
             id: 12,
             title: {
               en: "Headquarters Inauguration",
@@ -216,6 +211,79 @@ const GalleryPage = () => {
               mr: "आमच्या मुख्य कार्यालयाचे उद्घाटन",
             },
             url: opening2,
+          },
+
+          {
+            id: 13,
+            title: {
+              en: "Headquarters Inauguration",
+              mr: "मुख्यालय उद्घाटन",
+            },
+            description: {
+              en: "Opening of our main office",
+              mr: "आमच्या मुख्य कार्यालयाचे उद्घाटन",
+            },
+            url: opening4,
+          },
+          {
+            id: 13,
+            title: {
+              en: "Headquarters Inauguration",
+              mr: "मुख्यालय उद्घाटन",
+            },
+            description: {
+              en: "Opening of our main office",
+              mr: "आमच्या मुख्य कार्यालयाचे उद्घाटन",
+            },
+            url: opening8,
+          },
+          {
+            id: 13,
+            title: {
+              en: "Headquarters Inauguration",
+              mr: "मुख्यालय उद्घाटन",
+            },
+            description: {
+              en: "Opening of our main office",
+              mr: "आमच्या मुख्य कार्यालयाचे उद्घाटन",
+            },
+            url: offc1,
+          },
+          {
+            id: 13,
+            title: {
+              en: "Headquarters Inauguration",
+              mr: "मुख्यालय उद्घाटन",
+            },
+            description: {
+              en: "Opening of our main office",
+              mr: "आमच्या मुख्य कार्यालयाचे उद्घाटन",
+            },
+            url: offc2,
+          },
+          {
+            id: 13,
+            title: {
+              en: "Headquarters Inauguration",
+              mr: "मुख्यालय उद्घाटन",
+            },
+            description: {
+              en: "Opening of our main office",
+              mr: "आमच्या मुख्य कार्यालयाचे उद्घाटन",
+            },
+            url: offc3,
+          },
+          {
+            id: 13,
+            title: {
+              en: "Headquarters Inauguration",
+              mr: "मुख्यालय उद्घाटन",
+            },
+            description: {
+              en: "Opening of our main office",
+              mr: "आमच्या मुख्य कार्यालयाचे उद्घाटन",
+            },
+            url: opening9,
           },
         ],
       },
@@ -266,13 +334,26 @@ const GalleryPage = () => {
             },
             url: ladki3,
           },
+
+          {
+            id: 12,
+            title: {
+              en: "Award Distribution",
+              mr: "पुरस्कार वितरण",
+            },
+            description: {
+              en: "Recognizing outstanding participants",
+              mr: "उत्कृष्ट सहभागींना सन्मान",
+            },
+            url: ladki5,
+          },
         ],
       },
       {
         id: "womens_empowerment",
         title: {
           en: "Women's Empowerment",
-          mr: "महिला सक्षमीकरण",
+          mr: "महिला सशक्तिकरण",
         },
         description: {
           en: "Programs dedicated to uplifting women in our community",
@@ -301,7 +382,31 @@ const GalleryPage = () => {
               en: "Educating women about financial management",
               mr: "महिलांना आर्थिक व्यवस्थापनाबद्दल शिक्षण",
             },
-            url: womenemp1,
+            url: womenemp2,
+          },
+          {
+            id: 14,
+            title: {
+              en: "Financial Literacy Program",
+              mr: "आर्थिक साक्षरता कार्यक्रम",
+            },
+            description: {
+              en: "Educating women about financial management",
+              mr: "महिलांना आर्थिक व्यवस्थापनाबद्दल शिक्षण",
+            },
+            url: womenemp3,
+          },
+          {
+            id: 14,
+            title: {
+              en: "Financial Literacy Program",
+              mr: "आर्थिक साक्षरता कार्यक्रम",
+            },
+            description: {
+              en: "Educating women about financial management",
+              mr: "महिलांना आर्थिक व्यवस्थापनाबद्दल शिक्षण",
+            },
+            url: womenemp4,
           },
         ],
       },
@@ -327,6 +432,79 @@ const GalleryPage = () => {
               mr: "नवीन इमारतीसाठी पारंपारिक समारंभ",
             },
             url: bhumipujan,
+          },
+          {
+            id: 16,
+            title: {
+              en: "Construction Groundbreaking",
+              mr: "भूमी पूजन समारंभ",
+            },
+            description: {
+              en: "Traditional ceremony for new building",
+              mr: "नवीन इमारतीसाठी पारंपारिक समारंभ",
+            },
+            url: opening10,
+          },
+        ],
+      },
+      {
+        id: "conference",
+        title: {
+          en: "Conference",
+          mr: "परिषद",
+        },
+        description: {
+          en: "Moments from our important meetings and strategy discussions",
+          mr: "आमच्या महत्त्वाच्या सभा आणि धोरण चर्चेचे क्षण",
+        },
+        images: [
+          {
+            id: 1,
+            title: {
+              en: "Monthly Board Meeting",
+              mr: "मासिक मंडळ सभा",
+            },
+            description: {
+              en: "Discussion on development projects",
+              mr: "विकास प्रकल्पांवर चर्चा",
+            },
+            url: conf1,
+          },
+          {
+            id: 2,
+            title: {
+              en: "Team Meeting",
+              mr: "संघ सभा",
+            },
+            description: {
+              en: "Weekly coordination meeting",
+              mr: "साप्ताहिक समन्वय सभा",
+            },
+            url: conf2,
+          },
+          {
+            id: 3,
+            title: {
+              en: "Strategy Discussion",
+              mr: "रणनीती चर्चा",
+            },
+            description: {
+              en: "Planning for upcoming initiatives",
+              mr: "आगामी उपक्रमांसाठी नियोजन",
+            },
+            url: conf3,
+          },
+          {
+            id: 4,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: conf4,
           },
         ],
       },
