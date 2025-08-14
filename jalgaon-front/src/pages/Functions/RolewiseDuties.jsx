@@ -1,15 +1,24 @@
 import { motion } from "framer-motion";
-import { FaUserTie, FaUserShield, FaUserCog } from "react-icons/fa";
+import {
+  FaUserTie,
+  FaUserShield,
+  FaUserCog,
+  FaFileAlt,
+  FaChartLine,
+  FaMoneyBillWave,
+  FaCar,
+  FaUser,
+} from "react-icons/fa";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 const RolewiseDuties = () => {
   const { language } = useLanguage();
 
-  // Bilingual content
+  // Bilingual content based on provided data
   const content = {
     title: {
-      en: "Role-wise Duties",
-      mr: "पदनिहाय कर्तव्ये",
+      en: "Role-wise Duties and Responsibilities",
+      mr: "पदनिहाय कर्तव्ये आणि जबाबदाऱ्या",
     },
     roles: [
       {
@@ -19,21 +28,31 @@ const RolewiseDuties = () => {
         },
         duties: {
           en: [
-            "Chair all DPC meetings (minimum 4 per year)",
-            "Approve final district development plan",
-            "Monitor overall implementation progress",
-            "Resolve inter-departmental conflicts",
+            "Approval of MLA Local Area Development works",
+            "Approval of MP Local Area Development works",
+            "Approval of District Annual Plan",
+            "Chairperson of District Planning Committee meetings",
           ],
           mr: [
-            "सर्व DPC बैठकांचे अध्यक्षपद (दरवर्षी किमान 4)",
-            "अंतिम जिल्हा विकास योजना मंजूर करा",
-            "एकूण अंमलबजावणीच्या प्रगतीवर लक्ष ठेवा",
-            "विभागांतर्गत संघर्ष सोडवा",
+            "आमदार स्थानिक विकास कार्यक्रम मंजुरी",
+            "खासदार स्थानिक विकास कार्यक्रम मंजुरी",
+            "जिल्हा वार्षिक योजना मंजुरी",
+            "जिल्हा नियोजन समिती बैठकींचे अध्यक्षत्व",
           ],
         },
-        monitoring: {
-          en: "Overall supervision of all works",
-          mr: "सर्व कामांवर एकूण देखरेख",
+        authority: {
+          en: [
+            "As per Finance Department GR No. Viniyam/Pro.Kr.46/2001 dated 11/07/2001",
+            "As per Finance Department GR No. Sthavika-0616/Pro.Kr.96/Ka-1482 dated 12/07/2016",
+            "As per Central Government guidelines June 2016",
+            "As per Planning Department GR No. Jivayo-1007/Pro.Kr.39/Ka-1444 dated 16/02/2008",
+          ],
+          mr: [
+            "म.शा. वित्त विभागाचे शा. नि. क्र. वि. अ. प्र.-1000/प्र.क्र.46/2001, विनियम, दि.11जुलै 2001",
+            "म.शा. वित्त विभागाचे शा. नि. क्र. स्थाविका-0616/प्र.क्र.96/का-1482 दि.12/07/2016",
+            "केंद्र शासनाची जुन 2016 ची मार्गदर्शक पुस्तिका",
+            "म.शा. नियोजन विभाग, शा. नि. क्र. जिवायो-1007/प्र.क्र.39/का-1444, दि.16.02.2008",
+          ],
         },
       },
       {
@@ -43,128 +62,293 @@ const RolewiseDuties = () => {
         },
         duties: {
           en: [
-            "Prepare agenda for DPC meetings",
-            "Coordinate with line departments",
-            "Scrutinize MLA/MPLAD proposals",
-            "Prepare progress reports",
+            "Office In-charge responsibilities",
+            "Assist District Collector in planning matters",
+            "Prepare District Annual Plan and submit to government",
+            "Organize District Planning Committee meetings",
+            "Monitor progress of district plans and special programs",
+            "Process MLA/MPLAD proposals for approval",
+            "Maintain computerized records of planning matters",
+            "Maintain accounts of MLA/MPLAD/Tourism programs",
+            "Prepare budget estimates for planning cell",
+            "Inspect 10% of works under district annual plan",
+            "Follow up on fund disbursement to implementing agencies",
+            "Prepare district plan booklet and progress reports",
+            "Submit reports on approved MLA/MPLAD works",
+            "Perform other duties assigned by Planning Department",
           ],
           mr: [
-            "DPC बैठकांसाठी अजेंडा तयार करा",
-            "लाइन विभागांशी समन्वय साधा",
-            "MLA/MPLAD प्रस्तावांची तपासणी करा",
-            "प्रगती अहवाल तयार करा",
+            "कार्यालय प्रमुख जबाबदाऱ्या",
+            "जिल्हाधिकारी यांना नियोजन विषयांत मदत करणे",
+            "जिल्हा वार्षिक योजना तयार करून शासनास सादर करणे",
+            "जिल्हा नियोजन समितीच्या बैठका आयोजित करणे",
+            "जिल्हा योजना व विशेष कार्यक्रमांची प्रगती मॉनिटर करणे",
+            "आमदार/खासदार निधीचे प्रस्ताव मंजुरीसाठी सादर करणे",
+            "नियोजन विषयांची संगणकीय नोंद ठेवणे",
+            "आमदार/खासदार/पर्यटन कार्यक्रमांचे लेखा ठेवणे",
+            "नियोजन कक्षासाठी अर्थसंकल्पीय अंदाज तयार करणे",
+            "जिल्हा वार्षिक योजनेतील 10% कामांची पाहणी करणे",
+            "अंमलबजावणी यंत्रणांना निधी प्राप्तीसाठी पाठपुरावा करणे",
+            "जिल्हा योजना पुस्तिका तयार करणे",
+            "आमदार/खासदार कार्यक्रमांतील मंजूर कामांचे अहवाल सादर करणे",
+            "नियोजन विभागाने सोपविलेली इतर कामे करणे",
           ],
         },
-        monitoring: {
-          en: "Directly monitor 15% of ongoing works",
-          mr: "15% चालू कामांचा थेट मॉनिटरिंग",
+        authority: {
+          en: [
+            "As per Planning Department Circular No. Jinis-1002/Pro.Kr.6/Ka-1444 dated 24/04/2002",
+            "As per Government Resolutions mentioned for each duty",
+          ],
+          mr: [
+            "म.शा. नियोजन विभाग यांचे परिपत्रक क्र.जिनिस-1002/प्र.क्र.6/का-1444, दि. 24 एप्रिल 2002",
+            "प्रत्येक कर्तव्यासाठी नमूद केलेल्या शासन निर्णयांनुसार",
+          ],
         },
       },
       {
         position: {
-          en: "Assistant Planning Officer",
-          mr: "सहाय्यक नियोजन अधिकारी",
+          en: "Assistant District Planning Officer",
+          mr: "सहायक जिल्हा नियोजन अधिकारी",
         },
         duties: {
           en: [
-            "Compile Gram Panchayat plans",
-            "Maintain project databases",
-            "Conduct field visits",
-            "Prepare monitoring reports",
+            "Handle all matters related to District Annual Plan",
+            "Perform duties assigned by District Collector/Planning Officer",
+            "Act as Drawing and Disbursing Officer",
+            "Serve as Public Information Officer",
+            "Handle matters related to MLA/MPLAD funds, Tourism, Hill Area Development",
           ],
           mr: [
-            "ग्रामपंचायत योजना संकलित करा",
-            "प्रकल्प डेटाबेस राखणे",
-            "फील्ड भेटी आयोजित करा",
-            "मॉनिटरिंग अहवाल तयार करा",
+            "जिल्हा वार्षिक योजना संबंधी सर्व कामकाज पाहणे",
+            "जिल्हाधिकारी/नियोजन अधिकारी यांनी सोपविलेली कामे करणे",
+            "आहरण व संवितरण अधिकारी म्हणून काम पाहणे",
+            "जन माहिती अधिकारी म्हणून कामकाज पाहणे",
+            "आस्थाविका, खास्थाविका, पर्यटन, डोंगरी विकास कार्यक्रम संबंधी कामे",
           ],
         },
-        monitoring: {
-          en: "Physically verify 25% of works",
-          mr: "25% कामांची भौतिक पडताळणी",
+        authority: {
+          en: [
+            "As per Planning Department GR No. CAU-1401/Pro.Kr.348/Ka-1426 dated 24/01/2006",
+            "As per GR No. Sankirna-5710/Pro.Kr.30/Ka-1426 dated 29/02/2012",
+          ],
+          mr: [
+            "म.शा. नियोजन विभाग शासन निर्णय क्र.सीएयु-1401/प्र.क्र.348/का-1426 दि.24/01/2006",
+            "शासन निर्णय क्र.संकीर्ण-5710/प्र.क्र.30/का-1426 दि.29/02/2012",
+          ],
         },
       },
       {
         position: {
-          en: "Taluka Planning Officer",
-          mr: "तालुका नियोजन अधिकारी",
+          en: "Research Assistant (Various Positions)",
+          mr: "सहायक संशोधन अधिकारी (विविध पदे)",
         },
         duties: {
           en: [
-            "Collect local body proposals",
-            "Conduct public consultations",
-            "Verify ground realities",
-            "Submit progress reports",
+            "RA-1: Handle matters related to Zilla Parishad under District Annual Plan",
+            "RA-2: Handle MLA Local Area Development Program and assist Public Information Officer",
+            "RA-3: Handle District Annual Plan and MPLAD Program",
+            "RA-4: Handle MLA Local Area Development Program",
+            "RA-5: Handle Hill Area Development Program and Regional Tourism Development Scheme",
           ],
           mr: [
-            "स्थानिक संस्थांचे प्रस्ताव गोळा करा",
-            "सार्वजनिक सल्लामसलत आयोजित करा",
-            "ग्राउंड रिअॅलिटी तपासा",
-            "प्रगती अहवाल सादर करा",
+            "संशोधन अधिकारी-1: जिल्हा वार्षिक योजना अंतर्गत जिल्हा परिषद विषयक कामे",
+            "संशोधन अधिकारी-2: आमदार स्थानिक विकास कार्यक्रम व सहायक जन माहिती अधिकारी कामे",
+            "संशोधन अधिकारी-3: जिल्हा वार्षिक योजना व खासदार स्थानिक विकास कार्यक्रम",
+            "संशोधन अधिकारी-4: आमदार स्थानिक विकास कार्यक्रम",
+            "संशोधन अधिकारी-5: डोंगरी विभाग विकास कार्यक्रम व प्रादेशिक पर्यटन विकास योजना",
           ],
         },
-        monitoring: {
-          en: "Inspect 100% of works in assigned taluka",
-          mr: "नियुक्त तालुक्यातील 100% कामांची तपासणी",
+        authority: {
+          en: [
+            "As per various Government Resolutions and circulars",
+            "Central Government guidelines June 2016 for MPLAD",
+          ],
+          mr: [
+            "विविध शासन निर्णय व परिपत्रकांनुसार",
+            "केंद्र शासनाची जुन 2016 ची मार्गदर्शक पुस्तिका (खासदार निधीसाठी)",
+          ],
+        },
+      },
+      {
+        position: {
+          en: "Statistical Assistant",
+          mr: "सांख्यिकी सहायक",
+        },
+        duties: {
+          en: [
+            "SA-1: Scrutinize proposals received under statutory development schemes",
+            "SA-2: Prepare minutes of meetings, typing work, prepare monthly progress reports",
+          ],
+          mr: [
+            "सांख्यिकी सहायक-1: वैधानिक विकास मंडळ योजनांतर्गत प्रस्तावांची छानणी करणे",
+            "सांख्यिकी सहायक-2: बैठकीचे इतिवृत्त तयार करणे, टंकलेखन, मासिक प्रगती अहवाल तयार करणे",
+          ],
+        },
+        authority: {
+          en: ["As per Planning Department GRs"],
+          mr: ["म.शा. नियोजन विभागाच्या शासन निर्णयांनुसार"],
+        },
+      },
+      {
+        position: {
+          en: "Accountant",
+          mr: "लेखाधिकारी",
+        },
+        duties: {
+          en: [
+            "Handle all accounting matters",
+            "Perform duties assigned by District Collector/Planning Officer",
+          ],
+          mr: [
+            "लेखा विषयक सर्व कामकाज पाहणे",
+            "जिल्हाधिकारी/नियोजन अधिकारी यांनी सोपविलेली कामे करणे",
+          ],
+        },
+        authority: {
+          en: [
+            "As per Planning Department GR No. Jivayo-1007/Pro.Kr.39/Ka-1444 dated 16/02/2008",
+          ],
+          mr: [
+            "म.शा. नियोजन विभाग यांचे शा. नि. क्र.जिवायो-1007/प्र.क्र.39/का-1444, दि.16 फेब्रुवारी, 2008",
+          ],
         },
       },
     ],
-    generalDuties: {
+    timeBoundActivities: {
       title: {
-        en: "General Duties",
-        mr: "सामान्य कर्तव्ये",
+        en: "Time-bound Activities",
+        mr: "कालबद्ध क्रियाकलाप",
       },
-      items: {
-        en: [
-          "Attend all scheduled meetings",
-          "Maintain proper documentation",
-          "Submit periodic progress reports",
-          "Ensure transparency in operations",
-          "Address public grievances promptly",
-        ],
-        mr: [
-          "सर्व नियोजित बैठकींमध्ये उपस्थित रहा",
-          "योग्य दस्तऐवजीकरण राखा",
-          "नियतकालिक प्रगती अहवाल सादर करा",
-          "क्रियाकलापांमध्ये पारदर्शकता सुनिश्चित करा",
-          "लोकांच्या तक्रारी लगेच हाताळा",
-        ],
-      },
-    },
-    monitoringFramework: {
-      title: {
-        en: "Monitoring Framework",
-        mr: "मॉनिटरिंग फ्रेमवर्क",
-      },
-      items: {
-        en: [
-          "Monthly progress review meetings",
-          "Quarterly field inspections",
-          "Annual performance audits",
-          "Public disclosure of works",
-          "Social audits for major projects",
-        ],
-        mr: [
-          "मासिक प्रगती पुनरावलोकन बैठका",
-          "तिमाही फील्ड तपासणी",
-          "वार्षिक कार्यप्रदर्शन ऑडिट",
-          "कामांची सार्वजनिक जाहिरात",
-          "मोठ्या प्रकल्पांसाठी सामाजिक ऑडिट",
-        ],
-      },
+      items: [
+        {
+          activity: {
+            en: "MLA Local Area Development Program",
+            mr: "आमदार स्थानिक विकास कार्यक्रम",
+          },
+          timeframe: {
+            en: "90 days from receipt of proposal",
+            mr: "प्रस्ताव प्राप्त झाल्यापासून 90 दिवस",
+          },
+          responsible: {
+            en: "Research Assistant-2 & 4",
+            mr: "सहायक संशोधन अधिकारी-2 व 4",
+          },
+        },
+        {
+          activity: {
+            en: "MP Local Area Development Program",
+            mr: "खासदार स्थानिक विकास कार्यक्रम",
+          },
+          timeframe: {
+            en: "45 days from receipt of proposal",
+            mr: "प्रस्ताव प्राप्त झाल्यापासून 45 दिवस",
+          },
+          responsible: {
+            en: "Research Assistant-3",
+            mr: "सहायक संशोधन अधिकारी-3",
+          },
+        },
+        {
+          activity: {
+            en: "District Annual Plan preparation",
+            mr: "जिल्हा वार्षिक योजना आराखडा तयार करणे",
+          },
+          timeframe: {
+            en: "105 days",
+            mr: "105 दिवस",
+          },
+          responsible: {
+            en: "Research Assistant-1",
+            mr: "सहायक संशोधन अधिकारी-1",
+          },
+        },
+        {
+          activity: {
+            en: "Tourism Development Program",
+            mr: "पर्यटन विकास कार्यक्रम",
+          },
+          timeframe: {
+            en: "30 days",
+            mr: "30 दिवस",
+          },
+          responsible: {
+            en: "Research Assistant",
+            mr: "सहायक संशोधन अधिकारी",
+          },
+        },
+        {
+          activity: {
+            en: "Providing information under RTI",
+            mr: "माहितीच्या अधिकारातील माहिती पुरविणे",
+          },
+          timeframe: {
+            en: "30 days",
+            mr: "30 दिवस",
+          },
+          responsible: {
+            en: "Assistant District Planning Officer",
+            mr: "सहायक जिल्हा नियोजन अधिकारी",
+          },
+        },
+        {
+          activity: {
+            en: "Sending meeting agenda to DPC members",
+            mr: "जिल्हा नियोजन समिती सदस्यांना बैठक अजेंडा पाठविणे",
+          },
+          timeframe: {
+            en: "7 days before meeting",
+            mr: "बैठकीच्या 7 दिवस आधी",
+          },
+          responsible: {
+            en: "Research Assistant-1",
+            mr: "सहायक संशोधन अधिकारी-1",
+          },
+        },
+        {
+          activity: {
+            en: "Sending meeting documents to DPC members",
+            mr: "जिल्हा नियोजन समिती सदस्यांना बैठक संच पाठविणे",
+          },
+          timeframe: {
+            en: "7 days before meeting",
+            mr: "बैठकीच्या 7 दिवस आधी",
+          },
+          responsible: {
+            en: "Research Assistant-1",
+            mr: "सहायक संशोधन अधिकारी-1",
+          },
+        },
+        {
+          activity: {
+            en: "Monthly progress report to government",
+            mr: "मासिक प्रगती अहवाल शासनास पाठविणे",
+          },
+          timeframe: {
+            en: "By 10th of every month",
+            mr: "दरमहा 10 तारखेपर्यंत",
+          },
+          responsible: {
+            en: "Research Assistant/Statistical Assistant",
+            mr: "सहायक संशोधन अधिकारी/सांख्यिकी सहायक",
+          },
+        },
+      ],
     },
   };
 
   const iconComponents = [
-    <FaUserTie className="text-blue-600" />,
-    <FaUserShield className="text-blue-600" />,
-    <FaUserCog className="text-blue-600" />,
-    <FaUserCog className="text-blue-600" />,
+    <FaUserTie className="text-blue-600" size={20} />,
+    <FaFileAlt className="text-blue-600" size={20} />,
+    <FaUserShield className="text-blue-600" size={20} />,
+    <FaChartLine className="text-blue-600" size={20} />,
+    <FaMoneyBillWave className="text-blue-600" size={20} />,
+    <FaUserCog className="text-blue-600" size={20} />,
+    <FaCar className="text-blue-600" size={20} />,
   ];
 
   const getText = (item) => {
     if (Array.isArray(item)) {
-      return item[language] || item.en;
+      return item[language] || item.en || item;
     }
     if (typeof item === "object" && item !== null) {
       return item[language] || item.en || item;
@@ -174,7 +358,7 @@ const RolewiseDuties = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -186,85 +370,104 @@ const RolewiseDuties = () => {
           <div className="border-b-2 border-blue-100 w-20 mb-6"></div>
         </motion.div>
 
-        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-blue-50">
-                <tr>
-                  <th className="px-6 py-3 text-left font-medium text-blue-700 uppercase tracking-wider">
-                    {language === "mr" ? "पद" : "Position"}
-                  </th>
-                  <th className="px-6 py-3 text-left font-medium text-blue-700 uppercase tracking-wider">
-                    {language === "mr" ? "मुख्य कर्तव्ये" : "Key Duties"}
-                  </th>
-                  <th className="px-6 py-3 text-left font-medium text-blue-700 uppercase tracking-wider">
-                    {language === "mr"
-                      ? "मॉनिटरिंग जबाबदारी"
-                      : "Monitoring Responsibility"}
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {content.roles.map((role, index) => (
-                  <motion.tr
-                    key={index}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className="hover:bg-blue-50 transition"
-                  >
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="flex items-center">
-                        <div className="flex-shrink-0 bg-blue-100 p-2 rounded-full">
-                          {iconComponents[index]}
-                        </div>
-                        <div className="ml-4">
-                          <div className="font-medium text-gray-900">
-                            {getText(role.position)}
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <ul className="text-sm text-gray-700 list-disc pl-5 space-y-1">
-                        {getText(role.duties).map((duty, i) => (
-                          <li key={i}>{duty}</li>
-                        ))}
-                      </ul>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                      {getText(role.monitoring)}
-                    </td>
-                  </motion.tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        <div className="space-y-8">
+          {content.roles.map((role, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              className="bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="flex-shrink-0 bg-blue-100 p-3 rounded-full">
+                    {iconComponents[index % iconComponents.length]}
+                  </div>
+                  <div className="ml-4">
+                    <h2 className="text-xl font-semibold text-gray-800">
+                      {getText(role.position)}
+                    </h2>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h3 className="text-lg font-medium text-blue-700 mb-2">
+                      {language === "mr" ? "मुख्य कर्तव्ये" : "Key Duties"}
+                    </h3>
+                    <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                      {getText(role.duties).map((duty, i) => (
+                        <li key={i}>{duty}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="text-lg font-medium text-blue-700 mb-2">
+                      {language === "mr"
+                        ? "अधिकार आणि आधार"
+                        : "Authority Basis"}
+                    </h3>
+                    <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                      {getText(role.authority).map((auth, i) => (
+                        <li key={i} className="text-sm">
+                          {auth}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-lg font-semibold text-blue-800 mb-3">
-              {getText(content.generalDuties.title)}
-            </h3>
-            <ul className="list-disc pl-5 space-y-2 text-gray-700">
-              {getText(content.generalDuties.items).map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-12 bg-white rounded-lg shadow-md overflow-hidden"
+        >
+          <div className="p-6">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+              {getText(content.timeBoundActivities.title)}
+            </h2>
 
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-lg font-semibold text-blue-800 mb-3">
-              {getText(content.monitoringFramework.title)}
-            </h3>
-            <ul className="list-disc pl-5 space-y-2 text-gray-700">
-              {getText(content.monitoringFramework.items).map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-blue-50">
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider">
+                      {language === "mr" ? "क्रियाकलाप" : "Activity"}
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider">
+                      {language === "mr" ? "कालावधी" : "Timeframe"}
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider">
+                      {language === "mr" ? "जबाबदार" : "Responsible Officer"}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {content.timeBoundActivities.items.map((item, index) => (
+                    <tr key={index} className="hover:bg-blue-50">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                        {getText(item.activity)}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                        {getText(item.timeframe)}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                        {getText(item.responsible)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

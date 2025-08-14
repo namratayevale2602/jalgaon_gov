@@ -1,127 +1,74 @@
 import { motion } from "framer-motion";
-import { FaUserTie, FaSitemap, FaUsers } from "react-icons/fa";
+import {
+  FaUserTie,
+  FaSitemap,
+  FaUsers,
+  FaTasks,
+  FaCalendarAlt,
+  FaFileAlt,
+} from "react-icons/fa";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 const OrganizationalChart = () => {
   const { language } = useLanguage();
 
-  // Updated bilingual content with all positions
+  // Bilingual content with all positions and responsibilities
   const content = {
     title: {
       en: "Organizational Structure",
       mr: "संस्थात्मक रचना",
     },
     hierarchyTitle: {
-      en: "Hierarchy Chart",
-      mr: "पदानुक्रम आकृती",
+      en: "Jalgaon District Planning Committee Hierarchy",
+      mr: "जळगांव जिल्हा नियोजन समिती पदानुक्रम",
     },
     structure: [
       {
-        level: {
-          en: "District Planning Officer",
-          mr: "जिल्हा नियोजन अधिकारी",
-        },
-        name: {
-          en: "Vijay Shinde",
-          mr: "विजय शिंदे",
-        },
+        level: { en: "District Collector", mr: "जिल्हाधिकारी" },
+        name: { en: "Ayush Prasad", mr: "आयुष प्रसाद" },
         role: {
-          en: "Head of Planning Department",
-          mr: "नियोजन विभाग प्रमुख",
+          en: "Chairperson of District Planning Committee",
+          mr: "जिल्हा नियोजन समितीचे अध्यक्ष",
         },
-        description: {
-          en: "Assists District Collector, coordinates annual planning, conducts committee meetings",
-          mr: "जिल्हाधिकार्यांना सहाय्य, वार्षिक योजना समन्वय, समिती बैठका आयोजित करणे",
-        },
+      },
+      {
+        level: { en: "District Planning Officer", mr: "जिल्हा नियोजन अधिकारी" },
+        name: { en: "Prataprao Patil", mr: "प्रतापराव पाटील" },
+        role: { en: "Head of Planning Department", mr: "नियोजन विभाग प्रमुख" },
       },
       {
         level: {
           en: "Assistant District Planning Officer",
           mr: "सहाय्यक जिल्हा नियोजन अधिकारी",
         },
-        name: {
-          en: "R.A. Ithe",
-          mr: "रा.आ.इथे",
-        },
-        role: {
-          en: "Planning Implementation",
-          mr: "नियोजन अंमलबजावणी",
-        },
-        description: {
-          en: "Manages district annual planning activities",
-          mr: "जिल्हा वार्षिक योजना कार्यक्रम पाहणे",
-        },
+        name: { en: "S.R. Baviskar", mr: "सु.रा.बाविस्कर" },
+        role: { en: "Planning Implementation", mr: "नियोजन अंमलबजावणी" },
       },
       {
         level: {
-          en: "Assistant Research Officer-4",
-          mr: "सहायक संशोधन अधिकारी-४",
+          en: "Assistant District Planning Officer",
+          mr: "सहाय्यक जिल्हा नियोजन अधिकारी",
         },
-        name: {
-          en: "Che. L. Deshpande",
-          mr: "चे. ल. देशपांडे",
-        },
+        name: { en: "R.A. Ithe", mr: "रा.आ.इथे" },
         role: {
-          en: "MLA/MP Funds Management",
-          mr: "आमदार/खासदार निधी व्यवस्थापन",
-        },
-        description: {
-          en: "Handles MLA/MP local development programs",
-          mr: "आमदार/खासदार स्थानिक विकास कार्यक्रम",
+          en: "Drawing & Disbursing Officer, Public Information Officer",
+          mr: "आहरण व संवितरण अधिकारी, जन माहिती अधिकारी",
         },
       },
       {
-        level: {
-          en: "Distribution Officer",
-          mr: "सवितरण अधिकारी",
-        },
-        name: {
-          en: "R.A. Ithe",
-          mr: "रा.आ. इथे",
-        },
-        role: {
-          en: "Public Information Officer",
-          mr: "जन माहिती अधिकारी",
-        },
-        description: {
-          en: "Manages RTI, Hill Area Development Program",
-          mr: "माहिती अधिकार, डोंगरी विभाग विकास कार्यक्रम",
-        },
+        level: { en: "Accountant", mr: "लेखाधिकारी" },
+        name: { en: "Ni. Shri. Umbarkar", mr: "नि.श्री. उंबरकर" },
+        role: { en: "Financial Management", mr: "आर्थिक व्यवस्थापन" },
       },
       {
         level: {
-          en: "Accountant",
-          mr: "लेखाधिकारी",
+          en: "Assistant Research Officer-3 & 5",
+          mr: "सहायक संशोधन अधिकारी-३ व ५",
         },
-        name: {
-          en: "Ni. Shri. Umbarkar",
-          mr: "नि.श्री. उंबरकर",
-        },
+        name: { en: "V.V. Jadhav", mr: "वि.वि.जाधव" },
         role: {
-          en: "Financial Management",
-          mr: "आर्थिक व्यवस्थापन",
-        },
-        description: {
-          en: "Handles accounts and financial records",
-          mr: "लेखा आणि आर्थिक नोंदी व्यवस्थापन",
-        },
-      },
-      {
-        level: {
-          en: "Assistant Research Officer-5",
-          mr: "सहायक संशोधन अधिकारी-५",
-        },
-        name: {
-          en: "V.V. Jadhav",
-          mr: "वि.वि.जाधव",
-        },
-        role: {
-          en: "District Annual Planning",
-          mr: "जिल्हा वार्षिक नियोजन",
-        },
-        description: {
-          en: "Manages district annual planning activities",
-          mr: "जिल्हा वार्षिक योजना कार्यक्रम",
+          en: "District Annual Plan & MP Funds",
+          mr: "जिल्हा वार्षिक योजना व खासदार निधी",
         },
       },
       {
@@ -129,17 +76,10 @@ const OrganizationalChart = () => {
           en: "Assistant Research Officer-2",
           mr: "सहायक संशोधन अधिकारी-२",
         },
-        name: {
-          en: "B.B. Patil",
-          mr: "बी.बी. पाटील",
-        },
+        name: { en: "U. Shra. Bhale Rao", mr: "उ. श्रा. भालेराव" },
         role: {
-          en: "Hill Area Development",
-          mr: "डोंगरी विभाग विकास",
-        },
-        description: {
-          en: "Implements hilly area development programs",
-          mr: "डोंगरी विभाग विकास कार्यक्रम अंमलबजावणी",
+          en: "MLA Funds & Assistant Public Information Officer",
+          mr: "आमदार निधी व सहायक जन माहिती अधिकारी",
         },
       },
       {
@@ -147,146 +87,184 @@ const OrganizationalChart = () => {
           en: "Assistant Research Officer-1",
           mr: "सहायक संशोधन अधिकारी-१",
         },
-        name: {
-          en: "A.B. Suryavanshi",
-          mr: "अ. भि. सूर्यवंशी",
-        },
-        role: {
-          en: "Zilla Parishad Coordination",
-          mr: "जिल्हा परिषद समन्वय",
-        },
-        description: {
-          en: "Coordinates with Zilla Parishad for planning",
-          mr: "जिल्हा परिषदेशी नियोजनासाठी समन्वय",
-        },
+        name: { en: "A.B. Suryavanshi", mr: "अ. भि. सूर्यवंशी" },
+        role: { en: "Zilla Parishad Coordination", mr: "जिल्हा परिषद समन्वय" },
       },
       {
         level: {
-          en: "Assistant Research Officer-3",
-          mr: "सहायक संशोधन अधिकारी-३",
+          en: "Assistant Research Officer-4",
+          mr: "सहायक संशोधन अधिकारी-४",
         },
-        name: {
-          en: "Smt. A.P. Bawane",
-          mr: "श्रीमती अ.प्र. बावणे",
-        },
+        name: { en: "Che. L. Deshpande", mr: "चे. ल. देशपांडे" },
+        role: { en: "MLA Funds Management", mr: "आमदार निधी व्यवस्थापन" },
+      },
+      {
+        level: { en: "Assistant Research Officer", mr: "सहायक संशोधन अधिकारी" },
+        name: { en: "Smt. A.P. Bawane", mr: "श्रीमती अ.प्र. बावणे" },
         role: {
-          en: "Tourism Development",
-          mr: "पर्यटन विकास",
-        },
-        description: {
-          en: "Manages tourism development schemes",
-          mr: "पर्यटन विकास योजना व्यवस्थापन",
+          en: "Hill Area & Tourism Development",
+          mr: "डोंगरी विभाग व पर्यटन विकास",
         },
       },
       {
-        level: {
-          en: "Statistical Assistant-1",
-          mr: "सांख्यिकी सहायक-१",
-        },
-        name: {
-          en: "Smt. Sho. Ra. Jadhav",
-          mr: "श्रीमती शो.रा. जाधव",
-        },
-        role: {
-          en: "Data Compilation",
-          mr: "डेटा संकलन",
-        },
-        description: {
-          en: "Compiles statistical data and reports",
-          mr: "सांख्यिकीय डेटा आणि अहवाल संकलन",
-        },
+        level: { en: "Statistical Assistant-1", mr: "सांख्यिकी सहायक-१" },
+        name: { en: "Vacant", mr: "रिक्त" },
+        role: { en: "Data Compilation", mr: "डेटा संकलन" },
       },
       {
-        level: {
-          en: "Statistical Assistant-2",
-          mr: "सांख्यिकी सहायक-२",
-        },
-        name: {
-          en: "H. Su. Raut",
-          mr: "ह.सु.राऊत",
-        },
-        role: {
-          en: "Report Preparation",
-          mr: "अहवाल तयारी",
-        },
-        description: {
-          en: "Prepares monthly progress reports",
-          mr: "मासिक प्रगती अहवाल तयार करणे",
-        },
+        level: { en: "Statistical Assistant-2", mr: "सांख्यिकी सहायक-२" },
+        name: { en: "H. Su. Raut", mr: "ह.सु.राऊत" },
+        role: { en: "Report Preparation", mr: "अहवाल तयारी" },
       },
       {
-        level: {
-          en: "Sub-Accountant",
-          mr: "उपलेखापाल",
-        },
-        name: {
-          en: "H. Pra. Dandekar",
-          mr: "ह.प्र.दांडेकर",
-        },
-        role: {
-          en: "Accounts Management",
-          mr: "लेखा व्यवस्थापन",
-        },
-        description: {
-          en: "Manages establishment and accounts",
-          mr: "आस्थापना आणि लेखा व्यवस्थापन",
-        },
+        level: { en: "Sub-Accountant", mr: "उपलेखापाल" },
+        name: { en: "H. Pra. Dandekar", mr: "ह.प्र.दांडेकर" },
+        role: { en: "Accounts & Establishment", mr: "लेखा व आस्थापना" },
       },
       {
-        level: {
-          en: "Revenue Assistant",
-          mr: "महसुल सहायक",
-        },
-        name: {
-          en: "Pri. Bandrin",
-          mr: "प्रि. बॅन्ड्रीन",
-        },
-        role: {
-          en: "Establishment Management",
-          mr: "आस्थापना व्यवस्थापन",
-        },
-        description: {
-          en: "Handles establishment-related work",
-          mr: "आस्थापना विषयक कामे पाहणे",
-        },
+        level: { en: "Revenue Assistant", mr: "महसुल सहायक" },
+        name: { en: "Pri. Vi. Chaudhari", mr: "प्र.वि.चौधरी" },
+        role: { en: "Establishment Matters", mr: "आस्थापना विषयक" },
       },
       {
-        level: {
-          en: "Driver",
-          mr: "वाहनचालक",
-        },
-        name: {
-          en: "Mazhar Khan",
-          mr: "मझहर खान",
-        },
-        role: {
-          en: "Transport",
-          mr: "वाहतूक",
-        },
-        description: {
-          en: "Vehicle operation and maintenance",
-          mr: "वाहन चालविणे आणि देखभाल",
-        },
+        level: { en: "Driver", mr: "वाहनचालक" },
+        name: { en: "Vacant", mr: "रिक्त" },
+        role: { en: "Transport", mr: "वाहतूक" },
       },
       {
-        level: {
-          en: "Peon",
-          mr: "शिपाई",
-        },
-        name: {
-          en: "Vacant",
-          mr: "रिक्त",
-        },
-        role: {
-          en: "Office Support",
-          mr: "कार्यालयीन सहाय्य",
-        },
-        description: {
-          en: "Office maintenance and support",
-          mr: "कार्यालय देखभाल आणि सहाय्य",
-        },
+        level: { en: "Peon", mr: "शिपाई" },
+        name: { en: "Vacant", mr: "रिक्त" },
+        role: { en: "Office Support", mr: "कार्यालयीन सहाय्य" },
       },
     ],
+    decisionProcess: {
+      title: {
+        en: "Decision Making Process & Responsibilities",
+        mr: "निर्णय प्रकिया व जबाबदाऱ्या",
+      },
+      subtitle: {
+        en: "Development Plan Preparation Process",
+        mr: "विकास आराखडा तयार करण्याची प्रक्रिया",
+      },
+      act: {
+        en: "Related Act: District Planning Committee (Structure & Functions) Act 1998",
+        mr: "संबंधित कायदा: जिल्हा नियोजन समिती (रचना व कामे) अधिनियम 1998",
+      },
+      process: [
+        {
+          workType: {
+            en: "MLA Local Development Program",
+            mr: "आमदार स्थानिक विकास कार्यक्रम",
+          },
+          timeline: {
+            en: "90 days after receiving proposal",
+            mr: "प्रस्ताव प्राप्त झाल्यानंतर 90 दिवस",
+          },
+          responsible: {
+            en: "Assistant Research Officer-2 & 4",
+            mr: "सहायक संशोधन अधिकारी-2 व 4",
+          },
+        },
+        {
+          workType: {
+            en: "MP Local Development Program",
+            mr: "खासदार स्थानिक विकास कार्यक्रम",
+          },
+          timeline: {
+            en: "45 days after receiving proposal",
+            mr: "प्रस्ताव प्राप्त झाल्यानंतर 45 दिवस",
+          },
+          responsible: {
+            en: "Assistant Research Officer-3",
+            mr: "सहायक संशोधन अधिकारी-3",
+          },
+        },
+        {
+          workType: {
+            en: "District Annual Plan Preparation",
+            mr: "जिल्हा वार्षिक योजना आराखडा तयार करणे",
+          },
+          timeline: {
+            en: "105 days",
+            mr: "105 दिवस",
+          },
+          responsible: {
+            en: "Assistant Research Officer-1",
+            mr: "सहायक संशोधन अधिकारी-1",
+          },
+        },
+        {
+          workType: {
+            en: "Tourism Development Program",
+            mr: "पर्यटन विकास कार्यक्रम",
+          },
+          timeline: {
+            en: "30 days",
+            mr: "30 दिवस",
+          },
+          responsible: {
+            en: "Assistant Research Officer",
+            mr: "सहायक संशोधन अधिकारी",
+          },
+        },
+        {
+          workType: {
+            en: "Providing information under RTI",
+            mr: "माहितीच्या अधिकारातील माहिती पुरविणे",
+          },
+          timeline: {
+            en: "30 days",
+            mr: "30 दिवस",
+          },
+          responsible: {
+            en: "Assistant District Planning Officer",
+            mr: "सहायक जिल्हा नियोजन अधिकारी",
+          },
+        },
+        {
+          workType: {
+            en: "Sending meeting agenda to members",
+            mr: "सदस्यांना बैठकीचा अजेंडा पाठविणे",
+          },
+          timeline: {
+            en: "7 days before meeting",
+            mr: "बैठकीच्या 7 दिवस आधी",
+          },
+          responsible: {
+            en: "Assistant Research Officer-1",
+            mr: "सहायक संशोधन अधिकारी-1",
+          },
+        },
+        {
+          workType: {
+            en: "Sending meeting documents to members",
+            mr: "सदस्यांना बैठकीचा संच पाठविणे",
+          },
+          timeline: {
+            en: "7 days before meeting",
+            mr: "बैठकीच्या 7 दिवस आधी",
+          },
+          responsible: {
+            en: "Assistant Research Officer-1",
+            mr: "सहायक संशोधन अधिकारी-1",
+          },
+        },
+        {
+          workType: {
+            en: "Sending monthly progress report to government",
+            mr: "मासिक प्रगती अहवाल शासनास पाठविणे",
+          },
+          timeline: {
+            en: "By 10th of each month",
+            mr: "महिन्याच्या 10 तारखेपर्यंत",
+          },
+          responsible: {
+            en: "Assistant Research Officer / Statistical Assistant",
+            mr: "सहायक संशोधन अधिकारी / सांख्यिकी सहायक",
+          },
+        },
+      ],
+    },
     composition: {
       title: {
         en: "Key Responsibilities",
@@ -314,16 +292,18 @@ const OrganizationalChart = () => {
       },
       items: {
         en: [
-          "Govt. Circular No. JINIS/Planning Dept",
-          "Govt. Decision No. 5710/R.H.30aF1-1426",
-          "Finance Dept. Order No. STHAVIKA-0610/R.H.96-1482",
-          "Planning Dept. Circular No. 1007/St39/w-iaäa",
+          "Govt. Circular No. JINIS-1002/Pr.Kra.6/Ka-1444, dt. 24 April 2002",
+          "Govt. Decision No. JIVAYO-1007/Pr.Kra.39/Ka-1444, dt. 16 Feb 2008",
+          "Finance Dept. Order No. STHAVIKA-0616/Pr.Kra.96/Ka-1482, dt. 12/07/2016",
+          "Planning Dept. Circular No. JINIS-1002/Pr.Kra.6/Ka-1444, dt. 24/04/2002",
+          "Finance Dept. Order No. Viniyam/Pr.Kra.46/2001, dt. 11 July 2001",
         ],
         mr: [
-          "म.शा. परिपत्रक क्र. जिनिस/नियोजन विभाग",
-          "शासन निर्णय क्र. 5710/R.H.30aF1-1426",
-          "वित्त विभाग शासन निर्णय क्र. स्थाविका-0610/R.H.96-1482",
-          "नियोजन विभाग परिपत्रक क्र. 1007/St39/w-iaäa",
+          "म.शा. परिपत्रक क्र. जिनिस-1002/प्र.क्र.6/का-1444, दि. 24 एप्रिल 2002",
+          "शासन निर्णय क्र. जिवायो-1007/प्र.क्र.39/का-1444, दि. 16 फेब्रुवारी 2008",
+          "वित्त विभाग शासन निर्णय क्र. स्थाविका-0616/प्र.क्र.96/का-1482, दि. 12/07/2016",
+          "नियोजन विभाग परिपत्रक क्र. जिनिस-1002/प्र.क्र.6/का-1444, दि. 24/04/2002",
+          "वित्त विभाग शासन निर्णय क्र. विनियम/प्र.क्र.46/2001, दि. 11 जुलै 2001",
         ],
       },
     },
@@ -352,6 +332,7 @@ const OrganizationalChart = () => {
         <div className="border-b-2 border-blue-100 w-20 mb-6"></div>
       </motion.div>
 
+      {/* Organizational Hierarchy Section */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
         <div className="flex items-center mb-4">
           <FaSitemap className="text-blue-600 text-2xl mr-3" />
@@ -373,7 +354,7 @@ const OrganizationalChart = () => {
                 <div className="bg-blue-100 p-2 rounded-full mr-4">
                   <FaUserTie className="text-blue-600" />
                 </div>
-                <div>
+                <div className="flex-1">
                   <h3 className="text-xl font-medium text-gray-800">
                     {getText(item.level)}
                   </h3>
@@ -383,9 +364,6 @@ const OrganizationalChart = () => {
                   <p className="text-blue-900 font-medium">
                     {getText(item.name)}
                   </p>
-                  <p className="text-gray-600 mt-1">
-                    {getText(item.description)}
-                  </p>
                 </div>
               </div>
             </motion.div>
@@ -393,6 +371,62 @@ const OrganizationalChart = () => {
         </div>
       </div>
 
+      {/* Decision Making Process Section */}
+      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+        <div className="flex items-center mb-4">
+          <FaCalendarAlt className="text-blue-600 text-2xl mr-3" />
+          <h2 className="text-2xl font-semibold text-blue-700">
+            {getText(content.decisionProcess.title)}
+          </h2>
+        </div>
+
+        <h3 className="text-lg font-medium text-gray-800 mb-2">
+          {getText(content.decisionProcess.subtitle)}
+        </h3>
+        <p className="text-gray-600 mb-4">
+          {getText(content.decisionProcess.act)}
+        </p>
+
+        <div className="overflow-x-auto">
+          <table className="min-w-full bg-white border border-gray-200">
+            <thead className="bg-blue-50">
+              <tr>
+                <th className="py-2 px-4 border-b border-gray-200 text-left text-gray-700">
+                  {language === "mr" ? "कामाचे स्वरुप" : "Work Type"}
+                </th>
+                <th className="py-2 px-4 border-b border-gray-200 text-left text-gray-700">
+                  {language === "mr" ? "कालावधी" : "Timeline"}
+                </th>
+                <th className="py-2 px-4 border-b border-gray-200 text-left text-gray-700">
+                  {language === "mr"
+                    ? "जबाबदार अधिकारी"
+                    : "Responsible Officer"}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {content.decisionProcess.process.map((item, index) => (
+                <tr
+                  key={index}
+                  className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}
+                >
+                  <td className="py-2 px-4 border-b border-gray-200">
+                    {getText(item.workType)}
+                  </td>
+                  <td className="py-2 px-4 border-b border-gray-200">
+                    {getText(item.timeline)}
+                  </td>
+                  <td className="py-2 px-4 border-b border-gray-200">
+                    {getText(item.responsible)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Additional Information Sections */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-blue-50 rounded-lg p-6">
           <h3 className="text-lg font-semibold text-blue-800 mb-3 flex items-center">
@@ -406,8 +440,8 @@ const OrganizationalChart = () => {
         </div>
 
         <div className="bg-blue-50 rounded-lg p-6">
-          <h3 className="text-lg font-semibold text-blue-800 mb-3">
-            {getText(content.committees.title)}
+          <h3 className="text-lg font-semibold text-blue-800 mb-3 flex items-center">
+            <FaFileAlt className="mr-2" /> {getText(content.committees.title)}
           </h3>
           <ul className="list-disc pl-5 space-y-2 text-gray-700">
             {getText(content.committees.items).map((item, index) => (
