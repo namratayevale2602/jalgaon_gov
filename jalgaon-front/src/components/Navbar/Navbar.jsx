@@ -124,8 +124,8 @@ const Navbar = () => {
               </h1>
               <p className="text-sm">
                 {language === "en"
-                  ? "Jalgaon District Portal"
-                  : "जळगाव जिल्हा पोर्टल"}
+                  ? "Jalgaon District Planning Office Portal"
+                  : "जळगाव जिल्हा नियोजन कार्यालय पोर्टल"}
               </p>
             </div>
           </div>

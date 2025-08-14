@@ -6,8 +6,9 @@ import AboutDistrict from "./AboutDistrict";
 import RecentBlogs from "./RecentBlogs";
 import AboutDPC from "./AboutDPC";
 import LatestUpdates from "./LatestUpdates";
-import QuickLinks from "./QuickLinks";
+
 import Services from "./Services";
+import UsefulLinks from "./UsefulLinks";
 
 function Home() {
   return (
@@ -15,7 +16,7 @@ function Home() {
       <HeroCarousel />
       <LatestUpdates />
       <AboutDistrict />
-      <QuickLinks />
+      <UsefulLinks />
       <AboutDPC />
       <Services />
       <RecentBlogs />
