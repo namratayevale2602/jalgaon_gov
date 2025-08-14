@@ -8,19 +8,16 @@ import AboutDPC from "./AboutDPC";
 import LatestUpdates from "./LatestUpdates";
 import QuickLinks from "./QuickLinks";
 import Services from "./Services";
-// import GRDetailSection from "./GRDetailSection";
 
 function Home() {
   return (
     <div>
       <HeroCarousel />
-      {/* <RawContentDisplay /> */}
       <LatestUpdates />
       <AboutDistrict />
       <QuickLinks />
       <AboutDPC />
       <Services />
-      {/* <GRDetailSection /> */}
       <RecentBlogs />
     </div>
   );

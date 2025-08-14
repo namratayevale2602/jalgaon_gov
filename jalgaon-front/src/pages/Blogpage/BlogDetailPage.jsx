@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 import { FaArrowLeft, FaCalendarAlt, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import blogData from "../../data/blogData.json";
+import { blogData } from "../../data/blogData.js";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 const BlogDetailPage = () => {

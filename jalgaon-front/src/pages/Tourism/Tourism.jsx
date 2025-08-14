@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../contexts/LanguageContext";
+import { changdev, patnadevi, girnadam } from "../../assets";
 
 const TourismMain = () => {
   const { language } = useLanguage();
@@ -18,7 +19,7 @@ const TourismMain = () => {
         en: "14th century temple dedicated to saint Changdev Maharaj",
         mr: "14व्या शतकातील संत चांगदेव महाराज यांना समर्पित मंदिर",
       },
-      image: "/images/changdev-temple.jpg",
+      image: changdev,
       type: "religious",
       stats: {
         visitors: "250,000+",
@@ -36,7 +37,7 @@ const TourismMain = () => {
         en: "One of the 51 Shakti Peethas with great religious significance",
         mr: "51 शक्ती पीठांपैकी एक महत्त्वाचे धार्मिक स्थान",
       },
-      image: "/images/patan-devi.jpg",
+      image: patnadevi,
       type: "religious",
       stats: {
         visitors: "180,000+",
@@ -54,7 +55,7 @@ const TourismMain = () => {
         en: "Scenic river with beautiful dam and surrounding landscapes",
         mr: "सुंदर धरण आणि आजूबाजूच्या भूदृश्यांसह नयनरम्य नदी",
       },
-      image: "/images/girna-dam.jpg",
+      image: girnadam,
       type: "nature",
       stats: {
         visitors: "100,000+",

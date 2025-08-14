@@ -21,10 +21,11 @@ const Navbar = () => {
           href: "/organizationalChart",
         },
         { name: { en: "Objectives", mr: "उद्दिष्टे" }, href: "/objectives" },
-        {
-          name: { en: "GENERAL REGISTER", mr: "सामान्य नोंदणीकर्ता" },
-          href: "/gr-directory",
-        },
+        { name: { en: "Planning Committee", mr: "डीपीसी" }, href: "/dpc" },
+        // {
+        //   name: { en: "GENERAL REGISTER", mr: "सामान्य नोंदणीकर्ता" },
+        //   href: "/gr-directory",
+        // },
       ],
     },
     {
@@ -36,21 +37,8 @@ const Navbar = () => {
         },
       ],
     },
-    {
-      name: { en: "DSP", mr: "डीएसपी" },
-      dropdown: [
-        {
-          name: { en: "PRIVATE STAKE HOLDER", mr: "खाजगी भागधारक" },
-          href: "/planningcommittee",
-        },
-        {
-          name: { en: "GOVERMENT STAKE HOLDER", mr: "सरकारी भागधारक" },
-          href: "/planningcommittee",
-        },
-        { name: { en: "PRESENTATION", mr: "सादरीकरण" }, href: "/presentation" },
-      ],
-    },
-    { name: { en: "DPC", mr: "डीपीसी" }, href: "/dpc" },
+    { name: { en: "DSP", mr: "डीएसपी" }, href: "/dsp" },
+
     {
       name: { en: "FUNCTIONS", mr: "कार्ये" },
       dropdown: [
@@ -73,19 +61,32 @@ const Navbar = () => {
       dropdown: [
         {
           name: { en: "ANNUAL PLAN", mr: "वार्षिक योजना" },
-          href: "/annual-plan",
-        },
-        { name: { en: "MLA FUNDS", mr: "एमएलए निधी" }, href: "/MLAFunds" },
-        { name: { en: "MP FUNDS", mr: "एमपी निधी" }, href: "/MPFunds" },
-        {
-          name: { en: "MINORITY SCHEMA", mr: "मायनोरिटी स्कीमा" },
-          href: "/minority-scheme",
+          href: "/schemes#annualPlan",
         },
         {
-          name: { en: "AREA DEVELOPMENT", mr: "क्षेत्र विकास" },
-          href: "/area-develop",
+          name: { en: "MLA FUNDS", mr: "एमएलए निधी" },
+          href: "/schemes#mlaFunds",
         },
-        { name: { en: "OTHER FUNDS", mr: "इतर निधी" }, href: "/spacialfunds" },
+        {
+          name: { en: "MP FUNDS", mr: "एमपी निधी" },
+          href: "/schemes#mpFunds",
+        },
+        {
+          name: { en: "HILLY AREA DEVELOPMENT", mr: "डोंगराळ क्षेत्र विकास" },
+          href: "/schemes#hillyArea",
+        },
+        {
+          name: { en: "HUMAN DEVELOPMENT", mr: "मानवी विकास" },
+          href: "/schemes#humanDevelopment",
+        },
+        {
+          name: { en: "MINORITY SCHEMES", mr: "अल्पसंख्याक योजना" },
+          href: "/schemes#minoritySchemes",
+        },
+        {
+          name: { en: "OTHER SCHEMES", mr: "इतर योजना" },
+          href: "/schemes#otherSchemes",
+        },
       ],
     },
     {

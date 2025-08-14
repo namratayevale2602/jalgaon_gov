@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useLanguage } from "../../contexts/LanguageContext";
+import { img1, img2, img3, img4, img5, img6, img7, img8 } from "../../assets";
 
 const GalleryPage = () => {
   const { language } = useLanguage();
@@ -33,7 +34,7 @@ const GalleryPage = () => {
           en: "Beautiful mountain view with sunset colors",
           mr: "सूर्यास्ताच्या रंगांसह सुंदर पर्वत दृश्य",
         },
-        url: "https://source.unsplash.com/random/800x600/?nature,1",
+        url: img1,
       },
       {
         id: 2,
@@ -45,7 +46,7 @@ const GalleryPage = () => {
           en: "Modern city architecture at dusk",
           mr: "संध्याकाळी आधुनिक शहरी वास्तुकला",
         },
-        url: "https://source.unsplash.com/random/800x600/?city,1",
+        url: img2,
       },
       {
         id: 3,
@@ -57,7 +58,7 @@ const GalleryPage = () => {
           en: "Crystal clear water and sandy beach",
           mr: "स्फटिकासारखे स्वच्छ पाणी आणि वाळूचे किनारे",
         },
-        url: "https://source.unsplash.com/random/800x600/?ocean,1",
+        url: img3,
       },
       {
         id: 4,
@@ -69,7 +70,7 @@ const GalleryPage = () => {
           en: "Majestic elephant in the wild",
           mr: "जंगलातील भव्य हत्ती",
         },
-        url: "https://source.unsplash.com/random/800x600/?wildlife,1",
+        url: img4,
       },
       {
         id: 5,
@@ -81,7 +82,7 @@ const GalleryPage = () => {
           en: "Adventurous hiking trail in the mountains",
           mr: "पर्वतातील साहसी ट्रेक मार्ग",
         },
-        url: "https://source.unsplash.com/random/800x600/?mountain,1",
+        url: img5,
       },
       {
         id: 6,
@@ -93,7 +94,7 @@ const GalleryPage = () => {
           en: "Colorful street art in downtown",
           mr: "शहराच्या मध्यभागी रंगीबेरंगी रस्त्याची कला",
         },
-        url: "https://source.unsplash.com/random/800x600/?streetart,1",
+        url: img6,
       },
       {
         id: 7,
@@ -105,7 +106,7 @@ const GalleryPage = () => {
           en: "Golden hour in the sandy desert",
           mr: "वाळूच्या वाळवंटात सुवर्णकाळ",
         },
-        url: "https://source.unsplash.com/random/800x600/?desert,1",
+        url: img7,
       },
       {
         id: 8,
@@ -117,7 +118,7 @@ const GalleryPage = () => {
           en: "Snow-covered trees and frozen lake",
           mr: "बर्फाने झाकलेली झाडे आणि गोठलेले तलाव",
         },
-        url: "https://source.unsplash.com/random/800x600/?winter,1",
+        url: img8,
       },
     ],
   };

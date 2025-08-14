@@ -8,8 +8,8 @@ const PlanningCommittee = () => {
   // Bilingual content
   const content = {
     title: {
-      en: "District Planning Committee",
-      mr: "जिल्हा नियोजन समिती",
+      en: "District Planning Officer",
+      mr: "जिल्हा नियोजन अधिकारी",
     },
     membersTitle: {
       en: "Committee Members",
@@ -18,80 +18,127 @@ const PlanningCommittee = () => {
     members: [
       {
         name: {
-          en: "Shri. Rajesh Patil",
-          mr: "श्री. राजेश पाटील",
+          en: "Vijay Shinde",
+          mr: "विजय शिंदे",
         },
         designation: {
-          en: "District Collector (Chairperson)",
-          mr: "जिल्हाधिकारी (अध्यक्ष)",
-        },
-        role: {
-          en: "Chairperson",
-          mr: "अध्यक्ष",
+          en: "Head of Planning Department",
+          mr: "नियोजन विभाग प्रमुख",
         },
         contact: "dc-jalgaon@maharashtra.gov.in",
       },
       {
         name: {
-          en: "Smt. Meena Deshpande",
-          mr: "सौ. मीना देशपांडे",
+          en: "R.A. Ithe",
+          mr: "रा.आ.इथे",
         },
         designation: {
-          en: "District Planning Officer",
-          mr: "जिल्हा नियोजन अधिकारी",
-        },
-        role: {
-          en: "Member Secretary",
-          mr: "सदस्य सचिव",
+          en: "Planning Implementation",
+          mr: "नियोजन अंमलबजावणी",
         },
         contact: "dpo-jalgaon@maharashtra.gov.in",
       },
       {
         name: {
-          en: "Shri. Sunil Jadhav",
-          mr: "श्री. सुनील जाधव",
+          en: "Che. L. Deshpande",
+          mr: "चे. ल. देशपांडे",
         },
         designation: {
-          en: "Zilla Parishad President",
-          mr: "जिल्हा परिषद अध्यक्ष",
-        },
-        role: {
-          en: "Member",
-          mr: "सदस्य",
+          en: "MLA/MP Funds Management",
+          mr: "आमदार/खासदार निधी व्यवस्थापन",
         },
         contact: "zp-president@jalgaon.gov.in",
       },
       {
         name: {
-          en: "Smt. Anjali Pawar",
-          mr: "सौ. अंजली पवार",
+          en: "R.A.Ithe",
+          mr: "रा.आ.इथे",
         },
         designation: {
-          en: "Mayor, Jalgaon Municipal Corporation",
-          mr: "जळगाव महानगरपालिका महापौर",
-        },
-        role: {
-          en: "Member",
-          mr: "सदस्य",
+          en: "Public Information Officer",
+          mr: "जन माहिती अधिकारी",
         },
         contact: "mayor-jmc@jalgaon.gov.in",
       },
       {
         name: {
-          en: "Dr. Vikram Patil",
-          mr: "डॉ. विक्रम पाटील",
+          en: "Ni. Shri. Umbarkar",
+          mr: "नि.श्री. उंबरकर",
         },
         designation: {
-          en: "Chief Executive Officer, Zilla Parishad",
-          mr: "मुख्य कार्यकारी अधिकारी, जिल्हा परिषद",
+          en: "Financial Management",
+          mr: "आर्थिक व्यवस्थापन",
         },
-        role: {
-          en: "Member",
-          mr: "सदस्य",
+        contact: "ceo-zp@jalgaon.gov.in",
+      },
+      {
+        name: {
+          en: "V.V. Jadhav",
+          mr: "वि.वि.जाधव",
+        },
+        designation: {
+          en: "District Annual Planning",
+          mr: "जिल्हा वार्षिक नियोजन",
+        },
+        contact: "ceo-zp@jalgaon.gov.in",
+      },
+      {
+        name: {
+          en: "Ni. Shri. Umbarkar",
+          mr: "नि.श्री. उंबरकर",
+        },
+        designation: {
+          en: "Financial Management",
+          mr: "आर्थिक व्यवस्थापन",
+        },
+        contact: "ceo-zp@jalgaon.gov.in",
+      },
+      {
+        name: {
+          en: "B.B. Patil",
+          mr: "बी.बी. पाटील",
+        },
+        designation: {
+          en: "Hill Area Development",
+          mr: "डोंगरी विभाग विकास",
+        },
+        contact: "ceo-zp@jalgaon.gov.in",
+      },
+      {
+        name: {
+          en: "A.B. Suryavanshi",
+          mr: "अ. भि. सूर्यवंशी",
+        },
+        designation: {
+          en: "Zilla Parishad Coordination",
+          mr: "जिल्हा परिषद समन्वय",
+        },
+        contact: "ceo-zp@jalgaon.gov.in",
+      },
+      {
+        name: {
+          en: "Smt. Sho. Ra. Jadhav",
+          mr: "श्रीमती शो.रा. जाधव",
+        },
+        designation: {
+          en: "Compiles statistical data and reports",
+          mr: "सांख्यिकीय डेटा आणि अहवाल संकलन",
+        },
+        contact: "ceo-zp@jalgaon.gov.in",
+      },
+      {
+        name: {
+          en: "H. Su. Raut",
+          mr: "ह.सु.राऊत",
+        },
+        designation: {
+          en: "Report Preparation",
+          mr: "अहवाल तयारी",
         },
         contact: "ceo-zp@jalgaon.gov.in",
       },
     ],
+
     meetingsTitle: {
       en: "Meeting Schedule",
       mr: "बैठक वेळापत्रक",
@@ -214,9 +261,6 @@ const PlanningCommittee = () => {
                     {language === "mr" ? "पदनाम" : "Designation"}
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider">
-                    {language === "mr" ? "भूमिका" : "Role"}
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-blue-700 uppercase tracking-wider">
                     {language === "mr" ? "संपर्क" : "Contact"}
                   </th>
                 </tr>
@@ -235,9 +279,6 @@ const PlanningCommittee = () => {
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-700">
                       {getText(member.designation)}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
-                      {getText(member.role)}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600">
                       <a

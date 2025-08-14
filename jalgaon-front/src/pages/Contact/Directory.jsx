@@ -26,10 +26,6 @@ const Directory = () => {
           mobile: "9876543210",
           email: "dpo-jalgaon@maharashtra.gov.in",
         },
-        salary: {
-          en: "Pay Level 12 (₹78,800 - ₹2,09,200)",
-          mr: "पे लेव्हल 12 (₹78,800 - ₹2,09,200)",
-        },
         responsibilities: {
           en: [
             "Overall supervision of district planning",
@@ -57,10 +53,6 @@ const Directory = () => {
           mobile: "9876543211",
           email: "adpo-jalgaon@maharashtra.gov.in",
         },
-        salary: {
-          en: "Pay Level 10 (₹56,100 - ₹1,77,500)",
-          mr: "पे लेव्हल 10 (₹56,100 - ₹1,77,500)",
-        },
         responsibilities: {
           en: [
             "Day-to-day administration",
@@ -84,10 +76,6 @@ const Directory = () => {
           mobile: "9876543212",
           email: "accounts-dpc@jalgaon.gov.in",
         },
-        salary: {
-          en: "Pay Level 8 (₹47,600 - ₹1,51,100)",
-          mr: "पे लेव्हल 8 (₹47,600 - ₹1,51,100)",
-        },
         responsibilities: {
           en: [
             "Budget preparation",
@@ -110,10 +98,6 @@ const Directory = () => {
           phone: "0257-2222236",
           mobile: "9876543213",
           email: "tpo-jalgaon@jalgaon.gov.in",
-        },
-        salary: {
-          en: "Pay Level 7 (₹44,900 - ₹1,42,400)",
-          mr: "पे लेव्हल 7 (₹44,900 - ₹1,42,400)",
         },
         responsibilities: {
           en: [
@@ -182,15 +166,6 @@ const Directory = () => {
                         <p className="text-blue-700">
                           {getText(staff.designation)}
                         </p>
-                      </div>
-                    </div>
-
-                    <div className="mt-4">
-                      <div className="flex items-center mb-2">
-                        <FaRupeeSign className="text-gray-500 mr-2" />
-                        <span className="text-gray-700">
-                          {getText(staff.salary)}
-                        </span>
                       </div>
                     </div>
                   </div>

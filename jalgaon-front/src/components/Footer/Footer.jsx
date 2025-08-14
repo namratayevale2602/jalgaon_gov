@@ -28,6 +28,10 @@ const Footer = () => {
       en: "© Jalgaon District Planning • Last Updated: Jul 24, 2025",
       mr: "© जळगाव जिल्हा नियोजन • अंतिम अद्यतन: २४ जुलै, २०२५",
     },
+    developby: {
+      en: "Developed by Rich System Solution Pvt. Ltd.",
+      mr: "रिच सिस्टम सोल्युशन प्रायव्हेट लिमिटेड द्वारे विकसित.",
+    },
   };
 
   const getText = (key) => {
@@ -66,7 +70,10 @@ const Footer = () => {
 
         {/* Bottom copyright */}
         <div className="border-t border-gray-700 mt-4 pt-4 text-center text-sm text-gray-300">
-          <p>{getText("copyright")}</p>
+          <div className="flex flex-col md:flex-row justify-center items-center">
+            <p>{getText("copyright")}</p>
+            <p className="md:ml-4">{getText("developby")}</p>
+          </div>
         </div>
       </div>
     </footer>

@@ -5,7 +5,7 @@ import { useLanguage } from "../../contexts/LanguageContext";
 const OrganizationalChart = () => {
   const { language } = useLanguage();
 
-  // Bilingual content
+  // Updated bilingual content with all positions
   const content = {
     title: {
       en: "Organizational Structure",
@@ -18,30 +18,20 @@ const OrganizationalChart = () => {
     structure: [
       {
         level: {
-          en: "District Collector",
-          mr: "जिल्हाधिकारी",
-        },
-        role: {
-          en: "Chairperson",
-          mr: "अध्यक्ष",
-        },
-        description: {
-          en: "Overall supervision and guidance",
-          mr: "एकूण देखरेख आणि मार्गदर्शन",
-        },
-      },
-      {
-        level: {
           en: "District Planning Officer",
           mr: "जिल्हा नियोजन अधिकारी",
         },
+        name: {
+          en: "Vijay Shinde",
+          mr: "विजय शिंदे",
+        },
         role: {
-          en: "Member Secretary",
-          mr: "सदस्य सचिव",
+          en: "Head of Planning Department",
+          mr: "नियोजन विभाग प्रमुख",
         },
         description: {
-          en: "Day-to-day administration and coordination",
-          mr: "दैनंदिन प्रशासन आणि समन्वय",
+          en: "Assists District Collector, coordinates annual planning, conducts committee meetings",
+          mr: "जिल्हाधिकार्यांना सहाय्य, वार्षिक योजना समन्वय, समिती बैठका आयोजित करणे",
         },
       },
       {
@@ -49,81 +39,291 @@ const OrganizationalChart = () => {
           en: "Assistant District Planning Officer",
           mr: "सहाय्यक जिल्हा नियोजन अधिकारी",
         },
+        name: {
+          en: "R.A. Ithe",
+          mr: "रा.आ.इथे",
+        },
         role: {
-          en: "Technical Support",
-          mr: "तांत्रिक सहाय्य",
+          en: "Planning Implementation",
+          mr: "नियोजन अंमलबजावणी",
         },
         description: {
-          en: "Implementation and monitoring",
-          mr: "अंमलबजावणी आणि देखरेख",
+          en: "Manages district annual planning activities",
+          mr: "जिल्हा वार्षिक योजना कार्यक्रम पाहणे",
         },
       },
       {
         level: {
-          en: "Taluka Planning Officers",
-          mr: "तालुका नियोजन अधिकारी",
+          en: "Assistant Research Officer-4",
+          mr: "सहायक संशोधन अधिकारी-४",
+        },
+        name: {
+          en: "Che. L. Deshpande",
+          mr: "चे. ल. देशपांडे",
         },
         role: {
-          en: "Field Coordination",
-          mr: "क्षेत्र समन्वय",
+          en: "MLA/MP Funds Management",
+          mr: "आमदार/खासदार निधी व्यवस्थापन",
         },
         description: {
-          en: "Grassroots level planning and execution",
-          mr: "तळागाळातील नियोजन आणि अंमलबजावणी",
+          en: "Handles MLA/MP local development programs",
+          mr: "आमदार/खासदार स्थानिक विकास कार्यक्रम",
         },
       },
       {
         level: {
-          en: "Support Staff",
-          mr: "सहाय्यक कर्मचारी",
+          en: "Distribution Officer",
+          mr: "सवितरण अधिकारी",
+        },
+        name: {
+          en: "R.A. Ithe",
+          mr: "रा.आ. इथे",
         },
         role: {
-          en: "Administrative Support",
-          mr: "प्रशासकीय सहाय्य",
+          en: "Public Information Officer",
+          mr: "जन माहिती अधिकारी",
         },
         description: {
-          en: "Documentation and office management",
-          mr: "दस्तऐवजीकरण आणि कार्यालय व्यवस्थापन",
+          en: "Manages RTI, Hill Area Development Program",
+          mr: "माहिती अधिकार, डोंगरी विभाग विकास कार्यक्रम",
+        },
+      },
+      {
+        level: {
+          en: "Accountant",
+          mr: "लेखाधिकारी",
+        },
+        name: {
+          en: "Ni. Shri. Umbarkar",
+          mr: "नि.श्री. उंबरकर",
+        },
+        role: {
+          en: "Financial Management",
+          mr: "आर्थिक व्यवस्थापन",
+        },
+        description: {
+          en: "Handles accounts and financial records",
+          mr: "लेखा आणि आर्थिक नोंदी व्यवस्थापन",
+        },
+      },
+      {
+        level: {
+          en: "Assistant Research Officer-5",
+          mr: "सहायक संशोधन अधिकारी-५",
+        },
+        name: {
+          en: "V.V. Jadhav",
+          mr: "वि.वि.जाधव",
+        },
+        role: {
+          en: "District Annual Planning",
+          mr: "जिल्हा वार्षिक नियोजन",
+        },
+        description: {
+          en: "Manages district annual planning activities",
+          mr: "जिल्हा वार्षिक योजना कार्यक्रम",
+        },
+      },
+      {
+        level: {
+          en: "Assistant Research Officer-2",
+          mr: "सहायक संशोधन अधिकारी-२",
+        },
+        name: {
+          en: "B.B. Patil",
+          mr: "बी.बी. पाटील",
+        },
+        role: {
+          en: "Hill Area Development",
+          mr: "डोंगरी विभाग विकास",
+        },
+        description: {
+          en: "Implements hilly area development programs",
+          mr: "डोंगरी विभाग विकास कार्यक्रम अंमलबजावणी",
+        },
+      },
+      {
+        level: {
+          en: "Assistant Research Officer-1",
+          mr: "सहायक संशोधन अधिकारी-१",
+        },
+        name: {
+          en: "A.B. Suryavanshi",
+          mr: "अ. भि. सूर्यवंशी",
+        },
+        role: {
+          en: "Zilla Parishad Coordination",
+          mr: "जिल्हा परिषद समन्वय",
+        },
+        description: {
+          en: "Coordinates with Zilla Parishad for planning",
+          mr: "जिल्हा परिषदेशी नियोजनासाठी समन्वय",
+        },
+      },
+      {
+        level: {
+          en: "Assistant Research Officer-3",
+          mr: "सहायक संशोधन अधिकारी-३",
+        },
+        name: {
+          en: "Smt. A.P. Bawane",
+          mr: "श्रीमती अ.प्र. बावणे",
+        },
+        role: {
+          en: "Tourism Development",
+          mr: "पर्यटन विकास",
+        },
+        description: {
+          en: "Manages tourism development schemes",
+          mr: "पर्यटन विकास योजना व्यवस्थापन",
+        },
+      },
+      {
+        level: {
+          en: "Statistical Assistant-1",
+          mr: "सांख्यिकी सहायक-१",
+        },
+        name: {
+          en: "Smt. Sho. Ra. Jadhav",
+          mr: "श्रीमती शो.रा. जाधव",
+        },
+        role: {
+          en: "Data Compilation",
+          mr: "डेटा संकलन",
+        },
+        description: {
+          en: "Compiles statistical data and reports",
+          mr: "सांख्यिकीय डेटा आणि अहवाल संकलन",
+        },
+      },
+      {
+        level: {
+          en: "Statistical Assistant-2",
+          mr: "सांख्यिकी सहायक-२",
+        },
+        name: {
+          en: "H. Su. Raut",
+          mr: "ह.सु.राऊत",
+        },
+        role: {
+          en: "Report Preparation",
+          mr: "अहवाल तयारी",
+        },
+        description: {
+          en: "Prepares monthly progress reports",
+          mr: "मासिक प्रगती अहवाल तयार करणे",
+        },
+      },
+      {
+        level: {
+          en: "Sub-Accountant",
+          mr: "उपलेखापाल",
+        },
+        name: {
+          en: "H. Pra. Dandekar",
+          mr: "ह.प्र.दांडेकर",
+        },
+        role: {
+          en: "Accounts Management",
+          mr: "लेखा व्यवस्थापन",
+        },
+        description: {
+          en: "Manages establishment and accounts",
+          mr: "आस्थापना आणि लेखा व्यवस्थापन",
+        },
+      },
+      {
+        level: {
+          en: "Revenue Assistant",
+          mr: "महसुल सहायक",
+        },
+        name: {
+          en: "Pri. Bandrin",
+          mr: "प्रि. बॅन्ड्रीन",
+        },
+        role: {
+          en: "Establishment Management",
+          mr: "आस्थापना व्यवस्थापन",
+        },
+        description: {
+          en: "Handles establishment-related work",
+          mr: "आस्थापना विषयक कामे पाहणे",
+        },
+      },
+      {
+        level: {
+          en: "Driver",
+          mr: "वाहनचालक",
+        },
+        name: {
+          en: "Mazhar Khan",
+          mr: "मझहर खान",
+        },
+        role: {
+          en: "Transport",
+          mr: "वाहतूक",
+        },
+        description: {
+          en: "Vehicle operation and maintenance",
+          mr: "वाहन चालविणे आणि देखभाल",
+        },
+      },
+      {
+        level: {
+          en: "Peon",
+          mr: "शिपाई",
+        },
+        name: {
+          en: "Vacant",
+          mr: "रिक्त",
+        },
+        role: {
+          en: "Office Support",
+          mr: "कार्यालयीन सहाय्य",
+        },
+        description: {
+          en: "Office maintenance and support",
+          mr: "कार्यालय देखभाल आणि सहाय्य",
         },
       },
     ],
     composition: {
       title: {
-        en: "Composition",
-        mr: "रचना",
+        en: "Key Responsibilities",
+        mr: "मुख्य जबाबदाऱ्या",
       },
       items: {
         en: [
-          "80% members elected from Panchayat Raj Institutions",
-          "20% members elected from Urban Local Bodies",
-          "Ex-officio members from relevant departments",
-          "Technical experts as co-opted members",
+          "Annual district planning and committee coordination",
+          "MLA/MP fund management and project monitoring",
+          "Tourism development program implementation",
+          "Budget preparation and financial monitoring",
         ],
         mr: [
-          "पंचायत राज संस्थांमधून निवडलेले 80% सदस्य",
-          "शहरी स्थानिक स्वराज्य संस्थांमधून निवडलेले 20% सदस्य",
-          "संबंधित विभागांतील पदेन सदस्य",
-          "तांत्रिक तज्ज्ञांना सह-निवडलेले सदस्य",
+          "जिल्हा वार्षिक योजना आखणी आणि समिती समन्वय",
+          "आमदार/खासदार निधी व्यवस्थापन आणि प्रकल्प देखरेख",
+          "पर्यटन विकास कार्यक्रम अंमलबजावणी",
+          "अर्थसंकल्पीय अंदाज तयारी आणि आर्थिक देखरेख",
         ],
       },
     },
     committees: {
       title: {
-        en: "Key Committees",
-        mr: "महत्त्वाच्या समित्या",
+        en: "Governing References",
+        mr: "शासकीय संदर्भ",
       },
       items: {
         en: [
-          "District Planning Committee (Governing Body)",
-          "Executive Committee (Implementation Wing)",
-          "Technical Advisory Group",
-          "Subject-specific Sub-Committees",
+          "Govt. Circular No. JINIS/Planning Dept",
+          "Govt. Decision No. 5710/R.H.30aF1-1426",
+          "Finance Dept. Order No. STHAVIKA-0610/R.H.96-1482",
+          "Planning Dept. Circular No. 1007/St39/w-iaäa",
         ],
         mr: [
-          "जिल्हा नियोजन समिती (शासकीय मंडळ)",
-          "कार्यकारी समिती (अंमलबजावणी विभाग)",
-          "तांत्रिक सल्लागार समूह",
-          "विषय-विशिष्ट उपसमित्या",
+          "म.शा. परिपत्रक क्र. जिनिस/नियोजन विभाग",
+          "शासन निर्णय क्र. 5710/R.H.30aF1-1426",
+          "वित्त विभाग शासन निर्णय क्र. स्थाविका-0610/R.H.96-1482",
+          "नियोजन विभाग परिपत्रक क्र. 1007/St39/w-iaäa",
         ],
       },
     },
@@ -160,7 +360,7 @@ const OrganizationalChart = () => {
           </h2>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 pr-4">
           {content.structure.map((item, index) => (
             <motion.div
               key={index}
@@ -179,6 +379,9 @@ const OrganizationalChart = () => {
                   </h3>
                   <p className="text-blue-600 font-medium">
                     {getText(item.role)}
+                  </p>
+                  <p className="text-blue-900 font-medium">
+                    {getText(item.name)}
                   </p>
                   <p className="text-gray-600 mt-1">
                     {getText(item.description)}

@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { dpc } from "../../assets";
+import { Link } from "react-router-dom";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 const AboutDPC = () => {
@@ -27,6 +28,10 @@ const AboutDPC = () => {
         "DPC महाराष्ट्र जिल्हा परिषद कायदा, 1998 नुसार जिल्हा परिषद रचनेसह कार्य करते. यात निवडून आलेले सदस्य (जिल्ह्याच्या लोकसंख्येनुसार 24-50), पदेन सदस्य (संरक्षण मंत्री, जिल्हा अध्यक्ष) आणि नामनिर्देशित प्रतिनिधी समाविष्ट आहेत.",
         "या प्रणालीमध्ये अनुसूचित जाती (SC), अनुसूचित जमाती (ST), इतर मागासवर्गीय (OBC) आणि महिलांसाठी (30% कोटा) राखीव जागा असून स्थानिक समस्यांवर उपाययोजना करताना विकास योजना अंमलात आणल्या जातात.",
       ],
+    },
+    viewAll: {
+      en: "About DPC",
+      mr: "डीपीसी बद्दल",
     },
   };
   const getText = (item) => {
@@ -59,6 +64,24 @@ const AboutDPC = () => {
                 {paragraph}
               </p>
             ))}
+            <Link
+              to="/dpc"
+              className="text-blue-600 hover:text-blue-800 font-medium flex items-center"
+            >
+              {getText(content.viewAll)}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 ml-1"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </Link>
           </div>
         </div>
       </div>

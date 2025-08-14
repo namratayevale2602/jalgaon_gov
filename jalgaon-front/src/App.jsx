@@ -36,7 +36,10 @@ import MinoritySchemes from "./pages/Schemes/MinoritySchemes";
 import AreaDevelop from "./pages/Schemes/AreaDevelop";
 import GRDirectory from "./pages/GR/GRDirectory";
 import DPC from "./pages/DPC/DPC";
-// import Aboutdistrict from "./pages/About_District/About";
+import AllUpdates from "./pages/Home/AllUpdates";
+import UpdateDetails from "./pages/Home/UpdateDetails";
+import DistrictPlanningDashboard from "./pages/DSP/DSP";
+import SchemesPage from "./pages/Schemes/SchemesPage";
 
 function App() {
   const router = createBrowserRouter(
@@ -49,6 +52,7 @@ function App() {
             path="/organizationalChart"
             element={<OrganizationalChart />}
           />
+          <Route path="/schemes" element={<SchemesPage />} />
           <Route path="/objectives" element={<Objectives />} />
           <Route path="/responsibilities" element={<KeyResponsibilities />} />
           <Route path="/rolewiseduties" element={<RolewiseDuties />} />
@@ -75,6 +79,9 @@ function App() {
           <Route path="area-develop" element={<AreaDevelop />} />
           <Route path="gr-directory" element={<GRDirectory />} />
           <Route path="dpc" element={<DPC />} />
+          <Route path="updates" element={<AllUpdates />} />
+          <Route path="/updates/:id" element={<UpdateDetails />} />
+          <Route path="/dsp" element={<DistrictPlanningDashboard />} />
         </Route>
       </>
     )

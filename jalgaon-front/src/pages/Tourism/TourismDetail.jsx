@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../contexts/LanguageContext";
+import { changdev, patnadevi, girnadam } from "../../assets";
 
 const TourismDetail = () => {
   const { slug } = useParams();
@@ -41,7 +42,7 @@ const TourismDetail = () => {
           "दररोज सकाळी 6 ते रात्री 8 पर्यंत खुले, प्रवेश शुल्क नाही",
         ],
       },
-      image: "/images/changdev-temple.jpg",
+      image: changdev,
       type: "religious",
       stats: {
         visitors: "250,000+",
@@ -93,7 +94,7 @@ const TourismDetail = () => {
           "सकाळी 5 ते रात्री 9 पर्यंत खुले, सूर्योदय आणि सूर्यास्त येथे विशेष आरती",
         ],
       },
-      image: "/images/patan-devi.jpg",
+      image: patnadevi,
       type: "religious",
       stats: {
         visitors: "500,000+",
@@ -145,7 +146,7 @@ const TourismDetail = () => {
           "सुंदर उद्याने आणि सूर्यास्ताचे दृश्य बिंदू विकसित केले",
         ],
       },
-      image: "/images/girna-dam.jpg",
+      image: girnadam,
       type: "nature",
       stats: {
         visitors: "150,000+",

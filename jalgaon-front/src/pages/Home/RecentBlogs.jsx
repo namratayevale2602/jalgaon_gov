@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import BlogCard from "../../components/BlogCart/BlogCard";
-import blogData from "../../data/blogData.json";
+import { blogData } from "../../data/blogData.js";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 const RecentBlogs = () => {
