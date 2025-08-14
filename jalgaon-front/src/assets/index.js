@@ -2,9 +2,9 @@ import logo from "../assets/Logo/logo.png";
 import Banner1 from "../assets/About/jalgaon.jpg";
 import dpc from "../assets/About/dpc-office.png";
 
-import hero1 from "../assets/Banner/banner1.jpeg";
-import hero2 from "../assets/Banner/banner2.jpeg";
-import hero3 from "../assets/Banner/banner3.jpeg";
+import hero1 from "../assets/Banner/hero1.jpeg";
+import hero2 from "../assets/Banner/hero2.jpeg";
+import hero3 from "../assets/Banner/hero3.jpeg";
 import hero4 from "../assets/Banner/banner4.jpeg";
 
 import img1 from "../assets/Gallery/img1.jpeg";
