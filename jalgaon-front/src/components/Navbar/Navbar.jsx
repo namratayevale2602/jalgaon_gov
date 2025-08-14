@@ -91,12 +91,7 @@ const Navbar = () => {
     },
     {
       name: { en: "RTI", mr: "माहिती अधिकार" },
-      dropdown: [
-        {
-          name: { en: "RTI Portal", mr: "माहिती अधिकार पोर्टल" },
-          href: "/rti-portal",
-        },
-      ],
+      href: "/rti-portal",
     },
     { name: { en: "TOURISM", mr: "पर्यटन" }, href: "/tourism" },
     { name: { en: "GALLERY", mr: "गॅलरी" }, href: "/gallery" },

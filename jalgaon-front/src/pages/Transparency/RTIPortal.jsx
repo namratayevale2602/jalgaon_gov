@@ -1,336 +1,187 @@
-import { motion } from "framer-motion";
-import { FaUserTie, FaFileAlt, FaMoneyBillWave } from "react-icons/fa";
+import React, { useState } from "react";
 import { useLanguage } from "../../contexts/LanguageContext";
+import { FiExternalLink } from "react-icons/fi";
 
 const RTIPortal = () => {
   const { language } = useLanguage();
+  const [activeSubdivisionTab, setActiveSubdivisionTab] = useState("western");
 
-  // Bilingual content
   const content = {
-    title: {
-      en: "RTI Portal",
-      mr: "माहिती अधिकार पोर्टल",
-    },
-    pioSection: {
-      title: {
-        en: "Public Information Officer (PIO)",
-        mr: "सार्वजनिक माहिती अधिकारी (PIO)",
-      },
-      designatedPio: {
-        title: {
-          en: "Designated PIO",
-          mr: "नियुक्त PIO",
-        },
-        name: {
-          en: "Shri. R.A. Ide (Assistant District Planning Officer)",
-          mr: "श्री. आर.ए. इडे (सहाय्यक जिल्हा नियोजन अधिकारी)",
-        },
-        contact: {
-          en: "Contact Details:",
-          mr: "संपर्क तपशील:",
-        },
-        phone: {
-          en: "Phone: 0257-2222222",
-          mr: "फोन: 0257-2222222",
-        },
-        email: {
-          en: "Email: adpo-jalgaon@maharashtra.gov.in",
-          mr: "ईमेल: adpo-jalgaon@maharashtra.gov.in",
-        },
-        address: {
-          en: "Address: Planning Bhavan, Collector Office Campus, Jalgaon",
-          mr: "पत्ता: नियोजन भवन, कलेक्टर ऑफिस कॅम्पस, जळगाव",
-        },
-      },
-      appellateAuthority: {
-        title: {
-          en: "First Appellate Authority",
-          mr: "प्रथम अपील प्राधिकरण",
-        },
-        name: {
-          en: "Shri. Prataprao Patil (District Planning Officer)",
-          mr: "श्री. प्रतापराव पाटील (जिल्हा नियोजन अधिकारी)",
-        },
-      },
-    },
-    filingProcess: {
-      title: {
-        en: "How to File RTI Application",
-        mr: "माहिती अधिकार अर्ज कसा भरावा",
-      },
-      steps: [
-        {
-          step: 1,
-          title: {
-            en: "Prepare Application",
-            mr: "अर्ज तयार करा",
-          },
-          description: {
-            en: "Write your application in English, Hindi, Marathi or local language",
-            mr: "तुमचा अर्ज इंग्रजी, हिंदी, मराठी किंवा स्थानिक भाषेत लिहा",
-          },
-        },
-        {
-          step: 2,
-          title: {
-            en: "Pay Fee",
-            mr: "फी भरा",
-          },
-          description: {
-            en: "Attach ₹10 demand draft/IPO/bank receipt (₹5 for BPL)",
-            mr: "१० रुपये डिमांड ड्राफ्ट/IPO/बँक पावती संलग्न करा (BPL साठी ५ रुपये)",
-          },
-        },
-        {
-          step: 3,
-          title: {
-            en: "Submit",
-            mr: "सबमिट करा",
-          },
-          description: {
-            en: "Submit to PIO in person, by post or online RTI portal",
-            mr: "PIO कडे व्यक्तिशः, पोस्टद्वारे किंवा ऑनलाइन RTI पोर्टलवर सबमिट करा",
-          },
-        },
-        {
-          step: 4,
-          title: {
-            en: "Receive Response",
-            mr: "प्रतिसाद मिळवा",
-          },
-          description: {
-            en: "Get information within 30 days (48 hours for life/liberty cases)",
-            mr: "30 दिवसांत माहिती मिळवा (जीवन/स्वातंत्र्याच्या बाबतीत 48 तास)",
-          },
-        },
-      ],
-      feeStructure: {
-        title: {
-          en: "Fee Structure",
-          mr: "फी रचना",
-        },
-        points: {
-          en: [
-            "Application fee: ₹10 (₹5 for Below Poverty Line applicants)",
-            "Additional fees for information:",
-            "₹2 per page (A4/A3 size)",
-            "₹50 per diskette/floppy",
-            "₹100 per sample or model",
-            "Actual cost for inspection of records",
-            "No fee for first appeal",
-            "₹50 fee for second appeal to State Information Commission",
-          ],
-          mr: [
-            "अर्ज शुल्क: १० रुपये (गरीबी रेषेखालील अर्जदारांसाठी ५ रुपये)",
-            "माहितीसाठी अतिरिक्त शुल्क:",
-            "प्रति पृष्ठ २ रुपये (A4/A3 आकार)",
-            "प्रति डिस्केट/फ्लॉपी ५० रुपये",
-            "प्रति नमुना किंवा मॉडेल १०० रुपये",
-            "नोंदी तपासण्यासाठी वास्तविक खर्च",
-            "प्रथम अपीलसाठी शुल्क नाही",
-            "राज्य माहिती आयोगाकडे दुसऱ्या अपीलासाठी ५० रुपये शुल्क",
-          ],
-        },
-      },
-    },
-    appealsProcess: {
-      title: {
-        en: "Appeals Process",
-        mr: "अपील प्रक्रिया",
-      },
-      points: {
-        en: [
-          "First appeal to First Appellate Authority within 30 days of rejection/no response",
-          "Second appeal to State Information Commission within 90 days of FAA order",
-          "No fee for first appeal, ₹50 fee for second appeal",
-        ],
-        mr: [
-          "नकार/प्रतिसाद न मिळाल्यास 30 दिवसांत प्रथम अपील प्राधिकरणाकडे प्रथम अपील",
-          "FAA च्या आदेशानंतर 90 दिवसांत राज्य माहिती आयोगाकडे दुसरी अपील",
-          "प्रथम अपीलसाठी शुल्क नाही, दुसऱ्या अपीलासाठी ५० रुपये शुल्क",
+    en: {
+      title: "RTI",
+      subtitle: "RTI Jalgaon Planning Department",
+      rtiAct: {
+        title: "RTI Act 2005 :",
+        paragraphs: [
+          "The Right to Information Act, 2005 (RTI) is a law enacted by the Parliament of India to provide for setting out the practical regime of right to information for citizens. The Act applies to all States and Union Territories of India, except the State of Jammu and Kashmir - which is covered under a State-level law.",
+          "Under the provisions of the Act, any citizen may request information from a public authority or body of Government or instrumentality of State which is required to reply expeditiously or within thirty days. The Act also requires every public authority to computerize their records for wide dissemination and to proactively publish certain categories of information so that the citizens need minimum recourse to request for information formally.",
+          "This law was passed by Parliament on 15 June 2005 and came fully into force on 13 October 2005.",
         ],
       },
+      rtiPortal: {
+        title: "RTI Portal :",
+        paragraph:
+          "Right to Information Act 2005 mandates timely response to citizen requests for government information. It is an initiative taken by Department of Personnel and Training, Ministry of Personnel, Public Grievances and Pensions to provide an RTI Portal Gateway to the citizens for quick search of information on the details of First Appellate Authorities, PIOs etc., besides access to RTI related information/disclosures published on the web by various Public Authorities under the Government of India as well as the State Governments.",
+      },
+      contactTitle:
+        "Appeal Authority, Government Information Officer, Assistant Government Information Officer in Jalgaon Planning Department",
+      additionalResources: "Additional Resources",
+      subdivisions: {
+        title: "Subdivision Officers",
+        western: "Western Suburban",
+        eastern: "Eastern Suburban",
+      },
     },
-    onlinePortal: {
-      title: {
-        en: "Online RTI Portal",
-        mr: "ऑनलाइन माहिती अधिकार पोर्टल",
+    mr: {
+      title: "माहितीचा अधिकार",
+      subtitle: "आरटीआय जळगाव नियोजन विभाग",
+      rtiAct: {
+        title: "माहितीचा अधिकार कायदा 2005 :",
+        paragraphs: [
+          "माहितीचा अधिकार कायदा, 2005 (आरटीआय) हा भारतीय संसदेने नागरिकांना माहितीचा अधिकाराचा व्यावहारिक कार्यपद्धती निश्चित करण्यासाठी केलेला कायदा आहे. हा कायदा जम्मू आणि काश्मीर राज्य वगळता भारताच्या सर्व राज्ये आणि केंद्रशासित प्रदेशांना लागू होतो - जे राज्य-स्तरीय कायद्याखाली येतात.",
+          "या कायद्याच्या तरतुदींनुसार, कोणताही नागरिक सरकारी प्राधिकरण किंवा राज्याच्या कोणत्याही संस्थेकडून माहिती मागवू शकतो आणि त्यांना लवकरात लवकर किंवा तीस दिवसांच्या आत उत्तर देणे आवश्यक आहे. कायद्यामध्ये प्रत्येक सार्वजनिक प्राधिकरणाला त्यांचे रेकॉर्ड संगणकीकृत करणे आणि काही प्रकारची माहिती सक्रियपणे प्रसिद्ध करणे आवश्यक आहे जेणेकरून नागरिकांना औपचारिकरित्या माहिती मागण्याची गरज कमी व्हावी.",
+          "हा कायदा संसदेने 15 जून 2005 रोजी संमत केला आणि 13 ऑक्टोबर 2005 रोजी पूर्णपणे अंमलात आला.",
+        ],
       },
-      description: {
-        en: "You can now file RTI applications online through the Maharashtra Government RTI Portal.",
-        mr: "आता तुम्ही महाराष्ट्र सरकारच्या माहिती अधिकार पोर्टलद्वारे ऑनलाइन RTI अर्ज दाखल करू शकता.",
+      rtiPortal: {
+        title: "आरटीआय पोर्टल :",
+        paragraph:
+          "माहितीचा अधिकार कायदा 2005 नागरिकांच्या सरकारी माहितीच्या विनंत्या वेळेवर प्रतिसाद देणे बंधनकारक करतो. ही पर्सनल आणि ट्रेनिंग विभाग, कार्मिक, लोक शिकायत आणि निवृत्ती वेतन मंत्रालय यांनी केलेली एक पुढाकार आहे ज्यामुळे नागरिकांना पहिले अपील प्राधिकारी, पीआयओ इत्यादींच्या तपशीलांवर माहिती शोधण्यासाठी आरटीआय पोर्टल गेटवे उपलब्ध होते, तसेच भारत सरकार आणि राज्य सरकारांच्या विविध सार्वजनिक प्राधिकरणांनी वेबवर प्रकाशित केलेल्या आरटीआय संबंधित माहिती/प्रकटीकरणांना प्रवेश मिळतो.",
       },
-      buttonText: {
-        en: "Visit Online RTI Portal",
-        mr: "ऑनलाइन RTI पोर्टल भेट द्या",
+      contactTitle:
+        "अपील प्राधिकारी, सरकारी माहिती अधिकारी, सहाय्यक सरकारी माहिती अधिकारी जळगाव नियोजन विभागात",
+      additionalResources: "अतिरिक्त संसाधने",
+      subdivisions: {
+        title: "उपविभाग अधिकारी",
+        western: "पश्चिम उपनगरीय",
+        eastern: "पूर्व उपनगरीय",
       },
-      link: "https://rti.maharashtra.gov.in",
     },
   };
 
-  const getText = (item) => {
-    if (Array.isArray(item)) {
-      return item[language] || item.en;
-    }
-    if (typeof item === "object" && item !== null) {
-      return item[language] || item.en || item;
-    }
-    return item;
+  const subdivisionOfficers = {
+    western: [
+      {
+        name: "SubDivisional Officer Western Suburban",
+        pdfUrl: "/pdfs/western-suburban.pdf",
+        size: "800 KB",
+      },
+    ],
+    eastern: [
+      {
+        name: "SubDivisional Officer Eastern Suburban",
+        pdfUrl: "/pdfs/eastern-suburban.pdf",
+        size: "1 MB",
+      },
+    ],
   };
+
+  const offices = [
+    {
+      collector: "• Deputy Collector Appeals (PDF, 29 MB)",
+      subordinate: "",
+      taluka: "",
+      other: "",
+    },
+    // ... (keep all your existing office data)
+  ];
+
+  const lang = content[language] || content.en;
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">
-            {getText(content.title)}
-          </h1>
-          <div className="border-b-2 border-blue-100 w-20 mb-6"></div>
-        </motion.div>
-
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-2xl font-semibold text-blue-700 mb-4 flex items-center">
-            <FaUserTie className="mr-2" /> {getText(content.pioSection.title)}
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-blue-50 p-4 rounded-lg">
-              <h3 className="text-lg font-medium text-blue-800 mb-2">
-                {getText(content.pioSection.designatedPio.title)}
-              </h3>
-
-              <p className="text-gray-700 mt-2">
-                {getText(content.pioSection.designatedPio.name)}
-              </p>
-
-              <div className="mt-4">
-                <h4 className="font-medium text-gray-800">
-                  {getText(content.pioSection.designatedPio.contact)}
-                </h4>
-                <p className="text-gray-700">
-                  {getText(content.pioSection.designatedPio.phone)}
-                </p>
-                <p className="text-gray-700">
-                  {getText(content.pioSection.designatedPio.email)}
-                </p>
-                <p className="text-gray-700">
-                  {getText(content.pioSection.designatedPio.address)}
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-green-50 p-4 rounded-lg">
-              <h3 className="text-lg font-medium text-green-800 mb-2">
-                {getText(content.pioSection.appellateAuthority.title)}
-              </h3>
-
-              <p className="text-gray-700 mt-2">
-                {getText(content.pioSection.appellateAuthority.name)}
-              </p>
-
-              <div className="mt-4">
-                <h4 className="font-medium text-gray-800">
-                  {getText(content.pioSection.designatedPio.contact)}
-                </h4>
-                <p className="text-gray-700">
-                  {getText(content.pioSection.designatedPio.phone).replace(
-                    "2222222",
-                    "2222233"
-                  )}
-                </p>
-                <p className="text-gray-700">
-                  {getText(content.pioSection.designatedPio.email).replace(
-                    "adpo",
-                    "dpo"
-                  )}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-2xl font-semibold text-blue-700 mb-4 flex items-center">
-            <FaFileAlt className="mr-2" />{" "}
-            {getText(content.filingProcess.title)}
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-            {content.filingProcess.steps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white border border-blue-100 rounded-lg p-4 hover:shadow-md transition"
-              >
-                <div className="flex items-center mb-3">
-                  <div className="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">
-                    {step.step}
-                  </div>
-                  <h3 className="text-lg font-medium text-blue-700">
-                    {getText(step.title)}
-                  </h3>
-                </div>
-                <p className="text-gray-700">{getText(step.description)}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
-            <h3 className="text-lg font-medium text-yellow-800 mb-2 flex items-center">
-              <FaMoneyBillWave className="mr-2" />{" "}
-              {getText(content.filingProcess.feeStructure.title)}
-            </h3>
-            <ul className="list-disc pl-5 space-y-1 text-gray-700">
-              {getText(content.filingProcess.feeStructure.points).map(
-                (point, index) => (
-                  <li key={index}>{point}</li>
-                )
-              )}
-            </ul>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-xl font-semibold text-blue-700 mb-4">
-              {getText(content.appealsProcess.title)}
-            </h2>
-            <ul className="list-disc pl-5 space-y-2 text-gray-700">
-              {getText(content.appealsProcess.points).map((point, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  {point}
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-xl font-semibold text-blue-700 mb-4">
-              {getText(content.onlinePortal.title)}
-            </h2>
-            <p className="text-gray-700 mb-4">
-              {getText(content.onlinePortal.description)}
+    <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+      {/* Page Header with Hero Image */}
+      <div className="relative rounded-xl overflow-hidden mb-12 h-64">
+        <img
+          src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+          alt={
+            language === "mr"
+              ? "जळगाव जिल्हा विकास"
+              : "Jalgaon District Development"
+          }
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-blue-800/70 flex items-center justify-center">
+          <div className="text-center px-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              {lang.title}
+            </h1>
+            <p className="text-lg text-blue-100 max-w-3xl mx-auto">
+              {lang.subtitle}
             </p>
-            <a
-              href={content.onlinePortal.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-            >
-              {getText(content.onlinePortal.buttonText)}
-            </a>
           </div>
+        </div>
+      </div>
+
+      {/* RTI Act 2005 Section */}
+      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h3 className="text-xl font-bold text-blue-700 mb-4">
+          {lang.rtiAct.title}
+        </h3>
+        {lang.rtiAct.paragraphs.map((paragraph, index) => (
+          <p key={index} className="text-gray-700 mb-4">
+            {paragraph}
+          </p>
+        ))}
+      </div>
+
+      {/* RTI Portal Section */}
+      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h3 className="text-xl font-bold text-blue-700 mb-4">
+          {lang.rtiPortal.title}
+        </h3>
+        <p className="text-gray-700 mb-4">{lang.rtiPortal.paragraph}</p>
+      </div>
+
+      {/* Subdivision Officers Section with Tabs */}
+      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h3 className="text-xl font-bold text-blue-700 mb-4">
+          {lang.subdivisions.title}
+        </h3>
+
+        {/* Tabs */}
+        <div className="flex border-b border-gray-200 mb-4">
+          <button
+            className={`py-2 px-4 font-medium text-sm focus:outline-none ${
+              activeSubdivisionTab === "western"
+                ? "border-b-2 border-blue-500 text-blue-600"
+                : "text-gray-500 hover:text-gray-700"
+            }`}
+            onClick={() => setActiveSubdivisionTab("western")}
+          >
+            {lang.subdivisions.western}
+          </button>
+          <button
+            className={`py-2 px-4 font-medium text-sm focus:outline-none ${
+              activeSubdivisionTab === "eastern"
+                ? "border-b-2 border-blue-500 text-blue-600"
+                : "text-gray-500 hover:text-gray-700"
+            }`}
+            onClick={() => setActiveSubdivisionTab("eastern")}
+          >
+            {lang.subdivisions.eastern}
+          </button>
+        </div>
+
+        {/* Tab Content */}
+        <div className="space-y-3">
+          {subdivisionOfficers[activeSubdivisionTab].map((officer, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-between p-2 hover:bg-blue-50 rounded"
+            >
+              <span className="text-gray-700">{officer.name}</span>
+              <a
+                href={officer.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-blue-600 hover:text-blue-800"
+              >
+                <span className="mr-1">PDF ({officer.size})</span>
+                <FiExternalLink className="w-4 h-4" />
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </div>

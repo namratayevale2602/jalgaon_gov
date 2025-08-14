@@ -84,15 +84,35 @@ const TourismMain = () => {
 
   return (
     <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      {/* Page Header with Hero Image */}
+      <div className="relative rounded-xl overflow-hidden mb-12 h-64">
+        <img
+          src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
+          alt={
+            language === "mr"
+              ? "जळगाव जिल्हा विकास"
+              : "Jalgaon District Development"
+          }
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-blue-800/70 flex items-center justify-center">
+          <div className="text-center px-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              {getText(content.title)}
+            </h1>
+          </div>
+        </div>
+      </div>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">
+        {/* <h1 className="text-3xl font-bold text-gray-800 mb-2">
           {getText(content.title)}
-        </h1>
-        <div className="border-b-2 border-blue-100 w-20 mb-8"></div>
+        </h1> */}
+        {/* <div className="border-b-2 border-blue-100 w-20 mb-8"></div> */}
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
