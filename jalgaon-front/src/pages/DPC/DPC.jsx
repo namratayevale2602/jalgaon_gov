@@ -68,7 +68,7 @@ const dpcData = {
       ],
     },
     documents: {
-      title: "Important Documents",
+      title: "Planning Committee Rules & Act",
       items: [
         {
           name: "Maharashtra District Planning Committee ( Conduct of meetings ) Rules, 1999",
@@ -243,104 +243,6 @@ const DPC = () => {
         variants={containerVariants}
         className="container mx-auto px-4 py-6 md:py-8"
       >
-        {/* About Section */}
-        <motion.section
-          variants={itemVariants}
-          className="mb-8 md:mb-12 bg-white rounded-lg shadow-md p-4 md:p-6"
-        >
-          <h2 className="text-xl md:text-2xl font-semibold text-blue-800 border-b border-blue-200 pb-2 mb-3 md:mb-4">
-            {data.about.title}
-          </h2>
-          {data.about.content.map((paragraph, index) => (
-            <p
-              key={index}
-              className="text-gray-700 mb-3 md:mb-4 last:mb-0 text-sm md:text-base"
-            >
-              {paragraph}
-            </p>
-          ))}
-        </motion.section>
-
-        {/* Functions Section */}
-        <motion.section
-          variants={itemVariants}
-          className="mb-8 md:mb-12 bg-white rounded-lg shadow-md p-4 md:p-6"
-        >
-          <h2 className="text-xl md:text-2xl font-semibold text-blue-800 border-b border-blue-200 pb-2 mb-3 md:mb-4">
-            {data.functions.title}
-          </h2>
-          <ul className="list-disc pl-5 md:pl-6 space-y-1 md:space-y-2 text-gray-700 text-sm md:text-base">
-            {data.functions.items.map((item, index) => (
-              <motion.li
-                key={index}
-                variants={itemVariants}
-                whileHover={{ scale: 1.02, x: 5 }}
-              >
-                {item}
-              </motion.li>
-            ))}
-          </ul>
-        </motion.section>
-
-        {/* Meetings Section */}
-        <motion.section
-          variants={itemVariants}
-          className="mb-8 md:mb-12 bg-white rounded-lg shadow-md p-4 md:p-6"
-        >
-          <h2 className="text-xl md:text-2xl font-semibold text-blue-800 border-b border-blue-200 pb-2 mb-3 md:mb-4">
-            {data.meetings.title}
-          </h2>
-          <div className="space-y-3 md:space-y-4">
-            {data.meetings.sections.map((section, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ scale: 1.01 }}
-                className="p-3 md:p-4 bg-blue-50 rounded-lg"
-              >
-                <h3 className="text-base md:text-lg font-medium text-blue-700 mb-1 md:mb-2">
-                  {section.title}
-                </h3>
-                <p className="text-gray-700 text-sm md:text-base">
-                  {section.content}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* Committees Section */}
-        <motion.section
-          variants={itemVariants}
-          className="mb-8 md:mb-12 bg-white rounded-lg shadow-md p-4 md:p-6"
-        >
-          <h2 className="text-xl md:text-2xl font-semibold text-blue-800 border-b border-blue-200 pb-2 mb-3 md:mb-4">
-            {data.committees.title}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            {data.committees.items.map((item, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ y: -5 }}
-                className="border border-blue-100 rounded-lg p-3 md:p-4 hover:shadow-md transition-shadow"
-              >
-                <h3 className="text-base md:text-lg font-medium text-blue-700 mb-1 md:mb-2">
-                  {item.title}
-                </h3>
-                {item.content.map((para, idx) => (
-                  <p
-                    key={idx}
-                    className="text-gray-700 mb-1 md:mb-2 last:mb-0 text-sm md:text-base"
-                  >
-                    {para}
-                  </p>
-                ))}
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
         {/* Documents Section */}
         <motion.section
           variants={itemVariants}
@@ -375,44 +277,6 @@ const DPC = () => {
                 {doc.name}
               </motion.a>
             ))}
-          </div>
-        </motion.section>
-
-        {/* Contact Section */}
-        <motion.section
-          variants={itemVariants}
-          className="bg-white rounded-lg shadow-md p-4 md:p-6"
-        >
-          <h2 className="text-xl md:text-2xl font-semibold text-blue-800 border-b border-blue-200 pb-2 mb-3 md:mb-4">
-            {data.contact.title}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            <motion.div variants={itemVariants} whileHover={{ scale: 1.01 }}>
-              <h3 className="text-base md:text-lg font-medium text-blue-700 mb-1 md:mb-2">
-                {data.contact.address.title}
-              </h3>
-              {data.contact.address.lines.map((line, index) => (
-                <p key={index} className="text-gray-700 text-sm md:text-base">
-                  {line}
-                </p>
-              ))}
-            </motion.div>
-            <motion.div variants={itemVariants} whileHover={{ scale: 1.01 }}>
-              <h3 className="text-base md:text-lg font-medium text-blue-700 mb-1 md:mb-2">
-                {data.contact.details.title}
-              </h3>
-              <p className="text-gray-700 text-sm md:text-base">
-                <span className="font-medium">
-                  {language === "mr" ? "फोन:" : "Phone:"}
-                </span>{" "}
-                {data.contact.details.phone}
-                <br />
-                <span className="font-medium">
-                  {language === "mr" ? "ईमेल:" : "Email:"}
-                </span>{" "}
-                {data.contact.details.email}
-              </p>
-            </motion.div>
           </div>
         </motion.section>
       </motion.main>

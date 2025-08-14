@@ -26,115 +26,79 @@ const OrganizationalChart = () => {
       {
         level: { en: "District Collector", mr: "जिल्हाधिकारी" },
         name: { en: "Ayush Prasad", mr: "आयुष प्रसाद" },
-        role: {
-          en: "Chairperson of District Planning Committee",
-          mr: "जिल्हा नियोजन समितीचे अध्यक्ष",
-        },
       },
       {
         level: { en: "District Planning Officer", mr: "जिल्हा नियोजन अधिकारी" },
-        name: { en: "Prataprao Patil", mr: "प्रतापराव पाटील" },
-        role: { en: "Head of Planning Department", mr: "नियोजन विभाग प्रमुख" },
+        name: { en: "Vijay Shinde", mr: "विजय शिंदे" },
       },
       {
         level: {
           en: "Assistant District Planning Officer",
           mr: "सहाय्यक जिल्हा नियोजन अधिकारी",
         },
-        name: { en: "S.R. Baviskar", mr: "सु.रा.बाविस्कर" },
-        role: { en: "Planning Implementation", mr: "नियोजन अंमलबजावणी" },
+        name: { en: "R.A.Idhe", mr: "रा.आ.इधे" },
+      },
+
+      {
+        level: { en: "Accountant Officer", mr: "लेखापाल अधिकारी" },
+        name: { en: "N.S. Umbarkar", mr: "नि.श्री. उंबरकर" },
       },
       {
         level: {
-          en: "Assistant District Planning Officer",
-          mr: "सहाय्यक जिल्हा नियोजन अधिकारी",
-        },
-        name: { en: "R.A. Ithe", mr: "रा.आ.इथे" },
-        role: {
-          en: "Drawing & Disbursing Officer, Public Information Officer",
-          mr: "आहरण व संवितरण अधिकारी, जन माहिती अधिकारी",
-        },
-      },
-      {
-        level: { en: "Accountant", mr: "लेखाधिकारी" },
-        name: { en: "Ni. Shri. Umbarkar", mr: "नि.श्री. उंबरकर" },
-        role: { en: "Financial Management", mr: "आर्थिक व्यवस्थापन" },
-      },
-      {
-        level: {
-          en: "Assistant Research Officer-3 & 5",
-          mr: "सहायक संशोधन अधिकारी-३ व ५",
+          en: "Assistant Research Officer",
+          mr: "सहायक संशोधन अधिकारी",
         },
         name: { en: "V.V. Jadhav", mr: "वि.वि.जाधव" },
-        role: {
-          en: "District Annual Plan & MP Funds",
-          mr: "जिल्हा वार्षिक योजना व खासदार निधी",
-        },
       },
       {
         level: {
-          en: "Assistant Research Officer-2",
-          mr: "सहायक संशोधन अधिकारी-२",
+          en: "Assistant Research Officer",
+          mr: "सहायक संशोधन अधिकारी",
         },
-        name: { en: "U. Shra. Bhale Rao", mr: "उ. श्रा. भालेराव" },
-        role: {
-          en: "MLA Funds & Assistant Public Information Officer",
-          mr: "आमदार निधी व सहायक जन माहिती अधिकारी",
-        },
+        name: { en: "B.B.Patil", mr: "बी.बी. पाटील" },
       },
       {
         level: {
-          en: "Assistant Research Officer-1",
-          mr: "सहायक संशोधन अधिकारी-१",
+          en: "Assistant Research Officer",
+          mr: "सहायक संशोधन अधिकारी",
         },
         name: { en: "A.B. Suryavanshi", mr: "अ. भि. सूर्यवंशी" },
-        role: { en: "Zilla Parishad Coordination", mr: "जिल्हा परिषद समन्वय" },
       },
       {
         level: {
-          en: "Assistant Research Officer-4",
-          mr: "सहायक संशोधन अधिकारी-४",
+          en: "Assistant Research Officer",
+          mr: "सहायक संशोधन अधिकारी",
         },
-        name: { en: "Che. L. Deshpande", mr: "चे. ल. देशपांडे" },
-        role: { en: "MLA Funds Management", mr: "आमदार निधी व्यवस्थापन" },
+        name: { en: "C.L. Deshpande", mr: "चे. ल. देशपांडे" },
       },
       {
         level: { en: "Assistant Research Officer", mr: "सहायक संशोधन अधिकारी" },
         name: { en: "Smt. A.P. Bawane", mr: "श्रीमती अ.प्र. बावणे" },
-        role: {
-          en: "Hill Area & Tourism Development",
-          mr: "डोंगरी विभाग व पर्यटन विकास",
-        },
       },
       {
-        level: { en: "Statistical Assistant-1", mr: "सांख्यिकी सहायक-१" },
+        level: { en: "Dy.Accountant", mr: "उपलेखापाल" },
+        name: { en: "H.P. Dandekar", mr: "ह.प्र.दांडेकर" },
+      },
+      {
+        level: { en: "Statistical Assistant", mr: "सांख्यिकी सहायक" },
         name: { en: "Vacant", mr: "रिक्त" },
-        role: { en: "Data Compilation", mr: "डेटा संकलन" },
       },
       {
-        level: { en: "Statistical Assistant-2", mr: "सांख्यिकी सहायक-२" },
-        name: { en: "H. Su. Raut", mr: "ह.सु.राऊत" },
-        role: { en: "Report Preparation", mr: "अहवाल तयारी" },
+        level: { en: "Statistical Assistant", mr: "सांख्यिकी सहायक" },
+        name: { en: "H. S. Raut", mr: "ह.सु.राऊत" },
       },
-      {
-        level: { en: "Sub-Accountant", mr: "उपलेखापाल" },
-        name: { en: "H. Pra. Dandekar", mr: "ह.प्र.दांडेकर" },
-        role: { en: "Accounts & Establishment", mr: "लेखा व आस्थापना" },
-      },
+
       {
         level: { en: "Revenue Assistant", mr: "महसुल सहायक" },
-        name: { en: "Pri. Vi. Chaudhari", mr: "प्र.वि.चौधरी" },
-        role: { en: "Establishment Matters", mr: "आस्थापना विषयक" },
+        name: { en: "Smt. P.V.Vandrin", mr: "पि. व्ही. वॅन्ड्रीन" },
       },
       {
         level: { en: "Driver", mr: "वाहनचालक" },
-        name: { en: "Vacant", mr: "रिक्त" },
-        role: { en: "Transport", mr: "वाहतूक" },
+        name: { en: "Majhar Khan", mr: "मजहर खान" },
       },
       {
         level: { en: "Peon", mr: "शिपाई" },
         name: { en: "Vacant", mr: "रिक्त" },
-        role: { en: "Office Support", mr: "कार्यालयीन सहाय्य" },
       },
     ],
     decisionProcess: {

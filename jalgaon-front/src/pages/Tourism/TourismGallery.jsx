@@ -43,9 +43,6 @@ const TourismGallery = () => {
                 <span className="text-white text-lg font-bold mb-2">
                   {item.title}
                 </span>
-                <button className="bg-indigo-600 text-white px-4 py-1 rounded-full text-sm hover:bg-indigo-700 transition">
-                  View More
-                </button>
               </div>
             </div>
           ))}

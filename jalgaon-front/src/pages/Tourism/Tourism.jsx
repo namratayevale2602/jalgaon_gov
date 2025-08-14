@@ -2,16 +2,16 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../contexts/LanguageContext";
-import { 
-  changdev, 
-  patnadevi, 
+import {
+  changdev,
+  patnadevi,
   girnadam,
   gandhifoundation,
   waghurdam,
-  gandhigarden,   mehrunlake,
+  gandhigarden,
+  mehrunlake,
   mall,
-  bhauncheudyan
-
+  bhauncheudyan,
 } from "../../assets";
 import TourismGallery from "./TourismGallery";
 
@@ -147,24 +147,6 @@ const TourismMain = () => {
     },
     {
       id: 8,
-      slug: "khandesh-central-mall",
-      title: {
-        en: "Khandesh Central Mall",
-        mr: "खान्देश सेंट्रल मॉल",
-      },
-      excerpt: {
-        en: "Jalgaon's premier shopping destination with multiplex, food court, and entertainment facilities.",
-        mr: "जळगावचे प्रमुख शॉपिंग स्थान मल्टीप्लेक्स, फूड कोर्ट आणि मनोरंजन सुविधांसह.",
-      },
-      image: mall,
-      type: "commercial",
-      stats: {
-        visitors: "200,000+",
-        established: "2018",
-      },
-    },
-    {
-      id: 9,
       slug: "bhaunche-udyan",
       title: {
         en: "JCMC Bhaunche Udyan",
@@ -284,7 +266,7 @@ const TourismMain = () => {
           ))}
         </div>
       </motion.div>
-      <TourismGallery/>
+      <TourismGallery />
     </div>
   );
 };

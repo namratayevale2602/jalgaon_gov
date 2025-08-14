@@ -23,16 +23,18 @@ const Download = () => {
     tableHeaders: {
       title: { en: "Title", mr: "शीर्षक" },
       description: { en: "Description", mr: "वर्णन" },
-      date: { en: "Date", mr: "तारीख" },
       format: { en: "Format", mr: "स्वरूप" },
       actions: { en: "Actions", mr: "क्रिया" },
     },
     buttons: {
       view: { en: "View", mr: "पहा" },
-      download: { en: "Download", mr: "डाउनलोड करा" },
+      download: { en: "Download", mr: "डाउनलोड" },
     },
     emptyState: {
-      title: { en: "No reports found", mr: "कोणतेही अहवाल सापडले नाहीत" },
+      title: {
+        en: "No reports found",
+        mr: "कोणतेही अहवाल सापडले नाहीत",
+      },
       message: {
         en: "Try adjusting your search or filter to find what you're looking for.",
         mr: "तुम्ही शोधत असलेले शोधण्यासाठी तुमची शोध किंवा फिल्टर समायोजित करण्याचा प्रयत्न करा.",
@@ -42,76 +44,183 @@ const Download = () => {
       {
         id: 1,
         title: {
-          en: "Annual Financial Report 2023",
-          mr: "वार्षिक आर्थिक अहवाल २०२३",
+          en: "Jalgaon District Financial Review 2024",
+          mr: "जळगाव जिल्हा आर्थिक समालोचन 2024",
         },
-        date: "2023-12-31",
         description: {
-          en: "Complete financial overview for fiscal year 2023",
-          mr: "2023 च्या आर्थिक वर्षासाठी संपूर्ण आर्थिक आढावा",
+          en: "Comprehensive financial analysis of Jalgaon district for 2023-24",
+          mr: "2023-24 साठी जळगाव जिल्ह्याचे सर्वसमावेशक आर्थिक विश्लेषण",
         },
-        fileUrl: "/reports/financial-report-2023.pdf",
-        fileSize: "2.4 MB",
+        fileUrl:
+          "https://mahades.maharashtra.gov.in/files/publication/dsa/2023-24/DSA_Jalgaon_2023-24.pdf",
         fileType: "PDF",
       },
       {
         id: 2,
         title: {
-          en: "Quarterly Performance Q1 2024",
-          mr: "तिमाही कामगिरी Q1 २०२४",
+          en: "Jalgaon District Financial Review 2023",
+          mr: "जळगाव जिल्हा आर्थिक समालोचन 2023",
         },
-        date: "2024-03-31",
         description: {
-          en: "First quarter performance metrics and analysis",
-          mr: "पहिल्या तिमाहीची कामगिरी मेट्रिक्स आणि विश्लेषण",
+          en: "Financial assessment of Jalgaon district for 2022-23",
+          mr: "2022-23 साठी जळगाव जिल्ह्याचे आर्थिक मूल्यांकन",
         },
-        fileUrl: "/reports/q1-2024-performance.pdf",
-        fileSize: "1.8 MB",
+        fileUrl:
+          "https://mahades.maharashtra.gov.in/files/publication/dsa/2022-23/DSA%202023%20Jalgaon_006.pdf",
         fileType: "PDF",
       },
       {
         id: 3,
         title: {
-          en: "Sustainability Report 2023",
-          mr: "शाश्वतता अहवाल २०२३",
+          en: "Jalgaon District Financial Review 2022",
+          mr: "जळगाव जिल्हा आर्थिक समालोचन 2022",
         },
-        date: "2023-11-15",
         description: {
-          en: "Environmental and social impact assessment",
-          mr: "पर्यावरणीय आणि सामाजिक प्रभाव मूल्यांकन",
+          en: "Detailed financial report of Jalgaon district for 2021-22",
+          mr: "2021-22 साठी जळगाव जिल्ह्याचे तपशीलवार आर्थिक अहवाल",
         },
-        fileUrl: "/reports/sustainability-2023.pdf",
-        fileSize: "3.2 MB",
+        fileUrl:
+          "https://mahades.maharashtra.gov.in/files/publication/dsa/2021-22/DSA_Jalgaon_2021-22.pdf",
         fileType: "PDF",
       },
       {
         id: 4,
         title: {
-          en: "Market Research Analysis",
-          mr: "बाजार संशोधन विश्लेषण",
+          en: "Jalgaon District Financial Review 2021",
+          mr: "जळगाव जिल्हा आर्थिक समालोचन 2021",
         },
-        date: "2024-02-20",
         description: {
-          en: "Current market trends and competitor analysis",
-          mr: "चालू बाजारातील ट्रेंड आणि स्पर्धकांचे विश्लेषण",
+          en: "Economic survey of Jalgaon district for 2020-21",
+          mr: "2020-21 साठी जळगाव जिल्ह्याचे आर्थिक सर्वेक्षण",
         },
-        fileUrl: "/reports/market-research-2024.pdf",
-        fileSize: "4.1 MB",
+        fileUrl:
+          "https://mahades.maharashtra.gov.in/files/publication/Jalgaon_DSA_2021.pdf",
         fileType: "PDF",
       },
       {
         id: 5,
         title: {
-          en: "Employee Satisfaction Survey",
-          mr: "कर्मचारी समाधान सर्वेक्षण",
+          en: "Jalgaon District Financial Review 2020",
+          mr: "जळगाव जिल्हा आर्थिक समालोचन 2020",
         },
-        date: "2023-10-05",
         description: {
-          en: "Results from annual employee engagement survey",
-          mr: "वार्षिक कर्मचारी संलग्नता सर्वेक्षणाचे निकाल",
+          en: "Financial status report of Jalgaon district for 2019-20",
+          mr: "2019-20 साठी जळगाव जिल्ह्याचे आर्थिक स्थिती अहवाल",
         },
-        fileUrl: "/reports/employee-survey-2023.pdf",
-        fileSize: "1.5 MB",
+        fileUrl:
+          "https://mahades.maharashtra.gov.in/files/publication/dsa_Jalgaon_2020.pdf",
+        fileType: "PDF",
+      },
+      {
+        id: 6,
+        title: {
+          en: "Jalgaon Taluka Selected Indicators 2023-24",
+          mr: "जळगाव जिल्हा तालुका निवडक निर्देशांक 2023-24",
+        },
+        description: {
+          en: "Key development indicators for Jalgaon talukas 2023-24",
+          mr: "2023-24 साठी जळगाव तालुक्यांचे प्रमुख विकास निर्देशांक",
+        },
+        fileUrl:
+          "https://mahades.maharashtra.gov.in/files/publication/dsa/TalukaNirdeshak/2023-24/DSA_Jalgaon_2023-24.pdf",
+        fileType: "PDF",
+      },
+      {
+        id: 7,
+        title: {
+          en: "Jalgaon Taluka Selected Indicators 2022-23",
+          mr: "जळगाव जिल्हा तालुका निवडक निर्देशांक 2022-23",
+        },
+        description: {
+          en: "Development metrics for Jalgaon talukas 2022-23",
+          mr: "2022-23 साठी जळगाव तालुक्यांचे विकास मेट्रिक्स",
+        },
+        fileUrl:
+          "https://mahades.maharashtra.gov.in/files/publication/dsa/TalukaNirdeshak/2022-23/DSA_Jalgaon_2022-23.pdf",
+        fileType: "PDF",
+      },
+      {
+        id: 8,
+        title: {
+          en: "Maharashtra Economic Survey 2024-25",
+          mr: "महाराष्ट्राची आर्थिक पाहणी 2024-25",
+        },
+        description: {
+          en: "Comprehensive economic analysis of Maharashtra state",
+          mr: "महाराष्ट्र राज्याचे सर्वसमावेशक आर्थिक विश्लेषण",
+        },
+        fileUrl:
+          "https://mahades.maharashtra.gov.in/ESM1920/chapter/Marathi/esm_2425_m.pdf",
+        fileType: "PDF",
+      },
+      {
+        id: 9,
+        title: {
+          en: "Maharashtra Economic Survey 2023-24",
+          mr: "महाराष्ट्राची आर्थिक पाहणी 2023-24",
+        },
+        description: {
+          en: "State economic performance and analysis 2023-24",
+          mr: "2023-24 साठी राज्याची आर्थिक कामगिरी आणि विश्लेषण",
+        },
+        fileUrl:
+          "https://mahades.maharashtra.gov.in/files/publication/ESM_2023_24_Mar_Book.pdf",
+        fileType: "PDF",
+      },
+      {
+        id: 10,
+        title: {
+          en: "Maharashtra Economic Survey 2022-23",
+          mr: "महाराष्ट्राची आर्थिक पाहणी 2022-23",
+        },
+        description: {
+          en: "Economic trends and sectoral analysis of Maharashtra",
+          mr: "महाराष्ट्राचे आर्थिक ट्रेंड आणि क्षेत्रवार विश्लेषण",
+        },
+        fileUrl:
+          "https://mahades.maharashtra.gov.in/files/publication/ESM_2022_23_Mar_Book.pdf",
+        fileType: "PDF",
+      },
+      {
+        id: 11,
+        title: {
+          en: "District Development Plan (KBC North Maharashtra University Report)",
+          mr: "जिल्हा विकास आराखडा (कवयित्री बहिणाबाई चौधरी उत्तर महाराष्ट्र विद्यापीठ अहवाल)",
+        },
+        description: {
+          en: "Development framework report by KBC North Maharashtra University",
+          mr: "कवयित्री बहिणाबाई चौधरी विद्यापीठाचा विकास आराखडा अहवाल",
+        },
+        fileUrl:
+          "https://drive.google.com/file/d/1oZQ5-40jRxgDSl6hElpHVBTrtxpW2FeM/view?usp=drive_link",
+        fileType: "PDF",
+      },
+      {
+        id: 12,
+        title: {
+          en: "District Development Plan (Symbiosis University Report)",
+          mr: "जिल्हा विकास आराखडा (सिम्बॉयसिस विद्यापीठ पुणे अहवाल)",
+        },
+        description: {
+          en: "Comprehensive development strategy by Symbiosis University",
+          mr: "सिम्बॉयसिस विद्यापीठाचा सर्वसमावेशक विकास धोरण अहवाल",
+        },
+        fileUrl:
+          "https://drive.google.com/file/d/1QUr2l6rTw25abSYGG3ZcPHh-M8zEo9EN/view?usp=drive_link",
+        fileType: "PDF",
+      },
+      {
+        id: 13,
+        title: {
+          en: "Maharashtra Economic Advisory Council 2023 Report",
+          mr: "महाराष्ट्र आर्थिक सल्लागार समिती अहवाल 2023",
+        },
+        description: {
+          en: "Policy recommendations and economic guidance for Maharashtra",
+          mr: "महाराष्ट्रासाठी धोरण शिफारसी आणि आर्थिक मार्गदर्शन",
+        },
+        fileUrl:
+          "https://plan.maharashtra.gov.in/Sitemap/plan/Acts_Rules_and_Notifications_issued_in_respect_of_Maharashtra_District_Planning_Committee.htm",
         fileType: "PDF",
       },
     ],
@@ -146,13 +255,18 @@ const Download = () => {
   };
 
   const handleDownload = (fileUrl, fileName) => {
-    console.log(`Downloading ${fileName} from ${fileUrl}`);
-    // window.open(fileUrl, '_blank');
+    // Create a temporary anchor element
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = fileName || "document.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const handleView = (fileUrl) => {
-    console.log(`Viewing file at ${fileUrl}`);
-    // window.open(fileUrl, '_blank');
+    // Open PDF in new tab
+    window.open(fileUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -203,12 +317,7 @@ const Download = () => {
                     >
                       {getText(content.tableHeaders.description)}
                     </th>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                      {getText(content.tableHeaders.date)}
-                    </th>
+
                     <th
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
@@ -244,9 +353,6 @@ const Download = () => {
                             <div className="text-sm font-medium text-gray-900">
                               {getText(report.title)}
                             </div>
-                            <div className="text-sm text-gray-500">
-                              {report.fileSize}
-                            </div>
                           </div>
                         </div>
                       </td>
@@ -255,11 +361,7 @@ const Download = () => {
                           {getText(report.description)}
                         </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-gray-500">
-                          {formatDate(report.date)}
-                        </div>
-                      </td>
+
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
                           {report.fileType}
@@ -273,18 +375,6 @@ const Download = () => {
                           >
                             <FaEye className="mr-1" />{" "}
                             {getText(content.buttons.view)}
-                          </button>
-                          <button
-                            onClick={() =>
-                              handleDownload(
-                                report.fileUrl,
-                                getText(report.title)
-                              )
-                            }
-                            className="text-green-600 hover:text-green-900 flex items-center p-2 rounded hover:bg-green-50 transition"
-                          >
-                            <FaDownload className="mr-1" />{" "}
-                            {getText(content.buttons.download)}
                           </button>
                         </div>
                       </td>

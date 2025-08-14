@@ -9,112 +9,150 @@ const ReportsPage = () => {
   // Bilingual content
   const content = {
     title: {
-      en: "Reports",
-      mr: "अहवाल",
+      en: "Reports & Documents",
+      mr: "अहवाल आणि दस्तऐवज",
     },
     subtitle: {
-      en: "Access all official reports and documents",
-      mr: "सर्व अधिकृत अहवाल आणि दस्तऐवजांमध्ये प्रवेश करा",
+      en: "Official documents related to District Planning Committees",
+      mr: "जिल्हा नियोजन समिती संबंधित अधिकृत दस्तऐवज",
     },
     searchPlaceholder: {
-      en: "Search reports...",
-      mr: "अहवाल शोधा...",
-    },
-    tableHeaders: {
-      title: { en: "Title", mr: "शीर्षक" },
-      description: { en: "Description", mr: "वर्णन" },
-      date: { en: "Date", mr: "तारीख" },
-      format: { en: "Format", mr: "स्वरूप" },
-      actions: { en: "Actions", mr: "क्रिया" },
-    },
-    buttons: {
-      view: { en: "View", mr: "पहा" },
-      download: { en: "Download", mr: "डाउनलोड करा" },
-    },
-    emptyState: {
-      title: { en: "No reports found", mr: "कोणतेही अहवाल सापडले नाहीत" },
-      message: {
-        en: "Try adjusting your search or filter to find what you're looking for.",
-        mr: "तुम्ही शोधत असलेले शोधण्यासाठी तुमची शोध किंवा फिल्टर समायोजित करण्याचा प्रयत्न करा.",
-      },
+      en: "Search documents...",
+      mr: "दस्तऐवज शोधा...",
     },
     reports: [
       {
         id: 1,
         title: {
-          en: "Annual Financial Report 2023",
-          mr: "वार्षिक आर्थिक अहवाल २०२३",
+          en: "Jalgaon District Financial Review 2024",
+          mr: "जळगाव जिल्हा आर्थिक समालोचन 2024",
         },
-        date: "2023-12-31",
         description: {
-          en: "Complete financial overview for fiscal year 2023",
-          mr: "2023 च्या आर्थिक वर्षासाठी संपूर्ण आर्थिक आढावा",
+          en: "Comprehensive financial analysis of Jalgaon district for 2023-24",
+          mr: "2023-24 साठी जळगाव जिल्ह्याचे सर्वसमावेशक आर्थिक विश्लेषण",
         },
-        fileUrl: "/reports/financial-report-2023.pdf",
-        fileSize: "2.4 MB",
+        fileUrl:
+          "https://mahades.maharashtra.gov.in/files/publication/dsa/2023-24/DSA_Jalgaon_2023-24.pdf",
         fileType: "PDF",
       },
       {
         id: 2,
         title: {
-          en: "Quarterly Performance Q1 2024",
-          mr: "तिमाही कामगिरी Q1 २०२४",
+          en: "Jalgaon District Financial Review 2023",
+          mr: "जळगाव जिल्हा आर्थिक समालोचन 2023",
         },
-        date: "2024-03-31",
         description: {
-          en: "First quarter performance metrics and analysis",
-          mr: "पहिल्या तिमाहीची कामगिरी मेट्रिक्स आणि विश्लेषण",
+          en: "Financial assessment of Jalgaon district for 2022-23",
+          mr: "2022-23 साठी जळगाव जिल्ह्याचे आर्थिक मूल्यांकन",
         },
-        fileUrl: "/reports/q1-2024-performance.pdf",
-        fileSize: "1.8 MB",
+        fileUrl:
+          "https://mahades.maharashtra.gov.in/files/publication/dsa/2022-23/DSA%202023%20Jalgaon_006.pdf",
         fileType: "PDF",
       },
       {
         id: 3,
         title: {
-          en: "Sustainability Report 2023",
-          mr: "शाश्वतता अहवाल २०२३",
+          en: "Maharashtra Economic Survey 2024-25",
+          mr: "महाराष्ट्राची आर्थिक पाहणी 2024-25",
         },
-        date: "2023-11-15",
         description: {
-          en: "Environmental and social impact assessment",
-          mr: "पर्यावरणीय आणि सामाजिक प्रभाव मूल्यांकन",
+          en: "Comprehensive economic analysis of Maharashtra state",
+          mr: "महाराष्ट्र राज्याचे सर्वसमावेशक आर्थिक विश्लेषण",
         },
-        fileUrl: "/reports/sustainability-2023.pdf",
-        fileSize: "3.2 MB",
+        fileUrl:
+          "https://mahades.maharashtra.gov.in/ESM1920/chapter/Marathi/esm_2425_m.pdf",
         fileType: "PDF",
       },
       {
         id: 4,
         title: {
-          en: "Market Research Analysis",
-          mr: "बाजार संशोधन विश्लेषण",
+          en: "MAHARASHTRA DISTRICT PLANNING COMMITTEE (CONSTITUTIONS AND FUNCTIONS) ACT, 1998",
+          mr: "महाराष्ट्र जिल्हा नियोजन समिती (रचना व कामे) अधिनियम, १९९८",
         },
-        date: "2024-02-20",
         description: {
-          en: "Current market trends and competitor analysis",
-          mr: "चालू बाजारातील ट्रेंड आणि स्पर्धकांचे विश्लेषण",
+          en: "The principal act governing constitution and functions of District Planning Committees in Maharashtra",
+          mr: "महाराष्ट्रातील जिल्हा नियोजन समित्यांच्या रचना आणि कार्यांचे नियमन करणारा प्रमुख कायदा",
         },
-        fileUrl: "/reports/market-research-2024.pdf",
-        fileSize: "4.1 MB",
+        fileUrl:
+          "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/MAHARASHTRA_DISTRICT_PLANNING_COMMITTEE_(CONSTITUTIONS_AND_FUNCTIONS)_ACT_1998_18022021.pdf",
         fileType: "PDF",
       },
       {
         id: 5,
         title: {
-          en: "Employee Satisfaction Survey",
-          mr: "कर्मचारी समाधान सर्वेक्षण",
+          en: "Maharashtra District Planning Committee (Election) Rules, 1999",
+          mr: "महाराष्ट्र जिल्हा नियोजन समिती (निवडणूक) नियम,१९९९",
         },
-        date: "2023-10-05",
         description: {
-          en: "Results from annual employee engagement survey",
-          mr: "वार्षिक कर्मचारी संलग्नता सर्वेक्षणाचे निकाल",
+          en: "Rules governing the election process for District Planning Committee members",
+          mr: "जिल्हा नियोजन समिती सदस्यांच्या निवडणूक प्रक्रियेचे नियमन करणारे नियम",
         },
-        fileUrl: "/reports/employee-survey-2023.pdf",
-        fileSize: "1.5 MB",
+        fileUrl:
+          "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committee_(Election)_Rules_1999_18022021.pdf",
+        fileType: "PDF",
+      },
+      {
+        id: 6,
+        title: {
+          en: "Maharashtra District Planning Committee (Conduct of meetings) Rules, 1999",
+          mr: "महाराष्ट्र जिल्हा नियोजन समिती (सभा घेणे) नियम, १९९९",
+        },
+        description: {
+          en: "Rules regulating the conduct of meetings of District Planning Committees",
+          mr: "जिल्हा नियोजन समित्यांच्या सभांच्या आयोजना आणि संचालनाचे नियम",
+        },
+        fileUrl:
+          "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committee_(Conduct_of_meetings)Rules_1999_18022021.pdf",
+        fileType: "PDF",
+      },
+      {
+        id: 7,
+        title: {
+          en: "Maharashtra District Planning Committees (Conduct of meetings) (Amendments) Rules, 2018",
+          mr: "महाराष्ट्र जिल्हा नियोजन समिती (सभा घेणे) (सुधारणा) नियम, २०१८",
+        },
+        description: {
+          en: "Amendments to the rules governing conduct of DPC meetings",
+          mr: "जिल्हा नियोजन समिती सभांच्या संचालनाच्या नियमांमधील सुधारणा",
+        },
+        fileUrl:
+          "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committees_(Conduct_of_meetings)_(Amendments)_Rules_2018_18022021.pdf",
+        fileType: "PDF",
+      },
+      {
+        id: 8,
+        title: {
+          en: "Maharashtra District Planning Committee (Conduct of meetings) (Amendments) Rules, 2019",
+          mr: "महाराष्ट्र जिल्हा नियोजन समिती (सभा घेणे) (सुधारणा) नियम, २०१९",
+        },
+        description: {
+          en: "Latest amendments to the meeting conduct rules for DPCs",
+          mr: "जिल्हा नियोजन समिती सभांच्या संचालन नियमांमधील नवीनतम सुधारणा",
+        },
+        fileUrl:
+          "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committee_(Conduct_of_meetings)_(Amendments)_Rules_2019_18022021.pdf",
         fileType: "PDF",
       },
     ],
+    tableHeaders: {
+      title: { en: "Document Title", mr: "दस्तऐवज शीर्षक" },
+      description: { en: "Description", mr: "वर्णन" },
+      format: { en: "Format", mr: "स्वरूप" },
+      actions: { en: "Actions", mr: "क्रिया" },
+    },
+    buttons: {
+      view: { en: "View", mr: "पहा" },
+    },
+    emptyState: {
+      title: {
+        en: "No documents found",
+        mr: "कोणतेही दस्तऐवज सापडले नाहीत",
+      },
+      message: {
+        en: "Try adjusting your search criteria",
+        mr: "तुमची शोध निकष समायोजित करण्याचा प्रयत्न करा",
+      },
+    },
   };
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -146,13 +184,16 @@ const ReportsPage = () => {
   };
 
   const handleDownload = (fileUrl, fileName) => {
-    console.log(`Downloading ${fileName} from ${fileUrl}`);
-    // window.open(fileUrl, '_blank');
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = fileName || "document.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const handleView = (fileUrl) => {
-    console.log(`Viewing file at ${fileUrl}`);
-    // window.open(fileUrl, '_blank');
+    window.open(fileUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -203,12 +244,7 @@ const ReportsPage = () => {
                     >
                       {getText(content.tableHeaders.description)}
                     </th>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                      {getText(content.tableHeaders.date)}
-                    </th>
+
                     <th
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
@@ -244,9 +280,6 @@ const ReportsPage = () => {
                             <div className="text-sm font-medium text-gray-900">
                               {getText(report.title)}
                             </div>
-                            <div className="text-sm text-gray-500">
-                              {report.fileSize}
-                            </div>
                           </div>
                         </div>
                       </td>
@@ -255,11 +288,7 @@ const ReportsPage = () => {
                           {getText(report.description)}
                         </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-gray-500">
-                          {formatDate(report.date)}
-                        </div>
-                      </td>
+
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
                           {report.fileType}
@@ -273,18 +302,6 @@ const ReportsPage = () => {
                           >
                             <FaEye className="mr-1" />{" "}
                             {getText(content.buttons.view)}
-                          </button>
-                          <button
-                            onClick={() =>
-                              handleDownload(
-                                report.fileUrl,
-                                getText(report.title)
-                              )
-                            }
-                            className="text-green-600 hover:text-green-900 flex items-center p-2 rounded hover:bg-green-50 transition"
-                          >
-                            <FaDownload className="mr-1" />{" "}
-                            {getText(content.buttons.download)}
                           </button>
                         </div>
                       </td>

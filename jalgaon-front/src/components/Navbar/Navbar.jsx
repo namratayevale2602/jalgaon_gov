@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLanguage } from "../../contexts/LanguageContext";
-import { logo } from "../../assets";
+import { logo, logo1 } from "../../assets";
 
 const Navbar = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -20,7 +20,7 @@ const Navbar = () => {
           name: { en: "Organizational Chart", mr: "संस्थात्मक रचना" },
           href: "/organizationalChart",
         },
-        { name: { en: "Objectives", mr: "उद्दिष्टे" }, href: "/objectives" },
+        // { name: { en: "Objectives", mr: "उद्दिष्टे" }, href: "/objectives" },
         { name: { en: "Planning Committee", mr: "डीपीसी" }, href: "/dpc" },
         // {
         //   name: { en: "GENERAL REGISTER", mr: "सामान्य नोंदणीकर्ता" },
@@ -107,7 +107,7 @@ const Navbar = () => {
   return (
     <div className="bg-white relative">
       {/* Top Banner */}
-      <div className="bg-blue-800 text-white">
+      <div className="bg-blue-500 text-white">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">
           <div className="flex items-center space-x-4">
             <img
@@ -128,6 +128,11 @@ const Navbar = () => {
                   : "जळगाव जिल्हा नियोजन कार्यालय पोर्टल"}
               </p>
             </div>
+            <img
+              src={logo1}
+              alt="Government Logo"
+              className="h-20 md:h-24 w-auto"
+            />
           </div>
 
           <button

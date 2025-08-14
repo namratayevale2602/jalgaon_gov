@@ -3,9 +3,9 @@ import HeroCarousel from "./Banner";
 // import NoticesSection from "./Scrolling";
 // import { RawContentDisplay } from "./District";
 import AboutDistrict from "./AboutDistrict";
-import RecentBlogs from "./RecentBlogs";
+// import RecentBlogs from "./RecentBlogs";
 import AboutDPC from "./AboutDPC";
-import LatestUpdates from "./LatestUpdates";
+// import LatestUpdates from "./LatestUpdates";
 
 import Services from "./Services";
 import UsefulLinks from "./UsefulLinks";
@@ -14,12 +14,12 @@ function Home() {
   return (
     <div>
       <HeroCarousel />
-      <LatestUpdates />
+      {/* <LatestUpdates /> */}
       <AboutDistrict />
       <UsefulLinks />
       <AboutDPC />
       <Services />
-      <RecentBlogs />
+      {/* <RecentBlogs /> */}
     </div>
   );
 }

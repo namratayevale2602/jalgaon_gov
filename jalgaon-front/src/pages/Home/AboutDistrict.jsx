@@ -48,7 +48,7 @@ const AboutDistrict = () => {
             <p className="text-lg text-gray-700 mb-6">
               {districtData.description[language]}
             </p>
-            <div className="grid grid-cols-2 gap-4">
+            {/* <div className="grid grid-cols-2 gap-4">
               {districtData.stats[language].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -60,7 +60,7 @@ const AboutDistrict = () => {
                   <p className="text-blue-600 font-bold">{stat.value}</p>
                 </motion.div>
               ))}
-            </div>
+            </div> */}
           </div>
           <motion.div
             initial={{ opacity: 0 }}

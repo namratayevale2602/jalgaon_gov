@@ -68,54 +68,54 @@ const UsefulLinks = () => {
         },
         link: "https://jalgaon.gov.in/",
       },
-      {
-        title: {
-          en: "Committees",
-          mr: "समित्या",
-        },
-        icon: "Users",
-        description: {
-          en: "List of committees and members",
-          mr: "समित्या आणि सदस्यांची यादी",
-        },
-        link: "/planningcommittee",
-      },
-      {
-        title: {
-          en: "Downloads",
-          mr: "डाउनलोड",
-        },
-        icon: "FileText",
-        description: {
-          en: "Forms, reports and circulars",
-          mr: "फॉर्म, अहवाल आणि परिपत्रके",
-        },
-        link: "/downloads",
-      },
-      {
-        title: {
-          en: "Reports",
-          mr: "योजना",
-        },
-        icon: "Award",
-        description: {
-          en: "Current reports",
-          mr: "अहवाल",
-        },
-        link: "/reports",
-      },
-      {
-        title: {
-          en: "Acts & Rules",
-          mr: "कायदे आणि नियम",
-        },
-        icon: "Scale",
-        description: {
-          en: "Government acts and regulations",
-          mr: "सरकारी कायदे आणि नियम",
-        },
-        link: "https://www.mha.gov.in/en/acts",
-      },
+      // {
+      //   title: {
+      //     en: "Committees",
+      //     mr: "समित्या",
+      //   },
+      //   icon: "Users",
+      //   description: {
+      //     en: "List of committees and members",
+      //     mr: "समित्या आणि सदस्यांची यादी",
+      //   },
+      //   link: "/planningcommittee",
+      // },
+      // {
+      //   title: {
+      //     en: "Downloads",
+      //     mr: "डाउनलोड",
+      //   },
+      //   icon: "FileText",
+      //   description: {
+      //     en: "Forms, reports and circulars",
+      //     mr: "फॉर्म, अहवाल आणि परिपत्रके",
+      //   },
+      //   link: "/downloads",
+      // },
+      // {
+      //   title: {
+      //     en: "Reports",
+      //     mr: "योजना",
+      //   },
+      //   icon: "Award",
+      //   description: {
+      //     en: "Current reports",
+      //     mr: "अहवाल",
+      //   },
+      //   link: "/reports",
+      // },
+      // {
+      //   title: {
+      //     en: "Acts & Rules",
+      //     mr: "कायदे आणि नियम",
+      //   },
+      //   icon: "Scale",
+      //   description: {
+      //     en: "Government acts and regulations",
+      //     mr: "सरकारी कायदे आणि नियम",
+      //   },
+      //   link: "https://www.mha.gov.in/en/acts",
+      // },
     ],
   };
 

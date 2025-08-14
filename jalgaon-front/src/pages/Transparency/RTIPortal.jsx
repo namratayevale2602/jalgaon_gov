@@ -1,189 +1,477 @@
 import React, { useState } from "react";
-import { useLanguage } from "../../contexts/LanguageContext";
 import { FiExternalLink } from "react-icons/fi";
+import { useLanguage } from "../../contexts/LanguageContext";
+import { ArrowRight } from "lucide-react";
 
 const RTIPortal = () => {
   const { language } = useLanguage();
-  const [activeSubdivisionTab, setActiveSubdivisionTab] = useState("western");
+
+  // Office facilities data
+  const officeFacilities = [
+    {
+      id: 1,
+      facility: {
+        en: "Information about visiting hours",
+        mr: "भेटण्याच्या वेळे संदर्भात माहिती",
+      },
+      time: {
+        en: "During office hours",
+        mr: "कार्यालयीन वेळेत",
+      },
+      process: {
+        en: "By scheduling appointment/walk-in",
+        mr: "आगाऊ भेटीची वेळ ठरवून/ आयत्या वेळी",
+      },
+      location: {
+        en: "District Planning Committee, District Collector Office, Jalgaon",
+        mr: "जिल्हा नियोजन समिती, जिल्हाधिकारी कार्यालय, जळगांव",
+      },
+      responsible: {
+        en: "District Planning Officer/ Concerned person regarding subject",
+        mr: "जिल्हा नियोजन आधिकारी/ विषया संदर्भातील संबंधित व्यक्ती",
+      },
+      grievance: {
+        en: "District Planning Officer",
+        mr: "जिल्हा नियोजन अधिकारी",
+      },
+    },
+    {
+      id: 2,
+      facility: {
+        en: "Facilities available for record inspection",
+        mr: "अभिलेख तपासणीसाठी उपलब्ध सुविधांची माहिती",
+      },
+      time: {
+        en: "During office hours",
+        mr: "कार्यालयीन वेळेत",
+      },
+      process: {
+        en: "By submitting application",
+        mr: "अर्ज सादर करून",
+      },
+      location: {
+        en: "District Planning Committee, District Collector Office, Jalgaon",
+        mr: "जिल्हा नियोजन समिती, जिल्हाधिकारी कार्यालय, जळगांव",
+      },
+      responsible: {
+        en: "District Planning Officer",
+        mr: "जिल्हा नियोजन अधिकारी",
+      },
+      grievance: {
+        en: "District Planning Officer",
+        mr: "जिल्हा नियोजन अधिकारी",
+      },
+    },
+    {
+      id: 3,
+      facility: {
+        en: "Information about facilities available for work inspection",
+        mr: "कामाच्या तपासणीसाठी उपलब्ध सुविधांची माहिती",
+      },
+      time: {
+        en: "During office hours",
+        mr: "कार्यालयीन वेळेत",
+      },
+      process: {
+        en: "By submitting application",
+        mr: "अर्ज सादर करून",
+      },
+      location: {
+        en: "District Planning Committee, District Collector Office, Jalgaon",
+        mr: "जिल्हा नियोजन समिती, जिल्हाधिकारी कार्यालय, जळगांव",
+      },
+      responsible: {
+        en: "District Planning Officer",
+        mr: "जिल्हा नियोजन अधिकारी",
+      },
+      grievance: {
+        en: "District Planning Officer",
+        mr: "जिल्हा नियोजन अधिकारी",
+      },
+    },
+  ];
+
+  // RTI Officers data
+  const rtiOfficers = {
+    publicInformationOfficers: [
+      {
+        id: 1,
+        name: {
+          en: "Shri R.A. Ide",
+          mr: "श्री. रा.आ.इधे",
+        },
+        designation: {
+          en: "Assistant District Planning Officer",
+          mr: "सहायक जिल्हा नियोजन अधिकारी",
+        },
+        jurisdiction: {
+          en: "All matters related to Planning Branch",
+          mr: "नियोजन शाखेतील सर्व कामा संबंधित",
+        },
+        address: {
+          en: "District Collector Office, Jalgaon",
+          mr: "जिल्हाधिकारी कार्यालय, जळगाव",
+        },
+        phone: "0257-2223135",
+        email: "dpojalgaon@gmail.com",
+        appellateAuthority: {
+          en: "Shri Vijay Shinde, District Planning Officer, Jalgaon",
+          mr: "श्री. विजय शिंदे, जिल्हा नियोजन अधिकारी जळगांव",
+        },
+      },
+    ],
+    assistantPublicInformationOfficers: [
+      {
+        id: 1,
+        name: {
+          en: "Shri B.B. Patil",
+          mr: "श्री. बी.बी.पाटील",
+        },
+        designation: {
+          en: "Research Assistant",
+          mr: "संशोधन सहायक",
+        },
+        jurisdiction: {
+          en: "All works of Planning Branch",
+          mr: "नियोजन शाखेतील सर्व कामा करिता",
+        },
+        address: {
+          en: "District Collector Office, Jalgaon",
+          mr: "जिल्हाधिकारी कार्यालय, जळगाव",
+        },
+        phone: "0257-2223135",
+        email: "dpojalgaon@gmail.com",
+      },
+    ],
+    appellateAuthorities: [
+      {
+        id: 1,
+        name: {
+          en: "Shri Vijay Shinde",
+          mr: "श्री. विजय शिंदे",
+        },
+        designation: {
+          en: "District Planning Officer, Jalgaon",
+          mr: "जिल्हा नियोजन अधिकारी जळगांव",
+        },
+        jurisdiction: {
+          en: "Jalgaon District",
+          mr: "जळगाव जिल्हा",
+        },
+        address: {
+          en: "District Collector Office, Jalgaon",
+          mr: "जिल्हाधिकारी कार्यालय, जळगाव",
+        },
+        phone: "0257-2223135",
+        email: "dpojalgaon@gmail.com",
+        subordinateOfficer: {
+          en: "Shri R.A. Ide, Assistant District Planning Officer",
+          mr: "श्री. रा.आ.इधे, सहायक जिल्हा नियोजन अधिकारी",
+        },
+      },
+    ],
+  };
 
   const content = {
     en: {
-      title: "RTI",
-      subtitle: "RTI Jalgaon Planning Department",
-      rtiAct: {
-        title: "RTI Act 2005 :",
-        paragraphs: [
-          "The Right to Information Act, 2005 (RTI) is a law enacted by the Parliament of India to provide for setting out the practical regime of right to information for citizens. The Act applies to all States and Union Territories of India, except the State of Jammu and Kashmir - which is covered under a State-level law.",
-          "Under the provisions of the Act, any citizen may request information from a public authority or body of Government or instrumentality of State which is required to reply expeditiously or within thirty days. The Act also requires every public authority to computerize their records for wide dissemination and to proactively publish certain categories of information so that the citizens need minimum recourse to request for information formally.",
-          "This law was passed by Parliament on 15 June 2005 and came fully into force on 13 October 2005.",
+      title: "Right to Information",
+      subtitle: "RTI - Jalgaon District Planning Committee",
+      facilities: {
+        title: "Available Facilities at District Planning Committee Office",
+        columns: [
+          "Sr No",
+          "Type of Facility",
+          "Timing",
+          "Process",
+          "Location",
+          "Responsible Officer/Employee",
+          "Grievance Redressal",
         ],
       },
-      rtiPortal: {
-        title: "RTI Portal :",
-        paragraph:
-          "Right to Information Act 2005 mandates timely response to citizen requests for government information. It is an initiative taken by Department of Personnel and Training, Ministry of Personnel, Public Grievances and Pensions to provide an RTI Portal Gateway to the citizens for quick search of information on the details of First Appellate Authorities, PIOs etc., besides access to RTI related information/disclosures published on the web by various Public Authorities under the Government of India as well as the State Governments.",
+      rtiOfficers: {
+        title: "RTI Officers",
+        publicInfoOfficer: "Public Information Officer",
+        asstPublicInfoOfficer: "Assistant Public Information Officer",
+        appellateAuthority: "Appellate Authority",
+        columns: [
+          "Sr No",
+          "Name",
+          "Designation",
+          "Jurisdiction",
+          "Address/Phone",
+          "Email",
+          "Appellate Authority/Subordinate Officer",
+        ],
       },
-      contactTitle:
-        "Appeal Authority, Government Information Officer, Assistant Government Information Officer in Jalgaon Planning Department",
-      additionalResources: "Additional Resources",
-      subdivisions: {
-        title: "Subdivision Officers",
-        western: "Western Suburban",
-        eastern: "Eastern Suburban",
-      },
+
+      languageToggle: "मराठी मध्ये बदला",
     },
     mr: {
       title: "माहितीचा अधिकार",
-      subtitle: "आरटीआय जळगाव नियोजन विभाग",
-      rtiAct: {
-        title: "माहितीचा अधिकार कायदा 2005 :",
-        paragraphs: [
-          "माहितीचा अधिकार कायदा, 2005 (आरटीआय) हा भारतीय संसदेने नागरिकांना माहितीचा अधिकाराचा व्यावहारिक कार्यपद्धती निश्चित करण्यासाठी केलेला कायदा आहे. हा कायदा जम्मू आणि काश्मीर राज्य वगळता भारताच्या सर्व राज्ये आणि केंद्रशासित प्रदेशांना लागू होतो - जे राज्य-स्तरीय कायद्याखाली येतात.",
-          "या कायद्याच्या तरतुदींनुसार, कोणताही नागरिक सरकारी प्राधिकरण किंवा राज्याच्या कोणत्याही संस्थेकडून माहिती मागवू शकतो आणि त्यांना लवकरात लवकर किंवा तीस दिवसांच्या आत उत्तर देणे आवश्यक आहे. कायद्यामध्ये प्रत्येक सार्वजनिक प्राधिकरणाला त्यांचे रेकॉर्ड संगणकीकृत करणे आणि काही प्रकारची माहिती सक्रियपणे प्रसिद्ध करणे आवश्यक आहे जेणेकरून नागरिकांना औपचारिकरित्या माहिती मागण्याची गरज कमी व्हावी.",
-          "हा कायदा संसदेने 15 जून 2005 रोजी संमत केला आणि 13 ऑक्टोबर 2005 रोजी पूर्णपणे अंमलात आला.",
+      subtitle: "आरटीआय - जळगाव जिल्हा नियोजन समिती",
+      facilities: {
+        title:
+          "जळगांव येथील जिल्हा नियोजन समिती, कार्यालयात उपलब्ध सुविधांचा तक्ता",
+        columns: [
+          "अ.क्र.",
+          "सुविधेचा प्रकार",
+          "वेळ",
+          "कार्यपध्दती",
+          "ठिकाण",
+          "जबाबदार व्यक्ती / कर्मचारी",
+          "तक्रार निवारण",
         ],
       },
-      rtiPortal: {
-        title: "आरटीआय पोर्टल :",
-        paragraph:
-          "माहितीचा अधिकार कायदा 2005 नागरिकांच्या सरकारी माहितीच्या विनंत्या वेळेवर प्रतिसाद देणे बंधनकारक करतो. ही पर्सनल आणि ट्रेनिंग विभाग, कार्मिक, लोक शिकायत आणि निवृत्ती वेतन मंत्रालय यांनी केलेली एक पुढाकार आहे ज्यामुळे नागरिकांना पहिले अपील प्राधिकारी, पीआयओ इत्यादींच्या तपशीलांवर माहिती शोधण्यासाठी आरटीआय पोर्टल गेटवे उपलब्ध होते, तसेच भारत सरकार आणि राज्य सरकारांच्या विविध सार्वजनिक प्राधिकरणांनी वेबवर प्रकाशित केलेल्या आरटीआय संबंधित माहिती/प्रकटीकरणांना प्रवेश मिळतो.",
+      rtiOfficers: {
+        title:
+          "शासकीय माहिती अधिकारी / सहायक शासकीय माहिती अधिकारी / अपिलीय प्राधिकारी",
+        publicInfoOfficer: "शासकीय माहिती अधिकारी",
+        asstPublicInfoOfficer: "सहायक शासकीय माहिती अधिकारी",
+        appellateAuthority: "अपिलीय अधिकारी",
+        columns: [
+          "अ.क्र.",
+          "नाव",
+          "पदनाम",
+          "कार्यक्षेत्र",
+          "पत्ता / फोन",
+          "ई-मेल",
+          "अपिलीय प्राधिकारी/अधिनस्त अधिकारी",
+        ],
       },
-      contactTitle:
-        "अपील प्राधिकारी, सरकारी माहिती अधिकारी, सहाय्यक सरकारी माहिती अधिकारी जळगाव नियोजन विभागात",
-      additionalResources: "अतिरिक्त संसाधने",
-      subdivisions: {
-        title: "उपविभाग अधिकारी",
-        western: "पश्चिम उपनगरीय",
-        eastern: "पूर्व उपनगरीय",
-      },
+
+      languageToggle: "Switch to English",
     },
   };
 
-  const subdivisionOfficers = {
-    western: [
-      {
-        name: "SubDivisional Officer Western Suburban",
-        pdfUrl: "/pdfs/western-suburban.pdf",
-        size: "800 KB",
-      },
-    ],
-    eastern: [
-      {
-        name: "SubDivisional Officer Eastern Suburban",
-        pdfUrl: "/pdfs/eastern-suburban.pdf",
-        size: "1 MB",
-      },
-    ],
+  const lang = content[language];
+
+  const toggleLanguage = () => {
+    setLanguage(language === "en" ? "mr" : "en");
   };
-
-  const offices = [
-    {
-      collector: "• Deputy Collector Appeals (PDF, 29 MB)",
-      subordinate: "",
-      taluka: "",
-      other: "",
-    },
-    // ... (keep all your existing office data)
-  ];
-
-  const lang = content[language] || content.en;
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-      {/* Page Header with Hero Image */}
-      <div className="relative rounded-xl overflow-hidden mb-12 h-64">
-        <img
-          src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
-          alt={
-            language === "mr"
-              ? "जळगाव जिल्हा विकास"
-              : "Jalgaon District Development"
-          }
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-blue-800/70 flex items-center justify-center">
-          <div className="text-center px-4">
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {lang.title}
-            </h1>
-            <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-              {lang.subtitle}
-            </p>
-          </div>
+      {/* Page Header */}
+      <div className="text-center mb-12">
+        <h1 className="text-3xl md:text-4xl font-bold text-blue-800 mb-4">
+          {lang.title}
+        </h1>
+        <p className="text-lg text-gray-600">{lang.subtitle}</p>
+      </div>
+
+      {/* Office Facilities Section */}
+      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h2 className="text-2xl font-bold text-blue-700 mb-6">
+          {lang.facilities.title}
+        </h2>
+
+        <div className="overflow-x-auto">
+          <table className="min-w-full border border-gray-200">
+            <thead>
+              <tr className="bg-blue-50">
+                {lang.facilities.columns.map((column, index) => (
+                  <th
+                    key={index}
+                    className="px-4 py-3 text-left text-sm font-medium text-gray-700 border-b border-gray-200"
+                  >
+                    {column}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {officeFacilities.map((facility) => (
+                <tr key={facility.id} className="hover:bg-gray-50">
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {facility.id}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {facility.facility[language]}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {facility.time[language]}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {facility.process[language]}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {facility.location[language]}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {facility.responsible[language]}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {facility.grievance[language]}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
 
-      {/* RTI Act 2005 Section */}
+      {/* RTI Officers Section */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h3 className="text-xl font-bold text-blue-700 mb-4">
-          {lang.rtiAct.title}
-        </h3>
-        {lang.rtiAct.paragraphs.map((paragraph, index) => (
-          <p key={index} className="text-gray-700 mb-4">
-            {paragraph}
-          </p>
-        ))}
-      </div>
+        <h2 className="text-2xl font-bold text-blue-700 mb-6">
+          {lang.rtiOfficers.title}
+        </h2>
 
-      {/* RTI Portal Section */}
-      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h3 className="text-xl font-bold text-blue-700 mb-4">
-          {lang.rtiPortal.title}
+        {/* Public Information Officer */}
+        <h3 className="text-xl font-semibold text-blue-600 mb-4">
+          {lang.rtiOfficers.publicInfoOfficer}
         </h3>
-        <p className="text-gray-700 mb-4">{lang.rtiPortal.paragraph}</p>
-      </div>
-
-      {/* Subdivision Officers Section with Tabs */}
-      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h3 className="text-xl font-bold text-blue-700 mb-4">
-          {lang.subdivisions.title}
-        </h3>
-
-        {/* Tabs */}
-        <div className="flex border-b border-gray-200 mb-4">
-          <button
-            className={`py-2 px-4 font-medium text-sm focus:outline-none ${
-              activeSubdivisionTab === "western"
-                ? "border-b-2 border-blue-500 text-blue-600"
-                : "text-gray-500 hover:text-gray-700"
-            }`}
-            onClick={() => setActiveSubdivisionTab("western")}
-          >
-            {lang.subdivisions.western}
-          </button>
-          <button
-            className={`py-2 px-4 font-medium text-sm focus:outline-none ${
-              activeSubdivisionTab === "eastern"
-                ? "border-b-2 border-blue-500 text-blue-600"
-                : "text-gray-500 hover:text-gray-700"
-            }`}
-            onClick={() => setActiveSubdivisionTab("eastern")}
-          >
-            {lang.subdivisions.eastern}
-          </button>
+        <div className="overflow-x-auto mb-8">
+          <table className="min-w-full border border-gray-200 mb-6">
+            <thead>
+              <tr className="bg-blue-50">
+                {lang.rtiOfficers.columns.map((column, index) => (
+                  <th
+                    key={index}
+                    className="px-4 py-3 text-left text-sm font-medium text-gray-700 border-b border-gray-200"
+                  >
+                    {column}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rtiOfficers.publicInformationOfficers.map((officer) => (
+                <tr key={officer.id} className="hover:bg-gray-50">
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.id}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.name[language]}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.designation[language]}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.jurisdiction[language]}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    <div>{officer.address[language]}</div>
+                    <div>{officer.phone}</div>
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.email}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.appellateAuthority[language]}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
-        {/* Tab Content */}
-        <div className="space-y-3">
-          {subdivisionOfficers[activeSubdivisionTab].map((officer, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-between p-2 hover:bg-blue-50 rounded"
-            >
-              <span className="text-gray-700">{officer.name}</span>
-              <a
-                href={officer.pdfUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center text-blue-600 hover:text-blue-800"
-              >
-                <span className="mr-1">PDF ({officer.size})</span>
-                <FiExternalLink className="w-4 h-4" />
-              </a>
-            </div>
-          ))}
+        {/* Assistant Public Information Officer */}
+        <h3 className="text-xl font-semibold text-blue-600 mb-4">
+          {lang.rtiOfficers.asstPublicInfoOfficer}
+        </h3>
+        <div className="overflow-x-auto mb-8">
+          <table className="min-w-full border border-gray-200 mb-6">
+            <thead>
+              <tr className="bg-blue-50">
+                {lang.rtiOfficers.columns.slice(0, -1).map((column, index) => (
+                  <th
+                    key={index}
+                    className="px-4 py-3 text-left text-sm font-medium text-gray-700 border-b border-gray-200"
+                  >
+                    {column}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rtiOfficers.assistantPublicInformationOfficers.map((officer) => (
+                <tr key={officer.id} className="hover:bg-gray-50">
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.id}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.name[language]}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.designation[language]}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.jurisdiction[language]}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    <div>{officer.address[language]}</div>
+                    <div>{officer.phone}</div>
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.email}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Appellate Authority */}
+        <h3 className="text-xl font-semibold text-blue-600 mb-4">
+          {lang.rtiOfficers.appellateAuthority}
+        </h3>
+        <div className="overflow-x-auto">
+          <table className="min-w-full border border-gray-200">
+            <thead>
+              <tr className="bg-blue-50">
+                {lang.rtiOfficers.columns.map((column, index) => (
+                  <th
+                    key={index}
+                    className="px-4 py-3 text-left text-sm font-medium text-gray-700 border-b border-gray-200"
+                  >
+                    {column}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rtiOfficers.appellateAuthorities.map((officer) => (
+                <tr key={officer.id} className="hover:bg-gray-50">
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.id}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.name[language]}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.designation[language]}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.jurisdiction[language]}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    <div>{officer.address[language]}</div>
+                    <div>{officer.phone}</div>
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.email}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
+                    {officer.subordinateOfficer[language]}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
+      <h3 className="text-xl font-semibold text-blue-800 mb-4">
+        <a
+          href="https://rtionline.maharashtra.gov.in/index-e.php"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Click Here For More Detail
+          <span>
+            <ArrowRight></ArrowRight>
+          </span>
+        </a>
+      </h3>
     </div>
   );
 };

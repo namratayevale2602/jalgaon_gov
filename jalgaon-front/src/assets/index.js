@@ -1,4 +1,5 @@
 import logo from "../assets/Logo/logo.png";
+import logo1 from "../assets/Logo/logo3.png";
 import Banner1 from "../assets/About/jalgaon.jpg";
 import dpc from "../assets/About/dpc-office.png";
 
@@ -19,7 +20,6 @@ import img8 from "../assets/Gallery/img8.jpeg";
 import changdev from "../assets/Tourist/Changdev.jpeg";
 import girnadam from "../assets/Tourist/girna-dam.jpg";
 import patnadevi from "../assets/Tourist/patnadevi_temple.jpg";
-
 
 import meet1 from "../assets/Gallery/Meet1.jpeg";
 import meet2 from "../assets/Gallery/Meet2.jpeg";
@@ -51,6 +51,15 @@ import bhauncheudyan from "../assets/Tourist/bhauncheudyan.jpg";
 import mall from "../assets/Tourist/mall.webp";
 import mehrunlake from "../assets/Tourist/mehrunlake.jpg";
 
+import image1 from "../assets/DSP/image1.jpeg";
+import image2 from "../assets/DSP/image2.jpeg";
+import image3 from "../assets/DSP/image3.jpeg";
+import image4 from "../assets/DSP/image4.jpeg";
+import image5 from "../assets/DSP/image5.jpeg";
+import image6 from "../assets/DSP/image6.jpeg";
+import image7 from "../assets/DSP/image7.jpeg";
+import image8 from "../assets/DSP/image8.jpeg";
+
 export {
   mehrunlake,
   mall,
@@ -59,6 +68,7 @@ export {
   waghurdam,
   gandhigarden,
   logo,
+  logo1,
   Banner1,
   dpc,
   hero1,
@@ -94,4 +104,12 @@ export {
   ladki3,
   womenemp1,
   womenemp2,
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  image8,
 };
