@@ -19,8 +19,19 @@ import img8 from "../assets/Gallery/img8.jpeg";
 import changdev from "../assets/Tourist/Changdev.jpeg";
 import girnadam from "../assets/Tourist/girna-dam.jpg";
 import patnadevi from "../assets/Tourist/patnadevi_temple.jpg";
-
+import gandhifoundation from "../assets/Tourist/gandhifoundation.jpg";
+import waghurdam from "../assets/Tourist/waghurdam.png";
+import gandhigarden from "../assets/Tourist/gandhigarden.avif";
+import bhauncheudyan from "../assets/Tourist/bhauncheudyan.jpg";
+import mall from "../assets/Tourist/mall.webp";
+import mehrunlake from "../assets/Tourist/mehrunlake.jpg";
 export {
+  mehrunlake,
+  mall,
+  bhauncheudyan,
+  gandhifoundation,
+  waghurdam,
+  gandhigarden,
   logo,
   Banner1,
   dpc,
