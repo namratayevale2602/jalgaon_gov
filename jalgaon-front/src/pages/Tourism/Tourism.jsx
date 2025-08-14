@@ -1,7 +1,9 @@
-// TourismMain.jsx (Updated Listing Page)
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../contexts/LanguageContext";
+import TourismGallery from "./TourismGallery";
 import {
   changdev,
   patnadevi,
@@ -13,7 +15,224 @@ import {
   mall,
   bhauncheudyan,
 } from "../../assets";
-import TourismGallery from "./TourismGallery";
+
+const TourismCarousel = ({ spots }) => {
+  const { language } = useLanguage();
+
+  // Helper function to get text based on current language
+  const getText = (item) => {
+    if (typeof item === "object" && item !== null && language in item) {
+      return item[language];
+    }
+    return item;
+  };
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [cardsToShow, setCardsToShow] = useState(3);
+
+  const getCardsToShow = () => {
+    if (window.innerWidth >= 1280) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+  };
+
+  useEffect(() => {
+    setCardsToShow(getCardsToShow());
+    const handleResize = () => {
+      setCardsToShow(getCardsToShow());
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    let interval;
+    if (isAutoPlaying) {
+      interval = setInterval(() => {
+        setDirection(1);
+        setCurrentIndex(
+          (prev) => (prev + 1) % (spots.length - cardsToShow + 1)
+        );
+      }, 5000);
+    }
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, spots.length, cardsToShow]);
+
+  const goToPrev = () => {
+    setIsAutoPlaying(false);
+    setDirection(-1);
+    setCurrentIndex((prev) =>
+      prev === 0 ? spots.length - cardsToShow : prev - 1
+    );
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
+  const goToNext = () => {
+    setIsAutoPlaying(false);
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % (spots.length - cardsToShow + 1));
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
+  const goToIndex = (index) => {
+    setIsAutoPlaying(false);
+    setDirection(index > currentIndex ? 1 : -1);
+    setCurrentIndex(index);
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
+  const variants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 100 : -100,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction) => ({
+      x: direction > 0 ? -100 : 100,
+      opacity: 0,
+    }),
+  };
+
+  return (
+    <div className="relative py-8">
+      <button
+        onClick={goToPrev}
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white p-3 rounded-full shadow-md hover:bg-teal-100 transition-colors -ml-4"
+        aria-label={language === "en" ? "Previous spots" : "मागील स्थळे"}
+      >
+        <FaChevronLeft className="text-teal-600 text-xl" />
+      </button>
+      <button
+        onClick={goToNext}
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white p-3 rounded-full shadow-md hover:bg-teal-100 transition-colors -mr-4"
+        aria-label={language === "en" ? "Next spots" : "पुढील स्थळे"}
+      >
+        <FaChevronRight className="text-teal-600 text-xl" />
+      </button>
+
+      <div className="relative h-[500px] md:h-[450px] overflow-hidden">
+        <AnimatePresence custom={direction} initial={false}>
+          <motion.div
+            key={currentIndex}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="absolute inset-0 flex gap-6 px-2"
+          >
+            {spots
+              .slice(currentIndex, currentIndex + cardsToShow)
+              .map((spot) => (
+                <motion.div
+                  key={spot.id}
+                  className="bg-white p-6 rounded-xl shadow-md w-full h-full flex flex-col"
+                  whileHover={{ y: -5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Link
+                    to={`/tourism/${spot.slug}`}
+                    className="flex flex-col h-full"
+                  >
+                    <div className="h-48 overflow-hidden rounded-lg mb-4">
+                      <img
+                        src={spot.image}
+                        alt={getText(spot.title)}
+                        className="w-full h-full object-cover transition duration-300 hover:scale-105"
+                      />
+                    </div>
+                    <div className="flex-grow">
+                      <span className="inline-block px-3 py-1 text-xs font-semibold text-blue-800 bg-blue-100 rounded-full mb-2">
+                        {spot.type === "religious"
+                          ? language === "en"
+                            ? "Religious"
+                            : "धार्मिक"
+                          : spot.type === "nature"
+                          ? language === "en"
+                            ? "Nature"
+                            : "निसर्ग"
+                          : spot.type === "educational"
+                          ? language === "en"
+                            ? "Educational"
+                            : "शैक्षणिक"
+                          : language === "en"
+                          ? "Commercial"
+                          : "वाणिज्यिक"}
+                      </span>
+                      <h3 className="text-xl font-bold text-gray-800 mb-2">
+                        {getText(spot.title)}
+                      </h3>
+                      <p className="text-gray-600 mb-4">
+                        {getText(spot.excerpt)}
+                      </p>
+                    </div>
+                    <div className="flex justify-between text-sm text-gray-500 mt-auto">
+                      <span>
+                        {language === "en" ? "Visitors:" : "पर्यटक:"}{" "}
+                        {spot.stats.visitors}
+                      </span>
+                      <span>
+                        {language === "en" ? "Established:" : "स्थापना:"}{" "}
+                        {spot.stats.established}
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <div className="flex justify-center mt-8 space-x-2">
+        {Array.from({ length: spots.length - cardsToShow + 1 }).map(
+          (_, index) => (
+            <button
+              key={index}
+              onClick={() => goToIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                index === currentIndex ? "bg-teal-600 w-6" : "bg-gray-300"
+              }`}
+              aria-label={
+                language === "en"
+                  ? `Go to spot ${index + 1}`
+                  : `स्थळ ${index + 1} वर जा`
+              }
+            />
+          )
+        )}
+      </div>
+    </div>
+  );
+};
 
 const TourismMain = () => {
   const { language } = useLanguage();
@@ -210,61 +429,7 @@ const TourismMain = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {tourismSpots.map((spot, index) => (
-            <motion.div
-              key={spot.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.02 }}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
-            >
-              <Link to={`/tourism/${spot.slug}`}>
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={spot.image}
-                    alt={getText(spot.title)}
-                    className="w-full h-full object-cover transition duration-300 hover:scale-105"
-                  />
-                </div>
-                <div className="p-6">
-                  <span className="inline-block px-3 py-1 text-xs font-semibold text-blue-800 bg-blue-100 rounded-full mb-2">
-                    {spot.type === "religious"
-                      ? language === "en"
-                        ? "Religious"
-                        : "धार्मिक"
-                      : spot.type === "nature"
-                      ? language === "en"
-                        ? "Nature"
-                        : "निसर्ग"
-                      : spot.type === "educational"
-                      ? language === "en"
-                        ? "Educational"
-                        : "शैक्षणिक"
-                      : language === "en"
-                      ? "Commercial"
-                      : "वाणिज्यिक"}
-                  </span>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
-                    {getText(spot.title)}
-                  </h3>
-                  <p className="text-gray-600 mb-4">{getText(spot.excerpt)}</p>
-                  <div className="flex justify-between text-sm text-gray-500">
-                    <span>
-                      {language === "en" ? "Visitors:" : "पर्यटक:"}{" "}
-                      {spot.stats.visitors}
-                    </span>
-                    <span>
-                      {language === "en" ? "Established:" : "स्थापना:"}{" "}
-                      {spot.stats.established}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
+        <TourismCarousel spots={tourismSpots} />
       </motion.div>
       <TourismGallery />
     </div>

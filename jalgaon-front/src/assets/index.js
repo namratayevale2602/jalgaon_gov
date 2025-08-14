@@ -34,15 +34,30 @@ import meet10 from "../assets/Gallery/Meet10.jpeg";
 
 import opening1 from "../assets/Gallery/opening3.jpeg";
 import opening2 from "../assets/Gallery/openingc2.jpeg";
+import opening3 from "../assets/Gallery/openingc4.jpeg";
+import opening4 from "../assets/Gallery/openingc5.jpeg";
+import opening5 from "../assets/Gallery/openingc6.jpeg";
+import opening6 from "../assets/Gallery/openingc7.jpeg";
+import opening8 from "../assets/Gallery/openingc8.jpeg";
+import opening9 from "../assets/Gallery/openingc9.jpg";
+import opening10 from "../assets/Gallery/openingc1.jpeg";
 
 import bhumipujan from "../assets/Gallery/bhumipujan1.jpeg";
 
 import ladki1 from "../assets/Gallery/ladki1.jpg";
 import ladki2 from "../assets/Gallery/ladki2.jpg";
 import ladki3 from "../assets/Gallery/ladki3.jpg";
+import ladki4 from "../assets/Gallery/ladki4.jpg";
+import ladki5 from "../assets/Gallery/ladki5.jpg";
 
 import womenemp1 from "../assets/Gallery/womenempower1.jpg";
 import womenemp2 from "../assets/Gallery/womenempower2.jpg";
+import womenemp3 from "../assets/Gallery/womenempower3.jpg";
+import womenemp4 from "../assets/Gallery/womenempower4.jpg";
+
+import offc1 from "../assets/Gallery/offc1.jpeg";
+import offc2 from "../assets/Gallery/offc2.jpeg";
+import offc3 from "../assets/Gallery/offc3.jpeg";
 
 import gandhifoundation from "../assets/Tourist/gandhifoundation.jpg";
 import waghurdam from "../assets/Tourist/waghurdam.png";
@@ -50,6 +65,26 @@ import gandhigarden from "../assets/Tourist/gandhigarden.avif";
 import bhauncheudyan from "../assets/Tourist/bhauncheudyan.jpg";
 import mall from "../assets/Tourist/mall.webp";
 import mehrunlake from "../assets/Tourist/mehrunlake.jpg";
+import t1 from "../assets/Tourist/t1.jpeg";
+import t2 from "../assets/Tourist/t2.jpeg";
+import t3 from "../assets/Tourist/t3.jpeg";
+import t4 from "../assets/Tourist/t4.jpeg";
+import t5 from "../assets/Tourist/t5.jpeg";
+import t6 from "../assets/Tourist/t6.jpeg";
+import t7 from "../assets/Tourist/t7.jpeg";
+import t8 from "../assets/Tourist/t8.jpeg";
+import t9 from "../assets/Tourist/t9.jpeg";
+import t10 from "../assets/Tourist/t10.jpeg";
+import t11 from "../assets/Tourist/t11.jpeg";
+import t12 from "../assets/Tourist/t12.jpeg";
+import t13 from "../assets/Tourist/t13.jpeg";
+import t14 from "../assets/Tourist/t14.jpeg";
+import t15 from "../assets/Tourist/t15.jpeg";
+
+import conf1 from "../assets/Gallery/conference1.jpeg";
+import conf2 from "../assets/Gallery/conference2.jpeg";
+import conf3 from "../assets/Gallery/conference3.jpeg";
+import conf4 from "../assets/Gallery/conference4.jpeg";
 
 import image1 from "../assets/DSP/image1.jpeg";
 import image2 from "../assets/DSP/image2.jpeg";
@@ -61,6 +96,21 @@ import image7 from "../assets/DSP/image7.jpeg";
 import image8 from "../assets/DSP/image8.jpeg";
 
 export {
+  t1,
+  t2,
+  t3,
+  t4,
+  t5,
+  t6,
+  t7,
+  t8,
+  t9,
+  t10,
+  t11,
+  t12,
+  t13,
+  t14,
+  t15,
   mehrunlake,
   mall,
   bhauncheudyan,
@@ -98,12 +148,30 @@ export {
   meet10,
   opening1,
   opening2,
+  opening3,
+  opening4,
+  opening5,
+  opening6,
+  opening8,
+  opening9,
+  opening10,
   bhumipujan,
   ladki1,
   ladki2,
   ladki3,
+  ladki4,
+  ladki5,
   womenemp1,
   womenemp2,
+  womenemp3,
+  womenemp4,
+  conf1,
+  conf2,
+  conf3,
+  conf4,
+  offc1,
+  offc2,
+  offc3,
   image1,
   image2,
   image3,
