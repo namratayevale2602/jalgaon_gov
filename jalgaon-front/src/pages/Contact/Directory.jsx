@@ -22,9 +22,8 @@ const Directory = () => {
           mr: "जिल्हा नियोजन अधिकारी",
         },
         contact: {
-          phone: "0257-2222233",
-          mobile: "9876543210",
-          email: "dpo-jalgaon@maharashtra.gov.in",
+          phone: "0257-2223135",
+          email: "dpojalgaon@gmail.com",
         },
         responsibilities: {
           en: [
@@ -49,9 +48,8 @@ const Directory = () => {
           mr: "सहाय्यक जिल्हा नियोजन अधिकारी",
         },
         contact: {
-          phone: "0257-2222234",
-          mobile: "9876543211",
-          email: "adpo-jalgaon@maharashtra.gov.in",
+          phone: "0257-2223135",
+          email: "dpojalgaon@gmail.com",
         },
         responsibilities: {
           en: [
@@ -72,9 +70,8 @@ const Directory = () => {
           mr: "सहाय्यक जिल्हा नियोजन अधिकारी",
         },
         contact: {
-          phone: "0257-2222235",
-          mobile: "9876543212",
-          email: "accounts-dpc@jalgaon.gov.in",
+          phone: "0257-2223135",
+          email: "dpojalgaon@gmail.com",
         },
         responsibilities: {
           en: [
@@ -158,12 +155,7 @@ const Directory = () => {
                           {staff.contact.phone}
                         </span>
                       </div>
-                      <div className="flex items-center">
-                        <FaPhone className="text-gray-500 mr-2" />
-                        <span className="text-gray-700">
-                          {staff.contact.mobile}
-                        </span>
-                      </div>
+
                       <div className="flex items-center">
                         <FaEnvelope className="text-gray-500 mr-2" />
                         <a
