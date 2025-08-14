@@ -64,6 +64,22 @@ import gandhigarden from "../assets/Tourist/gandhigarden.avif";
 import bhauncheudyan from "../assets/Tourist/bhauncheudyan.jpg";
 import mall from "../assets/Tourist/mall.webp";
 import mehrunlake from "../assets/Tourist/mehrunlake.jpg";
+import t1 from "../assets/Tourist/t1.jpeg";
+import t2 from "../assets/Tourist/t2.jpeg";
+import t3 from "../assets/Tourist/t3.jpeg";
+import t4 from "../assets/Tourist/t4.jpeg";
+import t5 from "../assets/Tourist/t5.jpeg";
+import t6 from "../assets/Tourist/t6.jpeg";
+import t7 from "../assets/Tourist/t7.jpeg";
+import t8 from "../assets/Tourist/t8.jpeg";
+import t9 from "../assets/Tourist/t9.jpeg";
+import t10 from "../assets/Tourist/t10.jpeg";
+import t11 from "../assets/Tourist/t11.jpeg";
+import t12 from "../assets/Tourist/t12.jpeg";
+import t13 from "../assets/Tourist/t13.jpeg";
+import t14 from "../assets/Tourist/t14.jpeg";
+import t15 from "../assets/Tourist/t15.jpeg";
+
 
 import conf1 from "../assets/Gallery/conference1.jpeg";
 import conf2 from "../assets/Gallery/conference2.jpeg";
@@ -71,6 +87,21 @@ import conf3 from "../assets/Gallery/conference3.jpeg";
 import conf4 from "../assets/Gallery/conference4.jpeg";
 
 export {
+   t1,
+  t2,
+  t3,
+  t4,
+  t5,
+  t6,
+  t7,
+  t8,
+  t9,
+  t10,
+  t11,
+  t12,
+  t13,
+  t14,
+  t15,
   mehrunlake,
   mall,
   bhauncheudyan,
