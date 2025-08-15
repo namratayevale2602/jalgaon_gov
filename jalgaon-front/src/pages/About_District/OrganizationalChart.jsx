@@ -36,11 +36,18 @@ const OrganizationalChart = () => {
           en: "Assistant District Planning Officer",
           mr: "सहाय्यक जिल्हा नियोजन अधिकारी",
         },
+        name: { en: "B.P.Salunkhe", mr: "बी.पी. साळुंखे" },
+      },
+      {
+        level: {
+          en: "Assistant District Planning Officer",
+          mr: "सहाय्यक जिल्हा नियोजन अधिकारी",
+        },
         name: { en: "R.A.Idhe", mr: "रा.आ.इधे" },
       },
 
       {
-        level: { en: "Accountant Officer", mr: "लेखापाल अधिकारी" },
+        level: { en: "Accountant Officer", mr: "लेखा अधिकारी" },
         name: { en: "N.S. Umbarkar", mr: "नि.श्री. उंबरकर" },
       },
       {
@@ -62,7 +69,7 @@ const OrganizationalChart = () => {
           en: "Assistant Research Officer",
           mr: "सहायक संशोधन अधिकारी",
         },
-        name: { en: "A.B. Suryavanshi", mr: "अ. भि. सूर्यवंशी" },
+        name: { en: "Smt.Varsha Patil", mr: "श्रीमती वर्षा पाटील" },
       },
       {
         level: {
@@ -76,16 +83,16 @@ const OrganizationalChart = () => {
         name: { en: "Smt. A.P. Bawane", mr: "श्रीमती अ.प्र. बावणे" },
       },
       {
-        level: { en: "Dy.Accountant", mr: "उपलेखापाल" },
+        level: { en: "Dy.Accountant", mr: "उप लेखा अधिकारी" },
         name: { en: "H.P. Dandekar", mr: "ह.प्र.दांडेकर" },
       },
       {
         level: { en: "Statistical Assistant", mr: "सांख्यिकी सहायक" },
-        name: { en: "Vacant", mr: "रिक्त" },
+        name: { en: "H. S. Raut", mr: "ह.सु.राऊत" },
       },
       {
         level: { en: "Statistical Assistant", mr: "सांख्यिकी सहायक" },
-        name: { en: "H. S. Raut", mr: "ह.सु.राऊत" },
+        name: { en: "Vacant", mr: "रिक्त" },
       },
 
       {

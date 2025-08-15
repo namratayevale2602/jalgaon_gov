@@ -37,7 +37,13 @@ const Navbar = () => {
         },
       ],
     },
-    { name: { en: "DSP", mr: "डीएसपी" }, href: "/dsp" },
+    {
+      name: {
+        en: "District strategic planning",
+        mr: "जिल्हा धोरणात्मक नियोजन",
+      },
+      href: "/dsp",
+    },
 
     {
       name: { en: "FUNCTIONS", mr: "कार्ये" },

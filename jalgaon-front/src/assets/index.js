@@ -95,7 +95,42 @@ import image6 from "../assets/DSP/image6.jpeg";
 import image7 from "../assets/DSP/image7.jpeg";
 import image8 from "../assets/DSP/image8.jpeg";
 
+import amoljawale from "../assets/Politics/amoljawale.jpeg";
+import amolpatil from "../assets/Politics/amolpatil.jpeg";
+import anilpatil from "../assets/Politics/anilpatil.jpeg";
+import chandrakantpatil from "../assets/Politics/chandrakantpatil.jpeg";
+import chandrakantsonvane from "../assets/Politics/chandrakantsonvane.jpeg";
+import eknathkhadse from "../assets/Politics/eknathkhadse.jpeg";
+import gulabraoPatil from "../assets/Politics/gulabraoPatil.jpeg";
+import kishoedarade from "../assets/Politics/kishoedarade.jpeg";
+import kishoepatil from "../assets/Politics/kishoepatil.jpeg";
+import mangeshchavhan from "../assets/Politics/mangeshchavhan.jpeg";
+import raksha_khadse from "../assets/Politics/raksha_khadse.jpeg";
+import rakshakhadse from "../assets/Politics/rakshakhadse.jpeg";
+import sanjaysavkare from "../assets/Politics/sanjaysavkare.jpeg";
+import satyjittambe from "../assets/Politics/satyjittambe.jpeg";
+import smitawagh from "../assets/Politics/smitawagh.jpeg";
+import girish from "../assets/Politics/girish.jpg";
+import rajubhole from "../assets/Politics/rajubhole.jpeg";
+
 export {
+  girish,
+  rajubhole,
+  smitawagh,
+  satyjittambe,
+  sanjaysavkare,
+  rakshakhadse,
+  raksha_khadse,
+  mangeshchavhan,
+  kishoepatil,
+  kishoedarade,
+  gulabraoPatil,
+  eknathkhadse,
+  chandrakantsonvane,
+  chandrakantpatil,
+  anilpatil,
+  amolpatil,
+  amoljawale,
   t1,
   t2,
   t3,

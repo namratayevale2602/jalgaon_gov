@@ -9,6 +9,7 @@ import AboutDPC from "./AboutDPC";
 
 import Services from "./Services";
 import UsefulLinks from "./UsefulLinks";
+import DataCard from "./politics";
 
 function Home() {
   return (
@@ -19,6 +20,7 @@ function Home() {
       <UsefulLinks />
       <AboutDPC />
       <Services />
+      <DataCard />
       {/* <RecentBlogs /> */}
     </div>
   );

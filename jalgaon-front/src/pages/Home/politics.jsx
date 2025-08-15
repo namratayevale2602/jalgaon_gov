@@ -1,0 +1,310 @@
+import React from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
+import {
+  smitawagh,
+  satyjittambe,
+  sanjaysavkare,
+  rakshakhadse,
+  raksha_khadse,
+  mangeshchavhan,
+  kishoepatil,
+  kishoedarade,
+  gulabraoPatil,
+  eknathkhadse,
+  chandrakantsonvane,
+  chandrakantpatil,
+  anilpatil,
+  amolpatil,
+  amoljawale,
+  girish,
+  rajubhole,
+} from "../../assets";
+
+const DataCard = () => {
+  const { language } = useLanguage();
+
+  const departmentData = {
+    en: {
+      title: "Political Representatives",
+      categories: [
+        {
+          title: "Lok Sabha Members",
+          people: [
+            {
+              name: "Hon. Smt. Raksha Nikhil Khadse",
+              designation:
+                "Minister of State for Youth Affairs and Sports, Govt. of India",
+              matdarsangh: "Raver Lok Sabha",
+              image: rakshakhadse,
+            },
+            {
+              name: "Hon. Smt. Smita Uday Wagh",
+              designation: "",
+              matdarsangh: "Jalgaon Lok Sabha",
+              image: smitawagh,
+            },
+          ],
+        },
+        {
+          title: "Vidhan Sabha Members",
+          people: [
+            {
+              name: "Hon. Shri. Gulabrao Raghunath Patil",
+              designation:
+                "Minister for Water Supply and Sanitation, Govt. of Maharashtra",
+              matdarsangh: "Jalgaon (Rural)",
+              image: gulabraoPatil,
+            },
+            {
+              name: "Hon. Shri. Girish Dattatray Mahajan",
+              designation:
+                "Minister for Water Resources (Vidarbha, Tapi, Konkan Basin Development Corporation) & Disaster Management, Govt. of Maharashtra",
+              matdarsangh: "Jamner",
+              image: girish,
+            },
+            {
+              name: "Hon. Shri. Sanjay Waman Sawkare",
+              designation: "Minister for Textiles, Govt. of Maharashtra",
+              matdarsangh: "Bhusawal",
+              image: sanjaysavkare,
+            },
+            {
+              name: "Hon. Shri. Kishor Appa Patil",
+              designation: "MLA",
+              matdarsangh: "Pachora-Bhadgaon",
+              image: kishoepatil,
+            },
+            {
+              name: "Hon. Shri. Suresh Damu Bholle (Raju Mama)",
+              designation: "MLA",
+              matdarsangh: "Jalgaon (City)",
+              image: rajubhole,
+            },
+            {
+              name: "Hon. Shri. Chandrakant Balirao Sonawane",
+              designation: "MLA",
+              matdarsangh: "Chopda",
+              image: chandrakantsonvane,
+            },
+            {
+              name: "Hon. Shri. Anil Bhaidas Patil",
+              designation: "MLA",
+              matdarsangh: "Amalner",
+              image: anilpatil,
+            },
+            {
+              name: "Hon. Shri. Chandrakant Nibaji Patil",
+              designation: "MLA",
+              matdarsangh: "Muktainagar",
+              image: chandrakantpatil,
+            },
+            {
+              name: "Hon. Shri. Mangesh Ramesh Chavan",
+              designation: "MLA",
+              matdarsangh: "Chalisgaon",
+              image: mangeshchavhan,
+            },
+            {
+              name: "Hon. Shri. Amol Chimanrao Patil",
+              designation: "MLA",
+              matdarsangh: "Erandol-Parola",
+              image: amolpatil,
+            },
+            {
+              name: "Hon. Shri. Amol Haribhau Jawale",
+              designation: "MLA",
+              matdarsangh: "Raver",
+              image: amoljawale,
+            },
+          ],
+        },
+        {
+          title: "Vidhan Parishad Members",
+          people: [
+            {
+              name: "Hon. Shri. Eknathrao Khadse",
+              designation: "MLC",
+              matdarsangh: "Vidhan Parishad",
+              image: eknathkhadse,
+            },
+            {
+              name: "Hon. Shri. Kishor Bhikaji Darade",
+              designation: "MLC",
+              matdarsangh: "Teachers Constituency, Nashik",
+              image: kishoedarade,
+            },
+            {
+              name: "Hon. Shri. Satyajit Sudhir Tabe",
+              designation: "MLC",
+              matdarsangh: "Graduates Constituency, Nashik",
+              image: satyjittambe,
+            },
+          ],
+        },
+      ],
+    },
+    mr: {
+      title: "राजकीय प्रतिनिधी",
+      categories: [
+        {
+          title: "लोकसभा सदस्य",
+          people: [
+            {
+              name: "मा.ना. श्रीमती. रक्षा निखिल खडसे",
+              designation: "युवक आणि क्रीडा राज्यमंत्री, भारत सरकार",
+              matdarsangh: "रावेर लोकसभा",
+              image: rakshakhadse,
+            },
+            {
+              name: "मा.खा.श्रीमती. स्मिता उदय वाघ",
+              designation: "",
+              matdarsangh: "जळगाव लोकसभा",
+              image: smitawagh,
+            },
+          ],
+        },
+        {
+          title: "विधानसभा सदस्य",
+          people: [
+            {
+              name: "मा.ना.श्री.गुलाबराव रघुनाथ पाटील",
+              designation:
+                "मंत्री पाणी पुरवठा व स्वच्छता, महाराष्ट्र राज्य, तथा पालकमंत्री जळगाव जिल्हा",
+              matdarsangh: "जळगाव (ग्रामीण)",
+              image: gulabraoPatil,
+            },
+            {
+              name: "मा.ना.श्री. गिरीश दत्तात्रय महाजन",
+              designation:
+                "मंत्री जलसंपदा (विदर्भ, तापी, कोकण खोरे विकास महामंडळ), आपत्ती व्यवस्थापन, महाराष्ट्र राज्य",
+              matdarsangh: "जामनेर",
+              image: girish,
+            },
+            {
+              name: "मा.ना.श्री. संजय वामन सावकारे",
+              designation: "मंत्री वस्त्रोद्योग, महाराष्ट्र राज्य",
+              matdarsangh: "भुसावळ",
+              image: sanjaysavkare,
+            },
+            {
+              name: "मा.आ.श्री. किशोर आप्पा पाटील",
+              designation: "आमदार",
+              matdarsangh: "पाचोरा - भडगांव",
+              image: kishoepatil,
+            },
+            {
+              name: "मा.आ.श्री. सुरेश दामू भोळे (राजू मामा)",
+              designation: "आमदार",
+              matdarsangh: "जळगाव (शहर)",
+              image: rajubhole,
+            },
+            {
+              name: "मा.आ.श्री. चंद्रकांत बळीराम सोनवणे",
+              designation: "आमदार",
+              matdarsangh: "चोपडा",
+              image: chandrakantsonvane,
+            },
+            {
+              name: "मा.आ.श्री. अनिल भाईदास पाटील",
+              designation: "आमदार",
+              matdarsangh: "अमळनेर",
+              image: anilpatil,
+            },
+            {
+              name: "मा.आ.श्री. चंद्रकांत निबाजी पाटील",
+              designation: "आमदार",
+              matdarsangh: "मुक्ताईनगर",
+              image: chandrakantpatil,
+            },
+            {
+              name: "मा.आ.श्री. मंगेश रमेश चव्हाण",
+              designation: "आमदार",
+              matdarsangh: "चाळीसगांव",
+              image: mangeshchavhan,
+            },
+            {
+              name: "मा.आ.श्री. अमोल चिमणराव पाटील",
+              designation: "आमदार",
+              matdarsangh: "एरंडोल - पारोळा",
+              image: amolpatil,
+            },
+            {
+              name: "मा.आ.श्री. अमोल हरिभाऊ जावळे",
+              designation: "आमदार",
+              matdarsangh: "रावेर",
+              image: amoljawale,
+            },
+          ],
+        },
+        {
+          title: "विधानपरिषद सदस्य",
+          people: [
+            {
+              name: "मा.आ.श्री. एकनाथराव खडसे",
+              designation: "विधान परिषद सदस्य",
+              matdarsangh: "वि.प.स.",
+              image: eknathkhadse,
+            },
+            {
+              name: "मा.आ.श्री. किशोर भिकाजी दराडे",
+              designation: "विधान परिषद सदस्य",
+              matdarsangh: "शिक्षक मतदारसंघ नाशिक",
+              image: kishoedarade,
+            },
+            {
+              name: "मा.आ.श्री. सत्यजीत सुधीर तांबे",
+              designation: "विधान परिषद सदस्य",
+              matdarsangh: "नाशिक पदवीधर मतदारसंघ",
+              image: satyjittambe,
+            },
+          ],
+        },
+      ],
+    },
+  };
+
+  const data = departmentData[language] || departmentData.en;
+
+  return (
+    <div className="container mx-auto p-4">
+      <h1 className="text-3xl font-bold text-center mb-8">{data.title}</h1>
+
+      {data.categories.map((category) => (
+        <div key={category.title} className="mb-12">
+          <h2 className="text-xl font-semibold mb-6 border-b pb-2">
+            {category.title}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {category.people.map((person, index) => (
+              <div
+                key={index}
+                className="bg-white shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="p-4 flex flex-col items-center">
+                  <div className="w-60 h-60 mb-4">
+                    <img
+                      src={person.image}
+                      alt={person.name}
+                      className="w-full h-full object-cover border-4 border-blue-100"
+                    />
+                  </div>
+                  <h3 className="text-lg font-semibold text-center text-gray-800 mb-1">
+                    {person.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 text-center">
+                    {person.matdarsangh}
+                  </p>
+                  <p className="text-xs text-gray-500 text-center mt-2">
+                    {person.designation}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default DataCard;
