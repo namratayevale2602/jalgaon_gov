@@ -1,4 +1,4 @@
-import { img1, img2, img3, img4 } from "../assets";
+import { blog1, img1, img2, img3, img4 } from "../assets";
 
 export const blogData = [
   {
@@ -95,6 +95,6 @@ export const blogData = [
     },
     tags: ["women", "education", "employment"],
     author: "DPC Jalgaon",
-    image: img4,
+    image: blog1,
   },
 ];

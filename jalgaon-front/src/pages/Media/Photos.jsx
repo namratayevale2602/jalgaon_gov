@@ -5,9 +5,23 @@ import { useLanguage } from "../../contexts/LanguageContext";
 import {
   bhumipujan,
   conf1,
+  conf10,
+  conf11,
+  conf12,
+  conf13,
+  conf14,
+  conf15,
+  conf16,
+  conf17,
+  conf18,
   conf2,
   conf3,
   conf4,
+  conf5,
+  conf6,
+  conf7,
+  conf8,
+  conf9,
   img1,
   img2,
   img3,
@@ -29,6 +43,15 @@ import {
   meet7,
   meet8,
   meet9,
+  meeting1,
+  meeting2,
+  meeting3,
+  meeting4,
+  meeting5,
+  meeting6,
+  meeting7,
+  meeting8,
+  meeting9,
   offc1,
   offc2,
   offc3,
@@ -41,6 +64,12 @@ import {
   opening6,
   opening8,
   opening9,
+  sitevisit1,
+  sitevisit2,
+  sitevisit3,
+  sitevisit4,
+  sitevisit5,
+  sitevisit6,
   womenemp1,
   womenemp2,
   womenemp3,
@@ -201,7 +230,7 @@ const GalleryPage = () => {
         },
         images: [
           {
-            id: 12,
+            id: 1,
             title: {
               en: "Headquarters Inauguration",
               mr: "मुख्यालय उद्घाटन",
@@ -214,7 +243,7 @@ const GalleryPage = () => {
           },
 
           {
-            id: 13,
+            id: 2,
             title: {
               en: "Headquarters Inauguration",
               mr: "मुख्यालय उद्घाटन",
@@ -226,7 +255,7 @@ const GalleryPage = () => {
             url: opening4,
           },
           {
-            id: 13,
+            id: 3,
             title: {
               en: "Headquarters Inauguration",
               mr: "मुख्यालय उद्घाटन",
@@ -238,7 +267,7 @@ const GalleryPage = () => {
             url: opening8,
           },
           {
-            id: 13,
+            id: 4,
             title: {
               en: "Headquarters Inauguration",
               mr: "मुख्यालय उद्घाटन",
@@ -250,7 +279,7 @@ const GalleryPage = () => {
             url: offc1,
           },
           {
-            id: 13,
+            id: 5,
             title: {
               en: "Headquarters Inauguration",
               mr: "मुख्यालय उद्घाटन",
@@ -262,7 +291,7 @@ const GalleryPage = () => {
             url: offc2,
           },
           {
-            id: 13,
+            id: 6,
             title: {
               en: "Headquarters Inauguration",
               mr: "मुख्यालय उद्घाटन",
@@ -274,7 +303,7 @@ const GalleryPage = () => {
             url: offc3,
           },
           {
-            id: 13,
+            id: 6,
             title: {
               en: "Headquarters Inauguration",
               mr: "मुख्यालय उद्घाटन",
@@ -299,7 +328,7 @@ const GalleryPage = () => {
         },
         images: [
           {
-            id: 10,
+            id: 1,
             title: {
               en: "Scheme Launch Event",
               mr: "योजना सुरू करण्याचा कार्यक्रम",
@@ -311,7 +340,7 @@ const GalleryPage = () => {
             url: ladki1,
           },
           {
-            id: 11,
+            id: 2,
             title: {
               en: "Beneficiary Interaction",
               mr: "लाभार्थी संवाद",
@@ -323,7 +352,7 @@ const GalleryPage = () => {
             url: ladki2,
           },
           {
-            id: 12,
+            id: 3,
             title: {
               en: "Award Distribution",
               mr: "पुरस्कार वितरण",
@@ -336,7 +365,7 @@ const GalleryPage = () => {
           },
 
           {
-            id: 12,
+            id: 4,
             title: {
               en: "Award Distribution",
               mr: "पुरस्कार वितरण",
@@ -361,7 +390,7 @@ const GalleryPage = () => {
         },
         images: [
           {
-            id: 13,
+            id: 1,
             title: {
               en: "Skill Development Workshop",
               mr: "कौशल्य विकास कार्यशाळा",
@@ -373,7 +402,7 @@ const GalleryPage = () => {
             url: womenemp1,
           },
           {
-            id: 14,
+            id: 2,
             title: {
               en: "Financial Literacy Program",
               mr: "आर्थिक साक्षरता कार्यक्रम",
@@ -385,7 +414,7 @@ const GalleryPage = () => {
             url: womenemp2,
           },
           {
-            id: 14,
+            id: 3,
             title: {
               en: "Financial Literacy Program",
               mr: "आर्थिक साक्षरता कार्यक्रम",
@@ -397,7 +426,7 @@ const GalleryPage = () => {
             url: womenemp3,
           },
           {
-            id: 14,
+            id: 4,
             title: {
               en: "Financial Literacy Program",
               mr: "आर्थिक साक्षरता कार्यक्रम",
@@ -422,7 +451,7 @@ const GalleryPage = () => {
         },
         images: [
           {
-            id: 16,
+            id: 1,
             title: {
               en: "Construction Groundbreaking",
               mr: "भूमी पूजन समारंभ",
@@ -434,7 +463,7 @@ const GalleryPage = () => {
             url: bhumipujan,
           },
           {
-            id: 16,
+            id: 2,
             title: {
               en: "Construction Groundbreaking",
               mr: "भूमी पूजन समारंभ",
@@ -445,13 +474,25 @@ const GalleryPage = () => {
             },
             url: opening10,
           },
+          {
+            id: 3,
+            title: {
+              en: "Construction Groundbreaking",
+              mr: "भूमी पूजन समारंभ",
+            },
+            description: {
+              en: "Traditional ceremony for new building",
+              mr: "नवीन इमारतीसाठी पारंपारिक समारंभ",
+            },
+            url: opening9,
+          },
         ],
       },
       {
         id: "conference",
         title: {
           en: "Conference",
-          mr: "परिषद",
+          mr: "सभा",
         },
         description: {
           en: "Moments from our important meetings and strategy discussions",
@@ -505,6 +546,380 @@ const GalleryPage = () => {
               mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
             },
             url: conf4,
+          },
+          {
+            id: 5,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: conf5,
+          },
+          {
+            id: 6,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: conf6,
+          },
+          {
+            id: 7,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: conf7,
+          },
+          {
+            id: 8,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: conf8,
+          },
+          {
+            id: 9,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: conf9,
+          },
+          {
+            id: 10,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: conf10,
+          },
+          {
+            id: 11,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: conf11,
+          },
+          {
+            id: 12,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: conf12,
+          },
+          {
+            id: 13,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: conf13,
+          },
+          {
+            id: 14,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: conf14,
+          },
+          {
+            id: 15,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: conf15,
+          },
+          {
+            id: 16,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: conf16,
+          },
+          {
+            id: 17,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: conf17,
+          },
+          {
+            id: 18,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: conf18,
+          },
+        ],
+      },
+      {
+        id: "assembly",
+        title: {
+          en: "Assembly",
+          mr: "बैठक",
+        },
+        description: {
+          en: "An official meeting to discuss plans, ideas, and important decisions.",
+          mr: "योजना, कल्पना आणि महत्त्वपूर्ण निर्णयांवर चर्चा करण्यासाठी अधिकृत बैठक.",
+        },
+        images: [
+          {
+            id: 1,
+            title: {
+              en: "Monthly Board Meeting",
+              mr: "मासिक मंडळ सभा",
+            },
+            description: {
+              en: "Discussion on development projects",
+              mr: "विकास प्रकल्पांवर चर्चा",
+            },
+            url: meeting1,
+          },
+          {
+            id: 2,
+            title: {
+              en: "Team Meeting",
+              mr: "संघ सभा",
+            },
+            description: {
+              en: "Weekly coordination meeting",
+              mr: "साप्ताहिक समन्वय सभा",
+            },
+            url: meeting2,
+          },
+          {
+            id: 3,
+            title: {
+              en: "Strategy Discussion",
+              mr: "रणनीती चर्चा",
+            },
+            description: {
+              en: "Planning for upcoming initiatives",
+              mr: "आगामी उपक्रमांसाठी नियोजन",
+            },
+            url: meeting3,
+          },
+          {
+            id: 4,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: meeting4,
+          },
+          {
+            id: 4,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: meeting5,
+          },
+          {
+            id: 4,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: meeting6,
+          },
+          {
+            id: 7,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: meeting7,
+          },
+          {
+            id: 8,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: meeting8,
+          },
+          {
+            id: 9,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: meeting9,
+          },
+        ],
+      },
+      {
+        id: "sitevisit",
+        title: {
+          en: "Work site visit",
+          mr: "कामाच्या ठिकाणी भेट",
+        },
+        description: {
+          en: "A professional work site visit to ensure quality, safety, and smooth project progress.",
+          mr: "गुणवत्ता, सुरक्षितता आणि प्रकल्पाची सुरळीत प्रगती सुनिश्चित करण्यासाठी व्यावसायिक कामाच्या ठिकाणी भेट.",
+        },
+        images: [
+          {
+            id: 1,
+            title: {
+              en: "Monthly Board Meeting",
+              mr: "मासिक मंडळ सभा",
+            },
+            description: {
+              en: "Discussion on development projects",
+              mr: "विकास प्रकल्पांवर चर्चा",
+            },
+            url: sitevisit1,
+          },
+          {
+            id: 2,
+            title: {
+              en: "Team Meeting",
+              mr: "संघ सभा",
+            },
+            description: {
+              en: "Weekly coordination meeting",
+              mr: "साप्ताहिक समन्वय सभा",
+            },
+            url: sitevisit2,
+          },
+          {
+            id: 3,
+            title: {
+              en: "Strategy Discussion",
+              mr: "रणनीती चर्चा",
+            },
+            description: {
+              en: "Planning for upcoming initiatives",
+              mr: "आगामी उपक्रमांसाठी नियोजन",
+            },
+            url: sitevisit3,
+          },
+          {
+            id: 4,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: sitevisit4,
+          },
+          {
+            id: 5,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: sitevisit5,
+          },
+          {
+            id: 6,
+            title: {
+              en: "Annual Review Meeting",
+              mr: "वार्षिक पुनरावलोकन सभा",
+            },
+            description: {
+              en: "Review of yearly achievements",
+              mr: "वार्षिक यशस्वीतेचे पुनरावलोकन",
+            },
+            url: sitevisit6,
           },
         ],
       },
@@ -669,12 +1084,12 @@ const GalleryPage = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                  {/* <h3 className="text-2xl font-bold text-gray-800 mb-2">
                     {getText(selectedImage, true).title}
                   </h3>
                   <p className="text-gray-600">
                     {getText(selectedImage, true).description}
-                  </p>
+                  </p> */}
                   <div className="mt-4 text-sm text-gray-500">
                     {getText(content.imageCounter)
                       .replace("{current}", currentIndex + 1)
