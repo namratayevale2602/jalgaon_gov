@@ -41,6 +41,14 @@ import UpdateDetails from "./pages/Home/UpdateDetails";
 import DistrictPlanningDashboard from "./pages/DSP/DSP";
 import SchemesPage from "./pages/Schemes/SchemesPage";
 import DistrictPlanningCommittee from "./pages/Committees/DistrictPlanningCommittee";
+// import Projectdetail from "./pages/Projectpage/Projectdetail";
+import Projectpage from "./pages/Projectpage/Projectpage";
+// import ProjectDetail from "./pages/Projectpage/ProjectDetail";
+import Projectdetail from "./pages/Projectpage/Projectdetail";
+import Schemepage from "./pages/Schemepage/Schemepage";
+import Schemedetail from "./pages/Schemepage/Schemedetail";
+
+
 
 function App() {
   const router = createBrowserRouter(
@@ -89,6 +97,10 @@ function App() {
           <Route path="updates" element={<AllUpdates />} />
           <Route path="/updates/:id" element={<UpdateDetails />} />
           <Route path="/dsp" element={<DistrictPlanningDashboard />} />
+                {/* <Route path="/project" element={<Projectpage />} />
+              <Route path="/project/:projectSlug" element={<Projectdetail />} /> */}
+                      <Route path="/scheme" element={<Schemepage />} />
+              <Route path="/scheme/:schemeSlug" element={<Schemedetail />} />
         </Route>
       </>
     )

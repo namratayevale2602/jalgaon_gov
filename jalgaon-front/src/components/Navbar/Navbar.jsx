@@ -62,39 +62,40 @@ const Navbar = () => {
         },
       ],
     },
-    {
-      name: { en: "SCHEMES", mr: "योजना" },
-      dropdown: [
-        {
-          name: { en: "ANNUAL PLAN", mr: "वार्षिक योजना" },
-          href: "/schemes#annualPlan",
-        },
-        {
-          name: { en: "MLA FUNDS", mr: "एमएलए निधी" },
-          href: "/schemes#mlaFunds",
-        },
-        {
-          name: { en: "MP FUNDS", mr: "एमपी निधी" },
-          href: "/schemes#mpFunds",
-        },
-        {
-          name: { en: "HILLY AREA DEVELOPMENT", mr: "डोंगराळ क्षेत्र विकास" },
-          href: "/schemes#hillyArea",
-        },
-        {
-          name: { en: "HUMAN DEVELOPMENT", mr: "मानवी विकास" },
-          href: "/schemes#humanDevelopment",
-        },
-        {
-          name: { en: "MINORITY SCHEMES", mr: "अल्पसंख्याक योजना" },
-          href: "/schemes#minoritySchemes",
-        },
-        {
-          name: { en: "OTHER SCHEMES", mr: "इतर योजना" },
-          href: "/schemes#otherSchemes",
-        },
-      ],
-    },
+    // {
+    //   name: { en: "SCHEMES", mr: "योजना" },
+    //   dropdown: [
+    //     {
+    //       name: { en: "ANNUAL PLAN", mr: "वार्षिक योजना" },
+    //       href: "/schemes#annualPlan",
+    //     },
+    //     {
+    //       name: { en: "MLA FUNDS", mr: "एमएलए निधी" },
+    //       href: "/schemes#mlaFunds",
+    //     },
+    //     {
+    //       name: { en: "MP FUNDS", mr: "एमपी निधी" },
+    //       href: "/schemes#mpFunds",
+    //     },
+    //     {
+    //       name: { en: "HILLY AREA DEVELOPMENT", mr: "डोंगराळ क्षेत्र विकास" },
+    //       href: "/schemes#hillyArea",
+    //     },
+    //     {
+    //       name: { en: "HUMAN DEVELOPMENT", mr: "मानवी विकास" },
+    //       href: "/schemes#humanDevelopment",
+    //     },
+    //     {
+    //       name: { en: "MINORITY SCHEMES", mr: "अल्पसंख्याक योजना" },
+    //       href: "/schemes#minoritySchemes",
+    //     },
+    //     {
+    //       name: { en: "OTHER SCHEMES", mr: "इतर योजना" },
+    //       href: "/schemes#otherSchemes",
+    //     },
+    //   ],
+    // },
+        { name: { en: "SCHEMES", mr: "योजना" }, href: "/scheme" },
     {
       name: { en: "RTI", mr: "माहिती अधिकार" },
       href: "/rti-portal",
@@ -102,6 +103,7 @@ const Navbar = () => {
     { name: { en: "TOURISM", mr: "पर्यटन" }, href: "/tourism" },
     { name: { en: "GALLERY", mr: "गॅलरी" }, href: "/gallery" },
     { name: { en: "BLOG", mr: "ब्लॉग" }, href: "/blog" },
+
     { name: { en: "REPORTS", mr: "अहवाल" }, href: "/reports" },
     { name: { en: "DOWNLOADS", mr: "डाउनलोड्स" }, href: "/downloads" },
   ];
