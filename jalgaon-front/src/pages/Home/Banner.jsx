@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
-import { hero1, hero2, hero3, hero4 } from "../../assets";
+import { hero1, hero2, hero3, hero4, hero5 } from "../../assets";
 
 const BannerCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const banners = [
-    { id: 1, image: hero1, alt: "Banner 1" },
-    { id: 2, image: hero2, alt: "Banner 2" },
-    { id: 3, image: hero3, alt: "Banner 3" },
-    { id: 4, image: hero4, alt: "Banner 4" },
+    // { id: 1, image: hero5, alt: "Banner 1" },
+    { id: 2, image: hero1, alt: "Banner 1" },
+    { id: 3, image: hero2, alt: "Banner 2" },
+    { id: 4, image: hero3, alt: "Banner 3" },
+    // { id: 5, image: hero4, alt: "Banner 4" },
   ];
 
   // Auto slide every 5 seconds

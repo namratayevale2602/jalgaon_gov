@@ -37,13 +37,12 @@ const Schemepage = () => {
   const categories = [
     {
       id: 1,
-      name: { en: "ANNUAL PLAN", mr: "वार्षिक योजना" },
+      name: { en: "DISTRICT ANNUAL PLAN", mr: "जिल्हा वार्षिक योजना" },
       slug: "annualPlan",
       description: {
         en: "Annual development plans for local areas",
         mr: "स्थानिक भागांसाठी वार्षिक विकास योजना",
       },
-      icon: "📅",
     },
     {
       id: 2,
@@ -56,7 +55,6 @@ const Schemepage = () => {
         en: "Development projects under MLA funds",
         mr: "एमएलए निधीतर्गत विकास प्रकल्प",
       },
-      icon: "🏛️",
     },
     {
       id: 3,
@@ -69,7 +67,6 @@ const Schemepage = () => {
         en: "Development projects under MP funds",
         mr: "एमपी निधीतर्गत विकास प्रकल्प",
       },
-      icon: "🏛️",
     },
     {
       id: 4,
@@ -79,7 +76,6 @@ const Schemepage = () => {
         en: "Special development projects for hilly areas",
         mr: "डोंगराळ भागांसाठी विशेष विकास प्रकल्प",
       },
-      icon: "⛰️",
     },
     {
       id: 5,
@@ -89,7 +85,6 @@ const Schemepage = () => {
         en: "Programs focused on human development",
         mr: "मानवी विकासावर लक्ष केंद्रित केलेले कार्यक्रम",
       },
-      icon: "👥",
     },
     {
       id: 6,
@@ -99,7 +94,6 @@ const Schemepage = () => {
         en: "Development schemes for minority communities",
         mr: "अल्पसंख्याक समुदायांसाठी विकास योजना",
       },
-      icon: "🕌",
     },
     {
       id: 7,
@@ -109,7 +103,6 @@ const Schemepage = () => {
         en: "Various other development schemes",
         mr: "विविध इतर विकास योजना",
       },
-      icon: "📋",
     },
   ];
 
@@ -275,7 +268,6 @@ const Schemepage = () => {
                   </div>
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-lg">{projectCategory?.icon}</span>
                       <span className="text-xl font-bold text-black-600">
                         {getText(projectCategory?.name)}
                       </span>

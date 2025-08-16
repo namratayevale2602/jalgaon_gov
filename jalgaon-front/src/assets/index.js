@@ -7,6 +7,7 @@ import hero1 from "../assets/Banner/hero1.jpeg";
 import hero2 from "../assets/Banner/hero2.jpeg";
 import hero3 from "../assets/Banner/hero3.jpeg";
 import hero4 from "../assets/Banner/banner4.jpeg";
+import hero5 from "../assets/Banner/dpc-office.png";
 
 import img1 from "../assets/Gallery/img1.jpeg";
 import img2 from "../assets/Gallery/img2.jpeg";
@@ -213,6 +214,7 @@ export {
   hero2,
   hero3,
   hero4,
+  hero5,
   img1,
   img2,
   img3,

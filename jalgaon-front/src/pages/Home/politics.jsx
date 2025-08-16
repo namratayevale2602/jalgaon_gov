@@ -33,6 +33,18 @@ const DataCard = () => {
           title: "",
           people: [
             {
+              name: "Hon. Shri. Gulabrao Raghunath Patil",
+              designation:
+                "Minister for Water Supply and Sanitation, Govt. of Maharashtra",
+              matdarsangh: "Jalgaon (Rural)",
+              image: gulabraoPatil,
+            },
+          ],
+        },
+        {
+          title: "",
+          people: [
+            {
               name: "Shri.Aayush Prasad",
               designation: "Collector",
               matdarsangh: "Jalgoan",
@@ -67,13 +79,6 @@ const DataCard = () => {
         {
           title: "Vidhan Sabha Members",
           people: [
-            {
-              name: "Hon. Shri. Gulabrao Raghunath Patil",
-              designation:
-                "Minister for Water Supply and Sanitation, Govt. of Maharashtra",
-              matdarsangh: "Jalgaon (Rural)",
-              image: gulabraoPatil,
-            },
             {
               name: "Hon. Shri. Girish Dattatray Mahajan",
               designation:
@@ -169,6 +174,18 @@ const DataCard = () => {
           title: "",
           people: [
             {
+              name: "मा.ना.श्री.गुलाबराव रघुनाथ पाटील",
+              designation:
+                "मंत्री पाणी पुरवठा व स्वच्छता, महाराष्ट्र राज्य, तथा पालकमंत्री जळगाव जिल्हा",
+              matdarsangh: "जळगाव (ग्रामीण)",
+              image: gulabraoPatil,
+            },
+          ],
+        },
+        {
+          title: "",
+          people: [
+            {
               name: "श्री आयुष प्रसाद",
               designation: "जिल्हाधिकारी",
               matdarsangh: "जळगाव",
@@ -202,13 +219,6 @@ const DataCard = () => {
         {
           title: "विधानसभा सदस्य",
           people: [
-            {
-              name: "मा.ना.श्री.गुलाबराव रघुनाथ पाटील",
-              designation:
-                "मंत्री पाणी पुरवठा व स्वच्छता, महाराष्ट्र राज्य, तथा पालकमंत्री जळगाव जिल्हा",
-              matdarsangh: "जळगाव (ग्रामीण)",
-              image: gulabraoPatil,
-            },
             {
               name: "मा.ना.श्री. गिरीश दत्तात्रय महाजन",
               designation:
@@ -247,7 +257,7 @@ const DataCard = () => {
               image: anilpatil,
             },
             {
-              name: "मा.आ.श्री. चंद्रकांत निबाजी पाटील",
+              name: "मा.आ.श्री. चंद्रकांत निंबाजी पाटील",
               designation: "",
               matdarsangh: "मुक्ताईनगर",
               image: chandrakantpatil,
@@ -303,11 +313,11 @@ const DataCard = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center mb-8">{data.title}</h1>
+      {/* <h1 className="text-3xl font-bold text-center mb-8">{data.title}</h1> */}
 
       {data.categories.map((category) => (
         <div key={category.title} className="mb-12">
-          <h2 className="text-xl font-semibold mb-6 border-b pb-2">
+          <h2 className="text-xl text-center font-semibold mb-6 border-b pb-2">
             {category.title}
           </h2>
 

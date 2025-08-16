@@ -41,14 +41,14 @@ const OrganizationalChart = () => {
       {
         level: {
           en: "Assistant District Planning Officer",
-          mr: "सहाय्यक जिल्हा नियोजन अधिकारी",
+          mr: "सहायक जिल्हा नियोजन अधिकारी",
         },
         name: { en: "B.P.Salunkhe", mr: "बी.पी. साळुंखे" },
       },
       {
         level: {
           en: "Assistant District Planning Officer",
-          mr: "सहाय्यक जिल्हा नियोजन अधिकारी",
+          mr: "सहायक जिल्हा नियोजन अधिकारी",
         },
         name: { en: "R.A.Idhe", mr: "रा.आ.इधे" },
       },

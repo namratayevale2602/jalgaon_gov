@@ -35,7 +35,7 @@ const Schemedetail = () => {
     // ANNUAL PLAN
     {
       id: 1,
-      name: { en: "ANNUAL PLAN", mr: "वार्षिक योजना" },
+      name: { en: "DISTRICT ANNUAL PLAN", mr: "जिल्हा वार्षिक योजना" },
       slug: "annualPlan",
       description: {
         en: "Comprehensive annual development plans for local areas",
@@ -76,7 +76,7 @@ const Schemedetail = () => {
       },
       details: {
         en: [
-          "Only government/local government land projects eligible",
+          "Construction projects to be approved only on government/local government land",
           "10% limit for maintenance and repair of properties constructed under government schemes",
           "Action should be taken regarding approval within 45 days",
           "Final approval of the District Collector is required",
@@ -85,8 +85,8 @@ const Schemedetail = () => {
           "Random inspection of works by a team led by the District Planning Office",
         ],
         mr: [
-          "फक्त शासकीय/स्थानिक स्वराज्य संस्थांच्या जागांवर मंजूर करण्यात येणारे बांधकाम प्रकल्प पात्र",
-          "शासकीय योजनांमधून बांधकाम करण्यात आलेल्या मालमत्तांच्या देखभाल दुरूस्तीसाठी 10% मर्यादेत",
+          "फक्त शासकीय/स्थानिक स्वराज्य संस्थांच्या जागांवर मंजूर करण्यात येणारे बांधकाम प्रकल्प",
+          "प्रशासकीय खर्चासाठी जास्तीत जास्त 10% ऐवजी शासकीय योजनांमधून बांधकाम करण्यात आलेल्या मालमत्तांच्या देखभाल दुरूस्तीसाठी 10% मर्यादेत",
           "45-दिवसांत मंजुरीबाबत कार्यवाही करावी",
           "जिल्हाधिकारी महोदयांची अंतीम मंजूरी आवश्यक",
           "कार्यान्वयीन यंत्रणेव्दारे अंमलबजावणी",

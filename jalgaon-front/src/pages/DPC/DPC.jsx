@@ -130,7 +130,7 @@ const dpcData = {
       ],
     },
     meetings: {
-      title: "बैठका आणि प्रक्रिया",
+      title: "बैठक आणि प्रक्रिया",
       sections: [
         {
           title: "बैठक वेळापत्रक",
@@ -172,7 +172,7 @@ const dpcData = {
       title: "महत्त्वाची दस्तऐवजे",
       items: [
         {
-          name: "महाराष्ट्र जिल्हा नियोजन समिती (बैठका आयोजित करणे) नियम, १९९९",
+          name: "महाराष्ट्र जिल्हा नियोजन समिती (बैठक आयोजित करणे) नियम, १९९९",
           url: "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committee_(Conduct_of_meetings)Rules_1999_18022021.pdf",
         },
         {
@@ -180,11 +180,11 @@ const dpcData = {
           url: "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committee_(Election)_Rules_1999_18022021.pdf",
         },
         {
-          name: "महाराष्ट्र जिल्हा नियोजन समित्या (बैठका आयोजित करणे) (सुधारणा) नियम, २०१८",
+          name: "महाराष्ट्र जिल्हा नियोजन समित्या (बैठक आयोजित करणे) (सुधारणा) नियम, २०१८",
           url: "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committees_(Conduct_of_meetings)_(Amendments)_Rules_2018_18022021.pdf",
         },
         {
-          name: "महाराष्ट्र जिल्हा नियोजन समिती (बैठका आयोजित करणे) (सुधारणा) नियम, २०१९",
+          name: "महाराष्ट्र जिल्हा नियोजन समिती (बैठक आयोजित करणे) (सुधारणा) नियम, २०१९",
           url: "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committee_(Conduct_of_meetings)_(Amendments)_Rules_2019_18022021.pdf",
         },
       ],
