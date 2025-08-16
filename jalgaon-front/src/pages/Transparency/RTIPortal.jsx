@@ -42,8 +42,8 @@ const RTIPortal = () => {
         mr: "अभिलेख तपासणीसाठी उपलब्ध सुविधांची माहिती",
       },
       time: {
-        en: "During office hours",
-        mr: "कार्यालयीन वेळेत",
+        en: "Monday Time 3.00 PM to 5.00 PM",
+        mr: "सोमवारी दु.3.00 ते सां.5.00 वाजेपर्यंत",
       },
       process: {
         en: "By submitting application",
@@ -109,15 +109,11 @@ const RTIPortal = () => {
           mr: "नियोजन शाखेतील सर्व कामा संबंधित",
         },
         address: {
-          en: "District Collector Office, Jalgaon",
-          mr: "जिल्हाधिकारी कार्यालय, जळगाव",
+          en: "District Planning Committee, District Collector Office, Jalgaon",
+          mr: "जिल्हा नियोजन समिती, जिल्हाधिकारी कार्यालय, जळगांव",
         },
         phone: "0257-2223135",
         email: "dpojalgaon@gmail.com",
-        appellateAuthority: {
-          en: "Shri Vijay Shinde, District Planning Officer, Jalgaon",
-          mr: "श्री. विजय शिंदे, जिल्हा नियोजन अधिकारी जळगांव",
-        },
       },
     ],
     assistantPublicInformationOfficers: [
@@ -128,16 +124,16 @@ const RTIPortal = () => {
           mr: "श्री. बी.बी.पाटील",
         },
         designation: {
-          en: "Research Assistant",
-          mr: "संशोधन सहायक",
+          en: "Assistant Research Officer",
+          mr: "सहायक संशोधन अधिकारी",
         },
         jurisdiction: {
           en: "All works of Planning Branch",
           mr: "नियोजन शाखेतील सर्व कामा करिता",
         },
         address: {
-          en: "District Collector Office, Jalgaon",
-          mr: "जिल्हाधिकारी कार्यालय, जळगाव",
+          en: "District Planning Committee, District Collector Office, Jalgaon",
+          mr: "जिल्हा नियोजन समिती, जिल्हाधिकारी कार्यालय, जळगांव",
         },
         phone: "0257-2223135",
         email: "dpojalgaon@gmail.com",
@@ -159,15 +155,11 @@ const RTIPortal = () => {
           mr: "जळगाव जिल्हा",
         },
         address: {
-          en: "District Collector Office, Jalgaon",
-          mr: "जिल्हाधिकारी कार्यालय, जळगाव",
+          en: "District Planning Committee, District Collector Office, Jalgaon",
+          mr: "जिल्हा नियोजन समिती, जिल्हाधिकारी कार्यालय, जळगांव",
         },
         phone: "0257-2223135",
         email: "dpojalgaon@gmail.com",
-        subordinateOfficer: {
-          en: "Shri R.A. Ide, Assistant District Planning Officer",
-          mr: "श्री. रा.आ.इधे, सहायक जिल्हा नियोजन अधिकारी",
-        },
       },
     ],
   };
@@ -189,7 +181,8 @@ const RTIPortal = () => {
         ],
       },
       rtiOfficers: {
-        title: "RTI Officers",
+        title:
+          "Public Information Officer/Assistant Public Information Officer/Appellate Authority",
         publicInfoOfficer: "Public Information Officer",
         asstPublicInfoOfficer: "Assistant Public Information Officer",
         appellateAuthority: "Appellate Authority",
@@ -200,7 +193,7 @@ const RTIPortal = () => {
           "Jurisdiction",
           "Address/Phone",
           "Email",
-          "Appellate Authority/Subordinate Officer",
+          "",
         ],
       },
 
@@ -224,10 +217,10 @@ const RTIPortal = () => {
       },
       rtiOfficers: {
         title:
-          "शासकीय माहिती अधिकारी / सहायक शासकीय माहिती अधिकारी / अपिलीय प्राधिकारी",
-        publicInfoOfficer: "शासकीय माहिती अधिकारी",
-        asstPublicInfoOfficer: "सहायक शासकीय माहिती अधिकारी",
-        appellateAuthority: "अपिलीय अधिकारी",
+          "जन माहिती अधिकारी / सहायक जन माहिती अधिकारी / प्रथम अपिलीय प्राधिकारी",
+        publicInfoOfficer: "जन माहिती अधिकारी",
+        asstPublicInfoOfficer: "सहायक जन माहिती अधिकारी",
+        appellateAuthority: "प्रथम अपिलीय प्राधिकारी",
         columns: [
           "अ.क्र.",
           "नाव",
@@ -235,7 +228,7 @@ const RTIPortal = () => {
           "कार्यक्षेत्र",
           "पत्ता / फोन",
           "ई-मेल",
-          "अपिलीय प्राधिकारी/अधिनस्त अधिकारी",
+          "",
         ],
       },
 
@@ -356,9 +349,6 @@ const RTIPortal = () => {
                   <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
                     {officer.email}
                   </td>
-                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
-                    {officer.appellateAuthority[language]}
-                  </td>
                 </tr>
               ))}
             </tbody>
@@ -450,9 +440,6 @@ const RTIPortal = () => {
                   </td>
                   <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
                     {officer.email}
-                  </td>
-                  <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-200">
-                    {officer.subordinateOfficer[language]}
                   </td>
                 </tr>
               ))}

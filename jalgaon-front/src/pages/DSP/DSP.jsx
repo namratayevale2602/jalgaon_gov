@@ -77,8 +77,8 @@ const DSPReports = () => {
   const reports = [
     {
       title: {
-        en: "District Development Plan (Kavi Bahinabai Chaudhari North Maharashtra University Report)",
-        mr: "जिल्हा विकास आराखडा (कवयित्री बहिणाबाई चौधरी उत्तर महाराष्ट्र विद्यापीठ अहवाल)",
+        en: "District Development Plan (Kavayitri Bahinabai Chaudhari North Maharashtra University,Jalgaon Report)",
+        mr: "जिल्हा विकास आराखडा (कवयित्री बहिणाबाई चौधरी उत्तर महाराष्ट्र विद्यापीठ,जळगाव अहवाल)",
       },
       url: "https://drive.google.com/file/d/1oZQ5-40jRxgDSl6hElpHVBTrtxpW2FeM/view?usp=sharing",
     },
@@ -119,8 +119,8 @@ const DSPReports = () => {
     },
     {
       title: {
-        en: "Jalgaon District MahSTRIDE Presentation",
-        mr: "जळगाव जिल्हा MahSTRIDE सादरीकरण",
+        en: "Jalgaon District MahaSTRIDE Presentation",
+        mr: "जळगाव जिल्हा MahaSTRIDE सादरीकरण",
       },
       url: "https://docs.google.com/presentation/d/1B0TgauLWPwMm2Wk2xpiqEDTdih2ZcQ8J/edit?usp=sharing&ouid=108173865144049668925&rtpof=true&sd=true",
     },

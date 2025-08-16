@@ -8,20 +8,20 @@ import {
   FaMapMarkerAlt,
   FaShoppingCart,
   FaTree,
-  FaWater
+  FaWater,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../contexts/LanguageContext";
-import { 
-  changdev, 
-  patnadevi, 
+import {
+  changdev,
+  patnadevi,
   girnadam,
   gandhifoundation,
   waghurdam,
   gandhigarden,
-   mehrunlake,
+  mehrunlake,
   mall,
-  bhauncheudyan
+  bhauncheudyan,
 } from "../../assets";
 
 const TourismDetail = () => {
@@ -139,11 +139,11 @@ const TourismDetail = () => {
       slug: "bhaunche-udyan",
       title: {
         en: "JCMC Bhaunche Udyan",
-        mr: "जेसीएमसी भौंचे उद्यान",
+        mr: "जेसीएमसी भाऊंचे उद्यान",
       },
       description: {
         en: "Bhaunche Udyan (Hanging Garden) is a unique municipal garden developed by Jalgaon City Municipal Corporation featuring hanging bridges (Bhaunche) as its main attraction. The garden offers a perfect blend of nature and adventure for visitors of all ages.",
-        mr: "भौंचे उद्यान (हँगिंग गार्डन) हे जळगाव सिटी म्युनिसिपल कॉर्पोरेशनद्वारे विकसित केलेले एक अनोखे म्युनिसिपल गार्डन आहे ज्यामध्ये हँगिंग ब्रिजेस (भौंचे) हे मुख्य आकर्षण आहे. उद्यान सर्व वयोगटातील भेट देणाऱ्यांसाठी निसर्ग आणि साहसाचे उत्तम मिश्रण देते.",
+        mr: "भाऊंचे उद्यान (हँगिंग गार्डन) हे जळगाव सिटी म्युनिसिपल कॉर्पोरेशनद्वारे विकसित केलेले एक अनोखे म्युनिसिपल गार्डन आहे ज्यामध्ये हँगिंग ब्रिजेस (भाऊंचे) हे मुख्य आकर्षण आहे. उद्यान सर्व वयोगटातील भेट देणाऱ्यांसाठी निसर्ग आणि साहसाचे उत्तम मिश्रण देते.",
       },
       content: {
         en: [

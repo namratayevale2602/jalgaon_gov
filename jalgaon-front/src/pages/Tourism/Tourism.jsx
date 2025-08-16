@@ -258,14 +258,14 @@ const TourismMain = () => {
     },
     {
       id: 2,
-      slug: "patan-devi-temple",
+      slug: "Patana-devi-temple",
       title: {
-        en: "Patan Devi Temple",
-        mr: "पाटण देवी मंदिर",
+        en: "Patana Devi Temple",
+        mr: "पाटना देवी मंदिर",
       },
       excerpt: {
-        en: "Patan Devi Temple is one of the 51 Shakti Peethas in India, making it a highly significant pilgrimage site.",
-        mr: "पाटण देवी मंदिर हे भारतातील ५१ शक्तीपीठांपैकी एक आहे, ज्यामुळे ते एक अत्यंत महत्त्वाचे तीर्थस्थळ बनते.",
+        en: "Patana Devi Temple is one of the 51 Shakti Peethas in India, making it a highly significant pilgrimage site.",
+        mr: "पाटना देवी मंदिर हे भारतातील ५१ शक्तीपीठांपैकी एक आहे, ज्यामुळे ते एक अत्यंत महत्त्वाचे तीर्थस्थळ बनते.",
       },
       image: patnadevi,
       type: "religious",
@@ -369,11 +369,11 @@ const TourismMain = () => {
       slug: "bhaunche-udyan",
       title: {
         en: "JCMC Bhaunche Udyan",
-        mr: "जेसीएमसी भौंचे उद्यान",
+        mr: "जेसीएमसी भाऊंचे उद्यान",
       },
       excerpt: {
         en: "Municipal garden with unique hanging bridges (Bhaunche), children's play area and walking tracks.",
-        mr: "म्युनिसिपल गार्डन अनोख्या हँगिंग ब्रिजेस (भौंचे), मुलांचे खेळण्याचे क्षेत्र आणि चालण्याच्या मार्गांसह.",
+        mr: "म्युनिसिपल गार्डन अनोख्या हँगिंग ब्रिजेस (भाऊंचे), मुलांचे खेळण्याचे क्षेत्र आणि चालण्याच्या मार्गांसह.",
       },
       image: bhauncheudyan,
       type: "nature",

@@ -25,11 +25,18 @@ const OrganizationalChart = () => {
     structure: [
       {
         level: { en: "District Collector", mr: "जिल्हाधिकारी" },
-        name: { en: "Ayush Prasad", mr: "आयुष प्रसाद" },
+        name: { en: "Hon.Ayush Prasad", mr: "मा.ना.श्री. आयुष प्रसाद" },
       },
       {
         level: { en: "District Planning Officer", mr: "जिल्हा नियोजन अधिकारी" },
-        name: { en: "Vijay Shinde", mr: "विजय शिंदे" },
+        name: { en: "Hon.Vijay Shinde", mr: "मा.ना.श्री. विजय शिंदे" },
+      },
+      {
+        level: {
+          en: "Chairperson And Guardian Minister",
+          mr: "अध्यक्ष तथा पालकमंत्री",
+        },
+        name: { en: "Hon. Gulabrao Patil", mr: "मा.ना.श्री. गुलाबराव पाटील" },
       },
       {
         level: {
@@ -69,7 +76,7 @@ const OrganizationalChart = () => {
           en: "Assistant Research Officer",
           mr: "सहायक संशोधन अधिकारी",
         },
-        name: { en: "Smt.Varsha Patil", mr: "श्रीमती वर्षा पाटील" },
+        name: { en: "Smt.V.A Patil", mr: "श्रीमती व्ही.ए. पाटील" },
       },
       {
         level: {
@@ -128,26 +135,26 @@ const OrganizationalChart = () => {
             mr: "आमदार स्थानिक विकास कार्यक्रम",
           },
           timeline: {
-            en: "90 days after receiving proposal",
-            mr: "प्रस्ताव प्राप्त झाल्यानंतर 90 दिवस",
+            en: "45 days after receiving proposal",
+            mr: "प्रस्ताव प्राप्त झाल्यानंतर 45 दिवस",
           },
           responsible: {
-            en: "Assistant Research Officer-2 & 4",
-            mr: "सहायक संशोधन अधिकारी-2 व 4",
+            en: "Assistant Research Officer-4",
+            mr: "सहायक संशोधन अधिकारी-4",
           },
         },
         {
           workType: {
-            en: "MP Local Development Program",
-            mr: "खासदार स्थानिक विकास कार्यक्रम",
+            en: "Member of Parliament Local Area Development Scheme",
+            mr: "खासदार स्थानिक क्षेत्र विकास कार्यक्रम",
           },
           timeline: {
             en: "45 days after receiving proposal",
             mr: "प्रस्ताव प्राप्त झाल्यानंतर 45 दिवस",
           },
           responsible: {
-            en: "Assistant Research Officer-3",
-            mr: "सहायक संशोधन अधिकारी-3",
+            en: "Assistant Research Officer-4",
+            mr: "सहायक संशोधन अधिकारी-4",
           },
         },
         {
@@ -160,14 +167,14 @@ const OrganizationalChart = () => {
             mr: "105 दिवस",
           },
           responsible: {
-            en: "Assistant Research Officer-1",
-            mr: "सहायक संशोधन अधिकारी-1",
+            en: "Assistant Research Officer-4",
+            mr: "सहायक संशोधन अधिकारी-4",
           },
         },
         {
           workType: {
-            en: "Tourism Development Program",
-            mr: "पर्यटन विकास कार्यक्रम",
+            en: "Regional Tourism Development Plan",
+            mr: "प्रादेशिक पर्यटन विकास कार्यक्रम",
           },
           timeline: {
             en: "30 days",
@@ -202,8 +209,8 @@ const OrganizationalChart = () => {
             mr: "बैठकीच्या 7 दिवस आधी",
           },
           responsible: {
-            en: "Assistant Research Officer-1",
-            mr: "सहायक संशोधन अधिकारी-1",
+            en: "Assistant Research Officer-4",
+            mr: "सहायक संशोधन अधिकारी-4",
           },
         },
         {
@@ -216,8 +223,8 @@ const OrganizationalChart = () => {
             mr: "बैठकीच्या 7 दिवस आधी",
           },
           responsible: {
-            en: "Assistant Research Officer-1",
-            mr: "सहायक संशोधन अधिकारी-1",
+            en: "Assistant Research Officer-4",
+            mr: "सहायक संशोधन अधिकारी-4",
           },
         },
         {
@@ -265,14 +272,14 @@ const OrganizationalChart = () => {
         en: [
           "Govt. Circular No. JINIS-1002/Pr.Kra.6/Ka-1444, dt. 24 April 2002",
           "Govt. Decision No. JIVAYO-1007/Pr.Kra.39/Ka-1444, dt. 16 Feb 2008",
-          "Finance Dept. Order No. STHAVIKA-0616/Pr.Kra.96/Ka-1482, dt. 12/07/2016",
+          "Planning Department Government Decision No. Sthavika-0616/Pr.No.96/Ka-1482, dt. 12/07/2016",
           "Planning Dept. Circular No. JINIS-1002/Pr.Kra.6/Ka-1444, dt. 24/04/2002",
           "Finance Dept. Order No. Viniyam/Pr.Kra.46/2001, dt. 11 July 2001",
         ],
         mr: [
           "म.शा. परिपत्रक क्र. जिनिस-1002/प्र.क्र.6/का-1444, दि. 24 एप्रिल 2002",
           "शासन निर्णय क्र. जिवायो-1007/प्र.क्र.39/का-1444, दि. 16 फेब्रुवारी 2008",
-          "वित्त विभाग शासन निर्णय क्र. स्थाविका-0616/प्र.क्र.96/का-1482, दि. 12/07/2016",
+          "नियोजन विभाग शासन निर्णय क्र. स्थाविका-0616/प्र.क्र.96/का-1482, दि. 12/07/2016",
           "नियोजन विभाग परिपत्रक क्र. जिनिस-1002/प्र.क्र.6/का-1444, दि. 24/04/2002",
           "वित्त विभाग शासन निर्णय क्र. विनियम/प्र.क्र.46/2001, दि. 11 जुलै 2001",
         ],

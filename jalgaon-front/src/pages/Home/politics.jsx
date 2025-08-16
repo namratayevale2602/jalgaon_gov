@@ -28,6 +28,23 @@ const DataCard = () => {
       title: "Political Representatives",
       categories: [
         {
+          title: "",
+          people: [
+            {
+              name: "Smt.Aayush Prasad",
+              designation: "Collector",
+              matdarsangh: "Jalgoan",
+              image: rakshakhadse,
+            },
+            {
+              name: "Smt.Vijay Shinde",
+              designation: "District Planning Officer",
+              matdarsangh: "Jalgaon",
+              image: smitawagh,
+            },
+          ],
+        },
+        {
           title: "Lok Sabha Members",
           people: [
             {
@@ -70,49 +87,49 @@ const DataCard = () => {
             },
             {
               name: "Hon. Shri. Kishor Appa Patil",
-              designation: "MLA",
+              designation: "",
               matdarsangh: "Pachora-Bhadgaon",
               image: kishoepatil,
             },
             {
               name: "Hon. Shri. Suresh Damu Bholle (Raju Mama)",
-              designation: "MLA",
+              designation: "",
               matdarsangh: "Jalgaon (City)",
               image: rajubhole,
             },
             {
               name: "Hon. Shri. Chandrakant Balirao Sonawane",
-              designation: "MLA",
+              designation: "",
               matdarsangh: "Chopda",
               image: chandrakantsonvane,
             },
             {
               name: "Hon. Shri. Anil Bhaidas Patil",
-              designation: "MLA",
+              designation: "",
               matdarsangh: "Amalner",
               image: anilpatil,
             },
             {
               name: "Hon. Shri. Chandrakant Nibaji Patil",
-              designation: "MLA",
+              designation: "",
               matdarsangh: "Muktainagar",
               image: chandrakantpatil,
             },
             {
               name: "Hon. Shri. Mangesh Ramesh Chavan",
-              designation: "MLA",
+              designation: "",
               matdarsangh: "Chalisgaon",
               image: mangeshchavhan,
             },
             {
               name: "Hon. Shri. Amol Chimanrao Patil",
-              designation: "MLA",
+              designation: "",
               matdarsangh: "Erandol-Parola",
               image: amolpatil,
             },
             {
               name: "Hon. Shri. Amol Haribhau Jawale",
-              designation: "MLA",
+              designation: "",
               matdarsangh: "Raver",
               image: amoljawale,
             },
@@ -146,6 +163,23 @@ const DataCard = () => {
     mr: {
       title: "राजकीय प्रतिनिधी",
       categories: [
+        {
+          title: "",
+          people: [
+            {
+              name: "श्री आयुष प्रसाद",
+              designation: "जिल्हाधिकारी",
+              matdarsangh: "जळगाव",
+              image: rakshakhadse,
+            },
+            {
+              name: "श्री विजय शिंदे",
+              designation: "जिल्हा नियोजन अधिकारी",
+              matdarsangh: "जळगाव",
+              image: smitawagh,
+            },
+          ],
+        },
         {
           title: "लोकसभा सदस्य",
           people: [
@@ -188,49 +222,49 @@ const DataCard = () => {
             },
             {
               name: "मा.आ.श्री. किशोर आप्पा पाटील",
-              designation: "आमदार",
+              designation: "",
               matdarsangh: "पाचोरा - भडगांव",
               image: kishoepatil,
             },
             {
               name: "मा.आ.श्री. सुरेश दामू भोळे (राजू मामा)",
-              designation: "आमदार",
+              designation: "",
               matdarsangh: "जळगाव (शहर)",
               image: rajubhole,
             },
             {
               name: "मा.आ.श्री. चंद्रकांत बळीराम सोनवणे",
-              designation: "आमदार",
+              designation: "",
               matdarsangh: "चोपडा",
               image: chandrakantsonvane,
             },
             {
               name: "मा.आ.श्री. अनिल भाईदास पाटील",
-              designation: "आमदार",
+              designation: "",
               matdarsangh: "अमळनेर",
               image: anilpatil,
             },
             {
               name: "मा.आ.श्री. चंद्रकांत निबाजी पाटील",
-              designation: "आमदार",
+              designation: "",
               matdarsangh: "मुक्ताईनगर",
               image: chandrakantpatil,
             },
             {
               name: "मा.आ.श्री. मंगेश रमेश चव्हाण",
-              designation: "आमदार",
+              designation: "",
               matdarsangh: "चाळीसगांव",
               image: mangeshchavhan,
             },
             {
               name: "मा.आ.श्री. अमोल चिमणराव पाटील",
-              designation: "आमदार",
+              designation: "",
               matdarsangh: "एरंडोल - पारोळा",
               image: amolpatil,
             },
             {
               name: "मा.आ.श्री. अमोल हरिभाऊ जावळे",
-              designation: "आमदार",
+              designation: "",
               matdarsangh: "रावेर",
               image: amoljawale,
             },
@@ -274,18 +308,20 @@ const DataCard = () => {
           <h2 className="text-xl font-semibold mb-6 border-b pb-2">
             {category.title}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+          {/* Centered grid for all categories */}
+          <div className="flex flex-wrap justify-center gap-6">
             {category.people.map((person, index) => (
               <div
                 key={index}
-                className="bg-white shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                className="bg-white shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 w-full sm:w-72"
               >
                 <div className="p-4 flex flex-col items-center">
-                  <div className="w-60 h-60 mb-4">
+                  <div className="w-60 h-60 mb-4 overflow-hidden">
                     <img
                       src={person.image}
                       alt={person.name}
-                      className="w-full h-full object-cover border-4 border-blue-100"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <h3 className="text-lg font-semibold text-center text-gray-800 mb-1">

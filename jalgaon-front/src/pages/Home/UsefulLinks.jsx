@@ -16,8 +16,8 @@ const UsefulLinks = () => {
   // Bilingual content
   const content = {
     title: {
-      en: "Useful Government Links",
-      mr: "उपयुक्त सरकारी दुवे",
+      en: "Useful Links",
+      mr: "उपयुक्त दुवे",
     },
     quickLinksData: [
       {
@@ -35,24 +35,24 @@ const UsefulLinks = () => {
       {
         title: {
           en: "Government Resolutions",
-          mr: "सरकारी निर्णय",
+          mr: "शासन निर्णय",
         },
         icon: "FileText",
         description: {
           en: "Official government resolutions and orders",
-          mr: "अधिकृत सरकारी निर्णय आणि आदेश",
+          mr: "अधिकृत शासन निर्णय आणि आदेश",
         },
         link: "https://gr.maharashtra.gov.in/1145/Government-Resolutions",
       },
       {
         title: {
-          en: "Maharashtra e-District",
-          mr: "महाराष्ट्र इ-डिस्ट्रिक्ट",
+          en: "Directorate of Economics and Statistics",
+          mr: "अर्थ व सांख्यिकी संचालनालय",
         },
         icon: "Landmark",
         description: {
-          en: "Access various district services online",
-          mr: "विविध जिल्हा सेवा ऑनलाइन प्रवेश",
+          en: "Planning Department, Government of Maharashtra",
+          mr: "नियोजन विभाग, महाराष्ट्र शासन",
         },
         link: "https://mahades.maharashtra.gov.in/home.do?lang=en",
       },

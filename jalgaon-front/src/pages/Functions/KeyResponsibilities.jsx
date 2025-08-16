@@ -39,7 +39,7 @@ const KeyResponsibilities = () => {
       {
         title: {
           en: "Approve MLA/MP Local Area Development Projects",
-          mr: "एमएलए/एमपी स्थानिक क्षेत्र विकास प्रकल्प मंजूर करणे",
+          mr: "आमदार/खासदार स्थानिक विकास कार्यक्रमांतर्गत कामे मंजूर करणे",
         },
         description: {
           en: "Scrutiny and approval of works proposed under MLALAD and MPLAD schemes",
@@ -47,13 +47,13 @@ const KeyResponsibilities = () => {
         },
         details: {
           en: [
-            "Review project proposals within 90 days",
+            "Review project proposals within 45 days",
             "Ensure compliance with guidelines",
             "Monitor fund utilization",
             "Maintain transparency in approvals",
           ],
           mr: [
-            "90 दिवसांच्या आत प्रकल्प प्रस्तावांचे पुनरावलोकन करा",
+            "45 दिवसांच्या आत प्रकल्प प्रस्तावांचे पुनरावलोकन करा",
             "मार्गदर्शक तत्त्वांशी अनुपालन सुनिश्चित करा",
             "निधी वापरावर लक्ष ठेवा",
             "मंजुरीमध्ये पारदर्शकता राखा",

@@ -44,13 +44,13 @@ const RolewiseDuties = () => {
           en: [
             "As per Finance Department GR No. Viniyam/Pro.Kr.46/2001 dated 11/07/2001",
             "As per Finance Department GR No. Sthavika-0616/Pro.Kr.96/Ka-1482 dated 12/07/2016",
-            "As per Central Government guidelines June 2016",
+            "Central Government's April - 2023 Guidebook",
             "As per Planning Department GR No. Jivayo-1007/Pro.Kr.39/Ka-1444 dated 16/02/2008",
           ],
           mr: [
             "म.शा. वित्त विभागाचे शा. नि. क्र. वि. अ. प्र.-1000/प्र.क्र.46/2001, विनियम, दि.11जुलै 2001",
             "म.शा. वित्त विभागाचे शा. नि. क्र. स्थाविका-0616/प्र.क्र.96/का-1482 दि.12/07/2016",
-            "केंद्र शासनाची जुन 2016 ची मार्गदर्शक पुस्तिका",
+            "केंद्र शासनाची एप्रिल - 2023 ची मार्गदर्शक पुस्तिका",
             "म.शा. नियोजन विभाग, शा. नि. क्र. जिवायो-1007/प्र.क्र.39/का-1444, दि.16.02.2008",
           ],
         },
@@ -139,33 +139,33 @@ const RolewiseDuties = () => {
       },
       {
         position: {
-          en: "Research Assistant (Various Positions)",
+          en: "Assistant Research Officer (Various Positions)",
           mr: "सहायक संशोधन अधिकारी (विविध पदे)",
         },
         duties: {
           en: [
-            "RA-1: Handle matters related to Zilla Parishad under District Annual Plan",
-            "RA-2: Handle MLA Local Area Development Program and assist Public Information Officer",
-            "RA-3: Handle District Annual Plan and MPLAD Program",
-            "RA-4: Handle MLA Local Area Development Program",
-            "RA-5: Handle Hill Area Development Program and Regional Tourism Development Scheme",
+            "Assistant Research Officer-1: Handle matters related to Zilla Parishad under District Annual Plan",
+            "Assistant Research Officer-2: Hilly Division Development Program, Assistant Public Information Officer Works and Minority Development Program",
+            "Assistant Research Officer-3: Handle MPLAD Program",
+            "Assistant Research Officer-4: Handle MLA Local Area Development Program",
+            "Assistant Research Officer-5: State Schemes Work Under District Annual Plan",
           ],
           mr: [
-            "संशोधन अधिकारी-1: जिल्हा वार्षिक योजना अंतर्गत जिल्हा परिषद विषयक कामे",
-            "संशोधन अधिकारी-2: आमदार स्थानिक विकास कार्यक्रम व सहायक जन माहिती अधिकारी कामे",
-            "संशोधन अधिकारी-3: जिल्हा वार्षिक योजना व खासदार स्थानिक विकास कार्यक्रम",
-            "संशोधन अधिकारी-4: आमदार स्थानिक विकास कार्यक्रम",
-            "संशोधन अधिकारी-5: डोंगरी विभाग विकास कार्यक्रम व प्रादेशिक पर्यटन विकास योजना",
+            "सहायक संशोधन अधिकारी-1: जिल्हा वार्षिक योजना अंतर्गत जिल्हा परिषद विषयक कामे",
+            "सहायक संशोधन अधिकारी-2: डोंगरी विभाग विकास कार्यक्रम, सहायक जन माहिती अधिकारी कामे व अल्पसंख्यांक विकास कार्यक्रम",
+            "सहायक संशोधन अधिकारी-3: खासदार स्थानिक विकास कार्यक्रम",
+            "सहायक संशोधन अधिकारी-4: आमदार स्थानिक विकास कार्यक्रम",
+            "सहायक संशोधन अधिकारी-5: जिल्हा वार्षिक योजना अंतर्गत राज्य योजनांविषयक कामे",
           ],
         },
         authority: {
           en: [
             "As per various Government Resolutions and circulars",
-            "Central Government guidelines June 2016 for MPLAD",
+            "Central Government's April - 2023 Guidebook",
           ],
           mr: [
             "विविध शासन निर्णय व परिपत्रकांनुसार",
-            "केंद्र शासनाची जुन 2016 ची मार्गदर्शक पुस्तिका (खासदार निधीसाठी)",
+            "केंद्र शासनाची एप्रिल - 2023 ची मार्गदर्शक पुस्तिका (खासदार निधीसाठी)",
           ],
         },
       },
