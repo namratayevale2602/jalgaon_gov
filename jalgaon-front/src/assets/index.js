@@ -85,6 +85,20 @@ import conf1 from "../assets/Gallery/conference1.jpeg";
 import conf2 from "../assets/Gallery/conference2.jpeg";
 import conf3 from "../assets/Gallery/conference3.jpeg";
 import conf4 from "../assets/Gallery/conference4.jpeg";
+import conf5 from "../assets/Gallery/conference5.jpg";
+import conf6 from "../assets/Gallery/conference6.jpg";
+import conf7 from "../assets/Gallery/conference7.jpg";
+import conf8 from "../assets/Gallery/conference8.jpg";
+import conf9 from "../assets/Gallery/conference9.jpg";
+import conf10 from "../assets/Gallery/conference10.jpg";
+import conf11 from "../assets/Gallery/conference11.jpg";
+import conf12 from "../assets/Gallery/conference12.jpg";
+import conf13 from "../assets/Gallery/conference13.jpg";
+import conf14 from "../assets/Gallery/conference14.jpg";
+import conf15 from "../assets/Gallery/conference15.jpg";
+import conf16 from "../assets/Gallery/conference16.jpg";
+import conf17 from "../assets/Gallery/conference17.jpg";
+import conf18 from "../assets/Gallery/conference18.jpg";
 
 import image1 from "../assets/DSP/image1.jpeg";
 import image2 from "../assets/DSP/image2.jpeg";
@@ -112,6 +126,25 @@ import satyjittambe from "../assets/Politics/satyjittambe.jpeg";
 import smitawagh from "../assets/Politics/smitawagh.jpeg";
 import girish from "../assets/Politics/girish.jpg";
 import rajubhole from "../assets/Politics/rajubhole.jpeg";
+
+import sitevisit1 from "../assets/Gallery/sitevisit.jpg";
+import sitevisit2 from "../assets/Gallery/sitevisit1.jpg";
+import sitevisit3 from "../assets/Gallery/sitevisit2.jpg";
+import sitevisit4 from "../assets/Gallery/sitevisit3.jpg";
+import sitevisit5 from "../assets/Gallery/sitevisit4.jpg";
+import sitevisit6 from "../assets/Gallery/sitevisit5.jpg";
+
+import meeting1 from "../assets/Gallery/meeting1.jpg";
+import meeting2 from "../assets/Gallery/meeting2.jpg";
+import meeting3 from "../assets/Gallery/meeting3.jpg";
+import meeting4 from "../assets/Gallery/meeting4.jpg";
+import meeting5 from "../assets/Gallery/meeting5.jpg";
+import meeting6 from "../assets/Gallery/meeting6.jpg";
+import meeting7 from "../assets/Gallery/meeting7.jpg";
+import meeting8 from "../assets/Gallery/meeting8.jpg";
+import meeting9 from "../assets/Gallery/meeting9.jpg";
+
+import blog1 from "../assets/Blog/Women_emp_1.jpg";
 
 export {
   girish,
@@ -204,6 +237,20 @@ export {
   conf2,
   conf3,
   conf4,
+  conf5,
+  conf6,
+  conf7,
+  conf8,
+  conf9,
+  conf10,
+  conf11,
+  conf12,
+  conf13,
+  conf14,
+  conf15,
+  conf16,
+  conf17,
+  conf18,
   offc1,
   offc2,
   offc3,
@@ -215,4 +262,20 @@ export {
   image6,
   image7,
   image8,
+  sitevisit1,
+  sitevisit2,
+  sitevisit3,
+  sitevisit4,
+  sitevisit5,
+  sitevisit6,
+  meeting1,
+  meeting2,
+  meeting3,
+  meeting4,
+  meeting5,
+  meeting6,
+  meeting7,
+  meeting8,
+  meeting9,
+  blog1,
 };
