@@ -278,7 +278,9 @@ const ReportsPage = () => {
                           </div>
                           <div className="ml-4">
                             <div className="text-sm font-medium text-gray-900">
-                              {getText(report.title)}
+                              <span className="inline-block max-w-[120px] xs:max-w-[150px] sm:max-w-[180px] truncate">
+                                {getText(report.title)}
+                              </span>
                             </div>
                           </div>
                         </div>

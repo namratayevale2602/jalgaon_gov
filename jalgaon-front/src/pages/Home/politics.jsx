@@ -18,6 +18,8 @@ import {
   amoljawale,
   girish,
   rajubhole,
+  dmsir,
+  vijayshinde,
 } from "../../assets";
 
 const DataCard = () => {
@@ -31,16 +33,16 @@ const DataCard = () => {
           title: "",
           people: [
             {
-              name: "Smt.Aayush Prasad",
+              name: "Shri.Aayush Prasad",
               designation: "Collector",
               matdarsangh: "Jalgoan",
-              image: rakshakhadse,
+              image: dmsir,
             },
             {
-              name: "Smt.Vijay Shinde",
+              name: "Shri.Vijay Shinde",
               designation: "District Planning Officer",
               matdarsangh: "Jalgaon",
-              image: smitawagh,
+              image: vijayshinde,
             },
           ],
         },
@@ -170,13 +172,13 @@ const DataCard = () => {
               name: "श्री आयुष प्रसाद",
               designation: "जिल्हाधिकारी",
               matdarsangh: "जळगाव",
-              image: rakshakhadse,
+              image: dmsir,
             },
             {
               name: "श्री विजय शिंदे",
               designation: "जिल्हा नियोजन अधिकारी",
               matdarsangh: "जळगाव",
-              image: smitawagh,
+              image: vijayshinde,
             },
           ],
         },

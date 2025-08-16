@@ -39,7 +39,7 @@ const Navbar = () => {
     },
     {
       name: {
-        en: "District strategic planning",
+        en: "DISTRICT STRATEGIC PLANNING",
         mr: "जिल्हा धोरणात्मक नियोजन",
       },
       href: "/dsp",
@@ -57,7 +57,7 @@ const Navbar = () => {
           href: "/rolewiseduties",
         },
         {
-          name: { en: "STAFF & CONTACTS", mr: "कर्मचारी आणि संपर्क" },
+          name: { en: "OFFICER & CONTACTS", mr: "अधिकारी आणि संपर्क" },
           href: "/directory",
         },
       ],
@@ -95,7 +95,7 @@ const Navbar = () => {
     //     },
     //   ],
     // },
-        { name: { en: "SCHEMES", mr: "योजना" }, href: "/scheme" },
+    { name: { en: "SCHEMES", mr: "योजना" }, href: "/scheme" },
     {
       name: { en: "RTI", mr: "माहिती अधिकार" },
       href: "/rti-portal",
@@ -114,23 +114,23 @@ const Navbar = () => {
 
   return (
     <div className="bg-white relative">
-      {/* Top Banner */}
+      {/* Top Banner - Responsive */}
       <div className="bg-blue-500 text-white">
-        <div className="container mx-auto px-4 py-2 flex justify-between items-center">
-          <div className="flex items-center space-x-4">
+        <div className="container mx-auto px-2 sm:px-4 py-1 sm:py-2 flex justify-between items-center">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <img
               src={logo}
               alt="Government Logo"
-              className="h-16 md:h-20 w-auto"
+              className="h-12 sm:h-16 md:h-20 w-auto"
             />
-            <div className="hidden md:block border-l border-white h-8 mx-2"></div>
-            <div className="hidden md:block">
-              <h1 className="text-lg font-bold">
+            <div className="hidden sm:block border-l border-white h-6 sm:h-8 mx-1 sm:mx-2"></div>
+            <div className="hidden sm:block">
+              <h1 className="text-sm sm:text-lg font-bold">
                 {language === "en"
                   ? "Government of Maharashtra"
                   : "महाराष्ट्र शासन"}
               </h1>
-              <p className="text-sm">
+              <p className="text-xs sm:text-sm">
                 {language === "en"
                   ? "Jalgaon District Planning Office Portal"
                   : "जळगाव जिल्हा नियोजन कार्यालय पोर्टल"}
@@ -139,40 +139,45 @@ const Navbar = () => {
             <img
               src={logo1}
               alt="Government Logo"
-              className="h-20 md:h-24 w-auto"
+              className="h-16 sm:h-20 md:h-24 w-auto"
             />
           </div>
 
           <button
             onClick={toggleLanguage}
-            className="px-3 py-1 bg-white text-blue-800 rounded-md hover:bg-gray-100 text-sm font-medium"
+            className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white text-blue-800 rounded-md hover:bg-gray-100 text-xs sm:text-sm font-medium"
           >
             {language === "en" ? "मराठी" : "English"}
           </button>
         </div>
       </div>
 
-      {/* Main Navigation */}
+      {/* Main Navigation - Responsive */}
       <nav className="border-b border-gray-200">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-2 sm:px-4">
           {/* Desktop Navigation */}
           <div className="hidden md:flex">
             <ul className="flex w-full">
               {navItems.map((item, index) => (
-                <li key={index} className="relative group flex-1 text-center">
+                <li
+                  key={index}
+                  className="relative group flex-1 text-center whitespace-nowrap"
+                >
                   {item.dropdown ? (
                     <>
                       <button
                         onClick={() => toggleDropdown(index)}
-                        className={`w-full px-2 py-4 font-medium text-gray-700 hover:text-blue-800 hover:bg-blue-50 transition-colors flex items-center justify-center ${
+                        className={`w-full px-1 sm:px-2 py-3 sm:py-4 font-medium text-gray-700 hover:text-blue-800 hover:bg-blue-50 transition-colors flex items-center justify-center ${
                           openDropdown === index
                             ? "bg-blue-50 text-blue-800"
                             : ""
                         }`}
                       >
-                        {getText(item.name)}
+                        <span className="px-1 overflow-hidden text-ellipsis text-sm sm:text-base">
+                          {getText(item.name)}
+                        </span>
                         <svg
-                          className={`w-4 h-4 ml-1 transition-transform ${
+                          className={`w-3 h-3 sm:w-4 sm:h-4 ml-1 transition-transform ${
                             openDropdown === index ? "rotate-180" : ""
                           }`}
                           fill="none"
@@ -188,13 +193,13 @@ const Navbar = () => {
                         </svg>
                       </button>
                       {openDropdown === index && (
-                        <div className="absolute left-1/2 transform -translate-x-1/2 z-50">
-                          <ul className="bg-white shadow-lg py-1 border-t-2 border-blue-800 whitespace-nowrap">
+                        <div className="absolute left-1/2 transform -translate-x-1/2 z-50 min-w-max">
+                          <ul className="bg-white shadow-lg py-1 border-t-2 border-blue-800">
                             {item.dropdown.map((subItem, subIndex) => (
                               <li key={subIndex}>
                                 <a
                                   href={subItem.href}
-                                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-800 text-left"
+                                  className="block px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-800 text-left whitespace-nowrap"
                                 >
                                   {getText(subItem.name)}
                                 </a>
@@ -207,7 +212,7 @@ const Navbar = () => {
                   ) : (
                     <a
                       href={item.href}
-                      className="w-full block px-2 py-4 font-medium text-gray-700 hover:text-blue-800 hover:bg-blue-50 transition-colors"
+                      className="w-full block px-1 sm:px-2 py-3 sm:py-4 font-medium text-gray-700 hover:text-blue-800 hover:bg-blue-50 transition-colors whitespace-nowrap text-sm sm:text-base"
                     >
                       {getText(item.name)}
                     </a>
@@ -217,15 +222,15 @@ const Navbar = () => {
             </ul>
           </div>
 
-          {/* Mobile Navigation */}
-          <div className="md:hidden flex justify-between items-center py-3">
+          {/* Mobile Navigation - Enhanced for all small screens */}
+          <div className="md:hidden flex justify-between items-center py-2 sm:py-3">
             <button
               onClick={() => setShowMobileMenu(!showMobileMenu)}
               className="text-gray-700 hover:text-blue-800 focus:outline-none"
               aria-label="Toggle menu"
             >
               <svg
-                className="h-6 w-6"
+                className="h-5 w-5 sm:h-6 sm:w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -250,17 +255,17 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Responsive */}
         {showMobileMenu && (
           <div className="md:hidden bg-white">
-            <ul className="py-2">
+            <ul className="py-1 sm:py-2">
               {navItems.map((item, index) => (
                 <li key={index} className="border-b border-gray-100">
                   {item.dropdown ? (
                     <>
                       <button
                         onClick={() => toggleDropdown(index)}
-                        className={`w-full px-4 py-3 text-left font-medium text-gray-700 hover:text-blue-800 flex justify-between items-center ${
+                        className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-left font-medium text-gray-700 hover:text-blue-800 flex justify-between items-center text-sm sm:text-base ${
                           openDropdown === index
                             ? "bg-blue-50 text-blue-800"
                             : ""
@@ -268,7 +273,7 @@ const Navbar = () => {
                       >
                         {getText(item.name)}
                         <svg
-                          className={`w-4 h-4 ml-1 transform ${
+                          className={`w-3 h-3 sm:w-4 sm:h-4 ml-1 transform ${
                             openDropdown === index ? "rotate-180" : ""
                           }`}
                           fill="none"
@@ -284,7 +289,7 @@ const Navbar = () => {
                         </svg>
                       </button>
                       {openDropdown === index && (
-                        <ul className="bg-gray-50 pl-6">
+                        <ul className="bg-gray-50 pl-4 sm:pl-6">
                           {item.dropdown.map((subItem, subIndex) => (
                             <li
                               key={subIndex}
@@ -292,7 +297,7 @@ const Navbar = () => {
                             >
                               <a
                                 href={subItem.href}
-                                className="block px-4 py-3 text-sm text-gray-700 hover:text-blue-800 hover:bg-blue-100"
+                                className="block px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-700 hover:text-blue-800 hover:bg-blue-100"
                               >
                                 {getText(subItem.name)}
                               </a>
@@ -304,7 +309,7 @@ const Navbar = () => {
                   ) : (
                     <a
                       href={item.href}
-                      className="block px-4 py-3 font-medium text-gray-700 hover:text-blue-800 hover:bg-blue-50"
+                      className="block px-3 sm:px-4 py-2 sm:py-3 font-medium text-gray-700 hover:text-blue-800 hover:bg-blue-50 text-sm sm:text-base"
                     >
                       {getText(item.name)}
                     </a>

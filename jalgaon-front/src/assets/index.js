@@ -146,7 +146,27 @@ import meeting9 from "../assets/Gallery/meeting9.jpg";
 
 import blog1 from "../assets/Blog/Women_emp_1.jpg";
 
+import vijayshinde from "../assets/Politics/Vijay_shinde_sir.jpg";
+import dmsir from "../assets/Politics/photo_dm_sir.png";
+
+import dap from "../assets/Schemas/DAP.jpg";
+import hilldevelop from "../assets/Schemas/hillydevelop.png";
+import humandevelop from "../assets/Schemas/humandevelop.jpg";
+import minoritydevelop from "../assets/Schemas/minoritydevelop.jpg";
+import molalad from "../assets/Schemas/molalad.jpg";
+import parliment from "../assets/Schemas/parliment_local.jpg";
+import otherschemas from "../assets/Schemas/otherschemas.png";
+
 export {
+  dap,
+  hilldevelop,
+  humandevelop,
+  minoritydevelop,
+  molalad,
+  parliment,
+  otherschemas,
+  vijayshinde,
+  dmsir,
   girish,
   rajubhole,
   smitawagh,
