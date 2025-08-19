@@ -70,7 +70,10 @@ const Schemepage = () => {
     },
     {
       id: 4,
-      name: { en: "HILLY AREA DEVELOPMENT", mr: "डोंगराळ क्षेत्र विकास" },
+      name: {
+        en: "HILLY REGION DEVELOPMENT PROGRAM",
+        mr: "डोंगरी विभाग विकास कार्यक्रम",
+      },
       slug: "hillyArea",
       description: {
         en: "Special development projects for hilly areas",

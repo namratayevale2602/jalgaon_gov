@@ -158,7 +158,10 @@ import molalad from "../assets/Schemas/molalad.jpg";
 import parliment from "../assets/Schemas/parliment_local.jpg";
 import otherschemas from "../assets/Schemas/otherschemas.png";
 
+import MLA from "../assets/GRpdf/MLA Guidelines Final.pdf";
+
 export {
+  MLA,
   dap,
   hilldevelop,
   humandevelop,

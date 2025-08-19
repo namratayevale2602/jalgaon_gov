@@ -16,7 +16,12 @@ import {
   molalad,
   parliment,
   otherschemas,
+  MLA,
 } from "../../assets";
+
+import gr1 from "../../assets/GRpdf/17.07.2025 GR.pdf";
+import gr2 from "../../assets/GRpdf/18.01.2010 GR.pdf";
+import gr3 from "../../assets/GRpdf/Gr-13.03.2024.pdf";
 
 const Schemedetail = () => {
   const { language } = useLanguage();
@@ -60,6 +65,34 @@ const Schemedetail = () => {
         ],
       },
       image: dap,
+      documents: {
+        en: {
+          title: "Documents",
+          items: [
+            {
+              name: "Annual Plan Guidelines 2023-24",
+              url: gr1,
+            },
+            {
+              name: "District Planning Handbook",
+              url: gr2,
+            },
+          ],
+        },
+        mr: {
+          title: "दस्तऐवज",
+          items: [
+            {
+              name: "वार्षिक योजना मार्गदर्शक तत्त्वे २०२३-२४",
+              url: gr1,
+            },
+            {
+              name: "जिल्हा नियोजन हँडबुक",
+              url: gr2,
+            },
+          ],
+        },
+      },
     },
 
     // MLA FUNDS
@@ -95,6 +128,26 @@ const Schemedetail = () => {
         ],
       },
       image: molalad,
+      documents: {
+        en: {
+          title: "Documents",
+          items: [
+            {
+              name: "MLA Local Development Program Guidelines Government Decision Dated 12/07/2016",
+              url: MLA,
+            },
+          ],
+        },
+        mr: {
+          title: "दस्तऐवज",
+          items: [
+            {
+              name: "आमदार स्थानिक विकास कार्यक्रम मार्गदर्शक तत्वे शासन निर्णय दि. 12/07/2016",
+              url: MLA,
+            },
+          ],
+        },
+      },
     },
 
     // MP FUNDS
@@ -128,12 +181,43 @@ const Schemedetail = () => {
         ],
       },
       image: parliment,
+      documents: {
+        en: {
+          title: "Documents",
+          items: [
+            {
+              name: "MP LADS Scheme Guidelines",
+              url: gr1,
+            },
+            {
+              name: "Implementation Framework",
+              url: gr2,
+            },
+          ],
+        },
+        mr: {
+          title: "दस्तऐवज",
+          items: [
+            {
+              name: "खासदार एलएडीएस योजना मार्गदर्शक तत्त्वे",
+              url: gr1,
+            },
+            {
+              name: "अंमलबजावणी फ्रेमवर्क",
+              url: gr2,
+            },
+          ],
+        },
+      },
     },
 
     // HILLY AREA DEVELOPMENT
     {
       id: 4,
-      name: { en: "HILLY AREA DEVELOPMENT", mr: "डोंगराळ क्षेत्र विकास" },
+      name: {
+        en: "HILLY REGION DEVELOPMENT PROGRAM",
+        mr: "डोंगरी विभाग विकास कार्यक्रम",
+      },
       slug: "hillyArea",
       description: {
         en: "Special development projects for hilly and difficult terrains",
@@ -158,6 +242,42 @@ const Schemedetail = () => {
         ],
       },
       image: hilldevelop,
+      documents: {
+        en: {
+          title: "Documents",
+          items: [
+            {
+              name: "Govt Decision No.Donvika-2021/ Q.No.58/ Ka.1481-A,Ministry",
+              url: gr1,
+            },
+            {
+              name: "Government Decision, No.-Donvika-2009/P.No.6/Ka. 1483, Ministry",
+              url: gr2,
+            },
+            {
+              name: "Govt Decision No: Domvika-2021/P.No.58/Ka-1481-A Ministry",
+              url: gr3,
+            },
+          ],
+        },
+        mr: {
+          title: "दस्तऐवज",
+          items: [
+            {
+              name: "शासन निर्णय क्र.डोंविका-2021/ प्र.क्र.58/ का.1481-अ,मंत्रालय",
+              url: gr1,
+            },
+            {
+              name: "शासन निर्णय , क्रमांक-डोंविका-२००९/प्र.क्र .६/का. १४८३,मंत्रालय",
+              url: gr2,
+            },
+            {
+              name: "शासन निर्णय क्रमाांक: डोंविका-२०21/प्र.क्र.58/का-१४८१-अ मंत्रालय",
+              url: gr3,
+            },
+          ],
+        },
+      },
     },
 
     // HUMAN DEVELOPMENT
@@ -188,6 +308,34 @@ const Schemedetail = () => {
         ],
       },
       image: humandevelop,
+      documents: {
+        en: {
+          title: "Documents",
+          items: [
+            {
+              name: "Human Development Framework",
+              url: gr1,
+            },
+            {
+              name: "Skill Development Guidelines",
+              url: gr2,
+            },
+          ],
+        },
+        mr: {
+          title: "दस्तऐवज",
+          items: [
+            {
+              name: "मानवी विकास फ्रेमवर्क",
+              url: gr1,
+            },
+            {
+              name: "कौशल्य विकास मार्गदर्शक तत्त्वे",
+              url: gr2,
+            },
+          ],
+        },
+      },
     },
 
     // MINORITY SCHEMES
@@ -218,6 +366,34 @@ const Schemedetail = () => {
         ],
       },
       image: minoritydevelop,
+      documents: {
+        en: {
+          title: "Documents",
+          items: [
+            {
+              name: "Minority Welfare Schemes",
+              url: gr1,
+            },
+            {
+              name: "Scholarship Guidelines",
+              url: gr2,
+            },
+          ],
+        },
+        mr: {
+          title: "दस्तऐवज",
+          items: [
+            {
+              name: "अल्पसंख्याक कल्याण योजना",
+              url: gr1,
+            },
+            {
+              name: "शिष्यवृत्ती मार्गदर्शक तत्त्वे",
+              url: gr2,
+            },
+          ],
+        },
+      },
     },
 
     // OTHER SCHEMES
@@ -248,8 +424,47 @@ const Schemedetail = () => {
         ],
       },
       image: otherschemas,
+      documents: {
+        en: {
+          title: "Documents",
+          items: [
+            {
+              name: "Various Development Schemes",
+              url: gr1,
+            },
+            {
+              name: "Implementation Guidelines",
+              url: gr2,
+            },
+          ],
+        },
+        mr: {
+          title: "दस्तऐवज",
+          items: [
+            {
+              name: "विविध विकास योजना",
+              url: gr1,
+            },
+            {
+              name: "अंमलबजावणी मार्गदर्शक तत्त्वे",
+              url: gr2,
+            },
+          ],
+        },
+      },
     },
   ];
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
 
   const selectedProject = projects.find((proj) => proj.slug === schemeSlug);
 
@@ -261,9 +476,22 @@ const Schemedetail = () => {
     );
   }
 
+  const projectDocuments =
+    selectedProject.documents[language] || selectedProject.documents.en;
+
   return (
     <div className="bg-gray-50 min-h-screen">
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Back Button */}
+        <motion.button
+          onClick={() => navigate(-1)}
+          className="flex items-center text-blue-600 hover:text-blue-800 mb-6 transition-colors duration-200"
+          whileHover={{ x: -5 }}
+        >
+          <FiArrowLeft className="mr-2" />
+          {language === "mr" ? "मागे जा" : "Go Back"}
+        </motion.button>
+
         <motion.div
           className="bg-white rounded-xl shadow-lg overflow-hidden mb-10"
           initial={{ opacity: 0, y: 20 }}
@@ -292,9 +520,9 @@ const Schemedetail = () => {
               </p>
 
               <div className="space-y-4">
-                {/* <h3 className="text-xl font-semibold text-gray-800">
-                  {language === 'mr' ? 'प्रकल्प तपशील' : 'Scheme Highlights'}
-                </h3> */}
+                <h3 className="text-xl font-semibold text-gray-800">
+                  {language === "mr" ? "प्रकल्प तपशील" : "Scheme Highlights"}
+                </h3>
                 <ul className="space-y-3">
                   {getText(selectedProject.details).map((detail, index) => (
                     <li key={index} className="flex items-start">
@@ -320,6 +548,49 @@ const Schemedetail = () => {
             </div>
           </div>
         </motion.div>
+
+        {/* Documents Section */}
+        {projectDocuments &&
+          projectDocuments.items &&
+          projectDocuments.items.length > 0 && (
+            <motion.section
+              variants={itemVariants}
+              className="mb-8 md:mb-12 bg-white rounded-lg shadow-md p-4 md:p-6"
+            >
+              <h2 className="text-xl md:text-2xl font-semibold text-blue-800 border-b border-blue-200 pb-2 mb-3 md:mb-4">
+                {projectDocuments.title}
+              </h2>
+              <div className="space-y-2 md:space-y-3">
+                {projectDocuments.items.map((doc, index) => (
+                  <motion.a
+                    key={index}
+                    variants={itemVariants}
+                    whileHover={{ x: 5 }}
+                    href={doc.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center text-blue-600 hover:text-blue-800 text-sm md:text-base transition-colors duration-200"
+                  >
+                    <svg
+                      className="w-4 h-4 md:w-5 md:h-5 mr-2 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span className="truncate">{doc.name}</span>
+                  </motion.a>
+                ))}
+              </div>
+            </motion.section>
+          )}
 
         {isModalOpen && (
           <div

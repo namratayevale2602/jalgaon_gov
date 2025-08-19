@@ -37,6 +37,13 @@ const Navbar = () => {
         },
       ],
     },
+    // {
+    //   name: {
+    //     en: "HILLY REGION DEVELOPMENT PROGRAM",
+    //     mr: "डोंगरी विभाग विकास कार्यक्रम",
+    //   },
+    //   href: "/gr",
+    // },
     {
       name: {
         en: "DISTRICT STRATEGIC PLANNING",

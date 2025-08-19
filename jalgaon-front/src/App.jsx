@@ -34,7 +34,6 @@ import TourismMain from "./pages/Tourism/Tourism";
 import TourismDetail from "./pages/Tourism/TourismDetail";
 import MinoritySchemes from "./pages/Schemes/MinoritySchemes";
 import AreaDevelop from "./pages/Schemes/AreaDevelop";
-import GRDirectory from "./pages/GR/GRDirectory";
 import DPC from "./pages/DPC/DPC";
 import AllUpdates from "./pages/Home/AllUpdates";
 import UpdateDetails from "./pages/Home/UpdateDetails";
@@ -47,8 +46,7 @@ import Projectpage from "./pages/Projectpage/Projectpage";
 import Projectdetail from "./pages/Projectpage/Projectdetail";
 import Schemepage from "./pages/Schemepage/Schemepage";
 import Schemedetail from "./pages/Schemepage/Schemedetail";
-
-
+import GRDirectory from "./pages/GR/GRDirectory";
 
 function App() {
   const router = createBrowserRouter(
@@ -92,15 +90,15 @@ function App() {
           <Route path="tourism/:slug" element={<TourismDetail />} />
           <Route path="minority-scheme" element={<MinoritySchemes />} />
           <Route path="area-develop" element={<AreaDevelop />} />
-          <Route path="gr-directory" element={<GRDirectory />} />
           <Route path="dpc" element={<DPC />} />
           <Route path="updates" element={<AllUpdates />} />
           <Route path="/updates/:id" element={<UpdateDetails />} />
           <Route path="/dsp" element={<DistrictPlanningDashboard />} />
-                {/* <Route path="/project" element={<Projectpage />} />
+          {/* <Route path="/project" element={<Projectpage />} />
               <Route path="/project/:projectSlug" element={<Projectdetail />} /> */}
-                      <Route path="/scheme" element={<Schemepage />} />
-              <Route path="/scheme/:schemeSlug" element={<Schemedetail />} />
+          <Route path="/scheme" element={<Schemepage />} />
+          <Route path="/scheme/:schemeSlug" element={<Schemedetail />} />
+          <Route path="/gr" element={<GRDirectory />} />
         </Route>
       </>
     )
