@@ -1,40 +1,41 @@
-import React from "react";
-import {
-  t1,
-  t2,
-  t3,
-  t4,
-  t5,
-  t6,
-  t7,
-  t8,
-  t9,
-  t10,
-  t11,
-  t12,
-  t13,
-  t14,
-  t15,
-} from "../../assets";
+import React, { useState, useEffect } from "react";
+import { FaSpinner } from "react-icons/fa";
 
 const TourismGallery = () => {
-  const images = [
-    { src: t1, title: "Location 1" },
-    { src: t2, title: "Location 2" },
-    { src: t3, title: "Location 3" },
-    { src: t4, title: "Location 4" },
-    { src: t5, title: "Location 5" },
-    { src: t6, title: "Location 6" },
-    { src: t7, title: "Location 7" },
-    { src: t8, title: "Location 8" },
-    { src: t9, title: "Location 9" },
-    { src: t10, title: "Location 10" },
-    { src: t11, title: "Location 11" },
-    { src: t12, title: "Location 12" },
-    { src: t13, title: "Location 13" },
-    { src: t14, title: "Location 14" },
-    { src: t15, title: "Location 15" },
-  ];
+  const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchGalleryImages = async () => {
+      try {
+        const response = await fetch(
+          "http://127.0.0.1:8000/api/tourism/gallery"
+        );
+        const data = await response.json();
+
+        if (data.success) {
+          setImages(data.data);
+        }
+      } catch (err) {
+        console.error("Error fetching gallery images:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchGalleryImages();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <div className="text-center">
+          <FaSpinner className="animate-spin text-4xl text-blue-600 mx-auto mb-4" />
+          <p className="text-gray-600">Loading Gallary...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <section className="bg-gradient-to-b from-gray-50 to-gray-100 py-12">
@@ -53,13 +54,13 @@ const TourismGallery = () => {
             >
               <img
                 src={item.src}
-                alt={item.title}
+                alt={item.title.en || `Gallery image ${index + 1}`}
                 className="w-full h-64 object-cover transform group-hover:scale-110 transition duration-700 ease-in-out"
               />
               {/* Overlay */}
               <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center">
                 <span className="text-white text-lg font-bold mb-2">
-                  {item.title}
+                  {item.title.en || `Location ${index + 1}`}
                 </span>
               </div>
             </div>

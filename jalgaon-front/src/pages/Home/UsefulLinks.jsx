@@ -9,115 +9,35 @@ import {
   Scale,
 } from "lucide-react";
 import { useLanguage } from "../../contexts/LanguageContext";
+import { useState, useEffect } from "react";
+import { FaSpinner } from "react-icons/fa";
 
 const UsefulLinks = () => {
   const { language } = useLanguage();
-
-  // Bilingual content
-  const content = {
+  const [content, setContent] = useState({
     title: {
       en: "Useful Links",
       mr: "उपयुक्त दुवे",
     },
-    quickLinksData: [
-      {
-        title: {
-          en: "RTI Portal",
-          mr: "माहिती अधिकार पोर्टल",
-        },
-        icon: "FileSearch",
-        description: {
-          en: "Right to Information applications and status",
-          mr: "माहिती अधिकार अर्ज आणि स्थिती",
-        },
-        link: "https://rtionline.maharashtra.gov.in/index-e.php",
-      },
-      {
-        title: {
-          en: "Government Resolutions",
-          mr: "शासन निर्णय",
-        },
-        icon: "FileText",
-        description: {
-          en: "Official government resolutions and orders",
-          mr: "अधिकृत शासन निर्णय आणि आदेश",
-        },
-        link: "https://gr.maharashtra.gov.in/1145/Government-Resolutions",
-      },
-      {
-        title: {
-          en: "Directorate of Economics and Statistics",
-          mr: "अर्थ व सांख्यिकी संचालनालय",
-        },
-        icon: "Landmark",
-        description: {
-          en: "Planning Department, Government of Maharashtra",
-          mr: "नियोजन विभाग, महाराष्ट्र शासन",
-        },
-        link: "https://mahades.maharashtra.gov.in/home.do?lang=en",
-      },
-      {
-        title: {
-          en: "Jalgaon District Portal",
-          mr: "जळगाव जिल्हा पोर्टल",
-        },
-        icon: "Home",
-        description: {
-          en: "Official website of Jalgaon district",
-          mr: "जळगाव जिल्ह्याचे अधिकृत वेबसाइट",
-        },
-        link: "https://jalgaon.gov.in/",
-      },
-      // {
-      //   title: {
-      //     en: "Committees",
-      //     mr: "समित्या",
-      //   },
-      //   icon: "Users",
-      //   description: {
-      //     en: "List of committees and members",
-      //     mr: "समित्या आणि सदस्यांची यादी",
-      //   },
-      //   link: "/planningcommittee",
-      // },
-      // {
-      //   title: {
-      //     en: "Downloads",
-      //     mr: "डाउनलोड",
-      //   },
-      //   icon: "FileText",
-      //   description: {
-      //     en: "Forms, reports and circulars",
-      //     mr: "फॉर्म, अहवाल आणि परिपत्रके",
-      //   },
-      //   link: "/downloads",
-      // },
-      // {
-      //   title: {
-      //     en: "Reports",
-      //     mr: "योजना",
-      //   },
-      //   icon: "Award",
-      //   description: {
-      //     en: "Current reports",
-      //     mr: "अहवाल",
-      //   },
-      //   link: "/reports",
-      // },
-      // {
-      //   title: {
-      //     en: "Acts & Rules",
-      //     mr: "कायदे आणि नियम",
-      //   },
-      //   icon: "Scale",
-      //   description: {
-      //     en: "Government acts and regulations",
-      //     mr: "सरकारी कायदे आणि नियम",
-      //   },
-      //   link: "https://www.mha.gov.in/en/acts",
-      // },
-    ],
-  };
+    quickLinksData: [],
+  });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchLinks = async () => {
+      try {
+        const response = await fetch("http://127.0.0.1:8000/api/useful-links");
+        const data = await response.json();
+        setContent(data);
+      } catch (error) {
+        console.error("Error fetching useful links:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchLinks();
+  }, [language]);
 
   const iconComponents = {
     FileText,
@@ -138,6 +58,17 @@ const UsefulLinks = () => {
     }
     return item[language] || item.en;
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <div className="text-center">
+          <FaSpinner className="animate-spin text-4xl text-blue-600 mx-auto mb-4" />
+          <p className="text-gray-600">Loading useful links...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <section className="py-12 bg-gray-50">

@@ -1,10 +1,19 @@
 import { motion } from "framer-motion";
-import { FaDownload, FaEye, FaFilePdf, FaSearch } from "react-icons/fa";
-import { useState } from "react";
+import {
+  FaDownload,
+  FaEye,
+  FaFilePdf,
+  FaSearch,
+  FaSpinner,
+} from "react-icons/fa";
+import { useState, useEffect } from "react";
 import { useLanguage } from "../../contexts/LanguageContext";
 
-const Download = () => {
+const ReportsPage = () => {
   const { language } = useLanguage();
+  const [reports, setReports] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
 
   // Bilingual content
   const content = {
@@ -13,220 +22,50 @@ const Download = () => {
       mr: "डाउनलोड",
     },
     subtitle: {
-      en: "Access all official reports and documents",
-      mr: "सर्व अधिकृत अहवाल आणि दस्तऐवजांमध्ये प्रवेश करा",
+      en: "Official documents related to District Planning Committees",
+      mr: "जिल्हा नियोजन समिती संबंधित अधिकृत दस्तऐवज",
     },
     searchPlaceholder: {
-      en: "Search reports...",
-      mr: "अहवाल शोधा...",
+      en: "Search documents...",
+      mr: "दस्तऐवज शोधा...",
     },
     tableHeaders: {
-      title: { en: "Title", mr: "शीर्षक" },
+      title: { en: "Document Title", mr: "दस्तऐवज शीर्षक" },
       description: { en: "Description", mr: "वर्णन" },
       format: { en: "Format", mr: "स्वरूप" },
       actions: { en: "Actions", mr: "क्रिया" },
     },
     buttons: {
       view: { en: "View", mr: "पहा" },
-      download: { en: "Download", mr: "डाउनलोड" },
     },
     emptyState: {
       title: {
-        en: "No reports found",
-        mr: "कोणतेही अहवाल सापडले नाहीत",
+        en: "No documents found",
+        mr: "कोणतेही दस्तऐवज सापडले नाहीत",
       },
       message: {
-        en: "Try adjusting your search or filter to find what you're looking for.",
-        mr: "तुम्ही शोधत असलेले शोधण्यासाठी तुमची शोध किंवा फिल्टर समायोजित करण्याचा प्रयत्न करा.",
+        en: "Try adjusting your search criteria",
+        mr: "तुमची शोध निकष समायोजित करण्याचा प्रयत्न करा",
       },
     },
-    reports: [
-      {
-        id: 1,
-        title: {
-          en: "Jalgaon District Financial Review 2024",
-          mr: "जळगाव जिल्हा आर्थिक समालोचन 2024",
-        },
-        description: {
-          en: "Comprehensive financial analysis of Jalgaon district for 2023-24",
-          mr: "2023-24 साठी जळगाव जिल्ह्याचे सर्वसमावेशक आर्थिक विश्लेषण",
-        },
-        fileUrl:
-          "https://mahades.maharashtra.gov.in/files/publication/dsa/2023-24/DSA_Jalgaon_2023-24.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 2,
-        title: {
-          en: "Jalgaon District Financial Review 2023",
-          mr: "जळगाव जिल्हा आर्थिक समालोचन 2023",
-        },
-        description: {
-          en: "Financial assessment of Jalgaon district for 2022-23",
-          mr: "2022-23 साठी जळगाव जिल्ह्याचे आर्थिक मूल्यांकन",
-        },
-        fileUrl:
-          "https://mahades.maharashtra.gov.in/files/publication/dsa/2022-23/DSA%202023%20Jalgaon_006.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 3,
-        title: {
-          en: "Jalgaon District Financial Review 2022",
-          mr: "जळगाव जिल्हा आर्थिक समालोचन 2022",
-        },
-        description: {
-          en: "Detailed financial report of Jalgaon district for 2021-22",
-          mr: "2021-22 साठी जळगाव जिल्ह्याचे तपशीलवार आर्थिक अहवाल",
-        },
-        fileUrl:
-          "https://mahades.maharashtra.gov.in/files/publication/dsa/2021-22/DSA_Jalgaon_2021-22.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 4,
-        title: {
-          en: "Jalgaon District Financial Review 2021",
-          mr: "जळगाव जिल्हा आर्थिक समालोचन 2021",
-        },
-        description: {
-          en: "Economic survey of Jalgaon district for 2020-21",
-          mr: "2020-21 साठी जळगाव जिल्ह्याचे आर्थिक सर्वेक्षण",
-        },
-        fileUrl:
-          "https://mahades.maharashtra.gov.in/files/publication/Jalgaon_DSA_2021.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 5,
-        title: {
-          en: "Jalgaon District Financial Review 2020",
-          mr: "जळगाव जिल्हा आर्थिक समालोचन 2020",
-        },
-        description: {
-          en: "Financial status report of Jalgaon district for 2019-20",
-          mr: "2019-20 साठी जळगाव जिल्ह्याचे आर्थिक स्थिती अहवाल",
-        },
-        fileUrl:
-          "https://mahades.maharashtra.gov.in/files/publication/dsa_Jalgaon_2020.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 6,
-        title: {
-          en: "Jalgaon Taluka Selected Indicators 2023-24",
-          mr: "जळगाव जिल्हा तालुका निवडक निर्देशांक 2023-24",
-        },
-        description: {
-          en: "Key development indicators for Jalgaon talukas 2023-24",
-          mr: "2023-24 साठी जळगाव तालुक्यांचे प्रमुख विकास निर्देशांक",
-        },
-        fileUrl:
-          "https://mahades.maharashtra.gov.in/files/publication/dsa/TalukaNirdeshak/2023-24/DSA_Jalgaon_2023-24.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 7,
-        title: {
-          en: "Jalgaon Taluka Selected Indicators 2022-23",
-          mr: "जळगाव जिल्हा तालुका निवडक निर्देशांक 2022-23",
-        },
-        description: {
-          en: "Development metrics for Jalgaon talukas 2022-23",
-          mr: "2022-23 साठी जळगाव तालुक्यांचे विकास मेट्रिक्स",
-        },
-        fileUrl:
-          "https://mahades.maharashtra.gov.in/files/publication/dsa/TalukaNirdeshak/2022-23/DSA_Jalgaon_2022-23.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 8,
-        title: {
-          en: "Maharashtra Economic Survey 2024-25",
-          mr: "महाराष्ट्राची आर्थिक पाहणी 2024-25",
-        },
-        description: {
-          en: "Comprehensive economic analysis of Maharashtra state",
-          mr: "महाराष्ट्र राज्याचे सर्वसमावेशक आर्थिक विश्लेषण",
-        },
-        fileUrl:
-          "https://mahades.maharashtra.gov.in/ESM1920/chapter/Marathi/esm_2425_m.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 9,
-        title: {
-          en: "Maharashtra Economic Survey 2023-24",
-          mr: "महाराष्ट्राची आर्थिक पाहणी 2023-24",
-        },
-        description: {
-          en: "State economic performance and analysis 2023-24",
-          mr: "2023-24 साठी राज्याची आर्थिक कामगिरी आणि विश्लेषण",
-        },
-        fileUrl:
-          "https://mahades.maharashtra.gov.in/files/publication/ESM_2023_24_Mar_Book.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 10,
-        title: {
-          en: "Maharashtra Economic Survey 2022-23",
-          mr: "महाराष्ट्राची आर्थिक पाहणी 2022-23",
-        },
-        description: {
-          en: "Economic trends and sectoral analysis of Maharashtra",
-          mr: "महाराष्ट्राचे आर्थिक ट्रेंड आणि क्षेत्रवार विश्लेषण",
-        },
-        fileUrl:
-          "https://mahades.maharashtra.gov.in/files/publication/ESM_2022_23_Mar_Book.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 11,
-        title: {
-          en: "District Development Plan (KBC North Maharashtra University Report)",
-          mr: "जिल्हा विकास आराखडा (कवयित्री बहिणाबाई चौधरी उत्तर महाराष्ट्र विद्यापीठ अहवाल)",
-        },
-        description: {
-          en: "Development framework report by KBC North Maharashtra University",
-          mr: "कवयित्री बहिणाबाई चौधरी विद्यापीठाचा विकास आराखडा अहवाल",
-        },
-        fileUrl:
-          "https://drive.google.com/file/d/1oZQ5-40jRxgDSl6hElpHVBTrtxpW2FeM/view?usp=drive_link",
-        fileType: "PDF",
-      },
-      {
-        id: 12,
-        title: {
-          en: "District Development Plan (Symbiosis University Report)",
-          mr: "जिल्हा विकास आराखडा (सिम्बॉयसिस विद्यापीठ पुणे अहवाल)",
-        },
-        description: {
-          en: "Comprehensive development strategy by Symbiosis University",
-          mr: "सिम्बॉयसिस विद्यापीठाचा सर्वसमावेशक विकास धोरण अहवाल",
-        },
-        fileUrl:
-          "https://drive.google.com/file/d/1QUr2l6rTw25abSYGG3ZcPHh-M8zEo9EN/view?usp=drive_link",
-        fileType: "PDF",
-      },
-      {
-        id: 13,
-        title: {
-          en: "Maharashtra Economic Advisory Council 2023 Report",
-          mr: "महाराष्ट्र आर्थिक सल्लागार समिती अहवाल 2023",
-        },
-        description: {
-          en: "Policy recommendations and economic guidance for Maharashtra",
-          mr: "महाराष्ट्रासाठी धोरण शिफारसी आणि आर्थिक मार्गदर्शन",
-        },
-        fileUrl:
-          "https://plan.maharashtra.gov.in/Sitemap/plan/Acts_Rules_and_Notifications_issued_in_respect_of_Maharashtra_District_Planning_Committee.htm",
-        fileType: "PDF",
-      },
-    ],
   };
 
-  const [searchTerm, setSearchTerm] = useState("");
+  useEffect(() => {
+    fetchReports();
+  }, []);
+
+  const fetchReports = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch("http://127.0.0.1:8000/api/downloads");
+      const data = await response.json();
+      setReports(data);
+    } catch (error) {
+      console.error("Error fetching reports:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const getText = (item) => {
     if (Array.isArray(item)) {
@@ -238,7 +77,7 @@ const Download = () => {
     return item;
   };
 
-  const filteredReports = content.reports.filter(
+  const filteredReports = reports.filter(
     (report) =>
       getText(report.title).toLowerCase().includes(searchTerm.toLowerCase()) ||
       getText(report.description)
@@ -246,28 +85,20 @@ const Download = () => {
         .includes(searchTerm.toLowerCase())
   );
 
-  const formatDate = (dateString) => {
-    const options = { year: "numeric", month: "short", day: "numeric" };
-    return new Date(dateString).toLocaleDateString(
-      language === "mr" ? "mr-IN" : "en-US",
-      options
-    );
-  };
-
-  const handleDownload = (fileUrl, fileName) => {
-    // Create a temporary anchor element
-    const link = document.createElement("a");
-    link.href = fileUrl;
-    link.download = fileName || "document.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   const handleView = (fileUrl) => {
-    // Open PDF in new tab
     window.open(fileUrl, "_blank", "noopener,noreferrer");
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <div className="text-center">
+          <FaSpinner className="animate-spin text-4xl text-blue-600 mx-auto mb-4" />
+          <p className="text-gray-600">Loading documents...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
@@ -351,7 +182,9 @@ const Download = () => {
                           </div>
                           <div className="ml-4">
                             <div className="text-sm font-medium text-gray-900">
-                              {getText(report.title)}
+                              <span className="inline-block max-w-[120px] xs:max-w-[150px] sm:max-w-[180px] truncate">
+                                {getText(report.title)}
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -409,4 +242,4 @@ const Download = () => {
   );
 };
 
-export default Download;
+export default ReportsPage;

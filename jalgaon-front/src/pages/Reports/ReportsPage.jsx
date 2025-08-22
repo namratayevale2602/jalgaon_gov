@@ -1,10 +1,19 @@
 import { motion } from "framer-motion";
-import { FaDownload, FaEye, FaFilePdf, FaSearch } from "react-icons/fa";
-import { useState } from "react";
+import {
+  FaDownload,
+  FaEye,
+  FaFilePdf,
+  FaSearch,
+  FaSpinner,
+} from "react-icons/fa";
+import { useState, useEffect } from "react";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 const ReportsPage = () => {
   const { language } = useLanguage();
+  const [reports, setReports] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
 
   // Bilingual content
   const content = {
@@ -20,120 +29,6 @@ const ReportsPage = () => {
       en: "Search documents...",
       mr: "दस्तऐवज शोधा...",
     },
-    reports: [
-      {
-        id: 1,
-        title: {
-          en: "Jalgaon District Financial Review 2024",
-          mr: "जळगाव जिल्हा आर्थिक समालोचन 2024",
-        },
-        description: {
-          en: "Comprehensive financial analysis of Jalgaon district for 2023-24",
-          mr: "2023-24 साठी जळगाव जिल्ह्याचे सर्वसमावेशक आर्थिक विश्लेषण",
-        },
-        fileUrl:
-          "https://mahades.maharashtra.gov.in/files/publication/dsa/2023-24/DSA_Jalgaon_2023-24.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 2,
-        title: {
-          en: "Jalgaon District Financial Review 2023",
-          mr: "जळगाव जिल्हा आर्थिक समालोचन 2023",
-        },
-        description: {
-          en: "Financial assessment of Jalgaon district for 2022-23",
-          mr: "2022-23 साठी जळगाव जिल्ह्याचे आर्थिक मूल्यांकन",
-        },
-        fileUrl:
-          "https://mahades.maharashtra.gov.in/files/publication/dsa/2022-23/DSA%202023%20Jalgaon_006.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 3,
-        title: {
-          en: "Maharashtra Economic Survey 2024-25",
-          mr: "महाराष्ट्राची आर्थिक पाहणी 2024-25",
-        },
-        description: {
-          en: "Comprehensive economic analysis of Maharashtra state",
-          mr: "महाराष्ट्र राज्याचे सर्वसमावेशक आर्थिक विश्लेषण",
-        },
-        fileUrl:
-          "https://mahades.maharashtra.gov.in/ESM1920/chapter/Marathi/esm_2425_m.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 4,
-        title: {
-          en: "MAHARASHTRA DISTRICT PLANNING COMMITTEE (CONSTITUTIONS AND FUNCTIONS) ACT, 1998",
-          mr: "महाराष्ट्र जिल्हा नियोजन समिती (रचना व कामे) अधिनियम, १९९८",
-        },
-        description: {
-          en: "The principal act governing constitution and functions of District Planning Committees in Maharashtra",
-          mr: "महाराष्ट्रातील जिल्हा नियोजन समित्यांच्या रचना आणि कार्यांचे नियमन करणारा प्रमुख कायदा",
-        },
-        fileUrl:
-          "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/MAHARASHTRA_DISTRICT_PLANNING_COMMITTEE_(CONSTITUTIONS_AND_FUNCTIONS)_ACT_1998_18022021.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 5,
-        title: {
-          en: "Maharashtra District Planning Committee (Election) Rules, 1999",
-          mr: "महाराष्ट्र जिल्हा नियोजन समिती (निवडणूक) नियम,१९९९",
-        },
-        description: {
-          en: "Rules governing the election process for District Planning Committee members",
-          mr: "जिल्हा नियोजन समिती सदस्यांच्या निवडणूक प्रक्रियेचे नियमन करणारे नियम",
-        },
-        fileUrl:
-          "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committee_(Election)_Rules_1999_18022021.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 6,
-        title: {
-          en: "Maharashtra District Planning Committee (Conduct of meetings) Rules, 1999",
-          mr: "महाराष्ट्र जिल्हा नियोजन समिती (सभा घेणे) नियम, १९९९",
-        },
-        description: {
-          en: "Rules regulating the conduct of meetings of District Planning Committees",
-          mr: "जिल्हा नियोजन समित्यांच्या सभांच्या आयोजना आणि संचालनाचे नियम",
-        },
-        fileUrl:
-          "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committee_(Conduct_of_meetings)Rules_1999_18022021.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 7,
-        title: {
-          en: "Maharashtra District Planning Committees (Conduct of meetings) (Amendments) Rules, 2018",
-          mr: "महाराष्ट्र जिल्हा नियोजन समिती (सभा घेणे) (सुधारणा) नियम, २०१८",
-        },
-        description: {
-          en: "Amendments to the rules governing conduct of DPC meetings",
-          mr: "जिल्हा नियोजन समिती सभांच्या संचालनाच्या नियमांमधील सुधारणा",
-        },
-        fileUrl:
-          "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committees_(Conduct_of_meetings)_(Amendments)_Rules_2018_18022021.pdf",
-        fileType: "PDF",
-      },
-      {
-        id: 8,
-        title: {
-          en: "Maharashtra District Planning Committee (Conduct of meetings) (Amendments) Rules, 2019",
-          mr: "महाराष्ट्र जिल्हा नियोजन समिती (सभा घेणे) (सुधारणा) नियम, २०१९",
-        },
-        description: {
-          en: "Latest amendments to the meeting conduct rules for DPCs",
-          mr: "जिल्हा नियोजन समिती सभांच्या संचालन नियमांमधील नवीनतम सुधारणा",
-        },
-        fileUrl:
-          "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committee_(Conduct_of_meetings)_(Amendments)_Rules_2019_18022021.pdf",
-        fileType: "PDF",
-      },
-    ],
     tableHeaders: {
       title: { en: "Document Title", mr: "दस्तऐवज शीर्षक" },
       description: { en: "Description", mr: "वर्णन" },
@@ -155,7 +50,22 @@ const ReportsPage = () => {
     },
   };
 
-  const [searchTerm, setSearchTerm] = useState("");
+  useEffect(() => {
+    fetchReports();
+  }, []);
+
+  const fetchReports = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch("http://127.0.0.1:8000/api/reports");
+      const data = await response.json();
+      setReports(data);
+    } catch (error) {
+      console.error("Error fetching reports:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const getText = (item) => {
     if (Array.isArray(item)) {
@@ -167,7 +77,7 @@ const ReportsPage = () => {
     return item;
   };
 
-  const filteredReports = content.reports.filter(
+  const filteredReports = reports.filter(
     (report) =>
       getText(report.title).toLowerCase().includes(searchTerm.toLowerCase()) ||
       getText(report.description)
@@ -175,26 +85,20 @@ const ReportsPage = () => {
         .includes(searchTerm.toLowerCase())
   );
 
-  const formatDate = (dateString) => {
-    const options = { year: "numeric", month: "short", day: "numeric" };
-    return new Date(dateString).toLocaleDateString(
-      language === "mr" ? "mr-IN" : "en-US",
-      options
-    );
-  };
-
-  const handleDownload = (fileUrl, fileName) => {
-    const link = document.createElement("a");
-    link.href = fileUrl;
-    link.download = fileName || "document.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   const handleView = (fileUrl) => {
     window.open(fileUrl, "_blank", "noopener,noreferrer");
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <div className="text-center">
+          <FaSpinner className="animate-spin text-4xl text-blue-600 mx-auto mb-4" />
+          <p className="text-gray-600">Loading documents...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">

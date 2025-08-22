@@ -1,4 +1,4 @@
-// TourismDetail.jsx (Updated Detail Page)
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 import {
@@ -12,196 +12,135 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../contexts/LanguageContext";
-import {
-  changdev,
-  patnadevi,
-  girnadam,
-  gandhifoundation,
-  waghurdam,
-  gandhigarden,
-  mehrunlake,
-  mall,
-  bhauncheudyan,
-} from "../../assets";
+import { FaSpinner } from "react-icons/fa";
 
 const TourismDetail = () => {
   const { slug } = useParams();
   const { language } = useLanguage();
+  const [spot, setSpot] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const tourismData = [
-    // Previous 6 spots data remains the same...
-    // Add the new spots data below:
-    {
-      slug: "mehrun-lake",
-      title: {
-        en: "Mehrun Lake",
-        mr: "मेहरून तलाव",
-      },
-      description: {
-        en: "Mehrun Lake is a serene freshwater lake located about 12km from Jalgaon city, known for its peaceful surroundings and beautiful sunset views. The lake has been developed as a recreational spot with boating facilities and walking paths around its perimeter.",
-        mr: "मेहरून तलाव हे जळगाव शहरापासून सुमारे 12 किमी अंतरावर असलेले एक शांत गोड्या पाण्याचे तलाव आहे, जे त्याच्या शांत वातावरणासाठी आणि सुंदर सूर्यास्ताच्या दृश्यांसाठी ओळखले जाते. तलावाच्या परिघाभोवती बोटिंग सुविधा आणि चालण्याचे मार्ग असलेले हे एक मनोरंजन स्थळ म्हणून विकसित केले गेले आहे.",
-      },
-      content: {
-        en: [
-          "Spread over 25 hectares with maximum depth of 12 meters",
-          "Pedal boats and rowing boats available for visitors",
-          "1.8 km walking track around the lake with benches",
-          "Best time to visit is between October to March",
-          "Entry fee: ₹20 for adults, ₹10 for children",
-        ],
-        mr: [
-          "25 हेक्टरमध्ये पसरलेले जास्तीत जास्त 12 मीटर खोली",
-          "भेट देणाऱ्यांसाठी पेडल बोट आणि रोइंग बोट उपलब्ध",
-          "तलावाभोवती 1.8 किमी चालण्याचा मार्ग बेंचसह",
-          "ऑक्टोबर ते मार्च दरम्यान भेट देण्यासाठी सर्वोत्तम वेळ",
-          "प्रवेश शुल्क: प्रौढांसाठी ₹20, मुलांसाठी ₹10",
-        ],
-      },
-      image: mehrunlake,
-      type: "nature",
-      stats: {
-        visitors: "75,000+",
-        established: "1980",
-        location: "Mehrun, 12km from Jalgaon",
-        area: "25 hectares",
-      },
-      development: {
-        budget: "₹1.5 Crore",
-        projects: {
-          en: [
-            "Boating facility development",
-            "Lakefront beautification",
-            "Walking track construction",
-            "Safety railings installation",
-          ],
-          mr: [
-            "बोटिंग सुविधा विकास",
-            "लेकफ्रंट सुशोभीकरण",
-            "चालण्याच्या मार्गाचे बांधकाम",
-            "सुरक्षा रेलिंग स्थापना",
-          ],
-        },
-      },
-    },
-    {
-      slug: "khandesh-central-mall",
-      title: {
-        en: "Khandesh Central Mall",
-        mr: "खान्देश सेंट्रल मॉल",
-      },
-      description: {
-        en: "Khandesh Central Mall is Jalgaon's first and largest shopping mall, offering a complete retail and entertainment experience. Spread over 200,000 sq.ft., the mall houses national and international brands, a multiplex cinema, food court, and gaming zone.",
-        mr: "खान्देश सेंट्रल मॉल हे जळगावचे पहिले आणि सर्वात मोठे शॉपिंग मॉल आहे, जे संपूर्ण किरकोळ आणि मनोरंजनाचा अनुभव देतो. 200,000 चौ.फूटमध्ये पसरलेल्या या मॉलमध्ये राष्ट्रीय आणि आंतरराष्ट्रीय ब्रँड्स, मल्टीप्लेक्स सिनेमा, फूड कोर्ट आणि गेमिंग झोन आहे.",
-      },
-      content: {
-        en: [
-          "First multiplex cinema in North Maharashtra with 4 screens",
-          "Over 100 retail stores including major brands",
-          "Food court with 15+ dining options",
-          "Ample parking space for 500+ vehicles",
-          "Open 10 AM to 10 PM all days including holidays",
-        ],
-        mr: [
-          "उत्तर महाराष्ट्रातील पहिले मल्टीप्लेक्स सिनेमा 4 स्क्रीनसह",
-          "प्रमुख ब्रँड्ससह 100 पेक्षा जास्त किरकोळ दुकाने",
-          "15+ डायनिंग पर्यायांसह फूड कोर्ट",
-          "500+ वाहनांसाठी पुरेशी पार्किंग जागा",
-          "सुट्ट्यांसह सर्व दिवस सकाळी 10 ते रात्री 10 पर्यंत खुले",
-        ],
-      },
-      image: mall,
-      type: "commercial",
-      stats: {
-        visitors: "200,000+",
-        established: "2018",
-        location: "Jalgaon City Center",
-        area: "200,000 sq.ft.",
-      },
-      development: {
-        budget: "₹150 Crore",
-        projects: {
-          en: [
-            "Expansion with additional retail space",
-            "Parking automation system",
-            "Food court renovation",
-            "Entertainment zone upgrade",
-          ],
-          mr: [
-            "अतिरिक्त किरकोळ जागेसह विस्तार",
-            "पार्किंग ऑटोमेशन सिस्टम",
-            "फूड कोर्ट नूतनीकरण",
-            "मनोरंजन क्षेत्र सुधारणा",
-          ],
-        },
-      },
-    },
-    {
-      slug: "bhaunche-udyan",
-      title: {
-        en: "JCMC Bhaunche Udyan",
-        mr: "जेसीएमसी भाऊंचे उद्यान",
-      },
-      description: {
-        en: "Bhaunche Udyan (Hanging Garden) is a unique municipal garden developed by Jalgaon City Municipal Corporation featuring hanging bridges (Bhaunche) as its main attraction. The garden offers a perfect blend of nature and adventure for visitors of all ages.",
-        mr: "भाऊंचे उद्यान (हँगिंग गार्डन) हे जळगाव सिटी म्युनिसिपल कॉर्पोरेशनद्वारे विकसित केलेले एक अनोखे म्युनिसिपल गार्डन आहे ज्यामध्ये हँगिंग ब्रिजेस (भाऊंचे) हे मुख्य आकर्षण आहे. उद्यान सर्व वयोगटातील भेट देणाऱ्यांसाठी निसर्ग आणि साहसाचे उत्तम मिश्रण देते.",
-      },
-      content: {
-        en: [
-          "Features 5 unique hanging bridges of different designs",
-          "Children's play area with modern equipment",
-          "1.2 km walking track through lush greenery",
-          "Open gym equipment for fitness enthusiasts",
-          "Open from 6 AM to 9 PM, entry free for all",
-        ],
-        mr: [
-          "वेगवेगळ्या डिझाइनच्या 5 अनोख्या हँगिंग ब्रिजेस",
-          "आधुनिक उपकरणांसह मुलांचे खेळण्याचे क्षेत्र",
-          "हिरवळीतून 1.2 किमी चालण्याचा मार्ग",
-          "फिटनेसचे छंद असणाऱ्यांसाठी ओपन जिम उपकरणे",
-          "सकाळी 6 ते रात्री 9 पर्यंत खुले, सर्वांसाठी प्रवेश मोफत",
-        ],
-      },
-      image: bhauncheudyan,
-      type: "nature",
-      stats: {
-        visitors: "90,000+",
-        established: "2015",
-        location: "Near Jilha Peth, Jalgaon",
-        area: "3.5 acres",
-      },
-      development: {
-        budget: "₹2.8 Crore",
-        projects: {
-          en: [
-            "New hanging bridge installations",
-            "Play area modernization",
-            "Landscaping improvements",
-            "Lighting and security upgrades",
-          ],
-          mr: [
-            "नवीन हँगिंग ब्रिज स्थापना",
-            "खेळण्याच्या क्षेत्राचे आधुनिकीकरण",
-            "लँडस्केपिंग सुधारणा",
-            "प्रकाश आणि सुरक्षा सुधारणा",
-          ],
-        },
-      },
-    },
-    // ... (include all previous 6 spots data here as well)
-  ];
+  useEffect(() => {
+    const fetchTourismSpot = async () => {
+      try {
+        const response = await fetch(
+          `http://127.0.0.1:8000/api/tourism/spots/${slug}`
+        );
+        const data = await response.json();
 
-  const spot = tourismData.find((item) => item.slug === slug);
+        if (response.ok && data.success) {
+          setSpot(data.data);
+          setError(null);
+        } else {
+          // Handle API error responses more robustly
+          if (data.detail) {
+            if (typeof data.detail === "object" && data.detail !== null) {
+              // If detail is an object, try to extract a message
+              const errorMessage =
+                data.detail.message ||
+                data.detail.msg ||
+                data.detail.error ||
+                "Tourism spot not found";
+              setError(String(errorMessage));
+            } else {
+              setError(String(data.detail));
+            }
+          } else if (data.message) {
+            setError(String(data.message));
+          } else {
+            setError("Tourism spot not found");
+          }
+        }
+      } catch (err) {
+        setError("Error fetching tourism spot");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTourismSpot();
+  }, [slug]);
+
   const getText = (item) => {
+    if (item === null || item === undefined) {
+      return "";
+    }
+
     if (Array.isArray(item)) {
-      return item[language] || item.en;
+      return item;
     }
-    if (typeof item === "object" && item !== null) {
-      return item[language] || item.en || item;
+
+    if (typeof item === "object") {
+      // Handle error objects first to prevent rendering them
+      if (item.detail || item.error || item.message) {
+        return "";
+      }
+
+      // Handle multi-language objects
+      if (item[language] !== undefined) {
+        return item[language];
+      }
+      if (item.en !== undefined) {
+        return item.en;
+      }
+      // If it's an object with 'item' property
+      if (item.item !== undefined) {
+        return item.item;
+      }
+      // For any other object, return empty string to avoid rendering objects
+      return "";
     }
-    return item;
+
+    return String(item);
   };
 
-  if (!spot) {
+  const getArrayContent = (content) => {
+    if (!content) return [];
+
+    const result = getText(content);
+
+    if (Array.isArray(result)) {
+      // Process each item in the array to extract the actual text
+      return result
+        .map((item) => {
+          if (typeof item === "object" && item !== null) {
+            const text = getText(item);
+            // If we still get an object, return empty string
+            return typeof text === "object" ? "" : text;
+          }
+          return item;
+        })
+        .filter((item) => item && item.trim() !== "");
+    }
+
+    // If it's a string, try to split by newlines or return as single item array
+    if (typeof result === "string") {
+      return result.split("\n").filter((item) => item.trim() !== "");
+    }
+
+    // Fallback to empty array
+    return [];
+  };
+
+  const getDescription = (description) => {
+    if (!description) return "";
+    const result = getText(description);
+    return result || "";
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <div className="text-center">
+          <FaSpinner className="animate-spin text-4xl text-blue-600 mx-auto mb-4" />
+          <p className="text-gray-600">Loading tourism spots...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !spot) {
     return (
       <div className="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-2xl font-bold text-gray-800">
@@ -209,6 +148,7 @@ const TourismDetail = () => {
             ? "Tourism spot not found"
             : "पर्यटन स्थळ सापडले नाही"}
         </h1>
+        <p className="text-red-600 mb-4">{error}</p>
         <Link
           to="/tourism"
           className="mt-4 inline-flex items-center text-blue-600"
@@ -266,12 +206,12 @@ const TourismDetail = () => {
               <span className="flex items-center">
                 <FaUsers className="mr-1" />
                 {language === "en" ? "Visitors:" : "पर्यटक:"}{" "}
-                {spot.stats.visitors}
+                {spot.stats?.visitors || "N/A"}
               </span>
               <span className="flex items-center">
                 <FaCalendarAlt className="mr-1" />
                 {language === "en" ? "Established:" : "स्थापना:"}{" "}
-                {spot.stats.established}
+                {spot.stats?.established || "N/A"}
               </span>
               <span className="flex items-center">
                 {spot.type === "nature" ? (
@@ -283,7 +223,7 @@ const TourismDetail = () => {
                 ) : (
                   <FaWater className="mr-1" />
                 )}
-                {spot.stats.location}
+                {spot.stats?.location || getText(spot.title)}
               </span>
             </div>
 
@@ -297,44 +237,50 @@ const TourismDetail = () => {
               transition={{ delay: 0.2 }}
               className="prose max-w-none text-gray-700 mb-8"
             >
-              <p className="text-lg mb-6">{getText(spot.description)}</p>
+              <p className="text-lg mb-6">{getDescription(spot.description)}</p>
 
               <h3 className="text-xl font-semibold text-gray-800 mb-3">
                 {language === "en" ? "Key Features" : "मुख्य वैशिष्ट्ये"}
               </h3>
               <ul className="list-disc pl-5 space-y-2 mb-6">
-                {getText(spot.content).map((item, index) => (
+                {getArrayContent(spot.content).map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
             </motion.div>
 
-            <div className="bg-blue-50 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-blue-800 mb-4">
-                {language === "en" ? "Development Initiatives" : "विकास उपक्रम"}
-              </h3>
-
-              <div className="mb-4">
-                <h4 className="font-medium text-gray-800 mb-2">
+            {spot.development && (
+              <div className="bg-blue-50 rounded-lg p-6">
+                <h3 className="text-xl font-semibold text-blue-800 mb-4">
                   {language === "en"
-                    ? "Recent Investments"
-                    : "अलीकडील गुंतवणूक"}
-                </h4>
-                <p className="text-blue-700 font-medium">
-                  {language === "en" ? "Budget:" : "अर्थसंकल्प:"}{" "}
-                  {spot.development.budget}
-                </p>
-              </div>
+                    ? "Development Initiatives"
+                    : "विकास उपक्रम"}
+                </h3>
 
-              <h4 className="font-medium text-gray-800 mb-2">
-                {language === "en" ? "Ongoing Projects" : "चालू प्रकल्प"}
-              </h4>
-              <ul className="list-disc pl-5 space-y-1">
-                {getText(spot.development.projects).map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            </div>
+                <div className="mb-4">
+                  <h4 className="font-medium text-gray-800 mb-2">
+                    {language === "en"
+                      ? "Recent Investments"
+                      : "अलीकडील गुंतवणूक"}
+                  </h4>
+                  <p className="text-blue-700 font-medium">
+                    {language === "en" ? "Budget:" : "अर्थसंकल्प:"}{" "}
+                    {spot.development?.budget || "N/A"}
+                  </p>
+                </div>
+
+                <h4 className="font-medium text-gray-800 mb-2">
+                  {language === "en" ? "Ongoing Projects" : "चालू प्रकल्प"}
+                </h4>
+                <ul className="list-disc pl-5 space-y-1">
+                  {getArrayContent(spot.development?.projects).map(
+                    (item, index) => (
+                      <li key={index}>{item}</li>
+                    )
+                  )}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </motion.div>

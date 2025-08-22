@@ -1,56 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "../../contexts/LanguageContext";
-
-// DPC Data in both English and Marathi
-const dpcData = {
-  en: {
-    documents: {
-      title: "Planning Committee Rules & Act",
-      items: [
-        {
-          name: "Maharashtra District Planning Committee ( Conduct of meetings ) Rules, 1999",
-          url: "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committee_(Conduct_of_meetings)Rules_1999_18022021.pdf",
-        },
-        {
-          name: "Maharashtra District Planning Committee ( Election ) Rules, 1999",
-          url: "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committee_(Election)_Rules_1999_18022021.pdf",
-        },
-        {
-          name: "Maharashtra District Planning Committees ( Conduct of meetings ) (Amendments) Rules, 2018",
-          url: "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committees_(Conduct_of_meetings)_(Amendments)_Rules_2018_18022021.pdf",
-        },
-        {
-          name: "Maharashtra District Planning Committee ( Conduct of meetings ) (Amendments) Rules, 2019",
-          url: "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committee_(Conduct_of_meetings)_(Amendments)_Rules_2019_18022021.pdf",
-        },
-      ],
-    },
-  },
-  mr: {
-    documents: {
-      title: "महत्त्वाची दस्तऐवजे",
-      items: [
-        {
-          name: "महाराष्ट्र जिल्हा नियोजन समिती (बैठक आयोजित करणे) नियम, १९९९",
-          url: "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committee_(Conduct_of_meetings)Rules_1999_18022021.pdf",
-        },
-        {
-          name: "महाराष्ट्र जिल्हा नियोजन समिती (निवडणूक) नियम, १९९९",
-          url: "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committee_(Election)_Rules_1999_18022021.pdf",
-        },
-        {
-          name: "महाराष्ट्र जिल्हा नियोजन समित्या (बैठक आयोजित करणे) (सुधारणा) नियम, २०१८",
-          url: "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committees_(Conduct_of_meetings)_(Amendments)_Rules_2018_18022021.pdf",
-        },
-        {
-          name: "महाराष्ट्र जिल्हा नियोजन समिती (बैठक आयोजित करणे) (सुधारणा) नियम, २०१९",
-          url: "https://plan.maharashtra.gov.in/Sitemap/plan/pdf/Maharashtra_District_Planning_Committee_(Conduct_of_meetings)_(Amendments)_Rules_2019_18022021.pdf",
-        },
-      ],
-    },
-  },
-};
+import { FaSpinner } from "react-icons/fa";
 
 // Animation variants
 const containerVariants = {
@@ -76,7 +27,59 @@ const itemVariants = {
 
 const DPC = () => {
   const { language } = useLanguage();
-  const data = dpcData[language] || dpcData.en; // Fallback to English if language not found
+  const [data, setData] = useState({
+    documents: {
+      title:
+        language === "mr"
+          ? "महत्त्वाची दस्तऐवजे"
+          : "Planning Committee Rules & Act",
+      items: [],
+    },
+  });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(`http://127.0.0.1:8000/api/dpc-documents`);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const result = await response.json();
+        setData(result);
+      } catch (err) {
+        setError(err.message);
+        console.error("Error fetching DPC documents:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [language]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <div className="text-center">
+          <FaSpinner className="animate-spin text-4xl text-blue-600 mx-auto mb-4" />
+          <p className="text-gray-600">
+            Loading Planning Committee Rules & Act...
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-red-600">Error: {error}</div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -103,6 +106,7 @@ const DPC = () => {
                 whileHover={{ x: 5 }}
                 href={doc.url}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center text-blue-600 hover:text-blue-800 text-sm md:text-base"
               >
                 <svg

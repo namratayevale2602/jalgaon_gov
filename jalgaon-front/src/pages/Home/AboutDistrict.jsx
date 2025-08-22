@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useLanguage } from "../../contexts/LanguageContext";
-import { Banner1 } from "../../assets";
+import { FaSpinner } from "react-icons/fa";
 
 const AboutDistrict = () => {
   const { language, content, fetchContent } = useLanguage();
@@ -13,9 +13,7 @@ const AboutDistrict = () => {
     const fetchDistrictData = async () => {
       try {
         setLoading(true);
-        const response = await fetch(
-          "https://jalgaonback.demovoting.com/api/districts"
-        );
+        const response = await fetch("http://127.0.0.1:8000/api/districts");
         if (!response.ok) {
           throw new Error("Failed to fetch district data");
         }
@@ -31,7 +29,15 @@ const AboutDistrict = () => {
     fetchDistrictData();
   }, []);
 
-  if (loading) return <div className="text-center py-12">Loading...</div>;
+  if (loading)
+    return (
+      <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <div className="text-center">
+          <FaSpinner className="animate-spin text-4xl text-blue-600 mx-auto mb-4" />
+          <p className="text-gray-600">Loading About Jalgaon District...</p>
+        </div>
+      </div>
+    );
   if (error)
     return <div className="text-center py-12 text-red-500">Error: {error}</div>;
   if (!districtData)

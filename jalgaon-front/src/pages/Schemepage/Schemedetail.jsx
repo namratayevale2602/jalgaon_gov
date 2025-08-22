@@ -1,459 +1,118 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useParams, useNavigate } from "react-router-dom";
 import {
   FiArrowLeft,
-  FiChevronLeft,
-  FiChevronRight,
   FiImage,
+  FiDownload,
+  FiExternalLink,
 } from "react-icons/fi";
 import { useLanguage } from "../../contexts/LanguageContext";
-import {
-  dap,
-  hilldevelop,
-  humandevelop,
-  minoritydevelop,
-  molalad,
-  parliment,
-  otherschemas,
-  MLA,
-} from "../../assets";
-
-import gr1 from "../../assets/GRpdf/17.07.2025 GR.pdf";
-import gr2 from "../../assets/GRpdf/18.01.2010 GR.pdf";
-import gr3 from "../../assets/GRpdf/Gr-13.03.2024.pdf";
+import { FaSpinner } from "react-icons/fa";
 
 const Schemedetail = () => {
   const { language } = useLanguage();
   const { schemeSlug } = useParams();
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [scheme, setScheme] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const getText = (item) => {
-    if (typeof item === "object" && item !== null && language in item) {
-      return item[language];
+  useEffect(() => {
+    const fetchScheme = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(
+          `http://127.0.0.1:8000/api/schemes/${schemeSlug}`,
+          {
+            headers: {
+              "Accept-Language": language,
+            },
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch scheme details");
+        }
+
+        const data = await response.json();
+        setScheme(data);
+      } catch (err) {
+        setError(err.message);
+        console.error("Error fetching scheme:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (schemeSlug) {
+      fetchScheme();
     }
-    return item;
+  }, [schemeSlug, language]);
+
+  const downloadDocument = async (document, index) => {
+    try {
+      // For external URLs, open in new tab
+      window.open(document.url, "_blank", "noopener,noreferrer");
+    } catch (error) {
+      console.error("Error accessing document:", error);
+    }
   };
 
-  const projects = [
-    // ANNUAL PLAN
-    {
-      id: 1,
-      name: { en: "DISTRICT ANNUAL PLAN", mr: "जिल्हा वार्षिक योजना" },
-      slug: "annualPlan",
-      description: {
-        en: "Comprehensive annual development plans for local areas",
-        mr: "स्थानिक भागांसाठी व्यापक वार्षिक विकास योजना",
-      },
-      details: {
-        en: [
-          "Road construction and maintenance",
-          "Water supply projects",
-          "Public infrastructure development",
-          "Education facility improvements",
-          "Healthcare infrastructure",
-          "Yearly budget allocation",
-        ],
-        mr: [
-          "रस्ते बांधकाम आणि देखभाल",
-          "पाणीपुरवठा प्रकल्प",
-          "सार्वजनिक पायाभूत सुविधा विकास",
-          "शैक्षणिक सुविधा सुधारणा",
-          "आरोग्यसेवा पायाभूत सुविधा",
-          "वार्षिक अर्थसंकल्प वाटप",
-        ],
-      },
-      image: dap,
-      documents: {
-        en: {
-          title: "Documents",
-          items: [
-            {
-              name: "Annual Plan Guidelines 2023-24",
-              url: gr1,
-            },
-            {
-              name: "District Planning Handbook",
-              url: gr2,
-            },
-          ],
-        },
-        mr: {
-          title: "दस्तऐवज",
-          items: [
-            {
-              name: "वार्षिक योजना मार्गदर्शक तत्त्वे २०२३-२४",
-              url: gr1,
-            },
-            {
-              name: "जिल्हा नियोजन हँडबुक",
-              url: gr2,
-            },
-          ],
-        },
-      },
-    },
-
-    // MLA FUNDS
-    {
-      id: 2,
-      name: {
+  const getCategoryName = (categoryId) => {
+    const categories = {
+      1: { en: "DISTRICT ANNUAL PLAN", mr: "जिल्हा वार्षिक योजना" },
+      2: {
         en: "MLA Local Development Program",
-        mr: "आमदार स्थानिक विकास कार्यक्रम ",
-      },
-      slug: "mlaFunds",
-      description: {
-        en: "Development projects under MLA Local Area Development funds",
         mr: "आमदार स्थानिक विकास कार्यक्रम",
       },
-      details: {
-        en: [
-          "Construction projects to be approved only on government/local government land",
-          "10% limit for maintenance and repair of properties constructed under government schemes",
-          "Action should be taken regarding approval within 45 days",
-          "Final approval of the District Collector is required",
-          "Implementation through the implementing agencies",
-          "Monthly & quarterly progress reports",
-          "Random inspection of works by a team led by the District Planning Office",
-        ],
-        mr: [
-          "फक्त शासकीय/स्थानिक स्वराज्य संस्थांच्या जागांवर मंजूर करण्यात येणारे बांधकाम प्रकल्प",
-          "प्रशासकीय खर्चासाठी जास्तीत जास्त 10% ऐवजी शासकीय योजनांमधून बांधकाम करण्यात आलेल्या मालमत्तांच्या देखभाल दुरूस्तीसाठी 10% मर्यादेत",
-          "45-दिवसांत मंजुरीबाबत कार्यवाही करावी",
-          "जिल्हाधिकारी महोदयांची अंतीम मंजूरी आवश्यक",
-          "कार्यान्वयीन यंत्रणेव्दारे अंमलबजावणी",
-          "मासिक व तिमाही प्रगती अहवाल",
-          "जिल्हा नियोजन अधिकारी यांचे नेतृत्वाखालील पथकाव्दारे कामांची यादृच्छीक पध्दतीने तपासणी",
-        ],
-      },
-      image: molalad,
-      documents: {
-        en: {
-          title: "Documents",
-          items: [
-            {
-              name: "MLA Local Development Program Guidelines Government Decision Dated 12/07/2016",
-              url: MLA,
-            },
-          ],
-        },
-        mr: {
-          title: "दस्तऐवज",
-          items: [
-            {
-              name: "आमदार स्थानिक विकास कार्यक्रम मार्गदर्शक तत्वे शासन निर्णय दि. 12/07/2016",
-              url: MLA,
-            },
-          ],
-        },
-      },
-    },
-
-    // MP FUNDS
-    {
-      id: 3,
-      name: {
+      3: {
         en: "MP Local Area Development Program",
-        mr: "खासदार स्थानिक क्षेत्र विकास कार्यक्रम ",
-      },
-      slug: "mpFunds",
-      description: {
-        en: "Development projects under MP Local Area Development Program",
         mr: "खासदार स्थानिक क्षेत्र विकास कार्यक्रम",
       },
-      details: {
-        en: [
-          "45-day approval period",
-          "Final approval of the District Collector is required",
-          "Random inspection of works by a team led by the District Planning Office",
-          "Upload photographs (geotagged) of completed work",
-          "Follows latest program guidelines (April 2023)",
-          "List of approved projects (2023-24) available",
-        ],
-        mr: [
-          "45-दिवसांची मंजुरी मुदत",
-          "जिल्हाधिकारी महोदयांची अंतीम मंजूरी आवश्यक",
-          "जिल्हा नियोजन अधिकारी यांचे नेतृत्वाखालील पथकाव्दारे कामांची यादृच्छीक पध्दतीने तपासणी",
-          "पुर्ण झालेल्या कामांचे छायाचित्रे (जियो टॅग्ड) अपलोड करावे",
-          "खासदार स्थानिक क्षेत्र विकास कार्यक्रमाच्या मार्गदर्शक सुचना, एप्रिल-2023 नुसार",
-          "मंजूर प्रकल्प यादी (2023-24) उपलब्ध",
-        ],
-      },
-      image: parliment,
-      documents: {
-        en: {
-          title: "Documents",
-          items: [
-            {
-              name: "MP LADS Scheme Guidelines",
-              url: gr1,
-            },
-            {
-              name: "Implementation Framework",
-              url: gr2,
-            },
-          ],
-        },
-        mr: {
-          title: "दस्तऐवज",
-          items: [
-            {
-              name: "खासदार एलएडीएस योजना मार्गदर्शक तत्त्वे",
-              url: gr1,
-            },
-            {
-              name: "अंमलबजावणी फ्रेमवर्क",
-              url: gr2,
-            },
-          ],
-        },
-      },
-    },
-
-    // HILLY AREA DEVELOPMENT
-    {
-      id: 4,
-      name: {
+      4: {
         en: "HILLY REGION DEVELOPMENT PROGRAM",
         mr: "डोंगरी विभाग विकास कार्यक्रम",
       },
-      slug: "hillyArea",
-      description: {
-        en: "Special development projects for hilly and difficult terrains",
-        mr: "डोंगराळ आणि अवघड भूप्रदेशांसाठी विशेष विकास प्रकल्प",
-      },
-      details: {
-        en: [
-          "Road connectivity projects",
-          "Landslide prevention measures",
-          "Special housing schemes",
-          "Water conservation programs",
-          "Eco-tourism development",
-          "Hill agriculture support",
-        ],
-        mr: [
-          "रस्ते कनेक्टिव्हिटी प्रकल्प",
-          "जमीनसरकाव रोखण्याचे उपाय",
-          "विशेष गृहनिर्माण योजना",
-          "जलसंधारण कार्यक्रम",
-          "पर्यटन विकास",
-          "डोंगरी शेती समर्थन",
-        ],
-      },
-      image: hilldevelop,
-      documents: {
-        en: {
-          title: "Documents",
-          items: [
-            {
-              name: "Govt Decision No.Donvika-2021/ Q.No.58/ Ka.1481-A,Ministry",
-              url: gr1,
-            },
-            {
-              name: "Government Decision, No.-Donvika-2009/P.No.6/Ka. 1483, Ministry",
-              url: gr2,
-            },
-            {
-              name: "Govt Decision No: Domvika-2021/P.No.58/Ka-1481-A Ministry",
-              url: gr3,
-            },
-          ],
-        },
-        mr: {
-          title: "दस्तऐवज",
-          items: [
-            {
-              name: "शासन निर्णय क्र.डोंविका-2021/ प्र.क्र.58/ का.1481-अ,मंत्रालय",
-              url: gr1,
-            },
-            {
-              name: "शासन निर्णय , क्रमांक-डोंविका-२००९/प्र.क्र .६/का. १४८३,मंत्रालय",
-              url: gr2,
-            },
-            {
-              name: "शासन निर्णय क्रमाांक: डोंविका-२०21/प्र.क्र.58/का-१४८१-अ मंत्रालय",
-              url: gr3,
-            },
-          ],
-        },
-      },
-    },
+      5: { en: "HUMAN DEVELOPMENT", mr: "मानवी विकास" },
+      6: { en: "MINORITY SCHEMES", mr: "अल्पसंख्याक योजना" },
+      7: { en: "OTHER SCHEMES", mr: "इतर योजना" },
+    };
 
-    // HUMAN DEVELOPMENT
-    {
-      id: 5,
-      name: { en: "HUMAN DEVELOPMENT", mr: "मानवी विकास" },
-      slug: "humanDevelopment",
-      description: {
-        en: "Programs focused on human development and welfare",
-        mr: "मानवी विकास आणि कल्याणावर लक्ष केंद्रित केलेले कार्यक्रम",
-      },
-      details: {
-        en: [
-          "Skill development centers",
-          "Women empowerment programs",
-          "Child welfare initiatives",
-          "Health awareness campaigns",
-          "Adult literacy programs",
-          "Community development projects",
-        ],
-        mr: [
-          "कौशल्य विकास केंद्रे",
-          "महिला सक्षमीकरण कार्यक्रम",
-          "बालकल्याण उपक्रम",
-          "आरोग्य जागरूकता मोहीम",
-          "प्रौढ साक्षरता कार्यक्रम",
-          "समुदाय विकास प्रकल्प",
-        ],
-      },
-      image: humandevelop,
-      documents: {
-        en: {
-          title: "Documents",
-          items: [
-            {
-              name: "Human Development Framework",
-              url: gr1,
-            },
-            {
-              name: "Skill Development Guidelines",
-              url: gr2,
-            },
-          ],
-        },
-        mr: {
-          title: "दस्तऐवज",
-          items: [
-            {
-              name: "मानवी विकास फ्रेमवर्क",
-              url: gr1,
-            },
-            {
-              name: "कौशल्य विकास मार्गदर्शक तत्त्वे",
-              url: gr2,
-            },
-          ],
-        },
-      },
-    },
+    return (
+      categories[categoryId]?.[language] ||
+      categories[categoryId]?.en ||
+      "Unknown Category"
+    );
+  };
 
-    // MINORITY SCHEMES
-    {
-      id: 6,
-      name: { en: "MINORITY SCHEMES", mr: "अल्पसंख्याक योजना" },
-      slug: "minoritySchemes",
-      description: {
-        en: "Development schemes for minority community welfare",
-        mr: "अल्पसंख्याक समुदाय कल्याणासाठी विकास योजना",
-      },
-      details: {
-        en: [
-          "Educational scholarships",
-          "Skill development programs",
-          "Community center construction",
-          "Economic empowerment",
-          "Cultural preservation",
-          "Infrastructure development",
-        ],
-        mr: [
-          "शैक्षणिक शिष्यवृत्ती",
-          "कौशल्य विकास कार्यक्रम",
-          "समुदाय केंद्र बांधकाम",
-          "आर्थिक सक्षमीकरण",
-          "सांस्कृतिक संवर्धन",
-          "पायाभूत सुविधा विकास",
-        ],
-      },
-      image: minoritydevelop,
-      documents: {
-        en: {
-          title: "Documents",
-          items: [
-            {
-              name: "Minority Welfare Schemes",
-              url: gr1,
-            },
-            {
-              name: "Scholarship Guidelines",
-              url: gr2,
-            },
-          ],
-        },
-        mr: {
-          title: "दस्तऐवज",
-          items: [
-            {
-              name: "अल्पसंख्याक कल्याण योजना",
-              url: gr1,
-            },
-            {
-              name: "शिष्यवृत्ती मार्गदर्शक तत्त्वे",
-              url: gr2,
-            },
-          ],
-        },
-      },
-    },
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <div className="text-center">
+          <FaSpinner className="animate-spin text-4xl text-blue-600 mx-auto mb-4" />
+          <p className="text-gray-600">Loading scheme details...</p>
+        </div>
+      </div>
+    );
+  }
 
-    // OTHER SCHEMES
-    {
-      id: 7,
-      name: { en: "OTHER SCHEMES", mr: "इतर योजना" },
-      slug: "otherSchemes",
-      description: {
-        en: "Various other development schemes and programs",
-        mr: "विविध इतर विकास योजना आणि कार्यक्रम",
-      },
-      details: {
-        en: [
-          "Village development projects",
-          "Urban infrastructure",
-          "Public sanitation",
-          "Digital literacy",
-          "Sports infrastructure",
-          "Cultural heritage",
-        ],
-        mr: [
-          "ग्रामीण विकास प्रकल्प",
-          "शहरी पायाभूत सुविधा",
-          "सार्वजनिक स्वच्छता",
-          "डिजिटल साक्षरता",
-          "क्रीडा पायाभूत सुविधा",
-          "सांस्कृतिक वारसा",
-        ],
-      },
-      image: otherschemas,
-      documents: {
-        en: {
-          title: "Documents",
-          items: [
-            {
-              name: "Various Development Schemes",
-              url: gr1,
-            },
-            {
-              name: "Implementation Guidelines",
-              url: gr2,
-            },
-          ],
-        },
-        mr: {
-          title: "दस्तऐवज",
-          items: [
-            {
-              name: "विविध विकास योजना",
-              url: gr1,
-            },
-            {
-              name: "अंमलबजावणी मार्गदर्शक तत्त्वे",
-              url: gr2,
-            },
-          ],
-        },
-      },
-    },
-  ];
+  if (error) {
+    return (
+      <div className="bg-gray-50 min-h-screen flex items-center justify-center">
+        <div className="text-xl text-red-600">Error: {error}</div>
+      </div>
+    );
+  }
+
+  if (!scheme) {
+    return (
+      <div className="flex items-center justify-center h-screen text-xl">
+        {language === "mr" ? "प्रकल्प सापडला नाही" : "Scheme not found"}
+      </div>
+    );
+  }
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -466,18 +125,10 @@ const Schemedetail = () => {
     },
   };
 
-  const selectedProject = projects.find((proj) => proj.slug === schemeSlug);
-
-  if (!selectedProject) {
-    return (
-      <div className="flex items-center justify-center h-screen text-xl">
-        {language === "mr" ? "प्रकल्प सापडला नाही" : "Scheme not found"}
-      </div>
-    );
-  }
-
-  const projectDocuments =
-    selectedProject.documents[language] || selectedProject.documents.en;
+  // Extract details from the API response
+  const details = scheme.details
+    ? scheme.details.map((item) => item.detail)
+    : [];
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -501,10 +152,14 @@ const Schemedetail = () => {
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/2 relative group overflow-hidden">
               <img
-                src={selectedProject.image}
-                alt={getText(selectedProject.name)}
+                src={scheme.image}
+                alt={scheme.name}
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 cursor-pointer"
                 onClick={() => setIsModalOpen(true)}
+                onError={(e) => {
+                  e.target.src =
+                    "https://via.placeholder.com/600x400?text=Image+Not+Found";
+                }}
               />
               <div className="absolute inset-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
                 <FiImage className="text-white opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 text-4xl" />
@@ -512,11 +167,17 @@ const Schemedetail = () => {
             </div>
 
             <div className="md:w-1/2 p-8">
+              <div className="mb-4">
+                <span className="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                  {getCategoryName(scheme.category_id)}
+                </span>
+              </div>
+
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                {getText(selectedProject.name)}
+                {scheme.name}
               </h2>
               <p className="text-gray-600 mb-6 text-lg leading-relaxed">
-                {getText(selectedProject.description)}
+                {scheme.description}
               </p>
 
               <div className="space-y-4">
@@ -524,9 +185,9 @@ const Schemedetail = () => {
                   {language === "mr" ? "प्रकल्प तपशील" : "Scheme Highlights"}
                 </h3>
                 <ul className="space-y-3">
-                  {getText(selectedProject.details).map((detail, index) => (
+                  {details.map((detail, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="bg-green-100 text-green-600 rounded-full p-1 mr-3">
+                      <span className="bg-green-100 text-green-600 rounded-full p-1 mr-3 flex-shrink-0">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-5 w-5"
@@ -550,43 +211,35 @@ const Schemedetail = () => {
         </motion.div>
 
         {/* Documents Section */}
-        {projectDocuments &&
-          projectDocuments.items &&
-          projectDocuments.items.length > 0 && (
+        {scheme.documents &&
+          scheme.documents.items &&
+          scheme.documents.items.length > 0 && (
             <motion.section
               variants={itemVariants}
-              className="mb-8 md:mb-12 bg-white rounded-lg shadow-md p-4 md:p-6"
+              className="mb-8 md:mb-12 bg-white rounded-lg shadow-md p-6"
             >
-              <h2 className="text-xl md:text-2xl font-semibold text-blue-800 border-b border-blue-200 pb-2 mb-3 md:mb-4">
-                {projectDocuments.title}
+              <h2 className="text-2xl font-semibold text-blue-800 border-b border-blue-200 pb-3 mb-4">
+                {scheme.documents.title}
               </h2>
-              <div className="space-y-2 md:space-y-3">
-                {projectDocuments.items.map((doc, index) => (
-                  <motion.a
+              <div className="space-y-3">
+                {scheme.documents.items.map((doc, index) => (
+                  <motion.div
                     key={index}
                     variants={itemVariants}
                     whileHover={{ x: 5 }}
-                    href={doc.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-blue-600 hover:text-blue-800 text-sm md:text-base transition-colors duration-200"
+                    onClick={() => downloadDocument(doc, index)}
+                    className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200 cursor-pointer group"
                   >
-                    <svg
-                      className="w-4 h-4 md:w-5 md:h-5 mr-2 flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <span className="truncate">{doc.name}</span>
-                  </motion.a>
+                    <div className="flex items-center flex-1">
+                      <FiExternalLink className="w-5 h-5 mr-3 text-green-600 flex-shrink-0" />
+                      <span className="text-gray-800 group-hover:text-blue-700 font-medium">
+                        {doc.name}
+                      </span>
+                    </div>
+                    <span className="text-xs px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-medium">
+                      External Link
+                    </span>
+                  </motion.div>
                 ))}
               </div>
             </motion.section>
@@ -604,7 +257,7 @@ const Schemedetail = () => {
                     e.stopPropagation();
                     setIsModalOpen(false);
                   }}
-                  className="text-white hover:text-gray-300 text-2xl"
+                  className="text-white hover:text-gray-300 text-2xl bg-black bg-opacity-50 rounded-full p-2"
                   aria-label={language === "mr" ? "बंद करा" : "Close"}
                 >
                   &times;
@@ -612,10 +265,14 @@ const Schemedetail = () => {
               </div>
 
               <img
-                src={selectedProject.image}
-                alt={getText(selectedProject.name)}
-                className="max-w-full max-h-[80vh] object-contain"
+                src={scheme.image}
+                alt={scheme.name}
+                className="max-w-full max-h-[80vh] object-contain rounded-lg"
                 onClick={(e) => e.stopPropagation()}
+                onError={(e) => {
+                  e.target.src =
+                    "https://via.placeholder.com/800x600?text=Image+Not+Found";
+                }}
               />
             </div>
           </div>

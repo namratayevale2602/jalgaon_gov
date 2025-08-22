@@ -1,22 +1,38 @@
 import { useState, useEffect } from "react";
-import { hero1, hero2, hero3, hero4, hero5 } from "../../assets";
-
+import { FaSpinner } from "react-icons/fa";
 const BannerCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [banners, setBanners] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const banners = [
-    // { id: 1, image: hero5, alt: "Banner 1" },
-    { id: 2, image: hero1, alt: "Banner 1" },
-    { id: 3, image: hero2, alt: "Banner 2" },
-    { id: 4, image: hero3, alt: "Banner 3" },
-    // { id: 5, image: hero4, alt: "Banner 4" },
-  ];
+  // Fetch banners from API
+  useEffect(() => {
+    const fetchBanners = async () => {
+      try {
+        const response = await fetch("http://127.0.0.1:8000/api/banners");
+        const data = await response.json();
+
+        if (data.success) {
+          setBanners(data.data);
+        }
+      } catch (error) {
+        console.error("Error fetching banners:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBanners();
+  }, []);
 
   // Auto slide every 5 seconds
   useEffect(() => {
+    if (banners.length <= 1) return;
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === banners.length - 1 ? 0 : prev + 1));
     }, 5000);
+
     return () => clearInterval(interval);
   }, [banners.length]);
 
@@ -32,6 +48,25 @@ const BannerCarousel = () => {
     setCurrentSlide((prev) => (prev === banners.length - 1 ? 0 : prev + 1));
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <div className="text-center">
+          <FaSpinner className="animate-spin text-4xl text-blue-600 mx-auto mb-4" />
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (banners.length === 0) {
+    return (
+      <div className="w-full aspect-[16/9] max-h-[80vh] flex items-center justify-center">
+        No banners available
+      </div>
+    );
+  }
+
   return (
     <div className="relative w-full aspect-[16/9] max-h-[80vh] overflow-hidden rounded-lg">
       {/* Slides */}
@@ -42,8 +77,8 @@ const BannerCarousel = () => {
         {banners.map((banner) => (
           <div key={banner.id} className="w-full flex-shrink-0 h-full">
             <img
-              src={banner.image}
-              alt={banner.alt}
+              src={banner.image} // Use the full URL from the API
+              alt={banner.alt_text}
               className="w-full h-full object-cover"
               loading="lazy"
             />

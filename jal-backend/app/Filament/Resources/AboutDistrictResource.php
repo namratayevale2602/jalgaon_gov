@@ -17,7 +17,9 @@ class AboutDistrictResource extends Resource
 {
     protected static ?string $model = AboutDistrict::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-building-office';
+
+    protected static ?string $navigationGroup = 'Home';
 
     public static function form(Form $form): Form
     {
@@ -29,45 +31,55 @@ class AboutDistrictResource extends Resource
                             ->schema([
                                 Forms\Components\TextInput::make('name_en')
                                     ->required()
-                                    ->label('Name (English)'),
+                                    ->label('Name (English)')
+                                    ->maxLength(255),
                                 Forms\Components\Textarea::make('description_en')
                                     ->required()
                                     ->label('Description (English)')
-                                    ->columnSpanFull(),
+                                    ->columnSpanFull()
+                                    ->rows(5),
                                 Forms\Components\Repeater::make('stats_en')
                                     ->label('Statistics (English)')
                                     ->schema([
                                         Forms\Components\TextInput::make('title')
                                             ->required()
-                                            ->label('Stat Title'),
+                                            ->label('Stat Title')
+                                            ->maxLength(100),
                                         Forms\Components\TextInput::make('value')
                                             ->required()
-                                            ->label('Stat Value'),
+                                            ->label('Stat Value')
+                                            ->maxLength(50),
                                     ])
                                     ->defaultItems(4)
-                                    ->columnSpanFull(),
+                                    ->columnSpanFull()
+                                    ->grid(2),
                             ]),
                         Forms\Components\Tabs\Tab::make('Marathi')
                             ->schema([
                                 Forms\Components\TextInput::make('name_mr')
                                     ->required()
-                                    ->label('Name (Marathi)'),
+                                    ->label('Name (Marathi)')
+                                    ->maxLength(255),
                                 Forms\Components\Textarea::make('description_mr')
                                     ->required()
                                     ->label('Description (Marathi)')
-                                    ->columnSpanFull(),
+                                    ->columnSpanFull()
+                                    ->rows(5),
                                 Forms\Components\Repeater::make('stats_mr')
                                     ->label('Statistics (Marathi)')
                                     ->schema([
                                         Forms\Components\TextInput::make('title')
                                             ->required()
-                                            ->label('Stat Title (Marathi)'),
+                                            ->label('Stat Title (Marathi)')
+                                            ->maxLength(100),
                                         Forms\Components\TextInput::make('value')
                                             ->required()
-                                            ->label('Stat Value (Marathi)'),
+                                            ->label('Stat Value (Marathi)')
+                                            ->maxLength(50),
                                     ])
                                     ->defaultItems(4)
-                                    ->columnSpanFull(),
+                                    ->columnSpanFull()
+                                    ->grid(2),
                             ]),
                     ])
                     ->columnSpanFull(),
@@ -75,6 +87,13 @@ class AboutDistrictResource extends Resource
                     ->label('District Image')
                     ->image()
                     ->directory('district-images')
+                    ->visibility('public')
+                    ->maxSize(2048) // 2MB max
+                    ->imageResizeMode('cover')
+                    ->imageResizeTargetWidth('1200')
+                    ->imageResizeTargetHeight('800')
+                    ->imagePreviewHeight('200')
+                    ->helperText('Recommended aspect ratio: 3:2 (1200×800)')
                     ->columnSpanFull(),
             ]);
     }
@@ -84,13 +103,18 @@ class AboutDistrictResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('image_path')
-                    ->label('Image'),
+                    ->label('Image')
+                    ->size(100)
+                    ->height(60)
+                    ->extraImgAttributes(['class' => 'object-cover']),
                 Tables\Columns\TextColumn::make('name_en')
                     ->label('Name (English)')
-                    ->searchable(),
+                    ->searchable()
+                    ->wrap(),
                 Tables\Columns\TextColumn::make('name_mr')
                     ->label('Name (Marathi)')
-                    ->searchable(),
+                    ->searchable()
+                    ->wrap(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -105,6 +129,7 @@ class AboutDistrictResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

@@ -1,145 +1,83 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLanguage } from "../../contexts/LanguageContext";
-import {
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  image6,
-  image7,
-  image8,
-} from "../../assets";
+import { FaSpinner } from "react-icons/fa";
 
 const DSPReports = () => {
   const { language } = useLanguage();
-
-  // Image gallery data
-  const galleryImages = [
-    {
-      src: image1,
-      alt: {
-        en: "District planning meeting",
-        mr: "जिल्हा नियोजन बैठक",
-      },
-    },
-    {
-      src: image2,
-      alt: {
-        en: "Development project site visit",
-        mr: "विकास प्रकल्पाची साइट भेट",
-      },
-    },
-    {
-      src: image3,
-      alt: {
-        en: "Community consultation",
-        mr: "समुदाय सल्लामसलत",
-      },
-    },
-    {
-      src: image4,
-      alt: {
-        en: "Community consultation",
-        mr: "समुदाय सल्लामसलत",
-      },
-    },
-    {
-      src: image5,
-      alt: {
-        en: "Community consultation",
-        mr: "समुदाय सल्लामसलत",
-      },
-    },
-    {
-      src: image6,
-      alt: {
-        en: "Community consultation",
-        mr: "समुदाय सल्लामसलत",
-      },
-    },
-    {
-      src: image7,
-      alt: {
-        en: "Community consultation",
-        mr: "समुदाय सल्लामसलत",
-      },
-    },
-    {
-      src: image8,
-      alt: {
-        en: "Community consultation",
-        mr: "समुदाय सल्लामसलत",
-      },
-    },
-  ];
-
-  const reports = [
-    {
-      title: {
-        en: "District Development Plan (Kavayitri Bahinabai Chaudhari North Maharashtra University,Jalgaon Report)",
-        mr: "जिल्हा विकास आराखडा (कवयित्री बहिणाबाई चौधरी उत्तर महाराष्ट्र विद्यापीठ,जळगाव अहवाल)",
-      },
-      url: "https://drive.google.com/file/d/1oZQ5-40jRxgDSl6hElpHVBTrtxpW2FeM/view?usp=sharing",
-    },
-    {
-      title: {
-        en: "District Development Plan (Symbiosis University Pune Report)",
-        mr: "जिल्हा विकास आराखडा (सिम्बॉयसिस विद्यापीठ पुणे अहवाल)",
-      },
-      url: "https://drive.google.com/file/d/1QUr2l6rTw25abSYGG3ZcPHh-M8zEo9EN/view?usp=sharing",
-    },
-    {
-      title: {
-        en: "District Development Plan Action Plan",
-        mr: "जिल्हा विकास आराखडा Action Plan",
-      },
-      url: "https://docs.google.com/presentation/d/1fZ-NmrFer3NcoBizM61J07zo7wB9KTNL/edit?usp=sharing&ouid=108173865144049668925&rtpof=true&sd=true",
-    },
-    {
-      title: {
-        en: "District Development Plan Presentation 1",
-        mr: "जिल्हा विकास आराखडा सादरीकरण 1",
-      },
-      url: "https://docs.google.com/presentation/d/1-FVyZt0yMKA-SoGvMoDAzMO14RzRPEwI/edit?usp=drive_link&ouid=108173865144049668925&rtpof=true&sd=true",
-    },
-    {
-      title: {
-        en: "District Development Plan Presentation 2",
-        mr: "जिल्हा विकास आराखडा सादरीकरण 2",
-      },
-      url: "https://docs.google.com/presentation/d/1ocoL-UMbJJ7OSPuSb8vIJ12CHTG3r2Fl/edit?usp=drive_link&ouid=108173865144049668925&rtpof=true&sd=true",
-    },
-    {
-      title: {
-        en: "District Development Plan Presentation 3",
-        mr: "जिल्हा विकास आराखडा सादरीकरण 3",
-      },
-      url: "https://docs.google.com/presentation/d/1aIn_iE00xME4V_S2Lqa_pWRqWDJajPPa/edit?usp=drive_link&ouid=108173865144049668925&rtpof=true&sd=true",
-    },
-    {
-      title: {
-        en: "Jalgaon District MahaSTRIDE Presentation",
-        mr: "जळगाव जिल्हा MahaSTRIDE सादरीकरण",
-      },
-      url: "https://docs.google.com/presentation/d/1B0TgauLWPwMm2Wk2xpiqEDTdih2ZcQ8J/edit?usp=sharing&ouid=108173865144049668925&rtpof=true&sd=true",
-    },
-  ];
+  const [reports, setReports] = useState([]);
+  const [galleryImages, setGalleryImages] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const content = {
     en: {
       heading: "District Development Plan Reports",
       subheading: "Available Reports and Presentations",
-
+      galleryTitle: "Gallery",
       viewPdf: "View PDF",
     },
     mr: {
       heading: "जिल्हा विकास आराखडा अहवाल",
       subheading: "उपलब्ध अहवाल आणि सादरीकरणे",
-
+      galleryTitle: "गॅलरी",
       viewPdf: "PDF पहा",
     },
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+
+        // Fetch both reports and gallery images in parallel
+        const [reportsResponse, galleryResponse] = await Promise.all([
+          fetch(`http://127.0.0.1:8000/api/dsp-reports?lang=${language}`),
+          fetch(`http://127.0.0.1:8000/api/dsp-gallery-images`),
+        ]);
+
+        if (!reportsResponse.ok || !galleryResponse.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const reportsResult = await reportsResponse.json();
+        const galleryResult = await galleryResponse.json();
+
+        if (reportsResult.success) {
+          setReports(reportsResult.data);
+        }
+
+        if (galleryResult.success) {
+          setGalleryImages(galleryResult.data);
+        }
+      } catch (err) {
+        setError(err.message);
+        console.error("Error fetching DSP data:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [language]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <div className="text-center">
+          <FaSpinner className="animate-spin text-4xl text-blue-600 mx-auto mb-4" />
+          <p className="text-gray-600">Loading reports and gallery...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="text-center text-red-600">Error: {error}</div>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">

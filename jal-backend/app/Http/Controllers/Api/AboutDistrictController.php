@@ -12,6 +12,7 @@ class AboutDistrictController extends Controller
     {
         $districts = AboutDistrict::all()->map(function($district) {
             return [
+                'id' => $district->id,
                 'name' => [
                     'en' => $district->name_en,
                     'mr' => $district->name_mr,
@@ -20,7 +21,7 @@ class AboutDistrictController extends Controller
                     'en' => $district->description_en,
                     'mr' => $district->description_mr,
                 ],
-                'image' => $district->image_path ? asset('uploads/' . $district->image_path) : null,
+                'image' => $district->image_url, // Use the accessor to get full URL
                 'stats' => [
                     'en' => $district->stats_en,
                     'mr' => $district->stats_mr,
@@ -36,6 +37,7 @@ class AboutDistrictController extends Controller
         $district = AboutDistrict::findOrFail($id);
 
         return response()->json([
+            'id' => $district->id,
             'name' => [
                 'en' => $district->name_en,
                 'mr' => $district->name_mr,
@@ -44,7 +46,7 @@ class AboutDistrictController extends Controller
                 'en' => $district->description_en,
                 'mr' => $district->description_mr,
             ],
-            'image' => $district->image_path ? asset('uploads/' . $district->image_path) : null,
+            'image' => $district->image_url, // Use the accessor to get full URL
             'stats' => [
                 'en' => $district->stats_en,
                 'mr' => $district->stats_mr,

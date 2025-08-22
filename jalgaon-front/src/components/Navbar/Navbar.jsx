@@ -46,7 +46,7 @@ const Navbar = () => {
     // },
     {
       name: {
-        en: "DISTRICT STRATEGIC PLANNING",
+        en: "DISTRICT DEVELOPMENT PLANNING",
         mr: "जिल्हा विकास आराखडा",
       },
       href: "/dsp",
