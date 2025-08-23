@@ -79,17 +79,26 @@ const Services = () => {
     },
     {
       id: 4,
-      name: { en: "HILLY AREA DEVELOPMENT", mr: "डोंगराळ क्षेत्र विकास" },
+      name: {
+        en: "HILLY REGION DEVELOPMENT PROGRAM",
+        mr: "डोंगरी विभाग विकास कार्यक्रम",
+      },
       slug: "hillyArea",
     },
     {
       id: 5,
-      name: { en: "HUMAN DEVELOPMENT", mr: "मानवी विकास" },
+      name: {
+        en: "Human Development Department Programs",
+        mr: "मानव विकास विभाग कार्यक्रम",
+      },
       slug: "humanDevelopment",
     },
     {
       id: 6,
-      name: { en: "MINORITY SCHEMES", mr: "अल्पसंख्याक योजना" },
+      name: {
+        en: "Minority Development Department Scheme",
+        mr: "अल्पसंख्याक विकास विभाग योजना",
+      },
       slug: "minoritySchemes",
     },
     {
