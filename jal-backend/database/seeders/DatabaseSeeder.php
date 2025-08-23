@@ -13,13 +13,16 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             PoliticalRepresentativesSeeder::class,
-             OrganizationalStructureSeeder::class,
+            OrganizationalStructureSeeder::class,
             DecisionProcessSeeder::class,
             ResponsibilitySeeder::class,
             RoleDutiesSeeder::class,
             TimeBoundActivitiesSeeder::class,
             StaffMembersSeeder::class,
             SchemesSeeder::class,
+            DownloadSeeder::class,
+            BlogSeeder::class,
+            TourismSpotSeeder::class,
             // Add other seeders here
         ]);
     }

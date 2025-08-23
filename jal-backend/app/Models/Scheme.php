@@ -33,7 +33,7 @@ class Scheme extends Model
     protected function name(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => json_decode($value, true),
+            get: fn ($value) => json_decode($value, true) ?? ['en' => '', 'mr' => ''],
             set: fn ($value) => json_encode($value)
         );
     }
@@ -41,7 +41,7 @@ class Scheme extends Model
     protected function description(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => json_decode($value, true),
+            get: fn ($value) => json_decode($value, true) ?? ['en' => '', 'mr' => ''],
             set: fn ($value) => json_encode($value)
         );
     }
@@ -49,7 +49,7 @@ class Scheme extends Model
     protected function details(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => json_decode($value, true),
+            get: fn ($value) => json_decode($value, true) ?? ['en' => [], 'mr' => []],
             set: fn ($value) => json_encode($value)
         );
     }
@@ -57,7 +57,10 @@ class Scheme extends Model
     protected function documents(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => json_decode($value, true) ?? [],
+            get: fn ($value) => json_decode($value, true) ?? [
+                'en' => ['title' => 'Documents', 'items' => []],
+                'mr' => ['title' => 'दस्तऐवज', 'items' => []]
+            ],
             set: fn ($value) => json_encode($value)
         );
     }

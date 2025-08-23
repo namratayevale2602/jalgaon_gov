@@ -23,47 +23,49 @@ class GalleryImageResource extends Resource
     protected static ?string $navigationGroup = 'Gallery';
 
     public static function form(Form $form): Form
-    {
-        return $form
-            ->schema([
-                Forms\Components\Select::make('category_id')
-                    ->label('Category')
-                    ->options(GalleryCategory::all()->pluck('title_en', 'id'))
-                    ->required()
-                    ->searchable(),
-                Forms\Components\FileUpload::make('image')
-                    ->image()
-                    ->required()
-                    ->directory('gallery')
-                    ->visibility('public')
-                    ->maxSize(2048)
-                    ->imageResizeMode('cover')
-                    ->imageResizeTargetWidth('800')
-                    ->imageResizeTargetHeight('600')
-                    ->imagePreviewHeight('200')
-                    ->helperText('Recommended aspect ratio: 4:3 (800×600)'),
-                Forms\Components\TextInput::make('title_en')
-                    ->label('Title (English)')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('title_mr')
-                    ->label('Title (Marathi)')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('description_en')
-                    ->label('Description (English)')
-                    ->rows(3),
-                Forms\Components\Textarea::make('description_mr')
-                    ->label('Description (Marathi)')
-                    ->rows(3),
-                Forms\Components\TextInput::make('order')
-                    ->numeric()
-                    ->default(0),
-                Forms\Components\Toggle::make('is_active')
-                    ->required()
-                    ->default(true),
-            ]);
-    }
+{
+    return $form
+        ->schema([
+            Forms\Components\Select::make('category_id')
+                ->label('Category')
+                ->options(GalleryCategory::all()->pluck('title_en', 'id'))
+                ->required()
+                ->searchable(),
+            Forms\Components\FileUpload::make('image')
+                ->image()
+                ->required()
+                ->directory('gallery')
+                ->visibility('public')
+                ->maxSize(2048)
+                ->imageResizeMode('cover')
+                ->imageResizeTargetWidth('800')
+                ->imageResizeTargetHeight('600')
+                ->imagePreviewHeight('200')
+                ->helperText('Recommended aspect ratio: 4:3 (800×600)'),
+            Forms\Components\TextInput::make('title_en')
+                ->label('Title (English)')
+                ->maxLength(255)
+                ->nullable(), // Made nullable
+            Forms\Components\TextInput::make('title_mr')
+                ->label('Title (Marathi)')
+                ->maxLength(255)
+                ->nullable(), // Made nullable
+            Forms\Components\Textarea::make('description_en')
+                ->label('Description (English)')
+                ->rows(3)
+                ->nullable(),
+            Forms\Components\Textarea::make('description_mr')
+                ->label('Description (Marathi)')
+                ->rows(3)
+                ->nullable(),
+            Forms\Components\TextInput::make('order')
+                ->numeric()
+                ->default(0),
+            Forms\Components\Toggle::make('is_active')
+                ->required()
+                ->default(true),
+        ]);
+}
 
     public static function table(Table $table): Table
     {

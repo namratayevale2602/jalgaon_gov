@@ -13,8 +13,8 @@ class GalleryImage extends Model
     protected $fillable = [
         'category_id',
         'image',
-        'title_en',
-        'title_mr',
+        'title_en', // Will be nullable
+        'title_mr', // Will be nullable
         'description_en',
         'description_mr',
         'order',
@@ -38,7 +38,7 @@ class GalleryImage extends Model
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(GalleryCategory::class, 'category_id'); // Explicitly specify foreign key
+        return $this->belongsTo(GalleryCategory::class, 'category_id');
     }
 
     public function scopeActive($query)

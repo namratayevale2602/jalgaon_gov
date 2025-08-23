@@ -12,8 +12,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id')->constrained('gallery_categories')->onDelete('cascade');
             $table->string('image');
-            $table->string('title_en');
-            $table->string('title_mr');
+            $table->string('title_en')->nullable();
+            $table->string('title_mr')->nullable();
             $table->text('description_en')->nullable();
             $table->text('description_mr')->nullable();
             $table->integer('order')->default(0);

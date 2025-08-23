@@ -167,11 +167,11 @@ const Schemedetail = () => {
             </div>
 
             <div className="md:w-1/2 p-8">
-              <div className="mb-4">
+              {/* <div className="mb-4">
                 <span className="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
                   {getCategoryName(scheme.category_id)}
                 </span>
-              </div>
+              </div> */}
 
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
                 {scheme.name}
@@ -236,9 +236,9 @@ const Schemedetail = () => {
                         {doc.name}
                       </span>
                     </div>
-                    <span className="text-xs px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-medium">
+                    {/* <span className="text-xs px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-medium">
                       External Link
-                    </span>
+                    </span> */}
                   </motion.div>
                 ))}
               </div>

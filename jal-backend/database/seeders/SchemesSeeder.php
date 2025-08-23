@@ -6,7 +6,7 @@ use App\Models\Scheme;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
 
-class SchemeSeeder extends Seeder
+class SchemesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
