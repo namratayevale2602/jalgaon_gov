@@ -29,7 +29,7 @@ const Navbar = () => {
       ],
     },
     {
-      name: { en: "COMMITTEE", mr: "समित्या" },
+      name: { en: "COMMITTEE", mr: "समिती" },
       dropdown: [
         {
           name: { en: "Planning Committee", mr: "नियोजन समिती" },

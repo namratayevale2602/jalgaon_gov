@@ -20,7 +20,7 @@ const Directory = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          `http://127.0.0.1:8000/api/staff-members?lang=${language}`
+          `https://jalgaonback.demovoting.com/api/staff-members?lang=${language}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
