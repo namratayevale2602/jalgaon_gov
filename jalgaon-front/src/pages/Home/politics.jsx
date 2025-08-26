@@ -13,7 +13,7 @@ const DataCard = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          `http://127.0.0.1:8000/api/political-representatives?lang=${language}`
+          `https://jalgaonback.demovoting.com/api/political-representatives?lang=${language}`
         );
 
         if (!response.ok) {

@@ -57,7 +57,9 @@ const ReportsPage = () => {
   const fetchReports = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://127.0.0.1:8000/api/reports");
+      const response = await fetch(
+        "https://jalgaonback.demovoting.com/api/reports"
+      );
       const data = await response.json();
       setReports(data);
     } catch (error) {

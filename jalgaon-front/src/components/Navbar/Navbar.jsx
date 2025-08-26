@@ -109,7 +109,7 @@ const Navbar = () => {
     },
     { name: { en: "TOURISM", mr: "पर्यटन" }, href: "/tourism" },
     { name: { en: "GALLERY", mr: "गॅलरी" }, href: "/gallery" },
-    { name: { en: "BLOG", mr: "ब्लॉग" }, href: "/blog" },
+    // { name: { en: "BLOG", mr: "ब्लॉग" }, href: "/blog" },
 
     { name: { en: "REPORTS", mr: "अहवाल" }, href: "/reports" },
     { name: { en: "DOWNLOADS", mr: "डाउनलोड्स" }, href: "/downloads" },
