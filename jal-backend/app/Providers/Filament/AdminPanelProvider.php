@@ -27,6 +27,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->brandName('Jalgoan Planning Department')
             ->colors([
                 'primary' => Color::Amber,
             ])

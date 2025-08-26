@@ -31,8 +31,10 @@ const DSPReports = () => {
 
         // Fetch both reports and gallery images in parallel
         const [reportsResponse, galleryResponse] = await Promise.all([
-          fetch(`http://127.0.0.1:8000/api/dsp-reports?lang=${language}`),
-          fetch(`http://127.0.0.1:8000/api/dsp-gallery-images`),
+          fetch(
+            `https://jalgaonback.demovoting.com/api/dsp-reports?lang=${language}`
+          ),
+          fetch(`https://jalgaonback.demovoting.com/api/dsp-gallery-images`),
         ]);
 
         if (!reportsResponse.ok || !galleryResponse.ok) {

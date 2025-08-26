@@ -14,7 +14,9 @@ const TourismMain = () => {
   useEffect(() => {
     const fetchTourismSpots = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/tourism/spots");
+        const response = await fetch(
+          "https://jalgaonback.demovoting.com/api/tourism/spots"
+        );
         const data = await response.json();
 
         if (data.success) {

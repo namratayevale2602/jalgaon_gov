@@ -9,7 +9,9 @@ const BannerCarousel = () => {
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/banners");
+        const response = await fetch(
+          "https://jalgaonback.demovoting.com/api/banners"
+        );
         const data = await response.json();
 
         if (data.success) {

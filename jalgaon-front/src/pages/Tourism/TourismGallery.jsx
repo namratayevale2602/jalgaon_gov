@@ -9,7 +9,7 @@ const TourismGallery = () => {
     const fetchGalleryImages = async () => {
       try {
         const response = await fetch(
-          "http://127.0.0.1:8000/api/tourism/gallery"
+          "https://jalgaonback.demovoting.com/api/tourism/gallery"
         );
         const data = await response.json();
 

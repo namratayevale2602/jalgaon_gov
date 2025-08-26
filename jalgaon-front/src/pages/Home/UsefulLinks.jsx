@@ -26,7 +26,9 @@ const UsefulLinks = () => {
   useEffect(() => {
     const fetchLinks = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/useful-links");
+        const response = await fetch(
+          "https://jalgaonback.demovoting.com/api/useful-links"
+        );
         const data = await response.json();
         setContent(data);
       } catch (error) {

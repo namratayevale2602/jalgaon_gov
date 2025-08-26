@@ -13,7 +13,9 @@ const AboutDistrict = () => {
     const fetchDistrictData = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://127.0.0.1:8000/api/districts");
+        const response = await fetch(
+          "https://jalgaonback.demovoting.com/api/districts"
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch district data");
         }
