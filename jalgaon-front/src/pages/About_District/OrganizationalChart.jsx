@@ -241,7 +241,7 @@ const OrganizationalChart = () => {
       </div>
 
       {/* Additional Information Sections */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-blue-50 rounded-lg p-6">
           <h3 className="text-lg font-semibold text-blue-800 mb-3 flex items-center">
             <FaUsers className="mr-2" /> {getText(content.composition.title)}
@@ -273,7 +273,7 @@ const OrganizationalChart = () => {
             </p>
           )}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

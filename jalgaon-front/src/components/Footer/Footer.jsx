@@ -21,8 +21,8 @@ const Footer = () => {
       mr: "जळगाव, महाराष्ट्र",
     },
     phone: {
-      en: "0257-2220000",
-      mr: "०२५७-२२२००००",
+      en: "0257-2223135",
+      mr: "०२५७-२२२३१३५",
     },
     copyright: {
       en: "© Jalgaon District Planning • Last Updated: Jul 24, 2025",
@@ -63,7 +63,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center">
               <FaEnvelope className="mr-2" />
-              <span>contact@jalgaonplanning.gov.in</span>
+              <span>dpojalgaon@gmail.com</span>
             </div>
           </div>
         </div>

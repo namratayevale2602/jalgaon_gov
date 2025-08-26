@@ -45,25 +45,23 @@ const Schemepage = () => {
     {
       id: 4,
       name: {
-        en: "HILLY REGION DEVELOPMENT PROGRAM",
+        en: "Hilly Region Development Program",
         mr: "डोंगरी विभाग विकास कार्यक्रम",
       },
       slug: "hillyArea",
     },
     {
       id: 5,
-      name: { en: "HUMAN DEVELOPMENT", mr: "मानवी विकास" },
-      slug: "humanDevelopment",
+      name: { en: "Human Development Program", mr: "मानव विकास कार्यक्रम" },
+      slug: "humanDevelopmentProgramme",
     },
     {
       id: 6,
-      name: { en: "MINORITY SCHEMES", mr: "अल्पसंख्याक योजना" },
+      name: {
+        en: "Minority Development Department Scheme",
+        mr: "अल्पसंख्याक विकास विभाग योजना",
+      },
       slug: "minoritySchemes",
-    },
-    {
-      id: 7,
-      name: { en: "OTHER SCHEMES", mr: "इतर योजना" },
-      slug: "otherSchemes",
     },
   ];
 
