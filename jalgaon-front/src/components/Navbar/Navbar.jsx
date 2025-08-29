@@ -21,22 +21,17 @@ const Navbar = () => {
           href: "/organizationalChart",
         },
         // { name: { en: "Objectives", mr: "उद्दिष्टे" }, href: "/objectives" },
-        { name: { en: "Planning Committee", mr: "डीपीसी" }, href: "/dpc" },
+        {
+          name: { en: "Planning Committee", mr: "नियोजन समिती" },
+          href: "/dpc",
+        },
         // {
         //   name: { en: "GENERAL REGISTER", mr: "सामान्य नोंदणीकर्ता" },
         //   href: "/gr-directory",
         // },
       ],
     },
-    {
-      name: { en: "COMMITTEE", mr: "समिती" },
-      dropdown: [
-        {
-          name: { en: "Planning Committee", mr: "नियोजन समिती" },
-          href: "/planningcommittee",
-        },
-      ],
-    },
+    { name: { en: "COMMITTEE", mr: "समिती" }, href: "/planningcommittee" },
     // {
     //   name: {
     //     en: "HILLY REGION DEVELOPMENT PROGRAM",

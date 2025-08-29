@@ -25,8 +25,8 @@ const Footer = () => {
       mr: "०२५७-२२२३१३५",
     },
     copyright: {
-      en: "© Jalgaon District Planning • Last Updated: Jul 24, 2025",
-      mr: "© जळगाव जिल्हा नियोजन • अंतिम अद्यतन: २४ जुलै, २०२५",
+      en: "© Jalgaon District Planning",
+      mr: "© जळगाव जिल्हा नियोजन",
     },
     developby: {
       en: "Developed by Rich System Solution Pvt. Ltd.",

@@ -208,14 +208,6 @@ const GalleryPage = () => {
                           }}
                         />
                       </div>
-                      <div className="p-4">
-                        <h3 className="font-semibold text-sm mb-1">
-                          {imageText.title}
-                        </h3>
-                        <p className="text-xs text-gray-600 line-clamp-2">
-                          {imageText.description}
-                        </p>
-                      </div>
                     </motion.div>
                   );
                 })}
@@ -286,12 +278,12 @@ const GalleryPage = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  {/* <h3 className="text-xl font-bold text-gray-800 mb-2">
                     {getText(selectedImage, true).title}
                   </h3>
                   <p className="text-gray-600 mb-4">
                     {getText(selectedImage, true).description}
-                  </p>
+                  </p> */}
                   <div className="text-sm text-gray-500">
                     {getText(content.imageCounter)
                       .replace("{current}", currentIndex + 1)

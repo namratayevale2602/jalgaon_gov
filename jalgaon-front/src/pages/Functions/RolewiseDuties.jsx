@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import { useLanguage } from "../../contexts/LanguageContext";
 import { useState, useEffect } from "react";
+import Document from "./document";
 
 const RolewiseDuties = () => {
   const { language } = useLanguage();
@@ -119,6 +120,7 @@ const RolewiseDuties = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+      <Document />;
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -29,10 +29,7 @@ const DPC = () => {
   const { language } = useLanguage();
   const [data, setData] = useState({
     documents: {
-      title:
-        language === "mr"
-          ? "महत्त्वाची दस्तऐवजे"
-          : "Planning Committee Rules & Act",
+      title: "",
       items: [],
     },
   });
@@ -44,7 +41,7 @@ const DPC = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          `https://jalgaonback.demovoting.com/api/dpc-documents`
+          `https://jalgaonback.demovoting.com/api/dpc-documents?lang=${language}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -68,7 +65,9 @@ const DPC = () => {
         <div className="text-center">
           <FaSpinner className="animate-spin text-4xl text-blue-600 mx-auto mb-4" />
           <p className="text-gray-600">
-            Loading Planning Committee Rules & Act...
+            {language === "mr"
+              ? "नियोजन समिती नियम आणि कायदे लोड होत आहेत..."
+              : "Loading Planning Committee Rules & Act..."}
           </p>
         </div>
       </div>
@@ -78,7 +77,10 @@ const DPC = () => {
   if (error) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-red-600">Error: {error}</div>
+        <div className="text-red-600">
+          {language === "mr" ? "त्रुटी: " : "Error: "}
+          {error}
+        </div>
       </div>
     );
   }
@@ -125,7 +127,8 @@ const DPC = () => {
                     d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
                   />
                 </svg>
-                {doc.name}
+                {/* Use the appropriate name based on the language */}
+                {language === "mr" && doc.name_mr ? doc.name_mr : doc.name}
               </motion.a>
             ))}
           </div>

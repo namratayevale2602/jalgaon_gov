@@ -167,7 +167,7 @@ const KeyResponsibilities = () => {
           })}
         </div>
 
-        <div className="mt-8 bg-blue-50 rounded-lg p-6">
+        {/* <div className="mt-8 bg-blue-50 rounded-lg p-6">
           <h3 className="text-lg font-semibold text-blue-800 mb-3">
             {getText(content.legalBasis.title)}
           </h3>
@@ -175,7 +175,7 @@ const KeyResponsibilities = () => {
             {getText(content.legalBasis.text1)}
           </p>
           <p className="text-gray-700">{getText(content.legalBasis.text2)}</p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

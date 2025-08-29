@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { FaSpinner } from "react-icons/fa";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 const TourismGallery = () => {
+  const { language } = useLanguage();
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -9,7 +11,7 @@ const TourismGallery = () => {
     const fetchGalleryImages = async () => {
       try {
         const response = await fetch(
-          "https://jalgaonback.demovoting.com/api/tourism/gallery"
+          `https://jalgaonback.demovoting.com/api/tourism/gallery?lang=${language}`
         );
         const data = await response.json();
 
@@ -24,14 +26,16 @@ const TourismGallery = () => {
     };
 
     fetchGalleryImages();
-  }, []);
+  }, [language]); // Added language dependency to refetch when language changes
 
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
         <div className="text-center">
           <FaSpinner className="animate-spin text-4xl text-blue-600 mx-auto mb-4" />
-          <p className="text-gray-600">Loading Gallary...</p>
+          <p className="text-gray-600">
+            {language === "mr" ? "गॅलरी लोड होत आहे..." : "Loading Gallery..."}
+          </p>
         </div>
       </div>
     );
@@ -42,7 +46,10 @@ const TourismGallery = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Title */}
         <h2 className="text-3xl font-bold text-center mb-10">
-          Our <span className="text-indigo-600">Gallery</span>
+          {language === "mr" ? "आमची " : "Our "}
+          <span className="text-blue-600">
+            {language === "mr" ? "गॅलरी" : "Gallery"}
+          </span>
         </h2>
 
         {/* Grid Layout */}
@@ -54,13 +61,19 @@ const TourismGallery = () => {
             >
               <img
                 src={item.src}
-                alt={item.title.en || `Gallery image ${index + 1}`}
+                alt={
+                  item.title[language] ||
+                  item.title.en ||
+                  `Gallery image ${index + 1}`
+                }
                 className="w-full h-64 object-cover transform group-hover:scale-110 transition duration-700 ease-in-out"
               />
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center">
-                <span className="text-white text-lg font-bold mb-2">
-                  {item.title.en || `Location ${index + 1}`}
+              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center p-4">
+                <span className="text-white text-lg font-bold text-center">
+                  {item.title[language] ||
+                    item.title.en ||
+                    `Location ${index + 1}`}
                 </span>
               </div>
             </div>

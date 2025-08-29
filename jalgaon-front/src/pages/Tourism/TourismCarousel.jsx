@@ -118,10 +118,10 @@ const TourismCarousel = ({ spots }) => {
                         ? "Commercial"
                         : "वाणिज्यिक"}
                     </span>
-                    <div className="flex items-center bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full">
+                    {/* <div className="flex items-center bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full">
                       <FaStar className="text-yellow-400 mr-1" />
                       <span className="text-sm">{spot.rating || "4.5/5"}</span>
-                    </div>
+                    </div> */}
                   </div>
 
                   <h3 className="text-2xl md:text-3xl font-bold mb-3">

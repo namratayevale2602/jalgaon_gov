@@ -16,7 +16,6 @@ import "swiper/css/navigation";
 const Services = () => {
   const navigate = useNavigate();
   const { language } = useLanguage();
-  const [activeFilter] = useState("All");
   const [schemes, setSchemes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -50,71 +49,6 @@ const Services = () => {
 
     fetchSchemes();
   }, [language]);
-
-  const getText = (item) => {
-    if (typeof item === "object" && item !== null && language in item) {
-      return item[language];
-    }
-    return item;
-  };
-
-  const categories = [
-    {
-      id: 1,
-      name: { en: "DISTRICT ANNUAL PLAN", mr: "जिल्हा वार्षिक योजना" },
-      slug: "annualPlan",
-    },
-    {
-      id: 2,
-      name: {
-        en: "MLA Local Development Program",
-        mr: "आमदार स्थानिक विकास कार्यक्रम",
-      },
-      slug: "mlaFunds",
-    },
-    {
-      id: 3,
-      name: {
-        en: "MP Local Area Development Program",
-        mr: "खासदार स्थानिक क्षेत्र विकास कार्यक्रम",
-      },
-      slug: "mpFunds",
-    },
-    {
-      id: 4,
-      name: {
-        en: "HILLY REGION DEVELOPMENT PROGRAM",
-        mr: "डोंगरी विभाग विकास कार्यक्रम",
-      },
-      slug: "hillyArea",
-    },
-    {
-      id: 5,
-      name: {
-        en: "Human Development Department Programs",
-        mr: "मानव विकास विभाग कार्यक्रम",
-      },
-      slug: "humanDevelopment",
-    },
-    {
-      id: 6,
-      name: {
-        en: "Minority Development Department Scheme",
-        mr: "अल्पसंख्याक विकास विभाग योजना",
-      },
-      slug: "minoritySchemes",
-    },
-    {
-      id: 7,
-      name: { en: "OTHER SCHEMES", mr: "इतर योजना" },
-      slug: "otherSchemes",
-    },
-  ];
-
-  const getCategoryName = (categoryId) => {
-    const category = categories.find((cat) => cat.id === categoryId);
-    return category ? getText(category.name) : "Unknown Category";
-  };
 
   if (loading) {
     return (
@@ -192,17 +126,14 @@ const Services = () => {
                     />
                   </div>
                   <div className="p-5">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-xl font-bold text-black-600">
-                        {getCategoryName(scheme.category_id)}
-                      </span>
-                    </div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-2">
                       {scheme.title}
                     </h3>
-                    <p className="text-gray-600 text-sm">
-                      {scheme.description}
-                    </p>
+                    {scheme.description && (
+                      <p className="text-gray-600 text-sm">
+                        {scheme.description}
+                      </p>
+                    )}
                   </div>
                 </motion.div>
               </SwiperSlide>
